@@ -283,7 +283,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.eeka.eekapos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "35bd0cfb-0c9a-498d-8976-270aabb5cb80";
+				PROVISIONING_PROFILE = "e6dbaf96-1abe-4d7f-8ff4-b0fc6b4b55e3";
 				PROVISIONING_PROFILE_SPECIFIER = "EekaPOS开发描述文件";
 			};
 			name = Debug;
