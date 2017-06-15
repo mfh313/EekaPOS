@@ -111,7 +111,7 @@
 					AC7CC3531EF26CC300564823 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 2C97V99SA2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -275,14 +275,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: xu yiheng (8BZ9HQD624)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xu yiheng (8BZ9HQD624)";
 				DEVELOPMENT_TEAM = 2C97V99SA2;
 				INFOPLIST_FILE = EekaPOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.eeka.eekapos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "35bd0cfb-0c9a-498d-8976-270aabb5cb80";
+				PROVISIONING_PROFILE_SPECIFIER = "EekaPOS开发描述文件";
 			};
 			name = Debug;
 		};
@@ -290,14 +292,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHENZHEN EEKA FASHION CO.,LTD";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHENZHEN EEKA FASHION CO.,LTD";
 				DEVELOPMENT_TEAM = 2C97V99SA2;
 				INFOPLIST_FILE = EekaPOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.eeka.eekapos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "8981bcaf-fbca-46bc-b23b-9059ea3622a4";
+				PROVISIONING_PROFILE_SPECIFIER = "EekaPOS发布描述文件";
 			};
 			name = Release;
 		};
