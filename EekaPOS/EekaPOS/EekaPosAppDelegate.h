@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  EekaPosAppDelegate.h
 //  EekaPOS
 //
 //  Created by EEKA on 2017/6/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface EekaPosAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

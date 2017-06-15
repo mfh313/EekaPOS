@@ -1,18 +1,18 @@
 //
-//  AppDelegate.m
+//  EekaPosAppDelegate.m
 //  EekaPOS
 //
 //  Created by EEKA on 2017/6/15.
 //  Copyright © 2017年 eeka. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "EekaPosAppDelegate.h"
 
-@interface AppDelegate ()
+@interface EekaPosAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation EekaPosAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

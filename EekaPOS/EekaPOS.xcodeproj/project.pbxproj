@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC7CC3591EF26CC300564823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3581EF26CC300564823 /* main.m */; };
-		AC7CC35C1EF26CC300564823 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC35B1EF26CC300564823 /* AppDelegate.m */; };
+		AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */; };
 		AC7CC35F1EF26CC300564823 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC35E1EF26CC300564823 /* ViewController.m */; };
 		AC7CC3621EF26CC300564823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3601EF26CC300564823 /* Main.storyboard */; };
 		AC7CC3641EF26CC300564823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3631EF26CC300564823 /* Assets.xcassets */; };
@@ -18,8 +18,8 @@
 /* Begin PBXFileReference section */
 		AC7CC3541EF26CC300564823 /* EekaPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EekaPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7CC3581EF26CC300564823 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AC7CC35A1EF26CC300564823 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AC7CC35B1EF26CC300564823 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AC7CC35A1EF26CC300564823 /* EekaPosAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EekaPosAppDelegate.h; sourceTree = "<group>"; };
+		AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EekaPosAppDelegate.m; sourceTree = "<group>"; };
 		AC7CC35D1EF26CC300564823 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		AC7CC35E1EF26CC300564823 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		AC7CC3611EF26CC300564823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,8 +58,8 @@
 		AC7CC3561EF26CC300564823 /* EekaPOS */ = {
 			isa = PBXGroup;
 			children = (
-				AC7CC35A1EF26CC300564823 /* AppDelegate.h */,
-				AC7CC35B1EF26CC300564823 /* AppDelegate.m */,
+				AC7CC35A1EF26CC300564823 /* EekaPosAppDelegate.h */,
+				AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */,
 				AC7CC35D1EF26CC300564823 /* ViewController.h */,
 				AC7CC35E1EF26CC300564823 /* ViewController.m */,
 				AC7CC3601EF26CC300564823 /* Main.storyboard */,
@@ -152,7 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC7CC35F1EF26CC300564823 /* ViewController.m in Sources */,
-				AC7CC35C1EF26CC300564823 /* AppDelegate.m in Sources */,
+				AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */,
 				AC7CC3591EF26CC300564823 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +318,7 @@
 				AC7CC36D1EF26CC300564823 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
