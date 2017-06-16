@@ -6,9 +6,9 @@
 //  Copyright © 2016年 EEKA. All rights reserved.
 //
 
-#import "MMService.h"
+#import <Foundation/Foundation.h>
 
-@interface MFThirdPartyPlugin : MMService
+@interface MFThirdPartyPlugin : NSObject
     
 -(void)registerPlugins;
 
