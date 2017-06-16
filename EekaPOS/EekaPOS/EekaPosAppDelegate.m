@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+//    http://www.cocoachina.com/industry/20140225/7879.html
+    
     return YES;
 }
 
