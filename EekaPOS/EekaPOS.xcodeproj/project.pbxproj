@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC26E7D21EF3B2B100C4FAA6 /* EPAppViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E7D11EF3B2B100C4FAA6 /* EPAppViewControllerManager.m */; };
 		AC26E7D51EF3B2D300C4FAA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC26E7D41EF3B2D300C4FAA6 /* UIKit.framework */; };
 		AC26E7D91EF3B2E700C4FAA6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC26E7D61EF3B2E700C4FAA6 /* AVFoundation.framework */; };
 		AC26E7DA1EF3B2E700C4FAA6 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC26E7D71EF3B2E700C4FAA6 /* CoreFoundation.framework */; };
@@ -68,6 +67,7 @@
 		AC26E8A91EF3DDA600C4FAA6 /* XXNibConvention.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E86D1EF3DDA600C4FAA6 /* XXNibConvention.m */; };
 		AC26E8AA1EF3DDA600C4FAA6 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8701EF3DDA600C4FAA6 /* NSObject+YYModel.m */; };
 		AC26E8AB1EF3DDA600C4FAA6 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8721EF3DDA600C4FAA6 /* YYClassInfo.m */; };
+		AC26E8B01EF3E05300C4FAA6 /* EPAppViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8AF1EF3E05300C4FAA6 /* EPAppViewControllerManager.m */; };
 		AC7CC3591EF26CC300564823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3581EF26CC300564823 /* main.m */; };
 		AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */; };
 		AC7CC35F1EF26CC300564823 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC35E1EF26CC300564823 /* ViewController.m */; };
@@ -77,8 +77,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC26E7D01EF3B2B100C4FAA6 /* EPAppViewControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPAppViewControllerManager.h; sourceTree = "<group>"; };
-		AC26E7D11EF3B2B100C4FAA6 /* EPAppViewControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAppViewControllerManager.m; sourceTree = "<group>"; };
 		AC26E7D41EF3B2D300C4FAA6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AC26E7D61EF3B2E700C4FAA6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AC26E7D71EF3B2E700C4FAA6 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -193,6 +191,8 @@
 		AC26E8711EF3DDA600C4FAA6 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
 		AC26E8721EF3DDA600C4FAA6 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
 		AC26E8731EF3DDA600C4FAA6 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		AC26E8AE1EF3E05300C4FAA6 /* EPAppViewControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPAppViewControllerManager.h; sourceTree = "<group>"; };
+		AC26E8AF1EF3E05300C4FAA6 /* EPAppViewControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAppViewControllerManager.m; sourceTree = "<group>"; };
 		AC7CC3541EF26CC300564823 /* EekaPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EekaPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7CC3581EF26CC300564823 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC7CC35A1EF26CC300564823 /* EekaPosAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EekaPosAppDelegate.h; sourceTree = "<group>"; };
@@ -473,6 +473,15 @@
 			path = YYModel;
 			sourceTree = "<group>";
 		};
+		AC26E8AD1EF3E05300C4FAA6 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				AC26E8AE1EF3E05300C4FAA6 /* EPAppViewControllerManager.h */,
+				AC26E8AF1EF3E05300C4FAA6 /* EPAppViewControllerManager.m */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		AC7CC34B1EF26CC300564823 = {
 			isa = PBXGroup;
 			children = (
@@ -497,8 +506,7 @@
 				AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */,
 				AC7CC35D1EF26CC300564823 /* ViewController.h */,
 				AC7CC35E1EF26CC300564823 /* ViewController.m */,
-				AC26E7D01EF3B2B100C4FAA6 /* EPAppViewControllerManager.h */,
-				AC26E7D11EF3B2B100C4FAA6 /* EPAppViewControllerManager.m */,
+				AC26E8AD1EF3E05300C4FAA6 /* Module */,
 				AC26E7EF1EF3DD1B00C4FAA6 /* Models */,
 				AC26E7CF1EF3B1DE00C4FAA6 /* Macro */,
 				AC26E7F01EF3DDA600C4FAA6 /* Vendors */,
@@ -617,7 +625,6 @@
 				AC26E88A1EF3DDA600C4FAA6 /* YTKBaseRequest.m in Sources */,
 				AC26E8A01EF3DDA600C4FAA6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				AC26E8A91EF3DDA600C4FAA6 /* XXNibConvention.m in Sources */,
-				AC26E7D21EF3B2B100C4FAA6 /* EPAppViewControllerManager.m in Sources */,
 				AC26E87D1EF3DDA600C4FAA6 /* YTKAnimatingRequestAccessory.m in Sources */,
 				AC26E8A81EF3DDA600C4FAA6 /* XXNibBridge.m in Sources */,
 				AC26E8841EF3DDA600C4FAA6 /* AFURLRequestSerialization.m in Sources */,
@@ -628,6 +635,7 @@
 				AC26E8A21EF3DDA600C4FAA6 /* UIView+WebCacheOperation.m in Sources */,
 				AC26E8801EF3DDA600C4FAA6 /* YTKChainRequest+AnimatingAccessory.m in Sources */,
 				AC26E8A31EF3DDA600C4FAA6 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				AC26E8B01EF3E05300C4FAA6 /* EPAppViewControllerManager.m in Sources */,
 				AC26E88D1EF3DDA600C4FAA6 /* YTKChainRequest.m in Sources */,
 				AC26E8831EF3DDA600C4FAA6 /* AFSecurityPolicy.m in Sources */,
 				AC26E8741EF3DDA600C4FAA6 /* HexColors.m in Sources */,
