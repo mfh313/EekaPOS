@@ -21,13 +21,6 @@
 		AC26E7EA1EF3B54300C4FAA6 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AC26E7E91EF3B54300C4FAA6 /* libc++.tbd */; };
 		AC26E8741EF3DDA600C4FAA6 /* HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E7F31EF3DDA600C4FAA6 /* HexColors.m */; };
 		AC26E8751EF3DDA600C4FAA6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E7F61EF3DDA600C4FAA6 /* MBProgressHUD.m */; };
-		AC26E8761EF3DDA600C4FAA6 /* NSDictionary+Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E7FA1EF3DDA600C4FAA6 /* NSDictionary+Unicode.m */; };
-		AC26E8771EF3DDA600C4FAA6 /* NSString+MMWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E7FC1EF3DDA600C4FAA6 /* NSString+MMWidth.m */; };
-		AC26E8781EF3DDA600C4FAA6 /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E7FE1EF3DDA600C4FAA6 /* UIView+Extend.m */; };
-		AC26E8791EF3DDA600C4FAA6 /* UIView+threadHook.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8001EF3DDA600C4FAA6 /* UIView+threadHook.m */; };
-		AC26E87A1EF3DDA600C4FAA6 /* UIViewController+FixBackIndicatorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8021EF3DDA600C4FAA6 /* UIViewController+FixBackIndicatorImage.m */; };
-		AC26E87B1EF3DDA600C4FAA6 /* UIViewController+FullScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8041EF3DDA600C4FAA6 /* UIViewController+FullScreen.m */; };
-		AC26E87C1EF3DDA600C4FAA6 /* UIViewController+UINavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8061EF3DDA600C4FAA6 /* UIViewController+UINavigationItem.m */; };
 		AC26E87D1EF3DDA600C4FAA6 /* YTKAnimatingRequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E80A1EF3DDA600C4FAA6 /* YTKAnimatingRequestAccessory.m */; };
 		AC26E87E1EF3DDA600C4FAA6 /* YTKBaseRequest+AnimatingAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E80C1EF3DDA600C4FAA6 /* YTKBaseRequest+AnimatingAccessory.m */; };
 		AC26E87F1EF3DDA600C4FAA6 /* YTKBatchRequest+AnimatingAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E80E1EF3DDA600C4FAA6 /* YTKBatchRequest+AnimatingAccessory.m */; };
@@ -102,21 +95,6 @@
 		AC26E7F31EF3DDA600C4FAA6 /* HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexColors.m; sourceTree = "<group>"; };
 		AC26E7F51EF3DDA600C4FAA6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		AC26E7F61EF3DDA600C4FAA6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		AC26E7F81EF3DDA600C4FAA6 /* MFCategorys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCategorys.h; sourceTree = "<group>"; };
-		AC26E7F91EF3DDA600C4FAA6 /* NSDictionary+Unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Unicode.h"; sourceTree = "<group>"; };
-		AC26E7FA1EF3DDA600C4FAA6 /* NSDictionary+Unicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Unicode.m"; sourceTree = "<group>"; };
-		AC26E7FB1EF3DDA600C4FAA6 /* NSString+MMWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MMWidth.h"; sourceTree = "<group>"; };
-		AC26E7FC1EF3DDA600C4FAA6 /* NSString+MMWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MMWidth.m"; sourceTree = "<group>"; };
-		AC26E7FD1EF3DDA600C4FAA6 /* UIView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
-		AC26E7FE1EF3DDA600C4FAA6 /* UIView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extend.m"; sourceTree = "<group>"; };
-		AC26E7FF1EF3DDA600C4FAA6 /* UIView+threadHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+threadHook.h"; sourceTree = "<group>"; };
-		AC26E8001EF3DDA600C4FAA6 /* UIView+threadHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+threadHook.m"; sourceTree = "<group>"; };
-		AC26E8011EF3DDA600C4FAA6 /* UIViewController+FixBackIndicatorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FixBackIndicatorImage.h"; sourceTree = "<group>"; };
-		AC26E8021EF3DDA600C4FAA6 /* UIViewController+FixBackIndicatorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FixBackIndicatorImage.m"; sourceTree = "<group>"; };
-		AC26E8031EF3DDA600C4FAA6 /* UIViewController+FullScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FullScreen.h"; sourceTree = "<group>"; };
-		AC26E8041EF3DDA600C4FAA6 /* UIViewController+FullScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FullScreen.m"; sourceTree = "<group>"; };
-		AC26E8051EF3DDA600C4FAA6 /* UIViewController+UINavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UINavigationItem.h"; sourceTree = "<group>"; };
-		AC26E8061EF3DDA600C4FAA6 /* UIViewController+UINavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UINavigationItem.m"; sourceTree = "<group>"; };
 		AC26E8091EF3DDA600C4FAA6 /* YTKAnimatingRequestAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKAnimatingRequestAccessory.h; sourceTree = "<group>"; };
 		AC26E80A1EF3DDA600C4FAA6 /* YTKAnimatingRequestAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKAnimatingRequestAccessory.m; sourceTree = "<group>"; };
 		AC26E80B1EF3DDA600C4FAA6 /* YTKBaseRequest+AnimatingAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YTKBaseRequest+AnimatingAccessory.h"; sourceTree = "<group>"; };
@@ -287,7 +265,6 @@
 			children = (
 				AC26E7F11EF3DDA600C4FAA6 /* HexColors */,
 				AC26E7F41EF3DDA600C4FAA6 /* MBProgressHUD */,
-				AC26E7F71EF3DDA600C4FAA6 /* MMCategorys */,
 				AC26E8071EF3DDA600C4FAA6 /* Networking */,
 				AC26E83A1EF3DDA600C4FAA6 /* SDWebImage */,
 				AC26E85C1EF3DDA600C4FAA6 /* SVPullToRefresh */,
@@ -315,28 +292,6 @@
 				AC26E7F61EF3DDA600C4FAA6 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		AC26E7F71EF3DDA600C4FAA6 /* MMCategorys */ = {
-			isa = PBXGroup;
-			children = (
-				AC26E7F81EF3DDA600C4FAA6 /* MFCategorys.h */,
-				AC26E7F91EF3DDA600C4FAA6 /* NSDictionary+Unicode.h */,
-				AC26E7FA1EF3DDA600C4FAA6 /* NSDictionary+Unicode.m */,
-				AC26E7FB1EF3DDA600C4FAA6 /* NSString+MMWidth.h */,
-				AC26E7FC1EF3DDA600C4FAA6 /* NSString+MMWidth.m */,
-				AC26E7FD1EF3DDA600C4FAA6 /* UIView+Extend.h */,
-				AC26E7FE1EF3DDA600C4FAA6 /* UIView+Extend.m */,
-				AC26E7FF1EF3DDA600C4FAA6 /* UIView+threadHook.h */,
-				AC26E8001EF3DDA600C4FAA6 /* UIView+threadHook.m */,
-				AC26E8011EF3DDA600C4FAA6 /* UIViewController+FixBackIndicatorImage.h */,
-				AC26E8021EF3DDA600C4FAA6 /* UIViewController+FixBackIndicatorImage.m */,
-				AC26E8031EF3DDA600C4FAA6 /* UIViewController+FullScreen.h */,
-				AC26E8041EF3DDA600C4FAA6 /* UIViewController+FullScreen.m */,
-				AC26E8051EF3DDA600C4FAA6 /* UIViewController+UINavigationItem.h */,
-				AC26E8061EF3DDA600C4FAA6 /* UIViewController+UINavigationItem.m */,
-			);
-			path = MMCategorys;
 			sourceTree = "<group>";
 		};
 		AC26E8071EF3DDA600C4FAA6 /* Networking */ = {
@@ -640,7 +595,6 @@
 				AC26E8881EF3DDA600C4FAA6 /* MFNetwork.m in Sources */,
 				AC7CC35F1EF26CC300564823 /* ViewController.m in Sources */,
 				AC26E87F1EF3DDA600C4FAA6 /* YTKBatchRequest+AnimatingAccessory.m in Sources */,
-				AC26E8791EF3DDA600C4FAA6 /* UIView+threadHook.m in Sources */,
 				AC26E8961EF3DDA600C4FAA6 /* SDWebImageCompat.m in Sources */,
 				AC26E88E1EF3DDA600C4FAA6 /* YTKChainRequestAgent.m in Sources */,
 				AC26E8811EF3DDA600C4FAA6 /* AFHTTPSessionManager.m in Sources */,
@@ -648,19 +602,16 @@
 				AC26E8851EF3DDA600C4FAA6 /* AFURLResponseSerialization.m in Sources */,
 				AC26E8911EF3DDA600C4FAA6 /* YTKNetworkPrivate.m in Sources */,
 				AC26E89A1EF3DDA600C4FAA6 /* SDWebImageManager.m in Sources */,
-				AC26E8781EF3DDA600C4FAA6 /* UIView+Extend.m in Sources */,
 				AC26E8A61EF3DDA600C4FAA6 /* MFThirdPartyPlugin.m in Sources */,
 				AC26E8821EF3DDA600C4FAA6 /* AFNetworkReachabilityManager.m in Sources */,
 				AC26E8921EF3DDA600C4FAA6 /* YTKRequest.m in Sources */,
 				AC26E8971EF3DDA600C4FAA6 /* SDWebImageDecoder.m in Sources */,
 				AC26E8751EF3DDA600C4FAA6 /* MBProgressHUD.m in Sources */,
 				AC26E8891EF3DDA600C4FAA6 /* MFNetworkRequest.m in Sources */,
-				AC26E8771EF3DDA600C4FAA6 /* NSString+MMWidth.m in Sources */,
 				AC26E88C1EF3DDA600C4FAA6 /* YTKBatchRequestAgent.m in Sources */,
 				AC26E89F1EF3DDA600C4FAA6 /* UIImage+WebP.m in Sources */,
 				AC26E8901EF3DDA600C4FAA6 /* YTKNetworkConfig.m in Sources */,
 				AC26E8991EF3DDA600C4FAA6 /* SDWebImageDownloaderOperation.m in Sources */,
-				AC26E87C1EF3DDA600C4FAA6 /* UIViewController+UINavigationItem.m in Sources */,
 				AC26E8931EF3DDA600C4FAA6 /* MKAnnotationView+WebCache.m in Sources */,
 				AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */,
 				AC26E88A1EF3DDA600C4FAA6 /* YTKBaseRequest.m in Sources */,
@@ -670,8 +621,6 @@
 				AC26E87D1EF3DDA600C4FAA6 /* YTKAnimatingRequestAccessory.m in Sources */,
 				AC26E8A81EF3DDA600C4FAA6 /* XXNibBridge.m in Sources */,
 				AC26E8841EF3DDA600C4FAA6 /* AFURLRequestSerialization.m in Sources */,
-				AC26E87B1EF3DDA600C4FAA6 /* UIViewController+FullScreen.m in Sources */,
-				AC26E8761EF3DDA600C4FAA6 /* NSDictionary+Unicode.m in Sources */,
 				AC26E8AA1EF3DDA600C4FAA6 /* NSObject+YYModel.m in Sources */,
 				AC26E8A11EF3DDA600C4FAA6 /* UIImageView+WebCache.m in Sources */,
 				AC26E8AB1EF3DDA600C4FAA6 /* YYClassInfo.m in Sources */,
@@ -681,7 +630,6 @@
 				AC26E8A31EF3DDA600C4FAA6 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				AC26E88D1EF3DDA600C4FAA6 /* YTKChainRequest.m in Sources */,
 				AC26E8831EF3DDA600C4FAA6 /* AFSecurityPolicy.m in Sources */,
-				AC26E87A1EF3DDA600C4FAA6 /* UIViewController+FixBackIndicatorImage.m in Sources */,
 				AC26E8741EF3DDA600C4FAA6 /* HexColors.m in Sources */,
 				AC26E8981EF3DDA600C4FAA6 /* SDWebImageDownloader.m in Sources */,
 				AC26E8871EF3DDA600C4FAA6 /* HYBNetworking.m in Sources */,

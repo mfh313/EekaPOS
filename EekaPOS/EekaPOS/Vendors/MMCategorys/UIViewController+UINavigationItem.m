@@ -14,7 +14,6 @@
 {
     UIButton *leftBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
     leftBarButton.frame = CGRectMake(0, 0, 47, 30);
-//    [leftBarButton setImage:MFImage(@"Back") forState:UIControlStateNormal];
     [leftBarButton setTitle:@"返回" forState:UIControlStateNormal];
 
     [leftBarButton setBackgroundColor:[UIColor clearColor]];
@@ -32,7 +31,7 @@
     
     leftBarButton.frame = CGRectMake(0, 0, 70, 30);
     [leftBarButton setTitle:title forState:UIControlStateNormal];
-    [leftBarButton setTitleColor:YJCustomDefaultColor forState:UIControlStateNormal];
+//    [leftBarButton setTitleColor:YJCustomDefaultColor forState:UIControlStateNormal];
     [leftBarButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 8, 0, 0)];
     [leftBarButton setBackgroundColor:[UIColor clearColor]];
     if ([self respondsToSelector:anAction]) {
@@ -55,7 +54,7 @@
     [rightBarButton setTitle:title forState:UIControlStateNormal];
 //    [rightBarButton setBackgroundImage:MFImageStretchCenter(@"color") forState:UIControlStateNormal];
 //    [rightBarButton setBackgroundImage:MFImageStretchCenter(@"border_btn") forState:UIControlStateHighlighted];
-    [rightBarButton setTitleColor:YJCustomDefaultColor forState:UIControlStateNormal];
+//    [rightBarButton setTitleColor:YJCustomDefaultColor forState:UIControlStateNormal];
     [rightBarButton setBackgroundColor:[UIColor clearColor]];
     if ([self respondsToSelector:anAction]) {
         [rightBarButton addTarget:self action:anAction forControlEvents:UIControlEventTouchUpInside];

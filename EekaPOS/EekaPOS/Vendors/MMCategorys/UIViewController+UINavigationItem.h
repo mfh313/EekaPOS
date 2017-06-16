@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define YJCustomDefaultColor [UIColor hx_colorWithHexString:@"e93871"]
+
 @interface UIViewController (UINavigationItem)
 
 -(void)setLeftNaviButtonWithAction:(SEL)anAction;
