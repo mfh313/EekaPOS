@@ -764,6 +764,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/EekaPOS/ThirdLib/ThirdPartyPlugin",
 				);
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EekaPOS/EekaPos-pch.pch";
 				INFOPLIST_FILE = EekaPOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -785,6 +787,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/EekaPOS/ThirdLib/ThirdPartyPlugin",
 				);
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EekaPOS/EekaPos-pch.pch";
 				INFOPLIST_FILE = EekaPOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
