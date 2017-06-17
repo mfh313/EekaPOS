@@ -12,6 +12,10 @@
 
 #define MFURLWithPara(para) [MFURL stringByAppendingPathComponent:para]
 
+NSString const *EPApiTestUrl = @"https://pos.koradior.info:8443/";
+NSString const *EPApiUrl = @"https://pos.szyingjia.cn:8888/";
+
+
 @implementation EPApiManger
 
 + (NSString *)hostUrl

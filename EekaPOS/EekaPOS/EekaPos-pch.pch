@@ -16,6 +16,8 @@
 
 #import "MFUICommonUtil.h"
 
+#import "MMBaseClass.h"
+
 #import "HexColors.h"
 
 #import "MFNetwork.h"

@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "MMTabBarController.h"
 
 @interface EPAppViewControllerManager : NSObject
 {
     UIWindow *m_window;
+    MMTabBarController *m_tabbarController;
 }
 
 +(id)getAppViewControllerManager;

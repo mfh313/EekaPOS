@@ -68,7 +68,6 @@
 		AC26E8AA1EF3DDA600C4FAA6 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8701EF3DDA600C4FAA6 /* NSObject+YYModel.m */; };
 		AC26E8AB1EF3DDA600C4FAA6 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8721EF3DDA600C4FAA6 /* YYClassInfo.m */; };
 		AC26E8B01EF3E05300C4FAA6 /* EPAppViewControllerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8AF1EF3E05300C4FAA6 /* EPAppViewControllerManager.m */; };
-		AC26E8B31EF3E15A00C4FAA6 /* MMTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8B21EF3E15A00C4FAA6 /* MMTabBarController.m */; };
 		AC26E8B71EF3E1AE00C4FAA6 /* EPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8B61EF3E1AE00C4FAA6 /* EPLoginViewController.m */; };
 		AC26E8BA1EF3E20900C4FAA6 /* EPLoginUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8B91EF3E20900C4FAA6 /* EPLoginUserModel.m */; };
 		AC7CC3591EF26CC300564823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3581EF26CC300564823 /* main.m */; };
@@ -104,6 +103,9 @@
 		AC950E941EF4D337003EEBD0 /* UIViewController+UINavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E8D1EF4D337003EEBD0 /* UIViewController+UINavigationItem.m */; };
 		AC950E961EF4D560003EEBD0 /* Homelist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC950E951EF4D560003EEBD0 /* Homelist.storyboard */; };
 		AC950E9A1EF4D5D7003EEBD0 /* EPMainFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E991EF4D5D7003EEBD0 /* EPMainFrameViewController.m */; };
+		AC950E9E1EF4DC99003EEBD0 /* MMTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E9D1EF4DC99003EEBD0 /* MMTabBarController.m */; };
+		AC950EA01EF4DDDE003EEBD0 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC950E9F1EF4DDDE003EEBD0 /* Me.storyboard */; };
+		AC950EA41EF4DE1D003EEBD0 /* EPMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950EA31EF4DE1D003EEBD0 /* EPMeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -223,8 +225,6 @@
 		AC26E8731EF3DDA600C4FAA6 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		AC26E8AE1EF3E05300C4FAA6 /* EPAppViewControllerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPAppViewControllerManager.h; sourceTree = "<group>"; };
 		AC26E8AF1EF3E05300C4FAA6 /* EPAppViewControllerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAppViewControllerManager.m; sourceTree = "<group>"; };
-		AC26E8B11EF3E15A00C4FAA6 /* MMTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTabBarController.h; sourceTree = "<group>"; };
-		AC26E8B21EF3E15A00C4FAA6 /* MMTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTabBarController.m; sourceTree = "<group>"; };
 		AC26E8B51EF3E1AE00C4FAA6 /* EPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPLoginViewController.h; sourceTree = "<group>"; };
 		AC26E8B61EF3E1AE00C4FAA6 /* EPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPLoginViewController.m; sourceTree = "<group>"; };
 		AC26E8B81EF3E20900C4FAA6 /* EPLoginUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPLoginUserModel.h; sourceTree = "<group>"; };
@@ -297,6 +297,11 @@
 		AC950E951EF4D560003EEBD0 /* Homelist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Homelist.storyboard; sourceTree = "<group>"; };
 		AC950E981EF4D5D7003EEBD0 /* EPMainFrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPMainFrameViewController.h; sourceTree = "<group>"; };
 		AC950E991EF4D5D7003EEBD0 /* EPMainFrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPMainFrameViewController.m; sourceTree = "<group>"; };
+		AC950E9C1EF4DC99003EEBD0 /* MMTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTabBarController.h; sourceTree = "<group>"; };
+		AC950E9D1EF4DC99003EEBD0 /* MMTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTabBarController.m; sourceTree = "<group>"; };
+		AC950E9F1EF4DDDE003EEBD0 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		AC950EA21EF4DE1D003EEBD0 /* EPMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPMeViewController.h; sourceTree = "<group>"; };
+		AC950EA31EF4DE1D003EEBD0 /* EPMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPMeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -577,10 +582,10 @@
 			children = (
 				AC26E8AE1EF3E05300C4FAA6 /* EPAppViewControllerManager.h */,
 				AC26E8AF1EF3E05300C4FAA6 /* EPAppViewControllerManager.m */,
-				AC26E8B11EF3E15A00C4FAA6 /* MMTabBarController.h */,
-				AC26E8B21EF3E15A00C4FAA6 /* MMTabBarController.m */,
 				AC950E951EF4D560003EEBD0 /* Homelist.storyboard */,
+				AC950E9F1EF4DDDE003EEBD0 /* Me.storyboard */,
 				AC950E971EF4D59F003EEBD0 /* MainFrame */,
+				AC950EA11EF4DE06003EEBD0 /* Me */,
 				AC26E8B41EF3E18C00C4FAA6 /* Login */,
 			);
 			path = Module;
@@ -602,6 +607,7 @@
 		AC26E8BC1EF3E39700C4FAA6 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				AC950E9B1EF4DC99003EEBD0 /* MMTabBarController */,
 				AC950E391EF4AF54003EEBD0 /* Class */,
 				AC950E7E1EF4D337003EEBD0 /* Category */,
 				AC950E5C1EF4AF6B003EEBD0 /* Helper */,
@@ -767,6 +773,24 @@
 			path = MainFrame;
 			sourceTree = "<group>";
 		};
+		AC950E9B1EF4DC99003EEBD0 /* MMTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				AC950E9C1EF4DC99003EEBD0 /* MMTabBarController.h */,
+				AC950E9D1EF4DC99003EEBD0 /* MMTabBarController.m */,
+			);
+			path = MMTabBarController;
+			sourceTree = "<group>";
+		};
+		AC950EA11EF4DE06003EEBD0 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				AC950EA21EF4DE1D003EEBD0 /* EPMeViewController.h */,
+				AC950EA31EF4DE1D003EEBD0 /* EPMeViewController.m */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -829,6 +853,7 @@
 			files = (
 				AC7CC3671EF26CC300564823 /* LaunchScreen.storyboard in Resources */,
 				AC7CC3641EF26CC300564823 /* Assets.xcassets in Resources */,
+				AC950EA01EF4DDDE003EEBD0 /* Me.storyboard in Resources */,
 				AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */,
 				AC950E961EF4D560003EEBD0 /* Homelist.storyboard in Resources */,
 			);
@@ -883,6 +908,7 @@
 				AC26E8901EF3DDA600C4FAA6 /* YTKNetworkConfig.m in Sources */,
 				AC26E8991EF3DDA600C4FAA6 /* SDWebImageDownloaderOperation.m in Sources */,
 				AC950E511EF4AF54003EEBD0 /* MMBaseInfoItem.m in Sources */,
+				AC950E9E1EF4DC99003EEBD0 /* MMTabBarController.m in Sources */,
 				AC26E8931EF3DDA600C4FAA6 /* MKAnnotationView+WebCache.m in Sources */,
 				AC950E9A1EF4D5D7003EEBD0 /* EPMainFrameViewController.m in Sources */,
 				AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */,
@@ -894,6 +920,7 @@
 				AC26E87D1EF3DDA600C4FAA6 /* YTKAnimatingRequestAccessory.m in Sources */,
 				AC26E8A81EF3DDA600C4FAA6 /* XXNibBridge.m in Sources */,
 				AC950E691EF4B184003EEBD0 /* MMService.m in Sources */,
+				AC950EA41EF4DE1D003EEBD0 /* EPMeViewController.m in Sources */,
 				AC950E7D1EF4CD45003EEBD0 /* MFModelHelper.m in Sources */,
 				AC950E731EF4C39E003EEBD0 /* EPAccountMgr.m in Sources */,
 				AC950E621EF4B064003EEBD0 /* Aspects.m in Sources */,
@@ -906,7 +933,6 @@
 				AC950E581EF4AF54003EEBD0 /* MMUIBridgeView.m in Sources */,
 				AC7CC3591EF26CC300564823 /* main.m in Sources */,
 				AC950E931EF4D337003EEBD0 /* UIViewController+FullScreen.m in Sources */,
-				AC26E8B31EF3E15A00C4FAA6 /* MMTabBarController.m in Sources */,
 				AC26E8A21EF3DDA600C4FAA6 /* UIView+WebCacheOperation.m in Sources */,
 				AC26E8801EF3DDA600C4FAA6 /* YTKChainRequest+AnimatingAccessory.m in Sources */,
 				AC26E8A31EF3DDA600C4FAA6 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
