@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EekaPOS/EekaPOS/Module/Login/EPLoginViewController.m"
-            timestampString = "519362150.588307"
+            timestampString = "519380665.998351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "-onUserLoginUserName:Pwd:"
             landmarkType = "7">
          </BreakpointContent>

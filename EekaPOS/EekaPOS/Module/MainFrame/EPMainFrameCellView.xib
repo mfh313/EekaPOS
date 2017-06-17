@@ -31,6 +31,9 @@
                         <constraint firstAttribute="width" constant="70" id="6Wp-5j-nyF"/>
                         <constraint firstAttribute="height" constant="70" id="BaA-zA-k0M"/>
                     </constraints>
+                    <connections>
+                        <action selector="onClickIcon:" destination="iN0-l3-epB" eventType="touchUpInside" id="rVz-OY-6i0"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

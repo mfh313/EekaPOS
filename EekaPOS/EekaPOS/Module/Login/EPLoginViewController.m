@@ -12,6 +12,10 @@
 #import "EPAccountMgr.h"
 
 @interface EPLoginViewController ()
+{
+    __weak IBOutlet UITextField *_userNameTextField;
+    __weak IBOutlet UITextField *_passwordTextField;
+}
 
 @end
 
@@ -22,10 +26,11 @@
     
 }
 
-
 - (IBAction)onClickLoginBtn:(id)sender {
     
-    [self onUserLoginUserName:@"P10198" Pwd:@"eeka2012"];
+    NSString *userName = _userNameTextField.text;
+    NSString *password = _passwordTextField.text;
+    [self onUserLoginUserName:userName Pwd:password];
 }
 
 

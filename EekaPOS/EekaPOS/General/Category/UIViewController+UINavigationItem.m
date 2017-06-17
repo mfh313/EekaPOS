@@ -14,7 +14,7 @@
 {
     UIButton *leftBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
     leftBarButton.frame = CGRectMake(0, 0, 47, 30);
-    [leftBarButton setTitle:@"返回" forState:UIControlStateNormal];
+    [leftBarButton setImage:MFImage(@"back") forState:UIControlStateNormal];
 
     [leftBarButton setBackgroundColor:[UIColor clearColor]];
     if ([self respondsToSelector:anAction]) {

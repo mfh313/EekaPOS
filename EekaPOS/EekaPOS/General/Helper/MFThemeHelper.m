@@ -14,7 +14,7 @@
 {
     NSShadow *shadow = [[NSShadow alloc]init];
     shadow.shadowColor = [UIColor clearColor];
-    NSDictionary *textAttributes = @{NSShadowAttributeName: shadow,NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:18.0]};
+    NSDictionary *textAttributes = @{NSShadowAttributeName: shadow,NSForegroundColorAttributeName:[UIColor hx_colorWithHexString:@"282828"],NSFontAttributeName:[UIFont systemFontOfSize:18.0]};
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
     [[UINavigationBar appearance] setTintColor:MFCustomNavBarColor];
     

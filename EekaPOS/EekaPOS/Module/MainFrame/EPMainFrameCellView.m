@@ -24,4 +24,13 @@
     _nameLabel.text = desc;
 }
 
+- (IBAction)onClickIcon:(id)sender
+{
+    if (self.clickBlock)
+    {
+        self.clickBlock();
+    }
+}
+
+
 @end

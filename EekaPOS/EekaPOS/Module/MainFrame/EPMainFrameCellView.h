@@ -8,7 +8,11 @@
 
 #import "MMUIBridgeView.h"
 
+typedef void(^onClickMainFrameCellBlock)();
+
 @interface EPMainFrameCellView : MMUIBridgeView
+
+@property (nonatomic,copy) onClickMainFrameCellBlock clickBlock;
 
 -(void)setContentView:(UIImage *)iconImage desc:(NSString *)desc;
 

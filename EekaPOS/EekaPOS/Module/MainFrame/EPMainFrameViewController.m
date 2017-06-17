@@ -9,6 +9,7 @@
 #import "EPMainFrameViewController.h"
 #import "EPAccountMgr.h"
 #import "EPMainFrameCellView.h"
+#import "EPSaleBillingMainViewController.h"
 
 @interface EPMainFrameViewController ()
 {
@@ -33,8 +34,33 @@
     
     _currentEntityNameLabel.text = [NSString stringWithFormat:@"当前账号： %@",loginModel.fullname];
     
+    __weak typeof(self) weakSelf = self;
+    
     [_saleBillingView setContentView:MFImage(@"home") desc:@"销售开单"];
+    [_saleBillingView setClickBlock:^() {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf pushSaleBillingMainVC];
+    }];
+    
     [_billingListView setContentView:MFImage(@"home") desc:@"开单列表"];
+    [_billingListView setClickBlock:^() {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf pushBillingListVC];
+    }];
+}
+
+-(void)pushSaleBillingMainVC
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SaleBilling" bundle:nil];
+    EPSaleBillingMainViewController *saleBillingMainVC = [storyboard instantiateViewControllerWithIdentifier:@"EPSaleBillingMainViewController"];
+    saleBillingMainVC.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:saleBillingMainVC animated:YES];
+}
+
+-(void)pushBillingListVC
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {

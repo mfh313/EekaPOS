@@ -34,5 +34,7 @@
 
 #import "XXNibBridge.h"
 
+#import "MFCategorys.h"
+
 
 #endif /* EekaPos_pch_pch */

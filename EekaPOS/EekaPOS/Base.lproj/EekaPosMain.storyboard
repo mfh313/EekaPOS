@@ -142,6 +142,10 @@
                             <constraint firstItem="UUA-QF-S5s" firstAttribute="top" secondItem="du9-AF-GFu" secondAttribute="bottom" id="zeH-eh-yoH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_passwordTextField" destination="hQY-qd-C4G" id="nK0-JW-wvg"/>
+                        <outlet property="_userNameTextField" destination="Ouu-N3-uCZ" id="AM5-Rt-3dG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

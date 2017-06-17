@@ -114,6 +114,8 @@
 		AC950EB51EF505B1003EEBD0 /* MFUICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950EB01EF505B1003EEBD0 /* MFUICollectionView.m */; };
 		AC950EBA1EF51AF8003EEBD0 /* MMUINavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950EB71EF51AF8003EEBD0 /* MMUINavigationBar.m */; };
 		AC950EBB1EF51AF8003EEBD0 /* UINavigationBar+MMUINavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950EB91EF51AF8003EEBD0 /* UINavigationBar+MMUINavigationBar.m */; };
+		AC950EBF1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950EBE1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.m */; };
+		AC950EC11EF5227B003EEBD0 /* SaleBilling.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC950EC01EF5227B003EEBD0 /* SaleBilling.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -325,6 +327,9 @@
 		AC950EB71EF51AF8003EEBD0 /* MMUINavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUINavigationBar.m; sourceTree = "<group>"; };
 		AC950EB81EF51AF8003EEBD0 /* UINavigationBar+MMUINavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+MMUINavigationBar.h"; sourceTree = "<group>"; };
 		AC950EB91EF51AF8003EEBD0 /* UINavigationBar+MMUINavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+MMUINavigationBar.m"; sourceTree = "<group>"; };
+		AC950EBD1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingMainViewController.h; sourceTree = "<group>"; };
+		AC950EBE1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingMainViewController.m; sourceTree = "<group>"; };
+		AC950EC01EF5227B003EEBD0 /* SaleBilling.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SaleBilling.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -807,6 +812,7 @@
 				AC950EA51EF4FEA8003EEBD0 /* EPMainFrameCellView.h */,
 				AC950EA61EF4FEA8003EEBD0 /* EPMainFrameCellView.m */,
 				AC950EA81EF4FFE4003EEBD0 /* EPMainFrameCellView.xib */,
+				AC950EBC1EF51F2B003EEBD0 /* SaleBilling */,
 			);
 			path = MainFrame;
 			sourceTree = "<group>";
@@ -827,6 +833,16 @@
 				AC950EA31EF4DE1D003EEBD0 /* EPMeViewController.m */,
 			);
 			path = Me;
+			sourceTree = "<group>";
+		};
+		AC950EBC1EF51F2B003EEBD0 /* SaleBilling */ = {
+			isa = PBXGroup;
+			children = (
+				AC950EC01EF5227B003EEBD0 /* SaleBilling.storyboard */,
+				AC950EBD1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.h */,
+				AC950EBE1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.m */,
+			);
+			path = SaleBilling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -893,6 +909,7 @@
 				AC7CC3641EF26CC300564823 /* Assets.xcassets in Resources */,
 				AC950EA91EF4FFE4003EEBD0 /* EPMainFrameCellView.xib in Resources */,
 				AC950EA01EF4DDDE003EEBD0 /* Me.storyboard in Resources */,
+				AC950EC11EF5227B003EEBD0 /* SaleBilling.storyboard in Resources */,
 				AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */,
 				AC950E961EF4D560003EEBD0 /* Homelist.storyboard in Resources */,
 			);
@@ -995,6 +1012,7 @@
 				AC950E521EF4AF54003EEBD0 /* MMBaseTextFieldItem.m in Sources */,
 				AC26E8951EF3DDA600C4FAA6 /* SDImageCache.m in Sources */,
 				AC950E5B1EF4AF54003EEBD0 /* MMViewController.m in Sources */,
+				AC950EBF1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.m in Sources */,
 				AC950E7A1EF4C4D5003EEBD0 /* EPApiManger.m in Sources */,
 				AC26E8A41EF3DDA600C4FAA6 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				AC26E8941EF3DDA600C4FAA6 /* NSData+ImageContentType.m in Sources */,
