@@ -11,9 +11,11 @@
 
 @interface EPAppViewControllerManager : NSObject
 {
-    
+    UIWindow *m_window;
 }
 
++(id)getAppViewControllerManager;
 -(id)initWithWindow:(UIWindow *)window;
+-(void)jumpToLoginViewController;
 
 @end

@@ -9,12 +9,16 @@
 #import "EekaPosAppDelegate.h"
 #import "MFThirdPartyPlugin.h"
 #import "MMServiceCenter.h"
+#import "MFThemeHelper.h"
+#import "EPAppViewControllerManager.h"
+
 
 @interface EekaPosAppDelegate ()
 {
     //    http://www.cocoachina.com/industry/20140225/7879.html
     
-    
+    MMServiceCenter *m_serviceCenter;
+    EPAppViewControllerManager *m_appViewControllerMgr;
 }
 
 @end
@@ -24,9 +28,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-
-    MFThirdPartyPlugin *thirdPartyPlugin = [[MMServiceCenter defaultCenter] getService:[MFThirdPartyPlugin class]];
+    m_serviceCenter = [MMServiceCenter defaultCenter];
+    
+    MFThirdPartyPlugin *thirdPartyPlugin = [m_serviceCenter getService:[MFThirdPartyPlugin class]];
     [thirdPartyPlugin registerPlugins];
+    
+    [MFThemeHelper setDefaultThemeColor];
+    
+    [MFNetwork makeConfigNetwork];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    m_appViewControllerMgr = [[EPAppViewControllerManager getAppViewControllerManager] initWithWindow:self.window];
+    
+    [[EPAppViewControllerManager getAppViewControllerManager] jumpToLoginViewController];
     
     return YES;
 }
