@@ -91,6 +91,17 @@
 		AC950E691EF4B184003EEBD0 /* MMService.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E661EF4B184003EEBD0 /* MMService.m */; };
 		AC950E6A1EF4B184003EEBD0 /* MMServiceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E681EF4B184003EEBD0 /* MMServiceCenter.m */; };
 		AC950E6F1EF4B679003EEBD0 /* MFThemeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E6E1EF4B679003EEBD0 /* MFThemeHelper.m */; };
+		AC950E731EF4C39E003EEBD0 /* EPAccountMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E721EF4C39E003EEBD0 /* EPAccountMgr.m */; };
+		AC950E761EF4C433003EEBD0 /* EPMemberLoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E751EF4C433003EEBD0 /* EPMemberLoginApi.m */; };
+		AC950E7A1EF4C4D5003EEBD0 /* EPApiManger.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E791EF4C4D5003EEBD0 /* EPApiManger.m */; };
+		AC950E7D1EF4CD45003EEBD0 /* MFModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E7C1EF4CD45003EEBD0 /* MFModelHelper.m */; };
+		AC950E8E1EF4D337003EEBD0 /* NSDictionary+Unicode.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E811EF4D337003EEBD0 /* NSDictionary+Unicode.m */; };
+		AC950E8F1EF4D337003EEBD0 /* NSString+MMWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E831EF4D337003EEBD0 /* NSString+MMWidth.m */; };
+		AC950E901EF4D337003EEBD0 /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E851EF4D337003EEBD0 /* UIView+Extend.m */; };
+		AC950E911EF4D337003EEBD0 /* UIView+threadHook.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E871EF4D337003EEBD0 /* UIView+threadHook.m */; };
+		AC950E921EF4D337003EEBD0 /* UIViewController+FixBackIndicatorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E891EF4D337003EEBD0 /* UIViewController+FixBackIndicatorImage.m */; };
+		AC950E931EF4D337003EEBD0 /* UIViewController+FullScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E8B1EF4D337003EEBD0 /* UIViewController+FullScreen.m */; };
+		AC950E941EF4D337003EEBD0 /* UIViewController+UINavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E8D1EF4D337003EEBD0 /* UIViewController+UINavigationItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -258,6 +269,29 @@
 		AC950E6D1EF4B679003EEBD0 /* MFThemeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFThemeHelper.h; sourceTree = "<group>"; };
 		AC950E6E1EF4B679003EEBD0 /* MFThemeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFThemeHelper.m; sourceTree = "<group>"; };
 		AC950E701EF4BA68003EEBD0 /* Readme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Readme.h; sourceTree = "<group>"; };
+		AC950E711EF4C39E003EEBD0 /* EPAccountMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPAccountMgr.h; sourceTree = "<group>"; };
+		AC950E721EF4C39E003EEBD0 /* EPAccountMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAccountMgr.m; sourceTree = "<group>"; };
+		AC950E741EF4C433003EEBD0 /* EPMemberLoginApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPMemberLoginApi.h; sourceTree = "<group>"; };
+		AC950E751EF4C433003EEBD0 /* EPMemberLoginApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPMemberLoginApi.m; sourceTree = "<group>"; };
+		AC950E781EF4C4D5003EEBD0 /* EPApiManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPApiManger.h; sourceTree = "<group>"; };
+		AC950E791EF4C4D5003EEBD0 /* EPApiManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPApiManger.m; sourceTree = "<group>"; };
+		AC950E7B1EF4CD45003EEBD0 /* MFModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFModelHelper.h; sourceTree = "<group>"; };
+		AC950E7C1EF4CD45003EEBD0 /* MFModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFModelHelper.m; sourceTree = "<group>"; };
+		AC950E7F1EF4D337003EEBD0 /* MFCategorys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCategorys.h; sourceTree = "<group>"; };
+		AC950E801EF4D337003EEBD0 /* NSDictionary+Unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Unicode.h"; sourceTree = "<group>"; };
+		AC950E811EF4D337003EEBD0 /* NSDictionary+Unicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Unicode.m"; sourceTree = "<group>"; };
+		AC950E821EF4D337003EEBD0 /* NSString+MMWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MMWidth.h"; sourceTree = "<group>"; };
+		AC950E831EF4D337003EEBD0 /* NSString+MMWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MMWidth.m"; sourceTree = "<group>"; };
+		AC950E841EF4D337003EEBD0 /* UIView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
+		AC950E851EF4D337003EEBD0 /* UIView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extend.m"; sourceTree = "<group>"; };
+		AC950E861EF4D337003EEBD0 /* UIView+threadHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+threadHook.h"; sourceTree = "<group>"; };
+		AC950E871EF4D337003EEBD0 /* UIView+threadHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+threadHook.m"; sourceTree = "<group>"; };
+		AC950E881EF4D337003EEBD0 /* UIViewController+FixBackIndicatorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FixBackIndicatorImage.h"; sourceTree = "<group>"; };
+		AC950E891EF4D337003EEBD0 /* UIViewController+FixBackIndicatorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FixBackIndicatorImage.m"; sourceTree = "<group>"; };
+		AC950E8A1EF4D337003EEBD0 /* UIViewController+FullScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FullScreen.h"; sourceTree = "<group>"; };
+		AC950E8B1EF4D337003EEBD0 /* UIViewController+FullScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FullScreen.m"; sourceTree = "<group>"; };
+		AC950E8C1EF4D337003EEBD0 /* UIViewController+UINavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UINavigationItem.h"; sourceTree = "<group>"; };
+		AC950E8D1EF4D337003EEBD0 /* UIViewController+UINavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UINavigationItem.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,6 +584,10 @@
 			children = (
 				AC26E8B51EF3E1AE00C4FAA6 /* EPLoginViewController.h */,
 				AC26E8B61EF3E1AE00C4FAA6 /* EPLoginViewController.m */,
+				AC950E711EF4C39E003EEBD0 /* EPAccountMgr.h */,
+				AC950E721EF4C39E003EEBD0 /* EPAccountMgr.m */,
+				AC950E741EF4C433003EEBD0 /* EPMemberLoginApi.h */,
+				AC950E751EF4C433003EEBD0 /* EPMemberLoginApi.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -557,8 +595,8 @@
 		AC26E8BC1EF3E39700C4FAA6 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				AC950E5D1EF4AFD5003EEBD0 /* Category */,
 				AC950E391EF4AF54003EEBD0 /* Class */,
+				AC950E7E1EF4D337003EEBD0 /* Category */,
 				AC950E5C1EF4AF6B003EEBD0 /* Helper */,
 			);
 			path = General;
@@ -644,17 +682,12 @@
 		AC950E5C1EF4AF6B003EEBD0 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AC950E7B1EF4CD45003EEBD0 /* MFModelHelper.h */,
+				AC950E7C1EF4CD45003EEBD0 /* MFModelHelper.m */,
 				AC950E6D1EF4B679003EEBD0 /* MFThemeHelper.h */,
 				AC950E6E1EF4B679003EEBD0 /* MFThemeHelper.m */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		AC950E5D1EF4AFD5003EEBD0 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		AC950E5F1EF4B064003EEBD0 /* Aspects */ = {
@@ -669,6 +702,7 @@
 		AC950E631EF4B184003EEBD0 /* MFFramework */ = {
 			isa = PBXGroup;
 			children = (
+				AC950E771EF4C48C003EEBD0 /* EekaPos */,
 				AC950E641EF4B184003EEBD0 /* Service */,
 			);
 			name = MFFramework;
@@ -684,6 +718,37 @@
 				AC950E681EF4B184003EEBD0 /* MMServiceCenter.m */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		AC950E771EF4C48C003EEBD0 /* EekaPos */ = {
+			isa = PBXGroup;
+			children = (
+				AC950E781EF4C4D5003EEBD0 /* EPApiManger.h */,
+				AC950E791EF4C4D5003EEBD0 /* EPApiManger.m */,
+			);
+			path = EekaPos;
+			sourceTree = "<group>";
+		};
+		AC950E7E1EF4D337003EEBD0 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				AC950E7F1EF4D337003EEBD0 /* MFCategorys.h */,
+				AC950E801EF4D337003EEBD0 /* NSDictionary+Unicode.h */,
+				AC950E811EF4D337003EEBD0 /* NSDictionary+Unicode.m */,
+				AC950E821EF4D337003EEBD0 /* NSString+MMWidth.h */,
+				AC950E831EF4D337003EEBD0 /* NSString+MMWidth.m */,
+				AC950E841EF4D337003EEBD0 /* UIView+Extend.h */,
+				AC950E851EF4D337003EEBD0 /* UIView+Extend.m */,
+				AC950E861EF4D337003EEBD0 /* UIView+threadHook.h */,
+				AC950E871EF4D337003EEBD0 /* UIView+threadHook.m */,
+				AC950E881EF4D337003EEBD0 /* UIViewController+FixBackIndicatorImage.h */,
+				AC950E891EF4D337003EEBD0 /* UIViewController+FixBackIndicatorImage.m */,
+				AC950E8A1EF4D337003EEBD0 /* UIViewController+FullScreen.h */,
+				AC950E8B1EF4D337003EEBD0 /* UIViewController+FullScreen.m */,
+				AC950E8C1EF4D337003EEBD0 /* UIViewController+UINavigationItem.h */,
+				AC950E8D1EF4D337003EEBD0 /* UIViewController+UINavigationItem.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -776,14 +841,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC950E8E1EF4D337003EEBD0 /* NSDictionary+Unicode.m in Sources */,
 				AC26E8881EF3DDA600C4FAA6 /* MFNetwork.m in Sources */,
 				AC26E87F1EF3DDA600C4FAA6 /* YTKBatchRequest+AnimatingAccessory.m in Sources */,
 				AC26E8961EF3DDA600C4FAA6 /* SDWebImageCompat.m in Sources */,
 				AC26E88E1EF3DDA600C4FAA6 /* YTKChainRequestAgent.m in Sources */,
+				AC950E911EF4D337003EEBD0 /* UIView+threadHook.m in Sources */,
 				AC950E6A1EF4B184003EEBD0 /* MMServiceCenter.m in Sources */,
 				AC26E8811EF3DDA600C4FAA6 /* AFHTTPSessionManager.m in Sources */,
 				AC26E89C1EF3DDA600C4FAA6 /* UIButton+WebCache.m in Sources */,
 				AC26E8851EF3DDA600C4FAA6 /* AFURLResponseSerialization.m in Sources */,
+				AC950E761EF4C433003EEBD0 /* EPMemberLoginApi.m in Sources */,
 				AC26E8911EF3DDA600C4FAA6 /* YTKNetworkPrivate.m in Sources */,
 				AC26E89A1EF3DDA600C4FAA6 /* SDWebImageManager.m in Sources */,
 				AC26E8A61EF3DDA600C4FAA6 /* MFThirdPartyPlugin.m in Sources */,
@@ -802,19 +870,24 @@
 				AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */,
 				AC26E8B71EF3E1AE00C4FAA6 /* EPLoginViewController.m in Sources */,
 				AC26E88A1EF3DDA600C4FAA6 /* YTKBaseRequest.m in Sources */,
+				AC950E8F1EF4D337003EEBD0 /* NSString+MMWidth.m in Sources */,
 				AC26E8A01EF3DDA600C4FAA6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				AC26E8A91EF3DDA600C4FAA6 /* XXNibConvention.m in Sources */,
 				AC26E87D1EF3DDA600C4FAA6 /* YTKAnimatingRequestAccessory.m in Sources */,
 				AC26E8A81EF3DDA600C4FAA6 /* XXNibBridge.m in Sources */,
 				AC950E691EF4B184003EEBD0 /* MMService.m in Sources */,
+				AC950E7D1EF4CD45003EEBD0 /* MFModelHelper.m in Sources */,
+				AC950E731EF4C39E003EEBD0 /* EPAccountMgr.m in Sources */,
 				AC950E621EF4B064003EEBD0 /* Aspects.m in Sources */,
 				AC26E8841EF3DDA600C4FAA6 /* AFURLRequestSerialization.m in Sources */,
 				AC950E6F1EF4B679003EEBD0 /* MFThemeHelper.m in Sources */,
 				AC26E8AA1EF3DDA600C4FAA6 /* NSObject+YYModel.m in Sources */,
 				AC26E8A11EF3DDA600C4FAA6 /* UIImageView+WebCache.m in Sources */,
 				AC26E8AB1EF3DDA600C4FAA6 /* YYClassInfo.m in Sources */,
+				AC950E941EF4D337003EEBD0 /* UIViewController+UINavigationItem.m in Sources */,
 				AC950E581EF4AF54003EEBD0 /* MMUIBridgeView.m in Sources */,
 				AC7CC3591EF26CC300564823 /* main.m in Sources */,
+				AC950E931EF4D337003EEBD0 /* UIViewController+FullScreen.m in Sources */,
 				AC26E8B31EF3E15A00C4FAA6 /* MMTabBarController.m in Sources */,
 				AC26E8A21EF3DDA600C4FAA6 /* UIView+WebCacheOperation.m in Sources */,
 				AC26E8801EF3DDA600C4FAA6 /* YTKChainRequest+AnimatingAccessory.m in Sources */,
@@ -825,12 +898,14 @@
 				AC26E8831EF3DDA600C4FAA6 /* AFSecurityPolicy.m in Sources */,
 				AC26E8741EF3DDA600C4FAA6 /* HexColors.m in Sources */,
 				AC26E8981EF3DDA600C4FAA6 /* SDWebImageDownloader.m in Sources */,
+				AC950E921EF4D337003EEBD0 /* UIViewController+FixBackIndicatorImage.m in Sources */,
 				AC26E8871EF3DDA600C4FAA6 /* HYBNetworking.m in Sources */,
 				AC26E89D1EF3DDA600C4FAA6 /* UIImage+GIF.m in Sources */,
 				AC26E87E1EF3DDA600C4FAA6 /* YTKBaseRequest+AnimatingAccessory.m in Sources */,
 				AC950E521EF4AF54003EEBD0 /* MMBaseTextFieldItem.m in Sources */,
 				AC26E8951EF3DDA600C4FAA6 /* SDImageCache.m in Sources */,
 				AC950E5B1EF4AF54003EEBD0 /* MMViewController.m in Sources */,
+				AC950E7A1EF4C4D5003EEBD0 /* EPApiManger.m in Sources */,
 				AC26E8A41EF3DDA600C4FAA6 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				AC26E8941EF3DDA600C4FAA6 /* NSData+ImageContentType.m in Sources */,
 				AC950E561EF4AF54003EEBD0 /* MMSelectButton.m in Sources */,
@@ -840,6 +915,7 @@
 				AC950E5A1EF4AF54003EEBD0 /* MMUIView.m in Sources */,
 				AC26E8861EF3DDA600C4FAA6 /* AFURLSessionManager.m in Sources */,
 				AC26E8BA1EF3E20900C4FAA6 /* EPLoginUserModel.m in Sources */,
+				AC950E901EF4D337003EEBD0 /* UIView+Extend.m in Sources */,
 				AC950E541EF4AF54003EEBD0 /* MMObject.m in Sources */,
 				AC950E551EF4AF54003EEBD0 /* MMOnePixLayoutConstraint.m in Sources */,
 				AC950E531EF4AF54003EEBD0 /* MMNavigationController.m in Sources */,

@@ -17,5 +17,6 @@
 +(id)getAppViewControllerManager;
 -(id)initWithWindow:(UIWindow *)window;
 -(void)jumpToLoginViewController;
+-(void)createMainTabViewController;
 
 @end
