@@ -9,7 +9,7 @@
 
 #define MFCustomDefaultColor [UIColor hx_colorWithHexString:@"e93871"]
 #define MFCustomLineColor [UIColor hx_colorWithHexString:@"d4d4d4"]
-#define MFCustomNavBarColor [UIColor hx_colorWithHexString:@"c1b497"]
+#define MFCustomNavBarColor [UIColor hx_colorWithHexString:@"0080C0"]
 
 
 //282828 黑

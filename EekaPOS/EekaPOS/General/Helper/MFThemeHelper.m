@@ -16,12 +16,22 @@
     shadow.shadowColor = [UIColor clearColor];
     NSDictionary *textAttributes = @{NSShadowAttributeName: shadow,NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:18.0]};
     [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
-    [[UINavigationBar appearance] setTintColor:MFCustomLineColor];
+    [[UINavigationBar appearance] setTintColor:MFCustomNavBarColor];
+    
+    [[UINavigationBar appearance] setShadowImage:[UIImage new]];
+    
+    if ([[UINavigationBar appearance] respondsToSelector:@selector(setTranslucent:)])
+    {
+        [[UINavigationBar appearance] setTranslucent:YES];
+        [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    }
+    
+    [[UINavigationBar appearance] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     
     [[UITextField appearance] setTintColor:MFCustomNavBarColor];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor hx_colorWithHexString:@"686868"]} forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor hx_colorWithHexString:@"f23a47"]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor hx_colorWithHexString:@"71D0FF"]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:MFCustomNavBarColor} forState:UIControlStateSelected];
 
 }
 

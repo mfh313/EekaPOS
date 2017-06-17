@@ -45,10 +45,9 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homelist" bundle:nil];
     EPMainFrameViewController *mainFrameVC = [storyboard instantiateViewControllerWithIdentifier:@"EPMainFrameViewController"];
     MMNavigationController *rootNav = [[MMNavigationController alloc] initWithRootViewController:mainFrameVC];
-    [MFImage(@"set1") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UITabBarItem *homeTabItem = [[UITabBarItem alloc] initWithTitle:@"POS"
-                                                              image:[MFImage(@"home2") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                                                      selectedImage:[MFImage(@"home1") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                                                              image:[MFImage(@"tab1b") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                      selectedImage:[MFImage(@"tab1a") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     rootNav.tabBarItem = homeTabItem;
     
     
@@ -56,13 +55,13 @@
     EPMeViewController *meVC = [meStoryboard instantiateViewControllerWithIdentifier:@"EPMeViewController"];
     MMNavigationController *meRootNav = [[MMNavigationController alloc] initWithRootViewController:meVC];
     UITabBarItem *setTabItem = [[UITabBarItem alloc] initWithTitle:@"我"
-                                                             image:[MFImage(@"set2") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                                                     selectedImage:[MFImage(@"set1") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                                                             image:[MFImage(@"tab3b") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                     selectedImage:[MFImage(@"tab4a") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     meRootNav.tabBarItem = setTabItem;
     
     m_tabbarController = [self getTabBarController];
     m_tabbarController.viewControllers = @[rootNav,meRootNav];
-    m_tabbarController.tabBar.barTintColor = [UIColor hx_colorWithHexString:@"0080C0"];
+    m_tabbarController.tabBar.barTintColor = [UIColor whiteColor];
     
     m_window.rootViewController = m_tabbarController;
 }
