@@ -15,8 +15,6 @@
 
 @interface EekaPosAppDelegate ()
 {
-    //    http://www.cocoachina.com/industry/20140225/7879.html
-    
     MMServiceCenter *m_serviceCenter;
     EPAppViewControllerManager *m_appViewControllerMgr;
 }

@@ -257,6 +257,7 @@
 		AC950E6B1EF4B3DA003EEBD0 /* MFColorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFColorUtil.h; sourceTree = "<group>"; };
 		AC950E6D1EF4B679003EEBD0 /* MFThemeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFThemeHelper.h; sourceTree = "<group>"; };
 		AC950E6E1EF4B679003EEBD0 /* MFThemeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFThemeHelper.m; sourceTree = "<group>"; };
+		AC950E701EF4BA68003EEBD0 /* Readme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Readme.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -596,6 +597,7 @@
 				AC7CC3651EF26CC300564823 /* LaunchScreen.storyboard */,
 				AC7CC3681EF26CC300564823 /* Info.plist */,
 				AC26E7DC1EF3B39F00C4FAA6 /* EekaPos-pch.pch */,
+				AC950E701EF4BA68003EEBD0 /* Readme.h */,
 				AC7CC3571EF26CC300564823 /* Supporting Files */,
 			);
 			path = EekaPOS;
