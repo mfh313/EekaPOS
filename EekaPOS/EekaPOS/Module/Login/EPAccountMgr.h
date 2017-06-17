@@ -8,8 +8,11 @@
 
 #import "MMService.h"
 
+@class EPLoginUserModel;
+
 @interface EPAccountMgr : MMService
 
 @property (nonatomic,strong) NSString *token;
+@property (nonatomic,strong) EPLoginUserModel *loginModel;
 
 @end

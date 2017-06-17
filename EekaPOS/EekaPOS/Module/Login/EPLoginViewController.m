@@ -58,6 +58,7 @@
         EPLoginUserModel *loginModel = [EPLoginUserModel MM_modelWithJSON:request.responseJSONObject];
         EPAccountMgr *accountMgr = [[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
         accountMgr.token = loginModel.token;
+        accountMgr.loginModel = loginModel;
         
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf onloginSuccess];
