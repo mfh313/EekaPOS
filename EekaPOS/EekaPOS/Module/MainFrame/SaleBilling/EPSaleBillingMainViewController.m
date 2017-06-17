@@ -23,7 +23,6 @@
     [self MF_wantsFullScreenLayout:NO];
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
-    [self performSelector:@selector(pushCameraScanVC) withObject:nil afterDelay:1];
 }
 
 -(void)onClickBackBtn:(id)sender
