@@ -351,6 +351,7 @@
 		AC95149D1EF52EE4003EEBD0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC95149C1EF52EE4003EEBD0 /* QuartzCore.framework */; };
 		AC95149F1EF52EED003EEBD0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC95149E1EF52EED003EEBD0 /* ImageIO.framework */; };
 		AC9514A21EF53415003EEBD0 /* EPCameraScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9514A11EF53414003EEBD0 /* EPCameraScanViewController.m */; };
+		AC9514A41EF56C68003EEBD0 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC9514A31EF56C68003EEBD0 /* CodeScan.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1048,6 +1049,7 @@
 		AC95149E1EF52EED003EEBD0 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		AC9514A01EF53414003EEBD0 /* EPCameraScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPCameraScanViewController.h; sourceTree = "<group>"; };
 		AC9514A11EF53414003EEBD0 /* EPCameraScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPCameraScanViewController.m; sourceTree = "<group>"; };
+		AC9514A31EF56C68003EEBD0 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1577,6 +1579,7 @@
 		AC9511B11EF52D66003EEBD0 /* LBXScan */ = {
 			isa = PBXGroup;
 			children = (
+				AC9514A31EF56C68003EEBD0 /* CodeScan.bundle */,
 				AC9511B21EF52D66003EEBD0 /* AVCamUtilities.h */,
 				AC9511B31EF52D66003EEBD0 /* AVCamUtilities.m */,
 				AC9511B41EF52D66003EEBD0 /* LBXScanLineAnimation.h */,
@@ -2405,6 +2408,7 @@
 				AC950EC11EF5227B003EEBD0 /* SaleBilling.storyboard in Resources */,
 				AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */,
 				AC950E961EF4D560003EEBD0 /* Homelist.storyboard in Resources */,
+				AC9514A41EF56C68003EEBD0 /* CodeScan.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
