@@ -352,6 +352,8 @@
 		AC95149F1EF52EED003EEBD0 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC95149E1EF52EED003EEBD0 /* ImageIO.framework */; };
 		AC9514A21EF53415003EEBD0 /* EPCameraScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9514A11EF53414003EEBD0 /* EPCameraScanViewController.m */; };
 		AC9514A41EF56C68003EEBD0 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC9514A31EF56C68003EEBD0 /* CodeScan.bundle */; };
+		AC9514A71EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9514A61EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m */; };
+		AC9514A91EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9514A81EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1050,6 +1052,9 @@
 		AC9514A01EF53414003EEBD0 /* EPCameraScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPCameraScanViewController.h; sourceTree = "<group>"; };
 		AC9514A11EF53414003EEBD0 /* EPCameraScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPCameraScanViewController.m; sourceTree = "<group>"; };
 		AC9514A31EF56C68003EEBD0 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
+		AC9514A51EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingItemCodeInputView.h; sourceTree = "<group>"; };
+		AC9514A61EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingItemCodeInputView.m; sourceTree = "<group>"; };
+		AC9514A81EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingItemCodeInputView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1572,6 +1577,9 @@
 				AC950EC01EF5227B003EEBD0 /* SaleBilling.storyboard */,
 				AC950EBD1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.h */,
 				AC950EBE1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.m */,
+				AC9514A51EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.h */,
+				AC9514A61EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m */,
+				AC9514A81EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib */,
 			);
 			path = SaleBilling;
 			sourceTree = "<group>";
@@ -2405,6 +2413,7 @@
 				AC7CC3641EF26CC300564823 /* Assets.xcassets in Resources */,
 				AC950EA91EF4FFE4003EEBD0 /* EPMainFrameCellView.xib in Resources */,
 				AC950EA01EF4DDDE003EEBD0 /* Me.storyboard in Resources */,
+				AC9514A91EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib in Resources */,
 				AC950EC11EF5227B003EEBD0 /* SaleBilling.storyboard in Resources */,
 				AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */,
 				AC950E961EF4D560003EEBD0 /* Homelist.storyboard in Resources */,
@@ -2560,6 +2569,7 @@
 				AC9514821EF52D67003EEBD0 /* ZXQRCodeFormatInformation.m in Sources */,
 				AC9514971EF52D67003EEBD0 /* ZXingWrapper.m in Sources */,
 				AC95145A1EF52D67003EEBD0 /* ZXUPCAReader.m in Sources */,
+				AC9514A71EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m in Sources */,
 				AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */,
 				AC95140B1EF52D67003EEBD0 /* ZXInvertedLuminanceSource.m in Sources */,
 				AC9513DE1EF52D67003EEBD0 /* ZXSMTPResultParser.m in Sources */,

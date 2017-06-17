@@ -8,8 +8,12 @@
 
 #import "EPSaleBillingMainViewController.h"
 #import "EPCameraScanViewController.h"
+#import "EPSaleBillingItemCodeInputView.h"
 
-@interface EPSaleBillingMainViewController () <EPCameraScanDelegate>
+@interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate>
+{
+    __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
+}
 
 @end
 
@@ -23,6 +27,8 @@
     [self MF_wantsFullScreenLayout:NO];
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
+    _codeInputView.m_delegate = self;
+    
 }
 
 -(void)onClickBackBtn:(id)sender
@@ -30,13 +36,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)pushCameraScanVC
+-(void)onClickCameraScanBtn
 {
     EPCameraScanViewController *vc = [EPCameraScanViewController new];
     vc.hidesBottomBarWhenPushed = YES;
     vc.m_delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 
 - (void)onScanQRCodeString:(NSString *)strScanned
 {

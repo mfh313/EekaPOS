@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EPSaleBillingItemCodeInputView">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="57"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-Lo-3wX">
+                    <rect key="frame" x="20" y="8.5" width="292" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="XdD-AF-glL"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入商品条码或扫一扫录入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVb-YT-V0O">
+                    <rect key="frame" x="20" y="20" width="190" height="17"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tss-4s-dTU">
+                    <rect key="frame" x="268" y="6.5" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="eRS-eE-MAf"/>
+                        <constraint firstAttribute="height" constant="44" id="hbU-xl-fz1"/>
+                    </constraints>
+                    <state key="normal" image="scan"/>
+                    <connections>
+                        <action selector="onClickScanBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="ND3-Yg-GNx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Km3-Ee-jf1">
+                    <rect key="frame" x="322" y="6.5" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ZoO-Vd-Une"/>
+                        <constraint firstAttribute="width" constant="44" id="ekh-1S-Uhg"/>
+                    </constraints>
+                    <state key="normal" image="check"/>
+                    <connections>
+                        <action selector="onClickDoneBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="8Yc-Ni-iG9"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Km3-Ee-jf1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7KP-OQ-4tw"/>
+                <constraint firstItem="Tss-4s-dTU" firstAttribute="centerY" secondItem="ZUx-Lo-3wX" secondAttribute="centerY" id="Oa4-8O-plR"/>
+                <constraint firstAttribute="trailing" secondItem="Km3-Ee-jf1" secondAttribute="trailing" constant="20" id="meG-kA-Kgp"/>
+                <constraint firstItem="ZUx-Lo-3wX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nue-hU-QkV"/>
+                <constraint firstItem="Tss-4s-dTU" firstAttribute="trailing" secondItem="ZUx-Lo-3wX" secondAttribute="trailing" id="onk-0A-jYM"/>
+                <constraint firstItem="UVb-YT-V0O" firstAttribute="leading" secondItem="ZUx-Lo-3wX" secondAttribute="leading" id="otg-cF-CPK"/>
+                <constraint firstItem="Km3-Ee-jf1" firstAttribute="leading" secondItem="ZUx-Lo-3wX" secondAttribute="trailing" constant="10" id="tGt-n8-Ckj"/>
+                <constraint firstItem="ZUx-Lo-3wX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="v3e-98-PzY"/>
+                <constraint firstItem="UVb-YT-V0O" firstAttribute="centerY" secondItem="ZUx-Lo-3wX" secondAttribute="centerY" id="xty-AF-uba"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-6" y="84.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="check" width="15" height="14"/>
+        <image name="scan" width="23" height="23"/>
+    </resources>
+</document>
