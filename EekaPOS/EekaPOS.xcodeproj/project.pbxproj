@@ -71,22 +71,23 @@
 		AC26E8B31EF3E15A00C4FAA6 /* MMTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8B21EF3E15A00C4FAA6 /* MMTabBarController.m */; };
 		AC26E8B71EF3E1AE00C4FAA6 /* EPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8B61EF3E1AE00C4FAA6 /* EPLoginViewController.m */; };
 		AC26E8BA1EF3E20900C4FAA6 /* EPLoginUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8B91EF3E20900C4FAA6 /* EPLoginUserModel.m */; };
-		AC26E8D51EF3E39700C4FAA6 /* MMBaseInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8C01EF3E39700C4FAA6 /* MMBaseInfoItem.m */; };
-		AC26E8D61EF3E39700C4FAA6 /* MMBaseTextFieldItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8C21EF3E39700C4FAA6 /* MMBaseTextFieldItem.m */; };
-		AC26E8D71EF3E39700C4FAA6 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8C41EF3E39700C4FAA6 /* MMNavigationController.m */; };
-		AC26E8D81EF3E39700C4FAA6 /* MMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8C61EF3E39700C4FAA6 /* MMObject.m */; };
-		AC26E8D91EF3E39700C4FAA6 /* MMOnePixLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8C81EF3E39700C4FAA6 /* MMOnePixLayoutConstraint.m */; };
-		AC26E8DA1EF3E39700C4FAA6 /* MMSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8CA1EF3E39700C4FAA6 /* MMSelectButton.m */; };
-		AC26E8DB1EF3E39700C4FAA6 /* MMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8CC1EF3E39700C4FAA6 /* MMTableViewCell.m */; };
-		AC26E8DC1EF3E39700C4FAA6 /* MMUIBridgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8CE1EF3E39700C4FAA6 /* MMUIBridgeView.m */; };
-		AC26E8DD1EF3E39700C4FAA6 /* MMUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8D01EF3E39700C4FAA6 /* MMUITextField.m */; };
-		AC26E8DE1EF3E39700C4FAA6 /* MMUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8D21EF3E39700C4FAA6 /* MMUIView.m */; };
-		AC26E8DF1EF3E39700C4FAA6 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8D41EF3E39700C4FAA6 /* MMViewController.m */; };
 		AC7CC3591EF26CC300564823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3581EF26CC300564823 /* main.m */; };
 		AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */; };
 		AC7CC3621EF26CC300564823 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3601EF26CC300564823 /* Main.storyboard */; };
 		AC7CC3641EF26CC300564823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3631EF26CC300564823 /* Assets.xcassets */; };
 		AC7CC3671EF26CC300564823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3651EF26CC300564823 /* LaunchScreen.storyboard */; };
+		AC950E511EF4AF54003EEBD0 /* MMBaseInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E3C1EF4AF54003EEBD0 /* MMBaseInfoItem.m */; };
+		AC950E521EF4AF54003EEBD0 /* MMBaseTextFieldItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E3E1EF4AF54003EEBD0 /* MMBaseTextFieldItem.m */; };
+		AC950E531EF4AF54003EEBD0 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E401EF4AF54003EEBD0 /* MMNavigationController.m */; };
+		AC950E541EF4AF54003EEBD0 /* MMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E421EF4AF54003EEBD0 /* MMObject.m */; };
+		AC950E551EF4AF54003EEBD0 /* MMOnePixLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E441EF4AF54003EEBD0 /* MMOnePixLayoutConstraint.m */; };
+		AC950E561EF4AF54003EEBD0 /* MMSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E461EF4AF54003EEBD0 /* MMSelectButton.m */; };
+		AC950E571EF4AF54003EEBD0 /* MMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E481EF4AF54003EEBD0 /* MMTableViewCell.m */; };
+		AC950E581EF4AF54003EEBD0 /* MMUIBridgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E4A1EF4AF54003EEBD0 /* MMUIBridgeView.m */; };
+		AC950E591EF4AF54003EEBD0 /* MMUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E4C1EF4AF54003EEBD0 /* MMUITextField.m */; };
+		AC950E5A1EF4AF54003EEBD0 /* MMUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E4E1EF4AF54003EEBD0 /* MMUIView.m */; };
+		AC950E5B1EF4AF54003EEBD0 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E501EF4AF54003EEBD0 /* MMViewController.m */; };
+		AC950E621EF4B064003EEBD0 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E611EF4B064003EEBD0 /* Aspects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,29 +214,6 @@
 		AC26E8B81EF3E20900C4FAA6 /* EPLoginUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPLoginUserModel.h; sourceTree = "<group>"; };
 		AC26E8B91EF3E20900C4FAA6 /* EPLoginUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPLoginUserModel.m; sourceTree = "<group>"; };
 		AC26E8BB1EF3E25000C4FAA6 /* ColorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtil.h; sourceTree = "<group>"; };
-		AC26E8BE1EF3E39700C4FAA6 /* MMBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseClass.h; sourceTree = "<group>"; };
-		AC26E8BF1EF3E39700C4FAA6 /* MMBaseInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseInfoItem.h; sourceTree = "<group>"; };
-		AC26E8C01EF3E39700C4FAA6 /* MMBaseInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseInfoItem.m; sourceTree = "<group>"; };
-		AC26E8C11EF3E39700C4FAA6 /* MMBaseTextFieldItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseTextFieldItem.h; sourceTree = "<group>"; };
-		AC26E8C21EF3E39700C4FAA6 /* MMBaseTextFieldItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseTextFieldItem.m; sourceTree = "<group>"; };
-		AC26E8C31EF3E39700C4FAA6 /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
-		AC26E8C41EF3E39700C4FAA6 /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
-		AC26E8C51EF3E39700C4FAA6 /* MMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMObject.h; sourceTree = "<group>"; };
-		AC26E8C61EF3E39700C4FAA6 /* MMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMObject.m; sourceTree = "<group>"; };
-		AC26E8C71EF3E39700C4FAA6 /* MMOnePixLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMOnePixLayoutConstraint.h; sourceTree = "<group>"; };
-		AC26E8C81EF3E39700C4FAA6 /* MMOnePixLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMOnePixLayoutConstraint.m; sourceTree = "<group>"; };
-		AC26E8C91EF3E39700C4FAA6 /* MMSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSelectButton.h; sourceTree = "<group>"; };
-		AC26E8CA1EF3E39700C4FAA6 /* MMSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSelectButton.m; sourceTree = "<group>"; };
-		AC26E8CB1EF3E39700C4FAA6 /* MMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewCell.h; sourceTree = "<group>"; };
-		AC26E8CC1EF3E39700C4FAA6 /* MMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewCell.m; sourceTree = "<group>"; };
-		AC26E8CD1EF3E39700C4FAA6 /* MMUIBridgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUIBridgeView.h; sourceTree = "<group>"; };
-		AC26E8CE1EF3E39700C4FAA6 /* MMUIBridgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUIBridgeView.m; sourceTree = "<group>"; };
-		AC26E8CF1EF3E39700C4FAA6 /* MMUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUITextField.h; sourceTree = "<group>"; };
-		AC26E8D01EF3E39700C4FAA6 /* MMUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUITextField.m; sourceTree = "<group>"; };
-		AC26E8D11EF3E39700C4FAA6 /* MMUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUIView.h; sourceTree = "<group>"; };
-		AC26E8D21EF3E39700C4FAA6 /* MMUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUIView.m; sourceTree = "<group>"; };
-		AC26E8D31EF3E39700C4FAA6 /* MMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMViewController.h; sourceTree = "<group>"; };
-		AC26E8D41EF3E39700C4FAA6 /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMViewController.m; sourceTree = "<group>"; };
 		AC7CC3541EF26CC300564823 /* EekaPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EekaPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7CC3581EF26CC300564823 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC7CC35A1EF26CC300564823 /* EekaPosAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EekaPosAppDelegate.h; sourceTree = "<group>"; };
@@ -244,6 +222,32 @@
 		AC7CC3631EF26CC300564823 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC7CC3661EF26CC300564823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC7CC3681EF26CC300564823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC950E3A1EF4AF54003EEBD0 /* MMBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseClass.h; sourceTree = "<group>"; };
+		AC950E3B1EF4AF54003EEBD0 /* MMBaseInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseInfoItem.h; sourceTree = "<group>"; };
+		AC950E3C1EF4AF54003EEBD0 /* MMBaseInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseInfoItem.m; sourceTree = "<group>"; };
+		AC950E3D1EF4AF54003EEBD0 /* MMBaseTextFieldItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseTextFieldItem.h; sourceTree = "<group>"; };
+		AC950E3E1EF4AF54003EEBD0 /* MMBaseTextFieldItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseTextFieldItem.m; sourceTree = "<group>"; };
+		AC950E3F1EF4AF54003EEBD0 /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
+		AC950E401EF4AF54003EEBD0 /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
+		AC950E411EF4AF54003EEBD0 /* MMObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMObject.h; sourceTree = "<group>"; };
+		AC950E421EF4AF54003EEBD0 /* MMObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMObject.m; sourceTree = "<group>"; };
+		AC950E431EF4AF54003EEBD0 /* MMOnePixLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMOnePixLayoutConstraint.h; sourceTree = "<group>"; };
+		AC950E441EF4AF54003EEBD0 /* MMOnePixLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMOnePixLayoutConstraint.m; sourceTree = "<group>"; };
+		AC950E451EF4AF54003EEBD0 /* MMSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSelectButton.h; sourceTree = "<group>"; };
+		AC950E461EF4AF54003EEBD0 /* MMSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSelectButton.m; sourceTree = "<group>"; };
+		AC950E471EF4AF54003EEBD0 /* MMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewCell.h; sourceTree = "<group>"; };
+		AC950E481EF4AF54003EEBD0 /* MMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewCell.m; sourceTree = "<group>"; };
+		AC950E491EF4AF54003EEBD0 /* MMUIBridgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUIBridgeView.h; sourceTree = "<group>"; };
+		AC950E4A1EF4AF54003EEBD0 /* MMUIBridgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUIBridgeView.m; sourceTree = "<group>"; };
+		AC950E4B1EF4AF54003EEBD0 /* MMUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUITextField.h; sourceTree = "<group>"; };
+		AC950E4C1EF4AF54003EEBD0 /* MMUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUITextField.m; sourceTree = "<group>"; };
+		AC950E4D1EF4AF54003EEBD0 /* MMUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUIView.h; sourceTree = "<group>"; };
+		AC950E4E1EF4AF54003EEBD0 /* MMUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUIView.m; sourceTree = "<group>"; };
+		AC950E4F1EF4AF54003EEBD0 /* MMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMViewController.h; sourceTree = "<group>"; };
+		AC950E501EF4AF54003EEBD0 /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMViewController.m; sourceTree = "<group>"; };
+		AC950E5E1EF4B052003EEBD0 /* MFUICommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUICommonUtil.h; sourceTree = "<group>"; };
+		AC950E601EF4B064003EEBD0 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		AC950E611EF4B064003EEBD0 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +276,7 @@
 		AC26E7CF1EF3B1DE00C4FAA6 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
+				AC950E5E1EF4B052003EEBD0 /* MFUICommonUtil.h */,
 				AC26E8BB1EF3E25000C4FAA6 /* ColorUtil.h */,
 			);
 			path = Macro;
@@ -307,6 +312,7 @@
 		AC26E7F01EF3DDA600C4FAA6 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				AC950E5F1EF4B064003EEBD0 /* Aspects */,
 				AC26E7F11EF3DDA600C4FAA6 /* HexColors */,
 				AC26E7F41EF3DDA600C4FAA6 /* MBProgressHUD */,
 				AC26E8071EF3DDA600C4FAA6 /* Networking */,
@@ -541,39 +547,11 @@
 		AC26E8BC1EF3E39700C4FAA6 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				AC26E8BD1EF3E39700C4FAA6 /* BaseClass */,
+				AC950E5D1EF4AFD5003EEBD0 /* Category */,
+				AC950E391EF4AF54003EEBD0 /* Class */,
+				AC950E5C1EF4AF6B003EEBD0 /* Helper */,
 			);
 			path = General;
-			sourceTree = "<group>";
-		};
-		AC26E8BD1EF3E39700C4FAA6 /* BaseClass */ = {
-			isa = PBXGroup;
-			children = (
-				AC26E8BE1EF3E39700C4FAA6 /* MMBaseClass.h */,
-				AC26E8BF1EF3E39700C4FAA6 /* MMBaseInfoItem.h */,
-				AC26E8C01EF3E39700C4FAA6 /* MMBaseInfoItem.m */,
-				AC26E8C11EF3E39700C4FAA6 /* MMBaseTextFieldItem.h */,
-				AC26E8C21EF3E39700C4FAA6 /* MMBaseTextFieldItem.m */,
-				AC26E8C31EF3E39700C4FAA6 /* MMNavigationController.h */,
-				AC26E8C41EF3E39700C4FAA6 /* MMNavigationController.m */,
-				AC26E8C51EF3E39700C4FAA6 /* MMObject.h */,
-				AC26E8C61EF3E39700C4FAA6 /* MMObject.m */,
-				AC26E8C71EF3E39700C4FAA6 /* MMOnePixLayoutConstraint.h */,
-				AC26E8C81EF3E39700C4FAA6 /* MMOnePixLayoutConstraint.m */,
-				AC26E8C91EF3E39700C4FAA6 /* MMSelectButton.h */,
-				AC26E8CA1EF3E39700C4FAA6 /* MMSelectButton.m */,
-				AC26E8CB1EF3E39700C4FAA6 /* MMTableViewCell.h */,
-				AC26E8CC1EF3E39700C4FAA6 /* MMTableViewCell.m */,
-				AC26E8CD1EF3E39700C4FAA6 /* MMUIBridgeView.h */,
-				AC26E8CE1EF3E39700C4FAA6 /* MMUIBridgeView.m */,
-				AC26E8CF1EF3E39700C4FAA6 /* MMUITextField.h */,
-				AC26E8D01EF3E39700C4FAA6 /* MMUITextField.m */,
-				AC26E8D11EF3E39700C4FAA6 /* MMUIView.h */,
-				AC26E8D21EF3E39700C4FAA6 /* MMUIView.m */,
-				AC26E8D31EF3E39700C4FAA6 /* MMViewController.h */,
-				AC26E8D41EF3E39700C4FAA6 /* MMViewController.m */,
-			);
-			path = BaseClass;
 			sourceTree = "<group>";
 		};
 		AC7CC34B1EF26CC300564823 = {
@@ -600,11 +578,11 @@
 				AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */,
 				AC26E8AD1EF3E05300C4FAA6 /* Module */,
 				AC26E7EF1EF3DD1B00C4FAA6 /* Models */,
-				AC26E7CF1EF3B1DE00C4FAA6 /* Macro */,
 				AC26E7F01EF3DDA600C4FAA6 /* Vendors */,
 				AC26E8BC1EF3E39700C4FAA6 /* General */,
-				AC7CC3631EF26CC300564823 /* Assets.xcassets */,
+				AC26E7CF1EF3B1DE00C4FAA6 /* Macro */,
 				AC7CC3601EF26CC300564823 /* Main.storyboard */,
+				AC7CC3631EF26CC300564823 /* Assets.xcassets */,
 				AC7CC3651EF26CC300564823 /* LaunchScreen.storyboard */,
 				AC7CC3681EF26CC300564823 /* Info.plist */,
 				AC26E7DC1EF3B39F00C4FAA6 /* EekaPos-pch.pch */,
@@ -619,6 +597,59 @@
 				AC7CC3581EF26CC300564823 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC950E391EF4AF54003EEBD0 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				AC950E3A1EF4AF54003EEBD0 /* MMBaseClass.h */,
+				AC950E3B1EF4AF54003EEBD0 /* MMBaseInfoItem.h */,
+				AC950E3C1EF4AF54003EEBD0 /* MMBaseInfoItem.m */,
+				AC950E3D1EF4AF54003EEBD0 /* MMBaseTextFieldItem.h */,
+				AC950E3E1EF4AF54003EEBD0 /* MMBaseTextFieldItem.m */,
+				AC950E3F1EF4AF54003EEBD0 /* MMNavigationController.h */,
+				AC950E401EF4AF54003EEBD0 /* MMNavigationController.m */,
+				AC950E411EF4AF54003EEBD0 /* MMObject.h */,
+				AC950E421EF4AF54003EEBD0 /* MMObject.m */,
+				AC950E431EF4AF54003EEBD0 /* MMOnePixLayoutConstraint.h */,
+				AC950E441EF4AF54003EEBD0 /* MMOnePixLayoutConstraint.m */,
+				AC950E451EF4AF54003EEBD0 /* MMSelectButton.h */,
+				AC950E461EF4AF54003EEBD0 /* MMSelectButton.m */,
+				AC950E471EF4AF54003EEBD0 /* MMTableViewCell.h */,
+				AC950E481EF4AF54003EEBD0 /* MMTableViewCell.m */,
+				AC950E491EF4AF54003EEBD0 /* MMUIBridgeView.h */,
+				AC950E4A1EF4AF54003EEBD0 /* MMUIBridgeView.m */,
+				AC950E4B1EF4AF54003EEBD0 /* MMUITextField.h */,
+				AC950E4C1EF4AF54003EEBD0 /* MMUITextField.m */,
+				AC950E4D1EF4AF54003EEBD0 /* MMUIView.h */,
+				AC950E4E1EF4AF54003EEBD0 /* MMUIView.m */,
+				AC950E4F1EF4AF54003EEBD0 /* MMViewController.h */,
+				AC950E501EF4AF54003EEBD0 /* MMViewController.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		AC950E5C1EF4AF6B003EEBD0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		AC950E5D1EF4AFD5003EEBD0 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		AC950E5F1EF4B064003EEBD0 /* Aspects */ = {
+			isa = PBXGroup;
+			children = (
+				AC950E601EF4B064003EEBD0 /* Aspects.h */,
+				AC950E611EF4B064003EEBD0 /* Aspects.m */,
+			);
+			path = Aspects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -706,14 +737,14 @@
 				AC26E8821EF3DDA600C4FAA6 /* AFNetworkReachabilityManager.m in Sources */,
 				AC26E8921EF3DDA600C4FAA6 /* YTKRequest.m in Sources */,
 				AC26E8971EF3DDA600C4FAA6 /* SDWebImageDecoder.m in Sources */,
-				AC26E8DB1EF3E39700C4FAA6 /* MMTableViewCell.m in Sources */,
+				AC950E571EF4AF54003EEBD0 /* MMTableViewCell.m in Sources */,
 				AC26E8751EF3DDA600C4FAA6 /* MBProgressHUD.m in Sources */,
 				AC26E8891EF3DDA600C4FAA6 /* MFNetworkRequest.m in Sources */,
 				AC26E88C1EF3DDA600C4FAA6 /* YTKBatchRequestAgent.m in Sources */,
 				AC26E89F1EF3DDA600C4FAA6 /* UIImage+WebP.m in Sources */,
 				AC26E8901EF3DDA600C4FAA6 /* YTKNetworkConfig.m in Sources */,
 				AC26E8991EF3DDA600C4FAA6 /* SDWebImageDownloaderOperation.m in Sources */,
-				AC26E8D51EF3E39700C4FAA6 /* MMBaseInfoItem.m in Sources */,
+				AC950E511EF4AF54003EEBD0 /* MMBaseInfoItem.m in Sources */,
 				AC26E8931EF3DDA600C4FAA6 /* MKAnnotationView+WebCache.m in Sources */,
 				AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */,
 				AC26E8B71EF3E1AE00C4FAA6 /* EPLoginViewController.m in Sources */,
@@ -722,17 +753,18 @@
 				AC26E8A91EF3DDA600C4FAA6 /* XXNibConvention.m in Sources */,
 				AC26E87D1EF3DDA600C4FAA6 /* YTKAnimatingRequestAccessory.m in Sources */,
 				AC26E8A81EF3DDA600C4FAA6 /* XXNibBridge.m in Sources */,
+				AC950E621EF4B064003EEBD0 /* Aspects.m in Sources */,
 				AC26E8841EF3DDA600C4FAA6 /* AFURLRequestSerialization.m in Sources */,
 				AC26E8AA1EF3DDA600C4FAA6 /* NSObject+YYModel.m in Sources */,
 				AC26E8A11EF3DDA600C4FAA6 /* UIImageView+WebCache.m in Sources */,
 				AC26E8AB1EF3DDA600C4FAA6 /* YYClassInfo.m in Sources */,
-				AC26E8DC1EF3E39700C4FAA6 /* MMUIBridgeView.m in Sources */,
+				AC950E581EF4AF54003EEBD0 /* MMUIBridgeView.m in Sources */,
 				AC7CC3591EF26CC300564823 /* main.m in Sources */,
 				AC26E8B31EF3E15A00C4FAA6 /* MMTabBarController.m in Sources */,
 				AC26E8A21EF3DDA600C4FAA6 /* UIView+WebCacheOperation.m in Sources */,
 				AC26E8801EF3DDA600C4FAA6 /* YTKChainRequest+AnimatingAccessory.m in Sources */,
 				AC26E8A31EF3DDA600C4FAA6 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
-				AC26E8DD1EF3E39700C4FAA6 /* MMUITextField.m in Sources */,
+				AC950E591EF4AF54003EEBD0 /* MMUITextField.m in Sources */,
 				AC26E8B01EF3E05300C4FAA6 /* EPAppViewControllerManager.m in Sources */,
 				AC26E88D1EF3DDA600C4FAA6 /* YTKChainRequest.m in Sources */,
 				AC26E8831EF3DDA600C4FAA6 /* AFSecurityPolicy.m in Sources */,
@@ -741,21 +773,21 @@
 				AC26E8871EF3DDA600C4FAA6 /* HYBNetworking.m in Sources */,
 				AC26E89D1EF3DDA600C4FAA6 /* UIImage+GIF.m in Sources */,
 				AC26E87E1EF3DDA600C4FAA6 /* YTKBaseRequest+AnimatingAccessory.m in Sources */,
-				AC26E8D61EF3E39700C4FAA6 /* MMBaseTextFieldItem.m in Sources */,
+				AC950E521EF4AF54003EEBD0 /* MMBaseTextFieldItem.m in Sources */,
 				AC26E8951EF3DDA600C4FAA6 /* SDImageCache.m in Sources */,
-				AC26E8DF1EF3E39700C4FAA6 /* MMViewController.m in Sources */,
+				AC950E5B1EF4AF54003EEBD0 /* MMViewController.m in Sources */,
 				AC26E8A41EF3DDA600C4FAA6 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				AC26E8941EF3DDA600C4FAA6 /* NSData+ImageContentType.m in Sources */,
-				AC26E8DA1EF3E39700C4FAA6 /* MMSelectButton.m in Sources */,
+				AC950E561EF4AF54003EEBD0 /* MMSelectButton.m in Sources */,
 				AC26E88F1EF3DDA600C4FAA6 /* YTKNetworkAgent.m in Sources */,
 				AC26E89B1EF3DDA600C4FAA6 /* SDWebImagePrefetcher.m in Sources */,
 				AC26E89E1EF3DDA600C4FAA6 /* UIImage+MultiFormat.m in Sources */,
-				AC26E8DE1EF3E39700C4FAA6 /* MMUIView.m in Sources */,
+				AC950E5A1EF4AF54003EEBD0 /* MMUIView.m in Sources */,
 				AC26E8861EF3DDA600C4FAA6 /* AFURLSessionManager.m in Sources */,
 				AC26E8BA1EF3E20900C4FAA6 /* EPLoginUserModel.m in Sources */,
-				AC26E8D81EF3E39700C4FAA6 /* MMObject.m in Sources */,
-				AC26E8D91EF3E39700C4FAA6 /* MMOnePixLayoutConstraint.m in Sources */,
-				AC26E8D71EF3E39700C4FAA6 /* MMNavigationController.m in Sources */,
+				AC950E541EF4AF54003EEBD0 /* MMObject.m in Sources */,
+				AC950E551EF4AF54003EEBD0 /* MMOnePixLayoutConstraint.m in Sources */,
+				AC950E531EF4AF54003EEBD0 /* MMNavigationController.m in Sources */,
 				AC26E88B1EF3DDA600C4FAA6 /* YTKBatchRequest.m in Sources */,
 				AC26E8A71EF3DDA600C4FAA6 /* TTTAttributedLabel.m in Sources */,
 			);
