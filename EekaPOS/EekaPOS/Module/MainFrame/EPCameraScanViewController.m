@@ -21,12 +21,28 @@
     
     self.style = [[self class] notSquare];
     self.isOpenInterestRect = YES;
+    
+    [self setFlashView];
 }
 
 -(void)setFlashView
 {
     //设置闪光灯
     
+    UIView *bottomItemsView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.view.frame)-164,
+                                                                   CGRectGetWidth(self.view.frame), 100)];
+    bottomItemsView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    
+    [self.view addSubview:bottomItemsView];
+    
+    CGSize size = CGSizeMake(65, 87);
+    UIButton *btnFlash = [UIButton buttonWithType:UIButtonTypeCustom];
+    btnFlash.frame = CGRectMake(0, 0, size.width, size.height);
+    btnFlash.center = CGPointMake(CGRectGetWidth(bottomItemsView.frame)/2, CGRectGetHeight(bottomItemsView.frame)/2);
+    [btnFlash setImage:[UIImage imageNamed:@"CodeScan.bundle/qrcode_scan_btn_flash_nor"] forState:UIControlStateNormal];
+    [btnFlash addTarget:self action:@selector(openOrCloseFlash) forControlEvents:UIControlEventTouchUpInside];
+    
+    [bottomItemsView addSubview:btnFlash];
     
 }
 
