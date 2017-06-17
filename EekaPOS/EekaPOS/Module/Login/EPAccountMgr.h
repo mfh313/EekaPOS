@@ -7,8 +7,7 @@
 //
 
 #import "MMService.h"
-
-@class EPLoginUserModel;
+#import "EPLoginUserModel.h"
 
 @interface EPAccountMgr : MMService
 

@@ -32,5 +32,7 @@
 
 #import "EPAppViewControllerManager.h"
 
+#import "XXNibBridge.h"
+
 
 #endif /* EekaPos_pch_pch */
