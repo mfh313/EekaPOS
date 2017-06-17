@@ -7,8 +7,15 @@
 //
 
 #import "EekaPosAppDelegate.h"
+#import "MFThirdPartyPlugin.h"
+#import "MMServiceCenter.h"
 
 @interface EekaPosAppDelegate ()
+{
+    //    http://www.cocoachina.com/industry/20140225/7879.html
+    
+    
+}
 
 @end
 
@@ -17,7 +24,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    http://www.cocoachina.com/industry/20140225/7879.html
+
+    MFThirdPartyPlugin *thirdPartyPlugin = [[MMServiceCenter defaultCenter] getService:[MFThirdPartyPlugin class]];
+    [thirdPartyPlugin registerPlugins];
     
     return YES;
 }

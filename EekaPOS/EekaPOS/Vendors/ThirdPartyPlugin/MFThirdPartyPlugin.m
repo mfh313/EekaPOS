@@ -9,7 +9,7 @@
 #import "MFThirdPartyPlugin.h"
 #import <Bugly/Bugly.h>
 
-#define BuglyAppID @"900056633"
+#define BuglyAppID @"3f8f72c024"
 
 @implementation MFThirdPartyPlugin
 

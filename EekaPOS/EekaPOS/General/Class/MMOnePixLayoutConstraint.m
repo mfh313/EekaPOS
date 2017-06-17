@@ -38,7 +38,7 @@
 {
     [super drawRect:rect];
     
-    [YJCustomLineColor setFill];
+    [MFCustomLineColor setFill];
     UIRectFill(rect);
 }
 

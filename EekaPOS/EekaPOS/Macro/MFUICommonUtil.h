@@ -19,10 +19,7 @@
 #define MFImageStretch(image,width,height) [image stretchableImageWithLeftCapWidth:(float)width topCapHeight:(float)height]
 #define MFImageStretchCenter(image) [MFImage(image) stretchableImageWithLeftCapWidth:MFImage(image).size.width/2 topCapHeight:MFImage(image).size.height/2]
 
-#define YJCustomDefaultColor [UIColor hx_colorWithHexString:@"e93871"]
-#define YJCustomLineColor [UIColor hx_colorWithHexString:@"d4d4d4"]
-#define YJCustomNavBarColor [UIColor hx_colorWithHexString:@"c1b497"]
 
-//282828 黑
-//686868 灰色
-//989898 浅灰色
+#import "MFColorUtil.h"
+
+
