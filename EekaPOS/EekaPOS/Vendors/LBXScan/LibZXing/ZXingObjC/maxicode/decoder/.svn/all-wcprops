@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/maxicode/decoder
+END
+ZXMaxiCodeDecodedBitStreamParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/maxicode/decoder/ZXMaxiCodeDecodedBitStreamParser.h
+END
+ZXMaxiCodeBitMatrixParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/maxicode/decoder/ZXMaxiCodeBitMatrixParser.h
+END
+ZXMaxiCodeDecodedBitStreamParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/maxicode/decoder/ZXMaxiCodeDecodedBitStreamParser.m
+END
+ZXMaxiCodeBitMatrixParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/maxicode/decoder/ZXMaxiCodeBitMatrixParser.m
+END
+ZXMaxiCodeDecoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/maxicode/decoder/ZXMaxiCodeDecoder.h
+END
+ZXMaxiCodeDecoder.m
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/maxicode/decoder/ZXMaxiCodeDecoder.m
+END

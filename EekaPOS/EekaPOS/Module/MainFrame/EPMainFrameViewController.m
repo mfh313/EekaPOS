@@ -11,13 +11,12 @@
 #import "EPMainFrameCellView.h"
 #import "EPSaleBillingMainViewController.h"
 
-@interface EPMainFrameViewController ()
+@interface EPMainFrameViewController () 
 {
     __weak IBOutlet UILabel *_currentEntityNameLabel;
     
     __weak IBOutlet EPMainFrameCellView *_saleBillingView;
     __weak IBOutlet EPMainFrameCellView *_billingListView;
-    
 }
 
 @end
@@ -60,7 +59,7 @@
 
 -(void)pushBillingListVC
 {
-    
+
 }
 
 - (void)didReceiveMemoryWarning {

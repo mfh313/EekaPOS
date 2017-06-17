@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder
+END
+ZXDataMatrixDataBlock.m
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder/ZXDataMatrixDataBlock.m
+END
+ZXDataMatrixDecoder.m
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder/ZXDataMatrixDecoder.m
+END
+ZXDataMatrixVersion.m
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder/ZXDataMatrixVersion.m
+END
+ZXDataMatrixDecodedBitStreamParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder/ZXDataMatrixDecodedBitStreamParser.h
+END
+ZXDataMatrixBitMatrixParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder/ZXDataMatrixBitMatrixParser.h
+END
+ZXDataMatrixDataBlock.h
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder/ZXDataMatrixDataBlock.h
+END
+ZXDataMatrixDecodedBitStreamParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder/ZXDataMatrixDecodedBitStreamParser.m
+END
+ZXDataMatrixBitMatrixParser.m
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder/ZXDataMatrixBitMatrixParser.m
+END
+ZXDataMatrixDecoder.h
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder/ZXDataMatrixDecoder.h
+END
+ZXDataMatrixVersion.h
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/datamatrix/decoder/ZXDataMatrixVersion.h
+END

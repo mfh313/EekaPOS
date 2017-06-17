@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/multi
+END
+ZXGenericMultipleBarcodeReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/multi/ZXGenericMultipleBarcodeReader.h
+END
+ZXByQuadrantReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/multi/ZXByQuadrantReader.h
+END
+ZXMultipleBarcodeReader.h
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/multi/ZXMultipleBarcodeReader.h
+END
+ZXGenericMultipleBarcodeReader.m
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/multi/ZXGenericMultipleBarcodeReader.m
+END
+ZXByQuadrantReader.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/multi/ZXByQuadrantReader.m
+END

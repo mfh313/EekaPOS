@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common
+END
+ZXByteArray.m
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXByteArray.m
+END
+ZXDetectorResult.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXDetectorResult.h
+END
+ZXBitMatrix.m
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXBitMatrix.m
+END
+ZXDecoderResult.m
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXDecoderResult.m
+END
+ZXGridSampler.h
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXGridSampler.h
+END
+ZXBitArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXBitArray.h
+END
+ZXDetectorResult.m
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXDetectorResult.m
+END
+ZXDefaultGridSampler.h
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXDefaultGridSampler.h
+END
+ZXGridSampler.m
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXGridSampler.m
+END
+ZXBitArray.m
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXBitArray.m
+END
+ZXDefaultGridSampler.m
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXDefaultGridSampler.m
+END
+ZXGlobalHistogramBinarizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXGlobalHistogramBinarizer.h
+END
+ZXPerspectiveTransform.h
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXPerspectiveTransform.h
+END
+ZXStringUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXStringUtils.h
+END
+ZXHybridBinarizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXHybridBinarizer.h
+END
+ZXCharacterSetECI.h
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXCharacterSetECI.h
+END
+ZXGlobalHistogramBinarizer.m
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXGlobalHistogramBinarizer.m
+END
+ZXIntArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXIntArray.h
+END
+ZXBoolArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXBoolArray.h
+END
+ZXPerspectiveTransform.m
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXPerspectiveTransform.m
+END
+ZXStringUtils.m
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXStringUtils.m
+END
+ZXHybridBinarizer.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXHybridBinarizer.m
+END
+ZXCharacterSetECI.m
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXCharacterSetECI.m
+END
+ZXIntArray.m
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXIntArray.m
+END
+ZXBoolArray.m
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXBoolArray.m
+END
+ZXBitSource.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXBitSource.h
+END
+ZXByteArray.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXByteArray.h
+END
+ZXBitMatrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXBitMatrix.h
+END
+ZXBitSource.m
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXBitSource.m
+END
+ZXDecoderResult.h
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/EEKA/!svn/ver/18187/Mobile/Source/IOS/BloomBeauty/BloomBeauty/ThirdParty/LBXScan/LibZXing/ZXingObjC/common/ZXDecoderResult.h
+END

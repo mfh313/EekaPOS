@@ -7,8 +7,9 @@
 //
 
 #import "EPSaleBillingMainViewController.h"
+#import "EPCameraScanViewController.h"
 
-@interface EPSaleBillingMainViewController ()
+@interface EPSaleBillingMainViewController () <EPCameraScanDelegate>
 
 @end
 
@@ -26,6 +27,19 @@
 -(void)onClickBackBtn:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)pushCameraScanVC
+{
+    EPCameraScanViewController *vc = [EPCameraScanViewController new];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.m_delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)onScanQRCodeString:(NSString *)strScanned
+{
+    NSLog(@"扫描到的码=%@",strScanned);
 }
 
 - (void)didReceiveMemoryWarning {
