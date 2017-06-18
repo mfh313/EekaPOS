@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@interface EPSaleBillingDeductionModel : NSObject
+
+@property(nonatomic,strong) NSString *name;
+@property(nonatomic,strong) NSString *key;
+
++(instancetype)objectWithName:(NSString *)name key:(NSString *)key;
+
+@end
+
+#pragma mark - EPSaleBillingHelper
 @interface EPSaleBillingHelper : NSObject
+
++(NSMutableArray *)saleBillingDeductionModels;
 
 @end

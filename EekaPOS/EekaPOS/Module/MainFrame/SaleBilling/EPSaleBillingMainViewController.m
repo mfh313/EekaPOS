@@ -14,10 +14,11 @@
 #import "EPSaleBillingItemCodeInputView.h"
 #import "EPSaleBillingDeductionView.h"
 #import "EPSaleBillingEmployeeSelectView.h"
+#import "EPSaleBillingDeductionTypeSelectView.h"
 #import "EPSaleGuideSelectViewController.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
-                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate>
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     
@@ -88,7 +89,6 @@
         return;
     }
     
-    //    itemCode = @"R116C72080040";
     [self getItemDetail:itemCode];
 }
 
@@ -120,8 +120,14 @@
     }];
 }
 
-
 //选择扣减
+-(void)showSaleBillingDeductionTypeSelectView
+{
+    EPSaleBillingDeductionTypeSelectView *typeSelectView = [EPSaleBillingDeductionTypeSelectView nibView];
+    typeSelectView.m_delegate = self;
+    typeSelectView.frame = MFAppWindow.bounds;
+    [MFAppWindow addSubview:typeSelectView];
+}
 
 //选择收银员
 -(void)showSaleBillingEmployeeSelectView
@@ -166,8 +172,8 @@
 }
 
 - (IBAction)onClickSaveBtn:(id)sender {
-    [self showSaleBillingEmployeeSelectView];
-//    [self showSaleGuidesVC];
+//    [self showSaleBillingEmployeeSelectView];
+    [self showSaleGuidesVC];
 }
 
 - (IBAction)onClickScanBtn:(id)sender {
