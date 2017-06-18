@@ -12,8 +12,10 @@
 #import "EPGoodsDetailModel.h"
 #import "EPSaleBillingItemCodeInputView.h"
 #import "EPSaleBillingDeductionView.h"
+#import "EPSaleBillingEmployeeSelectView.h"
 
-@interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,EPSaleBillingDeductionViewDelegate>
+@interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     
@@ -118,13 +120,22 @@
 }
 
 
--(void)saleBillingEmployeeSelectView
+-(void)showSaleBillingEmployeeSelectView
+{    
+    EPSaleBillingEmployeeSelectView *employeeSelectView = [EPSaleBillingEmployeeSelectView nibView];
+    employeeSelectView.m_delegate = self;
+    employeeSelectView.frame = MFAppWindow.bounds;
+    [MFAppWindow addSubview:employeeSelectView];
+}
+
+#pragma mark - EPSaleBillingEmployeeSelectViewDelegate
+-(void)didSelectEmployee:(EPEntitityEmployeeModel *)selectEmployee view:(EPSaleBillingEmployeeSelectView *)view
 {
     
 }
 
 - (IBAction)onClickSaveBtn:(id)sender {
-    
+    [self showSaleBillingEmployeeSelectView];
 }
 
 - (IBAction)onClickScanBtn:(id)sender {

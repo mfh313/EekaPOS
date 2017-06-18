@@ -10,4 +10,6 @@
 
 @interface MMUIBridgeView : MMUIView
 
++ (id)nibView;
+
 @end

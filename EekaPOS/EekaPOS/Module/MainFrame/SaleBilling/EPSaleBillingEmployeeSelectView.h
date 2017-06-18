@@ -8,6 +8,17 @@
 
 #import "MMUIBridgeView.h"
 
+@class EPSaleBillingEmployeeSelectView,EPEntitityEmployeeModel;
+@protocol EPSaleBillingEmployeeSelectViewDelegate <NSObject>
+
+@optional
+-(void)didSelectEmployee:(EPEntitityEmployeeModel *)selectEmployee view:(EPSaleBillingEmployeeSelectView *)view;
+
+
+@end
+
 @interface EPSaleBillingEmployeeSelectView : MMUIBridgeView
+
+@property (nonatomic,weak) id<EPSaleBillingEmployeeSelectViewDelegate> m_delegate;
 
 @end

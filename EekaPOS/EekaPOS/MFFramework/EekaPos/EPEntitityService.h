@@ -14,5 +14,6 @@
 }
 
 -(void)getEntitityDetail;
+-(NSMutableArray *)getEntitityEmployees;
 
 @end
