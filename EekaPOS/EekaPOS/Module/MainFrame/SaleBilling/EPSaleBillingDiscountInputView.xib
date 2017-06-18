@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="整单折扣：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGH-hM-YeS">
-                    <rect key="frame" x="20" y="27" width="71.5" height="21"/>
+                    <rect key="frame" x="15" y="27" width="71.5" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="XOR-Se-zNl"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="wjm-l3-bF0"/>
@@ -26,7 +26,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ8-bl-NDf">
-                    <rect key="frame" x="91" y="6" width="18.5" height="21"/>
+                    <rect key="frame" x="86" y="6" width="18.5" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="amk-SF-d5d"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="tuu-7p-6mU"/>
@@ -36,7 +36,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRF-am-wRL">
-                    <rect key="frame" x="91" y="27" width="60" height="22"/>
+                    <rect key="frame" x="86" y="27" width="60" height="22"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="RHR-Y0-a8W"/>
                         <constraint firstAttribute="width" constant="60" id="qKh-Vy-nqJ"/>
@@ -46,7 +46,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEX-x6-Vov" customClass="MMOnePixLine">
-                    <rect key="frame" x="91" y="50" width="60" height="1"/>
+                    <rect key="frame" x="86" y="50" width="60" height="1"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="ZaB-qc-wP6"/>
@@ -95,9 +95,9 @@
             <constraints>
                 <constraint firstItem="AZ8-bl-NDf" firstAttribute="leading" secondItem="yRF-am-wRL" secondAttribute="leading" id="3VS-L1-OOL"/>
                 <constraint firstItem="x2m-5G-euD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3eD-aE-hNH"/>
-                <constraint firstItem="yRF-am-wRL" firstAttribute="leading" secondItem="MGH-hM-YeS" secondAttribute="trailing" constant="-0.5" id="43d-6X-RWO"/>
+                <constraint firstItem="yRF-am-wRL" firstAttribute="leading" secondItem="MGH-hM-YeS" secondAttribute="trailing" id="43d-6X-RWO"/>
                 <constraint firstItem="yRF-am-wRL" firstAttribute="centerY" secondItem="MGH-hM-YeS" secondAttribute="centerY" id="6zT-UZ-5yd"/>
-                <constraint firstItem="MGH-hM-YeS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="CUF-LX-eWc"/>
+                <constraint firstItem="MGH-hM-YeS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="CUF-LX-eWc"/>
                 <constraint firstAttribute="trailing" secondItem="x2m-5G-euD" secondAttribute="trailing" id="Fkm-rE-zka"/>
                 <constraint firstItem="aKa-Nt-ozV" firstAttribute="top" secondItem="nX2-m8-3bV" secondAttribute="bottom" id="I1x-Pk-IA8"/>
                 <constraint firstItem="aKa-Nt-ozV" firstAttribute="height" secondItem="nX2-m8-3bV" secondAttribute="height" id="IBM-cH-2ch"/>

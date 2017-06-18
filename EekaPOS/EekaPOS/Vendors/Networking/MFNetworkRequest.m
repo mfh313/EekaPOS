@@ -134,15 +134,27 @@
     }
 }
 
-
 -(BOOL)messageSuccess
 {
+    NSDictionary *dict = self.responseJSONObject;
+    NSNumber *number = dict[@"errcode"];
+    if (number.intValue == 0 || number.intValue == 1)
+    {
+        return YES;
+    }
+    
     return NO;
 }
 
 -(NSString*)errorMessage
 {
-    return nil;
+    NSDictionary *dict = self.responseJSONObject;
+    id string = dict[@"errmsg"];
+    if ([string isKindOfClass:[NSNull class]]) {
+        string = @"服务器无错误描述";
+    }
+    
+    return string;
 }
 
 @end

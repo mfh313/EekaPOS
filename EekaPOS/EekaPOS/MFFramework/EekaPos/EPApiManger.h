@@ -15,4 +15,8 @@
 
 +(NSString *)getItemDetailURL;
 
++(NSString *)getEntitityDetailURL;
+
++(NSString *)getIndividualDetailURL;
+
 @end

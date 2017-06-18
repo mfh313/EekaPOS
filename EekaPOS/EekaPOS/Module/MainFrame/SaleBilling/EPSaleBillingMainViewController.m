@@ -11,6 +11,7 @@
 #import "EPSaleBillingItemCodeInputView.h"
 #import "EPGetGoodsDetailApi.h"
 #import "EPGoodsDetailModel.h"
+#import "EPGetEntitityDetailApi.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate>
 {
@@ -35,6 +36,8 @@
     _codeInputView.m_delegate = self;
     
     _goodsDetailModel = [NSMutableArray array];
+    
+//    [self getEntitityDetail];
     
 }
 
@@ -72,6 +75,7 @@
 -(void)getItemDetail:(NSString *)itemCode
 {
     itemCode = @"R116C72080040";
+    
     __weak typeof(self) weakSelf = self;
     
     EPGetGoodsDetailApi *goodsDetailApi = [EPGetGoodsDetailApi new];
@@ -96,6 +100,28 @@
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];
     }];
+}
+
+-(void)getEntitityDetail
+{
+    __weak typeof(self) weakSelf = self;
+    
+    EPGetEntitityDetailApi *entitityDetailApi = [EPGetEntitityDetailApi new];
+    [entitityDetailApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        if (!entitityDetailApi.messageSuccess) {
+            [self showTips:entitityDetailApi.errorMessage];
+            return;
+        }
+
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        
+    } failure:^(YTKBaseRequest * request) {
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {
