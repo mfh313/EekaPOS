@@ -15,6 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="464" height="420"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="61d-Ky-Djo">
+                    <rect key="frame" x="0.0" y="0.0" width="464" height="420"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZy-bQ-uM6">
                     <rect key="frame" x="100" y="36" width="264" height="348"/>
                     <subviews>
@@ -74,7 +78,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="OZy-bQ-uM6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2DK-Eb-T78"/>
+                <constraint firstItem="61d-Ky-Djo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Db-rD-y85"/>
+                <constraint firstAttribute="bottom" secondItem="61d-Ky-Djo" secondAttribute="bottom" id="Lu5-wV-zOm"/>
                 <constraint firstItem="OZy-bQ-uM6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OeB-ID-kEm"/>
+                <constraint firstAttribute="trailing" secondItem="61d-Ky-Djo" secondAttribute="trailing" id="bIL-h7-Wx9"/>
+                <constraint firstItem="61d-Ky-Djo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="njl-Cy-Cix"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -82,6 +90,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="_bgImageView" destination="ZqA-U4-Ezs" id="y5z-ev-rqy"/>
+                <outlet property="_bgTapView" destination="61d-Ky-Djo" id="U2q-qP-zuD"/>
             </connections>
             <point key="canvasLocation" x="39" y="-16"/>
         </view>

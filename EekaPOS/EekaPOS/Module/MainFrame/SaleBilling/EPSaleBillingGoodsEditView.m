@@ -11,6 +11,7 @@
 @interface EPSaleBillingGoodsEditView ()
 {
     __weak IBOutlet UIImageView *_bgImageView;
+    __weak IBOutlet UIView *_bgTapView;
 }
 
 @end
@@ -25,8 +26,13 @@
     self.backgroundColor = [UIColor hx_colorWithHexString:@"#000" alpha:0.3];
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
+    [_bgTapView addGestureRecognizer:tapGes];
 }
 
-
+-(void)onTap
+{
+    [self removeFromSuperview];
+}
 
 @end
