@@ -23,6 +23,8 @@
     
     self.title = @"商品条形码扫描";
     
+    [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
+    
     self.style = [[self class] notSquare];
     self.isOpenInterestRect = YES;
     

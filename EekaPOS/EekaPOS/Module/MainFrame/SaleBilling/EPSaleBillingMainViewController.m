@@ -16,6 +16,8 @@
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     
+    NSMutableArray *_goodsDetailModel;
+    
 }
 
 @end
@@ -31,6 +33,8 @@
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
     _codeInputView.m_delegate = self;
+    
+    _goodsDetailModel = [NSMutableArray array];
     
 }
 
@@ -83,8 +87,7 @@
         }
 
         EPGoodsDetailModel *detailModel = [EPGoodsDetailModel MM_modelWithJSON:request.responseJSONObject];
-  
-        NSLog(@"detail=%@",detailModel);
+        [_goodsDetailModel addObject:detailModel];
         
         __strong typeof(weakSelf) strongSelf = weakSelf;
         

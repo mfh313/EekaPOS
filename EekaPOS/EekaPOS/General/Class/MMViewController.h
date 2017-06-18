@@ -10,4 +10,6 @@
 
 @interface MMViewController : UIViewController
 
+-(void)onClickBackBtn:(id)sender;
+
 @end
