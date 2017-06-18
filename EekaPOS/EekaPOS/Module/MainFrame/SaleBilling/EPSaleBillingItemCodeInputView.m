@@ -8,14 +8,22 @@
 
 #import "EPSaleBillingItemCodeInputView.h"
 
-@interface EPSaleBillingItemCodeInputView ()
+@interface EPSaleBillingItemCodeInputView () <UITextFieldDelegate>
 {
-    
+    __weak IBOutlet UIImageView *_textFieldBgView;
+    __weak IBOutlet UITextField *_itemCodeTextField;
 }
 
 @end
 
 @implementation EPSaleBillingItemCodeInputView
+
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    _textFieldBgView.image = MFImageStretchCenter(@"border");
+    
+}
 
 - (IBAction)onClickScanBtn:(id)sender {
     if ([self.m_delegate respondsToSelector:@selector(onClickCameraScanBtn)]) {
@@ -24,7 +32,11 @@
 }
 
 - (IBAction)onClickDoneBtn:(id)sender {
+    NSString *itemCode = _itemCodeTextField.text;
     
+    if ([self.m_delegate respondsToSelector:@selector(onInputSaleBillingItemCode:)]) {
+        [self.m_delegate onInputSaleBillingItemCode:itemCode];
+    }
 }
 
 

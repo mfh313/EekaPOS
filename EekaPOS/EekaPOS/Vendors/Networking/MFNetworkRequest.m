@@ -134,4 +134,15 @@
     }
 }
 
+
+-(BOOL)messageSuccess
+{
+    return NO;
+}
+
+-(NSString*)errorMessage
+{
+    return nil;
+}
+
 @end

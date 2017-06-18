@@ -12,6 +12,7 @@
 
 @optional
 -(void)onClickCameraScanBtn;
+-(void)onInputSaleBillingItemCode:(NSString *)itemCode;
 
 @end
 

@@ -12,4 +12,7 @@
 
 @interface MFNetworkRequest : YTKRequest
 
+-(BOOL)messageSuccess;
+-(NSString*)errorMessage;
+
 @end

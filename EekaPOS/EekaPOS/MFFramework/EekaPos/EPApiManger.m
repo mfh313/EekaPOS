@@ -23,9 +23,14 @@ NSString const *EPApiUrl = @"https://pos.szyingjia.cn:8888/";
     return @"http://120.76.242.182:8083/";
 }
 
-+(NSString *)loginUrl
++(NSString *)loginURL
 {
     return MFURLWithPara(@"pos/employee/login.json");
+}
+
++(NSString *)getItemDetailURL
+{
+    return MFURLWithPara(@"pos/employee/getItemDetail.json");
 }
 
 @end

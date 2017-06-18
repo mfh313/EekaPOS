@@ -1,35 +1,18 @@
 //
-//  EPMemberLoginApi.m
+//  EPGetGoodsDetailApi.m
 //  EekaPOS
 //
-//  Created by EEKA on 2017/6/17.
+//  Created by EEKA on 2017/6/18.
 //  Copyright © 2017年 eeka. All rights reserved.
 //
 
-#import "EPMemberLoginApi.h"
+#import "EPGetGoodsDetailApi.h"
 
-@interface EPMemberLoginApi ()
-{
-    NSString *_account;
-    NSString *_password;
-}
-
-@end
-
-@implementation EPMemberLoginApi
-
-- (id)initWithUsername:(NSString *)username password:(NSString *)password {
-    self = [super init];
-    if (self) {
-        _account = username;
-        _password = password;
-    }
-    return self;
-}
+@implementation EPGetGoodsDetailApi
 
 -(NSString *)requestUrl
 {
-    return [EPApiManger loginURL];
+    return [EPApiManger getItemDetailURL];
 }
 
 - (YTKRequestMethod)requestMethod {
@@ -37,13 +20,20 @@
 }
 
 - (id)requestArgument {
-    return @{
-             @"account":_account,
-             @"password":_password
-             };
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    EPAccountMgr *accountMgr =[[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
+    NSString *token = accountMgr.token;
+    
+    params[@"token"] = token;
+    params[@"itemCode"] = self.itemCode;
+    
+    return params;
+
 }
 
--(BOOL)loginSuccess
+-(BOOL)messageSuccess
 {
     NSDictionary *dict = self.responseJSONObject;
     NSNumber *number = dict[@"errcode"];

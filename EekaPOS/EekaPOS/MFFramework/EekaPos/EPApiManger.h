@@ -11,6 +11,8 @@
 
 @interface EPApiManger : NSObject
 
-+(NSString *)loginUrl;
++(NSString *)loginURL;
+
++(NSString *)getItemDetailURL;
 
 @end

@@ -30,6 +30,8 @@
 
 #import "EPApiManger.h"
 
+#import "EPAccountMgr.h"
+
 #import "EPAppViewControllerManager.h"
 
 #import "XXNibBridge.h"
