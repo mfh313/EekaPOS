@@ -114,7 +114,7 @@
                                     <constraint firstItem="2ZF-od-72u" firstAttribute="width" secondItem="x6X-Z2-WKQ" secondAttribute="width" id="wl3-9D-qln"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhT-O1-vAD">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhT-O1-vAD">
                                 <rect key="frame" x="0.0" y="76" width="375" height="501"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POT-vt-Elx" customClass="EPSaleBillingGoodsCellView">

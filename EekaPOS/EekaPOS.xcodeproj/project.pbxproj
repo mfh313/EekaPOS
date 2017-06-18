@@ -84,6 +84,8 @@
 		AC32BE651EF662FF001A6291 /* MFStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32BE641EF662FF001A6291 /* MFStringUtil.m */; };
 		AC32BE681EF6648A001A6291 /* EPEntitityService.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32BE671EF6648A001A6291 /* EPEntitityService.m */; };
 		AC32BE6B1EF66EBC001A6291 /* EPEntitityEmployeeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32BE6A1EF66EBC001A6291 /* EPEntitityEmployeeModel.m */; };
+		AC32BE6E1EF671D7001A6291 /* EPSaleBillingEmployeeSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32BE6D1EF671D7001A6291 /* EPSaleBillingEmployeeSelectView.m */; };
+		AC32BE701EF67227001A6291 /* EPSaleBillingEmployeeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC32BE6F1EF67227001A6291 /* EPSaleBillingEmployeeSelectView.xib */; };
 		AC7CC3591EF26CC300564823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3581EF26CC300564823 /* main.m */; };
 		AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */; };
 		AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3601EF26CC300564823 /* EekaPosMain.storyboard */; };
@@ -516,6 +518,9 @@
 		AC32BE671EF6648A001A6291 /* EPEntitityService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPEntitityService.m; sourceTree = "<group>"; };
 		AC32BE691EF66EBC001A6291 /* EPEntitityEmployeeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPEntitityEmployeeModel.h; sourceTree = "<group>"; };
 		AC32BE6A1EF66EBC001A6291 /* EPEntitityEmployeeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPEntitityEmployeeModel.m; sourceTree = "<group>"; };
+		AC32BE6C1EF671D7001A6291 /* EPSaleBillingEmployeeSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingEmployeeSelectView.h; sourceTree = "<group>"; };
+		AC32BE6D1EF671D7001A6291 /* EPSaleBillingEmployeeSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingEmployeeSelectView.m; sourceTree = "<group>"; };
+		AC32BE6F1EF67227001A6291 /* EPSaleBillingEmployeeSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingEmployeeSelectView.xib; sourceTree = "<group>"; };
 		AC7CC3541EF26CC300564823 /* EekaPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EekaPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7CC3581EF26CC300564823 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC7CC35A1EF26CC300564823 /* EekaPosAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EekaPosAppDelegate.h; sourceTree = "<group>"; };
@@ -1650,6 +1655,9 @@
 				AC32BE5D1EF62B19001A6291 /* EPSaleBillingDeductionView.h */,
 				AC32BE5E1EF62B19001A6291 /* EPSaleBillingDeductionView.m */,
 				AC32BE601EF62BE4001A6291 /* EPSaleBillingDeductionView.xib */,
+				AC32BE6C1EF671D7001A6291 /* EPSaleBillingEmployeeSelectView.h */,
+				AC32BE6D1EF671D7001A6291 /* EPSaleBillingEmployeeSelectView.m */,
+				AC32BE6F1EF67227001A6291 /* EPSaleBillingEmployeeSelectView.xib */,
 				AC32BE441EF600AD001A6291 /* EPGetGoodsDetailApi.h */,
 				AC32BE451EF600AD001A6291 /* EPGetGoodsDetailApi.m */,
 			);
@@ -2489,6 +2497,7 @@
 				AC32BE561EF617CE001A6291 /* EPSaleBillingGoodsCellView.xib in Resources */,
 				AC950EA01EF4DDDE003EEBD0 /* Me.storyboard in Resources */,
 				AC9514A91EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib in Resources */,
+				AC32BE701EF67227001A6291 /* EPSaleBillingEmployeeSelectView.xib in Resources */,
 				AC950EC11EF5227B003EEBD0 /* SaleBilling.storyboard in Resources */,
 				AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */,
 				AC950E961EF4D560003EEBD0 /* Homelist.storyboard in Resources */,
@@ -2666,6 +2675,7 @@
 				AC9514741EF52D67003EEBD0 /* ZXPDF417Dimensions.m in Sources */,
 				AC950E8F1EF4D337003EEBD0 /* NSString+MMWidth.m in Sources */,
 				AC9513FB1EF52D67003EEBD0 /* ZXDecoderResult.m in Sources */,
+				AC32BE6E1EF671D7001A6291 /* EPSaleBillingEmployeeSelectView.m in Sources */,
 				AC9513E01EF52D67003EEBD0 /* ZXTelResultParser.m in Sources */,
 				AC26E8A01EF3DDA600C4FAA6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				AC9514921EF52D67003EEBD0 /* ZXQRCodeMultiReader.m in Sources */,
