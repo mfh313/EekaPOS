@@ -8,7 +8,6 @@
 
 #import "EPEntitityService.h"
 #import "EPGetEntitityDetailApi.h"
-
 #import "EPEntitityEmployeeModel.h"
 
 @implementation EPEntitityService
@@ -33,8 +32,13 @@
             return;
         }
         
+        [m_employees removeAllObjects];
         NSArray *employees = request.responseObject[@"employees"];
-        NSLog(@"employees=%@",employees);
+        for (int i = 0; i < employees.count; i++) {
+            EPEntitityEmployeeModel *model = [EPEntitityEmployeeModel MM_modelWithDictionary:employees[i]];
+            [m_employees addObject:model];
+        }
+        
         
         
     } failure:^(YTKBaseRequest * request) {
