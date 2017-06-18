@@ -28,7 +28,11 @@
     self.style = [[self class] notSquare];
     self.isOpenInterestRect = YES;
     
-    
+}
+
+-(void)onClickBackBtn:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
