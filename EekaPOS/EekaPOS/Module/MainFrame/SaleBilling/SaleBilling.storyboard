@@ -28,8 +28,22 @@
                                     <constraint firstAttribute="height" constant="56" id="2RB-Uo-eaS"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POT-vt-Elx" customClass="EPSaleBillingGoodsCellView">
+                                <rect key="frame" x="0.0" y="76" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="YHi-hG-bX9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCb-UU-VbX" customClass="EPSaleBillingGoodsCellView">
+                                <rect key="frame" x="0.0" y="156" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="thN-SH-zuF"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEH-bc-jHz" customClass="EPSaleBillingDiscountInputView">
-                                <rect key="frame" x="0.0" y="86" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="236" width="375" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="Gck-dI-h2z"/>
@@ -38,11 +52,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="WCb-UU-VbX" firstAttribute="leading" secondItem="POT-vt-Elx" secondAttribute="leading" id="1qk-Yr-o8d"/>
                             <constraint firstAttribute="trailing" secondItem="zxw-Qe-2bz" secondAttribute="trailing" id="1yY-qm-BLv"/>
-                            <constraint firstItem="TEH-bc-jHz" firstAttribute="top" secondItem="zxw-Qe-2bz" secondAttribute="bottom" constant="10" id="PWr-mm-e7f"/>
+                            <constraint firstItem="POT-vt-Elx" firstAttribute="leading" secondItem="TEH-bc-jHz" secondAttribute="leading" id="5bV-bO-vY8"/>
+                            <constraint firstItem="WCb-UU-VbX" firstAttribute="trailing" secondItem="POT-vt-Elx" secondAttribute="trailing" id="LCD-tj-CyO"/>
                             <constraint firstItem="TEH-bc-jHz" firstAttribute="leading" secondItem="zxw-Qe-2bz" secondAttribute="leading" id="RZx-7A-eBw"/>
                             <constraint firstItem="TEH-bc-jHz" firstAttribute="centerX" secondItem="zxw-Qe-2bz" secondAttribute="centerX" id="ScN-cj-fBF"/>
+                            <constraint firstItem="POT-vt-Elx" firstAttribute="top" secondItem="zxw-Qe-2bz" secondAttribute="bottom" id="kQ4-23-FIg"/>
+                            <constraint firstItem="POT-vt-Elx" firstAttribute="trailing" secondItem="TEH-bc-jHz" secondAttribute="trailing" id="oLF-6O-Lpf"/>
+                            <constraint firstItem="TEH-bc-jHz" firstAttribute="top" secondItem="WCb-UU-VbX" secondAttribute="bottom" id="sZ7-L1-h4Q"/>
                             <constraint firstItem="zxw-Qe-2bz" firstAttribute="leading" secondItem="Pw7-vr-Umx" secondAttribute="leading" id="vzj-zW-E6u"/>
+                            <constraint firstItem="WCb-UU-VbX" firstAttribute="top" secondItem="POT-vt-Elx" secondAttribute="bottom" id="ymf-8t-8CD"/>
                             <constraint firstItem="zxw-Qe-2bz" firstAttribute="top" secondItem="49l-xr-2YA" secondAttribute="bottom" id="z2t-IV-cEH"/>
                         </constraints>
                     </view>
