@@ -10,7 +10,6 @@
 #import "EPCameraScanViewController.h"
 #import "EPGetGoodsDetailApi.h"
 #import "EPGoodsDetailModel.h"
-#import "EPGetEntitityDetailApi.h"
 #import "EPSaleBillingItemCodeInputView.h"
 #import "EPSaleBillingDeductionView.h"
 
@@ -33,16 +32,16 @@
     
     self.title = @"销售开单";
     
-    [self MF_wantsFullScreenLayout:NO];
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.edgesForExtendedLayout = UIRectEdgeAll;
+    
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
     _codeInputView.m_delegate = self;
     _deductionView.m_delegate = self;
     
     _goodsDetailModel = [NSMutableArray array];
-    
-//    [self getEntitityDetail];
-    
 }
 
 -(void)onClickBackBtn:(id)sender
@@ -80,19 +79,19 @@
 
 -(void)onInputSaleBillingItemCode:(NSString *)itemCode
 {
-    if (!itemCode) {
+    if ([MFStringUtil isBlankString:itemCode]) {
+        [self showTips:@"请输入正确的商品码"];
         return;
     }
     
     [self getItemDetail:itemCode];
 }
 
-
 -(void)getItemDetail:(NSString *)itemCode
 {
     itemCode = @"R116C72080040";
     
-    __weak typeof(self) weakSelf = self;
+//    __weak typeof(self) weakSelf = self;
     
     EPGetGoodsDetailApi *goodsDetailApi = [EPGetGoodsDetailApi new];
     goodsDetailApi.itemCode = itemCode;
@@ -109,7 +108,7 @@
         EPGoodsDetailModel *detailModel = [EPGoodsDetailModel MM_modelWithJSON:request.responseJSONObject];
         [_goodsDetailModel addObject:detailModel];
         
-        __strong typeof(weakSelf) strongSelf = weakSelf;
+//        __strong typeof(weakSelf) strongSelf = weakSelf;
         
         
     } failure:^(YTKBaseRequest * request) {
@@ -118,27 +117,14 @@
     }];
 }
 
--(void)getEntitityDetail
-{
-    __weak typeof(self) weakSelf = self;
+- (IBAction)onClickSaveBtn:(id)sender {
     
-    EPGetEntitityDetailApi *entitityDetailApi = [EPGetEntitityDetailApi new];
-    [entitityDetailApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
-        
-        if (!entitityDetailApi.messageSuccess) {
-            [self showTips:entitityDetailApi.errorMessage];
-            return;
-        }
-
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        
-        
-    } failure:^(YTKBaseRequest * request) {
-        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
-        [self showTips:errorDesc];
-    }];
-
 }
+
+- (IBAction)onClickScanBtn:(id)sender {
+    [self onClickCameraScanBtn];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

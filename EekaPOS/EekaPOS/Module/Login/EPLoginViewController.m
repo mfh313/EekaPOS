@@ -10,6 +10,7 @@
 #import "EPMemberLoginApi.h"
 #import "EPLoginUserModel.h"
 #import "EPAccountMgr.h"
+#import "EPEntitityService.h"
 
 @interface EPLoginViewController ()
 {
@@ -79,6 +80,9 @@
 -(void)onloginSuccess
 {
     [[EPAppViewControllerManager getAppViewControllerManager] createMainTabViewController];
+    
+    EPEntitityService *entitityService = [[MMServiceCenter defaultCenter] getService:[EPEntitityService class]];
+    [entitityService getEntitityDetail];
 }
 
 - (void)didReceiveMemoryWarning {

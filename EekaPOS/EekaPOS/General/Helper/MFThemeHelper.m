@@ -22,7 +22,7 @@
     
     if ([[UINavigationBar appearance] respondsToSelector:@selector(setTranslucent:)])
     {
-        [[UINavigationBar appearance] setTranslucent:YES];
+        [[UINavigationBar appearance] setTranslucent:NO];
         [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     }
     
