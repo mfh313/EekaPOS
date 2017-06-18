@@ -19,5 +19,6 @@
 #import "MMObject.h"
 
 #import "MMUITextField.h"
+#import "MFUIButton.h"
 
 #endif /* MMBaseClass_h */

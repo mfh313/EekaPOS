@@ -8,6 +8,17 @@
 
 #import "MMUIBridgeView.h"
 
+@class EPSaleBillingDeductionView;
+@protocol EPSaleBillingDeductionViewDelegate <NSObject>
+
+@optional
+-(void)onClickDeductionBtn:(EPSaleBillingDeductionView *)view;
+-(void)onClickAddBtn:(EPSaleBillingDeductionView *)view;
+
+@end
+
 @interface EPSaleBillingDeductionView : MMUIBridgeView
+
+@property (nonatomic,weak) id<EPSaleBillingDeductionViewDelegate> m_delegate;
 
 @end

@@ -8,14 +8,17 @@
 
 #import "EPSaleBillingMainViewController.h"
 #import "EPCameraScanViewController.h"
-#import "EPSaleBillingItemCodeInputView.h"
 #import "EPGetGoodsDetailApi.h"
 #import "EPGoodsDetailModel.h"
 #import "EPGetEntitityDetailApi.h"
+#import "EPSaleBillingItemCodeInputView.h"
+#import "EPSaleBillingDeductionView.h"
 
-@interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate>
+@interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,EPSaleBillingDeductionViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
+    
+    __weak IBOutlet EPSaleBillingDeductionView *_deductionView;
     
     NSMutableArray *_goodsDetailModel;
     
@@ -34,6 +37,7 @@
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
     _codeInputView.m_delegate = self;
+    _deductionView.m_delegate = self;
     
     _goodsDetailModel = [NSMutableArray array];
     
@@ -46,6 +50,18 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - EPSaleBillingDeductionViewDelegate
+-(void)onClickDeductionBtn:(EPSaleBillingDeductionView *)view
+{
+    
+}
+
+-(void)onClickAddBtn:(EPSaleBillingDeductionView *)view
+{
+    
+}
+
+#pragma mark - EPSaleBillingItemCodeInputViewDelegate
 -(void)onClickCameraScanBtn
 {
     EPCameraScanViewController *vc = [EPCameraScanViewController new];

@@ -49,6 +49,13 @@
                                     <constraint firstAttribute="height" constant="75" id="Gck-dI-h2z"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFr-M6-RFZ" customClass="EPSaleBillingDeductionView">
+                                <rect key="frame" x="0.0" y="311" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="67P-3Y-goW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -58,8 +65,11 @@
                             <constraint firstItem="WCb-UU-VbX" firstAttribute="trailing" secondItem="POT-vt-Elx" secondAttribute="trailing" id="LCD-tj-CyO"/>
                             <constraint firstItem="TEH-bc-jHz" firstAttribute="leading" secondItem="zxw-Qe-2bz" secondAttribute="leading" id="RZx-7A-eBw"/>
                             <constraint firstItem="TEH-bc-jHz" firstAttribute="centerX" secondItem="zxw-Qe-2bz" secondAttribute="centerX" id="ScN-cj-fBF"/>
+                            <constraint firstAttribute="trailing" secondItem="eFr-M6-RFZ" secondAttribute="trailing" id="jPp-Fz-5ix"/>
                             <constraint firstItem="POT-vt-Elx" firstAttribute="top" secondItem="zxw-Qe-2bz" secondAttribute="bottom" id="kQ4-23-FIg"/>
+                            <constraint firstItem="eFr-M6-RFZ" firstAttribute="leading" secondItem="Pw7-vr-Umx" secondAttribute="leading" id="kXP-Kh-kCM"/>
                             <constraint firstItem="POT-vt-Elx" firstAttribute="trailing" secondItem="TEH-bc-jHz" secondAttribute="trailing" id="oLF-6O-Lpf"/>
+                            <constraint firstItem="eFr-M6-RFZ" firstAttribute="top" secondItem="TEH-bc-jHz" secondAttribute="bottom" id="r0a-7w-X58"/>
                             <constraint firstItem="TEH-bc-jHz" firstAttribute="top" secondItem="WCb-UU-VbX" secondAttribute="bottom" id="sZ7-L1-h4Q"/>
                             <constraint firstItem="zxw-Qe-2bz" firstAttribute="leading" secondItem="Pw7-vr-Umx" secondAttribute="leading" id="vzj-zW-E6u"/>
                             <constraint firstItem="WCb-UU-VbX" firstAttribute="top" secondItem="POT-vt-Elx" secondAttribute="bottom" id="ymf-8t-8CD"/>
@@ -68,6 +78,7 @@
                     </view>
                     <connections>
                         <outlet property="_codeInputView" destination="zxw-Qe-2bz" id="hWh-sp-xgJ"/>
+                        <outlet property="_deductionView" destination="eFr-M6-RFZ" id="fPp-gV-U7V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lT-vL-nFh" userLabel="First Responder" sceneMemberID="firstResponder"/>

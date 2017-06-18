@@ -16,6 +16,8 @@
 
 #import "MFUICommonUtil.h"
 
+#import "XXNibBridge.h"
+
 #import "MMBaseClass.h"
 
 #import "HexColors.h"
@@ -34,7 +36,7 @@
 
 #import "EPAppViewControllerManager.h"
 
-#import "XXNibBridge.h"
+
 
 #import "MFCategorys.h"
 
