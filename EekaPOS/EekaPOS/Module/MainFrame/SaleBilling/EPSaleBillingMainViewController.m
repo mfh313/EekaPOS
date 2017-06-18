@@ -88,13 +88,12 @@
         return;
     }
     
+    //    itemCode = @"R116C72080040";
     [self getItemDetail:itemCode];
 }
 
 -(void)getItemDetail:(NSString *)itemCode
 {
-//    itemCode = @"R116C72080040";
-    
 //    __weak typeof(self) weakSelf = self;
     
     EPGetGoodsDetailApi *goodsDetailApi = [EPGetGoodsDetailApi new];
