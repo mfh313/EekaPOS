@@ -1,5 +1,5 @@
 //
-//  EPSaleBillingEmployeeSelectCellView.h
+//  EPSaleBillingSingleTitleSelectCellView.h
 //  EekaPOS
 //
 //  Created by EEKA on 2017/6/18.
@@ -8,7 +8,7 @@
 
 #import "MMUIBridgeView.h"
 
-@interface EPSaleBillingEmployeeSelectCellView : MMUIBridgeView
+@interface EPSaleBillingSingleTitleSelectCellView : MMUIBridgeView
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 

@@ -21,4 +21,6 @@
 
 @property (nonatomic,weak) id<EPSaleBillingDeductionViewDelegate> m_delegate;
 
+-(void)setDeductionTypeName:(NSString *)type;
+
 @end

@@ -27,6 +27,11 @@
     
 }
 
+-(void)setDeductionTypeName:(NSString *)type
+{
+    _deductionTypeLabel.text = type;
+}
+
 -(void)onClickDeductionBtn
 {
     if ([self.m_delegate respondsToSelector:@selector(onClickDeductionBtn:)]) {

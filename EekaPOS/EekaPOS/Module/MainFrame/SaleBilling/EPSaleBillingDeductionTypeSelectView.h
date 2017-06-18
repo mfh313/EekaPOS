@@ -8,10 +8,11 @@
 
 #import "MMUIBridgeView.h"
 
+@class EPSaleBillingDeductionModel;
 @protocol EPSaleBillingDeductionTypeSelectViewDelegate <NSObject>
 
 @optional
-
+-(void)didSelectSaleBillingDeductionType:(EPSaleBillingDeductionModel *)typemodel;
 
 @end
 

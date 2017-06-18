@@ -9,7 +9,7 @@
 #import "EPSaleBillingEmployeeSelectView.h"
 #import "EPEntitityEmployeeModel.h"
 #import "EPEntitityService.h"
-#import "EPSaleBillingEmployeeSelectCellView.h"
+#import "EPSaleBillingSingleTitleSelectCellView.h"
 
 @interface EPSaleBillingEmployeeSelectView () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -36,15 +36,14 @@
     self.backgroundColor = [UIColor hx_colorWithHexString:@"#000" alpha:0.3];
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    EPEntitityService *entitityService = [[MMServiceCenter defaultCenter] getService:[EPEntitityService class]];
-    
-    _entitityEmployees = [entitityService getEntitityEmployees];
-    
     _tableView.rowHeight = 44;
     
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
     [_bgTapView addGestureRecognizer:tapGes];
-
+    
+    EPEntitityService *entitityService = [[MMServiceCenter defaultCenter] getService:[EPEntitityService class]];
+    
+    _entitityEmployees = [entitityService getEntitityEmployees];
 }
 
 -(void)onTap
@@ -61,7 +60,7 @@
 -(void)setTableViewConstaint
 {
     NSInteger rowCount = _entitityEmployees.count;
-    _viewHeightConstraint.constant = rowCount * _tableView.rowHeight + 41;
+    _viewHeightConstraint.constant = rowCount * _tableView.rowHeight + 40.5;
     
     [_tableView reloadData];
     
@@ -93,13 +92,13 @@
     
     if (cell == nil) {
         cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingEmployeeSelectView"];
-        EPSaleBillingEmployeeSelectCellView *cellView = [EPSaleBillingEmployeeSelectCellView nibView];
+        EPSaleBillingSingleTitleSelectCellView *cellView = [EPSaleBillingSingleTitleSelectCellView nibView];
         cell.m_subContentView = cellView;
     }
     
     cell.m_subContentView.frame = cell.contentView.bounds;
     
-    EPSaleBillingEmployeeSelectCellView *cellView = (EPSaleBillingEmployeeSelectCellView *)cell.m_subContentView;
+    EPSaleBillingSingleTitleSelectCellView *cellView = (EPSaleBillingSingleTitleSelectCellView *)cell.m_subContentView;
     
     EPEntitityEmployeeModel *employeeModel = _entitityEmployees[indexPath.row];
     

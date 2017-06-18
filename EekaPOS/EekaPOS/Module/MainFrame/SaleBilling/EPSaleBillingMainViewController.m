@@ -16,6 +16,7 @@
 #import "EPSaleBillingEmployeeSelectView.h"
 #import "EPSaleBillingDeductionTypeSelectView.h"
 #import "EPSaleGuideSelectViewController.h"
+#import "EPSaleBillingHelper.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
                                     EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate>
@@ -57,7 +58,7 @@
 #pragma mark - EPSaleBillingDeductionViewDelegate
 -(void)onClickDeductionBtn:(EPSaleBillingDeductionView *)view
 {
-    
+    [self showSaleBillingDeductionTypeSelectView];
 }
 
 -(void)onClickAddBtn:(EPSaleBillingDeductionView *)view
@@ -129,6 +130,11 @@
     [MFAppWindow addSubview:typeSelectView];
 }
 
+-(void)didSelectSaleBillingDeductionType:(EPSaleBillingDeductionModel *)typemodel
+{
+    [_deductionView setDeductionTypeName:typemodel.name];
+}
+
 //选择收银员
 -(void)showSaleBillingEmployeeSelectView
 {    
@@ -172,8 +178,9 @@
 }
 
 - (IBAction)onClickSaveBtn:(id)sender {
-//    [self showSaleBillingEmployeeSelectView];
-    [self showSaleGuidesVC];
+    [self showSaleBillingEmployeeSelectView];
+//    [self showSaleGuidesVC];
+//    [self showSaleBillingDeductionTypeSelectView];
 }
 
 - (IBAction)onClickScanBtn:(id)sender {
