@@ -138,17 +138,27 @@
                                             <constraint firstAttribute="height" constant="128" id="67P-3Y-goW"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwv-jE-FZL" customClass="EPSaleBillingDeductionSelectedItemView">
+                                        <rect key="frame" x="0.0" y="283" width="375" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Qtd-IR-7UC"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="TEH-bc-jHz" firstAttribute="leading" secondItem="JhT-O1-vAD" secondAttribute="leading" id="7e0-Zi-WlL"/>
                                     <constraint firstItem="TEH-bc-jHz" firstAttribute="top" secondItem="POT-vt-Elx" secondAttribute="bottom" id="CF9-6p-Xvi"/>
+                                    <constraint firstItem="lwv-jE-FZL" firstAttribute="leading" secondItem="eFr-M6-RFZ" secondAttribute="leading" id="IQ7-V8-lAj"/>
                                     <constraint firstAttribute="trailing" secondItem="POT-vt-Elx" secondAttribute="trailing" id="JWV-Bs-sxk"/>
                                     <constraint firstItem="TEH-bc-jHz" firstAttribute="centerX" secondItem="JhT-O1-vAD" secondAttribute="centerX" id="OdN-Lh-D0Q"/>
                                     <constraint firstItem="eFr-M6-RFZ" firstAttribute="centerX" secondItem="JhT-O1-vAD" secondAttribute="centerX" id="Tue-Tz-IJF"/>
                                     <constraint firstItem="eFr-M6-RFZ" firstAttribute="leading" secondItem="JhT-O1-vAD" secondAttribute="leading" id="ZpA-aA-JBJ"/>
                                     <constraint firstItem="POT-vt-Elx" firstAttribute="leading" secondItem="JhT-O1-vAD" secondAttribute="leading" id="b04-2A-Lu0"/>
+                                    <constraint firstItem="lwv-jE-FZL" firstAttribute="centerX" secondItem="eFr-M6-RFZ" secondAttribute="centerX" id="c3F-w9-Yp9"/>
                                     <constraint firstItem="eFr-M6-RFZ" firstAttribute="top" secondItem="TEH-bc-jHz" secondAttribute="bottom" id="eeF-HI-VrZ"/>
+                                    <constraint firstItem="lwv-jE-FZL" firstAttribute="top" secondItem="eFr-M6-RFZ" secondAttribute="bottom" id="imd-dm-x0e"/>
                                     <constraint firstItem="POT-vt-Elx" firstAttribute="top" secondItem="JhT-O1-vAD" secondAttribute="top" id="qKt-MW-5dv"/>
                                 </constraints>
                             </view>

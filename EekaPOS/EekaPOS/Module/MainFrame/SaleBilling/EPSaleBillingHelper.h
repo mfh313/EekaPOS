@@ -20,6 +20,8 @@
 #pragma mark - EPSaleBillingHelper
 @interface EPSaleBillingHelper : NSObject
 
++(NSString *)moneyDescWithNumber:(NSNumber *)money;
+
 +(NSMutableArray *)saleBillingDeductionModels;
 
 @end

@@ -26,6 +26,11 @@
 #pragma mark - EPSaleBillingHelper
 @implementation EPSaleBillingHelper
 
++(NSString *)moneyDescWithNumber:(NSNumber *)money
+{
+    return @"¥ 20.0";
+}
+
 +(NSMutableArray *)saleBillingDeductionModels
 {
     EPSaleBillingDeductionModel *model1 = [EPSaleBillingDeductionModel objectWithName:@"抹零" key:@"1"];
