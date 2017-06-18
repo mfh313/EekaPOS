@@ -9,7 +9,18 @@
 #import "EPEntitityService.h"
 #import "EPGetEntitityDetailApi.h"
 
+#import "EPEntitityEmployeeModel.h"
+
 @implementation EPEntitityService
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        m_employees = [NSMutableArray array];
+    }
+    return self;
+}
 
 -(void)getEntitityDetail
 {
@@ -22,6 +33,8 @@
             return;
         }
         
+        NSArray *employees = request.responseObject[@"employees"];
+        NSLog(@"employees=%@",employees);
         
         
     } failure:^(YTKBaseRequest * request) {
@@ -30,5 +43,6 @@
     }];
     
 }
+
 
 @end

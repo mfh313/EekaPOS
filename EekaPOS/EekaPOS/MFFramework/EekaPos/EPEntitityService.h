@@ -9,6 +9,9 @@
 #import "MMService.h"
 
 @interface EPEntitityService : MMService
+{
+    NSMutableArray *m_employees;
+}
 
 -(void)getEntitityDetail;
 
