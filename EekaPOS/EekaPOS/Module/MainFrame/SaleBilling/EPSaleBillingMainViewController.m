@@ -10,12 +10,14 @@
 #import "EPCameraScanViewController.h"
 #import "EPGetGoodsDetailApi.h"
 #import "EPGoodsDetailModel.h"
+#import "EPEntitityEmployeeModel.h"
 #import "EPSaleBillingItemCodeInputView.h"
 #import "EPSaleBillingDeductionView.h"
 #import "EPSaleBillingEmployeeSelectView.h"
+#import "EPSaleGuideSelectViewController.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
-                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate>
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     
@@ -91,7 +93,7 @@
 
 -(void)getItemDetail:(NSString *)itemCode
 {
-    itemCode = @"R116C72080040";
+//    itemCode = @"R116C72080040";
     
 //    __weak typeof(self) weakSelf = self;
     
@@ -119,7 +121,7 @@
     }];
 }
 
-
+//选择收银员
 -(void)showSaleBillingEmployeeSelectView
 {    
     EPSaleBillingEmployeeSelectView *employeeSelectView = [EPSaleBillingEmployeeSelectView nibView];
@@ -134,8 +136,32 @@
     
 }
 
+//选择销售人员
+-(void)showSaleGuidesVC
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SaleBilling" bundle:nil];
+    EPSaleGuideSelectViewController *guideSelectVC = [storyboard instantiateViewControllerWithIdentifier:@"EPSaleGuideSelectViewController"];
+    guideSelectVC.m_delegate = self;
+    guideSelectVC.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:guideSelectVC animated:YES];
+}
+
+#pragma mark - EPSaleGuideSelectViewControllerDelegate
+-(void)didSelectEmployees:(NSMutableArray *)selectEmployees viewController:(EPSaleGuideSelectViewController *)viewController
+{
+    NSMutableArray *nameArray = [NSMutableArray array];
+    for (int i = 0; i < selectEmployees.count; i++) {
+        EPEntitityEmployeeModel *employee = selectEmployees[i];
+        [nameArray addObject:employee.contactName];
+    }
+    
+    NSString *names = [nameArray componentsJoinedByString:@"、"];
+    NSLog(@"names=%@",names);
+}
+
 - (IBAction)onClickSaveBtn:(id)sender {
-    [self showSaleBillingEmployeeSelectView];
+    [self showSaleGuidesVC];
 }
 
 - (IBAction)onClickScanBtn:(id)sender {

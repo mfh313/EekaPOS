@@ -180,5 +180,42 @@
             </objects>
             <point key="canvasLocation" x="-634.39999999999998" y="-14.842578710644679"/>
         </scene>
+        <!--Sale Guide Select View Controller-->
+        <scene sceneID="A2I-f6-wMk">
+            <objects>
+                <viewController storyboardIdentifier="EPSaleGuideSelectViewController" id="xcZ-FB-pax" customClass="EPSaleGuideSelectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6zk-zh-7k9"/>
+                        <viewControllerLayoutGuide type="bottom" id="ak8-Jr-aFb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jyZ-fn-fhM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="zbP-Ov-9QV" customClass="MFUITableView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xcZ-FB-pax" id="olV-ZJ-Yqg"/>
+                                    <outlet property="delegate" destination="xcZ-FB-pax" id="9qP-RE-bAs"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zbP-Ov-9QV" firstAttribute="top" secondItem="6zk-zh-7k9" secondAttribute="bottom" id="2MC-by-hsq"/>
+                            <constraint firstAttribute="trailing" secondItem="zbP-Ov-9QV" secondAttribute="trailing" id="4YO-p2-YqJ"/>
+                            <constraint firstItem="zbP-Ov-9QV" firstAttribute="leading" secondItem="jyZ-fn-fhM" secondAttribute="leading" id="cqO-ix-k0r"/>
+                            <constraint firstItem="ak8-Jr-aFb" firstAttribute="top" secondItem="zbP-Ov-9QV" secondAttribute="bottom" id="ozr-Vh-I3y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_tableView" destination="zbP-Ov-9QV" id="Ioo-Sv-mLJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dq5-Af-EZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="-15"/>
+        </scene>
     </scenes>
 </document>

@@ -17,6 +17,7 @@
 #import "MMOnePixLayoutConstraint.h"
 #import "MMSelectButton.h"
 #import "MMObject.h"
+#import "MFUITableView.h"
 
 #import "MMUITextField.h"
 #import "MFUIButton.h"

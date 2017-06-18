@@ -88,6 +88,9 @@
 		AC32BE701EF67227001A6291 /* EPSaleBillingEmployeeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC32BE6F1EF67227001A6291 /* EPSaleBillingEmployeeSelectView.xib */; };
 		AC32BE731EF67BFB001A6291 /* EPSaleBillingEmployeeSelectCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32BE721EF67BFB001A6291 /* EPSaleBillingEmployeeSelectCellView.m */; };
 		AC32BE751EF67C31001A6291 /* EPSaleBillingEmployeeSelectCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC32BE741EF67C31001A6291 /* EPSaleBillingEmployeeSelectCellView.xib */; };
+		AC32BE781EF684B5001A6291 /* EPSaleGuideSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32BE771EF684B5001A6291 /* EPSaleGuideSelectViewController.m */; };
+		AC32BE7B1EF69565001A6291 /* EPSaleGuideSelectCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32BE7A1EF69565001A6291 /* EPSaleGuideSelectCellView.m */; };
+		AC32BE7D1EF69736001A6291 /* EPSaleGuideSelectCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC32BE7C1EF69736001A6291 /* EPSaleGuideSelectCellView.xib */; };
 		AC7CC3591EF26CC300564823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3581EF26CC300564823 /* main.m */; };
 		AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */; };
 		AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3601EF26CC300564823 /* EekaPosMain.storyboard */; };
@@ -526,6 +529,11 @@
 		AC32BE711EF67BFB001A6291 /* EPSaleBillingEmployeeSelectCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingEmployeeSelectCellView.h; sourceTree = "<group>"; };
 		AC32BE721EF67BFB001A6291 /* EPSaleBillingEmployeeSelectCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingEmployeeSelectCellView.m; sourceTree = "<group>"; };
 		AC32BE741EF67C31001A6291 /* EPSaleBillingEmployeeSelectCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingEmployeeSelectCellView.xib; sourceTree = "<group>"; };
+		AC32BE761EF684B5001A6291 /* EPSaleGuideSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleGuideSelectViewController.h; sourceTree = "<group>"; };
+		AC32BE771EF684B5001A6291 /* EPSaleGuideSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleGuideSelectViewController.m; sourceTree = "<group>"; };
+		AC32BE791EF69565001A6291 /* EPSaleGuideSelectCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleGuideSelectCellView.h; sourceTree = "<group>"; };
+		AC32BE7A1EF69565001A6291 /* EPSaleGuideSelectCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleGuideSelectCellView.m; sourceTree = "<group>"; };
+		AC32BE7C1EF69736001A6291 /* EPSaleGuideSelectCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleGuideSelectCellView.xib; sourceTree = "<group>"; };
 		AC7CC3541EF26CC300564823 /* EekaPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EekaPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7CC3581EF26CC300564823 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC7CC35A1EF26CC300564823 /* EekaPosAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EekaPosAppDelegate.h; sourceTree = "<group>"; };
@@ -1666,6 +1674,11 @@
 				AC32BE711EF67BFB001A6291 /* EPSaleBillingEmployeeSelectCellView.h */,
 				AC32BE721EF67BFB001A6291 /* EPSaleBillingEmployeeSelectCellView.m */,
 				AC32BE741EF67C31001A6291 /* EPSaleBillingEmployeeSelectCellView.xib */,
+				AC32BE761EF684B5001A6291 /* EPSaleGuideSelectViewController.h */,
+				AC32BE771EF684B5001A6291 /* EPSaleGuideSelectViewController.m */,
+				AC32BE791EF69565001A6291 /* EPSaleGuideSelectCellView.h */,
+				AC32BE7A1EF69565001A6291 /* EPSaleGuideSelectCellView.m */,
+				AC32BE7C1EF69736001A6291 /* EPSaleGuideSelectCellView.xib */,
 				AC32BE441EF600AD001A6291 /* EPGetGoodsDetailApi.h */,
 				AC32BE451EF600AD001A6291 /* EPGetGoodsDetailApi.m */,
 			);
@@ -2504,6 +2517,7 @@
 				AC950EA91EF4FFE4003EEBD0 /* EPMainFrameCellView.xib in Resources */,
 				AC32BE561EF617CE001A6291 /* EPSaleBillingGoodsCellView.xib in Resources */,
 				AC950EA01EF4DDDE003EEBD0 /* Me.storyboard in Resources */,
+				AC32BE7D1EF69736001A6291 /* EPSaleGuideSelectCellView.xib in Resources */,
 				AC9514A91EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib in Resources */,
 				AC32BE701EF67227001A6291 /* EPSaleBillingEmployeeSelectView.xib in Resources */,
 				AC950EC11EF5227B003EEBD0 /* SaleBilling.storyboard in Resources */,
@@ -2563,6 +2577,7 @@
 				AC9513BD1EF52D67003EEBD0 /* ZXAztecBinaryShiftToken.m in Sources */,
 				AC950E6A1EF4B184003EEBD0 /* MMServiceCenter.m in Sources */,
 				AC9514901EF52D67003EEBD0 /* ZXMultiDetector.m in Sources */,
+				AC32BE781EF684B5001A6291 /* EPSaleGuideSelectViewController.m in Sources */,
 				AC9513EF1EF52D67003EEBD0 /* ZXMonochromeRectangleDetector.m in Sources */,
 				AC26E8811EF3DDA600C4FAA6 /* AFHTTPSessionManager.m in Sources */,
 				AC9514661EF52D67003EEBD0 /* ZXPDF417BarcodeValue.m in Sources */,
@@ -2716,6 +2731,7 @@
 				AC9513D71EF52D67003EEBD0 /* ZXParsedResult.m in Sources */,
 				AC9514091EF52D67003EEBD0 /* ZXEncodeHints.m in Sources */,
 				AC9514231EF52D67003EEBD0 /* ZXDataMatrixReader.m in Sources */,
+				AC32BE7B1EF69565001A6291 /* EPSaleGuideSelectCellView.m in Sources */,
 				AC9514191EF52D67003EEBD0 /* ZXDataMatrixC40Encoder.m in Sources */,
 				AC9513E61EF52D67003EEBD0 /* ZXVEventResultParser.m in Sources */,
 				AC950EB21EF505B1003EEBD0 /* MFTableViewCell.m in Sources */,
