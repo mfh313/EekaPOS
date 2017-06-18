@@ -17,9 +17,10 @@
 #import "EPSaleBillingDeductionTypeSelectView.h"
 #import "EPSaleGuideSelectViewController.h"
 #import "EPSaleBillingHelper.h"
+#import "EPSaleBillingGoodsEditView.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
-                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate>
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     
@@ -121,6 +122,17 @@
     }];
 }
 
+//修改商品详情
+-(void)showSaleBillingGoodsEditView
+{
+    EPSaleBillingGoodsEditView *goodsEditView = [EPSaleBillingGoodsEditView nibView];
+    goodsEditView.m_delegate = self;
+    goodsEditView.frame = MFAppWindow.bounds;
+    [MFAppWindow addSubview:goodsEditView];
+}
+
+#pragma mark - EPSaleBillingGoodsEditViewDelegate
+
 //选择扣减
 -(void)showSaleBillingDeductionTypeSelectView
 {
@@ -178,9 +190,10 @@
 }
 
 - (IBAction)onClickSaveBtn:(id)sender {
-    [self showSaleBillingEmployeeSelectView];
+//    [self showSaleBillingEmployeeSelectView];
 //    [self showSaleGuidesVC];
 //    [self showSaleBillingDeductionTypeSelectView];
+    [self showSaleBillingGoodsEditView];
 }
 
 - (IBAction)onClickScanBtn:(id)sender {
