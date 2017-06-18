@@ -120,6 +120,9 @@
     }];
 }
 
+
+//选择扣减
+
 //选择收银员
 -(void)showSaleBillingEmployeeSelectView
 {    
@@ -132,7 +135,10 @@
 #pragma mark - EPSaleBillingEmployeeSelectViewDelegate
 -(void)didSelectEmployee:(EPEntitityEmployeeModel *)selectEmployee view:(EPSaleBillingEmployeeSelectView *)view
 {
+    NSLog(@"选中收银员=%@",selectEmployee.contactName);
     
+    [view removeFromSuperview];
+    view = nil;
 }
 
 //选择销售人员
@@ -160,19 +166,18 @@
 }
 
 - (IBAction)onClickSaveBtn:(id)sender {
-    [self showSaleGuidesVC];
+    [self showSaleBillingEmployeeSelectView];
+//    [self showSaleGuidesVC];
 }
 
 - (IBAction)onClickScanBtn:(id)sender {
     [self onClickCameraScanBtn];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
 }
-
 
 
 @end
