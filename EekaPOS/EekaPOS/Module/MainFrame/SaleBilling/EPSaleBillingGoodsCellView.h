@@ -7,17 +7,19 @@
 //
 
 #import "MMUIBridgeView.h"
+#import "EPGoodsDetailModel.h"
 
 @protocol EPSaleBillingGoodsCellViewDelegate <NSObject>
 
 @optional
--(void)onClickGoodsCellView;
+-(void)onClickGoodsCellView:(EPGoodsDetailModel *)goodsModel;
 
 @end
 
 @interface EPSaleBillingGoodsCellView : MMUIBridgeView
 
-
+@property(nonatomic,strong) EPGoodsDetailModel *goodsModel;
+@property(nonatomic,weak) id<EPSaleBillingGoodsCellViewDelegate> m_delegate;
 
 -(void)setItemCode:(NSString *)itemCode itemName:(NSString *)itemName;
 

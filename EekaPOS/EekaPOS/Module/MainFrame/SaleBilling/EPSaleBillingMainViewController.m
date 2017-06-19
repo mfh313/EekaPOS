@@ -21,7 +21,7 @@
 #import "EPSaleBillingGoodsCellView.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
-                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate>
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     __weak IBOutlet EPSaleBillingDeductionView *_deductionView;
@@ -48,6 +48,7 @@
     
     _codeInputView.m_delegate = self;
     _deductionView.m_delegate = self;
+    _goodsCellView.m_delegate = self;
     
     _goodsDetailModel = [NSMutableArray array];
 }
@@ -130,6 +131,11 @@
     [_goodsCellView setDiscountPreNumber:detailModel.listPrice];
     [_goodsCellView setDiscountAfterNumber:detailModel.adjustPrice];
     [_goodsCellView setDiscountRate:@(0.9)];
+}
+
+-(void)onClickGoodsCellView:(EPGoodsDetailModel *)goodsModel
+{
+    [self showSaleBillingGoodsEditView];
 }
 
 //修改商品详情

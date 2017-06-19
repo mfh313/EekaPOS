@@ -26,6 +26,16 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapGoodsCellView)];
+    [self addGestureRecognizer:tapGes];
+}
+
+-(void)onTapGoodsCellView
+{
+    if ([self.m_delegate respondsToSelector:@selector(onClickGoodsCellView:)]) {
+        [self.m_delegate onClickGoodsCellView:self.goodsModel];
+    }
 }
 
 -(void)setItemCode:(NSString *)itemCode itemName:(NSString *)itemName
