@@ -19,4 +19,14 @@
 
 @property (nonatomic,weak) id<EPSaleBillingGoodsEditViewDelegate> m_delegate;
 
+-(void)setItemCode:(NSString *)itemCode;
+
+-(void)setItemName:(NSString *)itemName;
+
+-(void)setItemSize:(NSNumber *)size;
+
+-(void)setDiscount:(NSNumber *)discountNumber;
+
+-(void)setRemarkString:(NSString *)remark;
+
 @end

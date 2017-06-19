@@ -135,16 +135,21 @@
 
 -(void)onClickGoodsCellView:(EPGoodsDetailModel *)goodsModel
 {
-    [self showSaleBillingGoodsEditView];
+    [self showSaleBillingGoodsEditView:goodsModel];
 }
 
 //修改商品详情
--(void)showSaleBillingGoodsEditView
+-(void)showSaleBillingGoodsEditView:(EPGoodsDetailModel *)detailModel
 {
     EPSaleBillingGoodsEditView *goodsEditView = [EPSaleBillingGoodsEditView nibView];
     goodsEditView.m_delegate = self;
     goodsEditView.frame = MFAppWindow.bounds;
     [MFAppWindow addSubview:goodsEditView];
+    
+    [goodsEditView setItemCode:detailModel.itemCode];
+    [goodsEditView setItemSize:detailModel.size];
+    [goodsEditView setItemName:detailModel.itemName];
+    
 }
 
 #pragma mark - EPSaleBillingGoodsEditViewDelegate
@@ -208,8 +213,8 @@
 - (IBAction)onClickSaveBtn:(id)sender {
 //    [self showSaleBillingEmployeeSelectView];
 //    [self showSaleGuidesVC];
-//    [self showSaleBillingDeductionTypeSelectView];
-    [self showSaleBillingGoodsEditView];
+    [self showSaleBillingDeductionTypeSelectView];
+
 }
 
 - (IBAction)onClickScanBtn:(id)sender {

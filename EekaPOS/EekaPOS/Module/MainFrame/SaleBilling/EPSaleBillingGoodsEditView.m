@@ -8,10 +8,16 @@
 
 #import "EPSaleBillingGoodsEditView.h"
 
-@interface EPSaleBillingGoodsEditView ()
+@interface EPSaleBillingGoodsEditView ()<UITextFieldDelegate>
 {
     __weak IBOutlet UIImageView *_bgImageView;
     __weak IBOutlet UIView *_bgTapView;
+    __weak IBOutlet UILabel *_itemCodeLabel;
+    __weak IBOutlet UILabel *_itemNameLabel;
+    __weak IBOutlet UITextField *_itemSizeInputTextField;
+    __weak IBOutlet UITextField *_remarkTextField;
+    __weak IBOutlet UIImageView *_rateBgImageView;
+    
 }
 
 @end
@@ -34,5 +40,39 @@
 {
     [self removeFromSuperview];
 }
+
+-(void)setItemCode:(NSString *)itemCode
+{
+    _itemCodeLabel.text = itemCode;
+}
+
+-(void)setItemName:(NSString *)itemName
+{
+    _itemNameLabel.text = itemName;
+}
+
+-(void)setItemSize:(NSNumber *)size
+{
+    _itemSizeInputTextField.text = [NSString stringWithFormat:@"%@",size];
+}
+
+-(void)setDiscount:(NSNumber *)discountNumber
+{
+    
+}
+
+-(void)setRemarkString:(NSString *)remark
+{
+    
+}
+
+- (IBAction)onClickSelectDiscount:(id)sender {
+    NSLog(@"此功能暂未开发");
+}
+
+- (IBAction)onClickSelectRemark:(id)sender {
+    NSLog(@"此功能暂未开发");
+}
+
 
 @end
