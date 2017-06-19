@@ -27,7 +27,8 @@
     NSString *token = accountMgr.token;
     
     params[@"token"] = token;
-//    params[@"itemCode"] = self.itemCode;
+    params[@"brandId"] = self.brandId;
+    params[@"telephone"] = self.telephone;
     
     return params;
     

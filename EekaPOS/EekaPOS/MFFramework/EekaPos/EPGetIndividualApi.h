@@ -10,4 +10,7 @@
 
 @interface EPGetIndividualApi : MFNetworkRequest
 
+@property(nonatomic,strong) NSString *brandId;
+@property(nonatomic,strong) NSString *telephone;
+
 @end
