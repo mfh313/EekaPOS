@@ -47,6 +47,9 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="_phoneTextField" destination="1sV-br-eQ4" id="0uW-gm-L4b"/>
+            </connections>
             <point key="canvasLocation" x="4.5" y="54"/>
         </view>
     </objects>

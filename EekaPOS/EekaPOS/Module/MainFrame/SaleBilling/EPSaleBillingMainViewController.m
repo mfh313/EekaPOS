@@ -26,7 +26,7 @@
 #import "EPSaleBillingPhoneInputView.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
-                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,UITableViewDataSource,UITableViewDelegate>
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     __weak IBOutlet EPSaleBillingDeductionView *_deductionView;
@@ -59,6 +59,7 @@
     
     _saleBillingModel = [EPSaleBillingModel new];
     _saleBillingModel.discount = @(0.85);
+    _saleBillingModel.phone = @"15813818620";
     
     _saleBillingItemModels = [NSMutableArray array];
     
@@ -87,6 +88,10 @@
     {
         return 1;
     }
+    else if (section == 2)
+    {
+        return 1;
+    }
     
     return 0;
 }
@@ -102,6 +107,10 @@
     else if (section == 1)
     {
         return [self tableView:tableView discountInputCellForRowAtIndexPath:indexPath];
+    }
+    else if (section == 2)
+    {
+        return [self tableView:tableView telePhoneCellForRowAtIndexPath:indexPath];
     }
     
     return [UITableViewCell new];
@@ -181,6 +190,31 @@
     }
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView telePhoneCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"telePhoneCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"telePhoneCell"];
+        EPSaleBillingPhoneInputView *cellView = [EPSaleBillingPhoneInputView nibView];
+        cellView.m_delegate = self;
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingPhoneInputView *cellView = (EPSaleBillingPhoneInputView *)cell.m_subContentView;
+    [cellView setPhone:_saleBillingModel.phone];
+    
+    return cell;
+}
+
+-(void)didInputPhone:(NSString *)phone
+{
+    _saleBillingModel.phone = phone;
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger section = indexPath.section;
@@ -191,6 +225,10 @@
     else if (section == 1)
     {
         return 75.0;
+    }
+    else if (section == 2)
+    {
+        return 46.0;
     }
     
     return 0;

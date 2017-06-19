@@ -19,4 +19,6 @@
 
 @property (nonatomic,weak) id<EPSaleBillingPhoneInputViewDelegate> m_delegate;
 
+-(void)setPhone:(NSString *)phone;
+
 @end
