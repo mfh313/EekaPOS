@@ -34,7 +34,7 @@
 -(void)onTapGoodsCellView
 {
     if ([self.m_delegate respondsToSelector:@selector(onClickGoodsCellView:)]) {
-        [self.m_delegate onClickGoodsCellView:self.goodsModel];
+        [self.m_delegate onClickGoodsCellView:self.itemModel];
     }
 }
 

@@ -7,9 +7,9 @@
 //
 
 #import "EPSaleBillingGoodsEditView.h"
-#import "EPGoodsDetailModel.h"
-#import "TKeyBoardView.h"
+#import "EPSaleBillingItemModel.h"
 #import "EPSaleBillingHelper.h"
+#import "TKeyBoardView.h"
 
 @interface EPSaleBillingGoodsEditView ()<UITextFieldDelegate>
 {
@@ -123,8 +123,8 @@
     float rateFloat = [EPSaleBillingHelper roundFloat:rateString.floatValue];
     NSNumber *rateNumber = @(rateFloat);
     
-    if ([self.m_delegate respondsToSelector:@selector(editGoodsWithSize:rate:remark:goodsModel:)]) {
-        [self.m_delegate editGoodsWithSize:sizeNumber rate:rateNumber remark:remarkString goodsModel:self.goodsModel];
+    if ([self.m_delegate respondsToSelector:@selector(editGoodsWithSize:rate:remark:itemModel:)]) {
+        [self.m_delegate editGoodsWithSize:sizeNumber rate:rateNumber remark:remarkString itemModel:self.itemModel];
     }
 }
 

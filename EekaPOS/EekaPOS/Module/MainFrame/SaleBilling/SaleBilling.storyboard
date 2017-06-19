@@ -114,7 +114,7 @@
                                     <constraint firstItem="2ZF-od-72u" firstAttribute="width" secondItem="x6X-Z2-WKQ" secondAttribute="width" id="wl3-9D-qln"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhT-O1-vAD">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JhT-O1-vAD">
                                 <rect key="frame" x="0.0" y="76" width="375" height="501"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POT-vt-Elx" customClass="EPSaleBillingGoodsCellView">
@@ -185,6 +185,7 @@
                         <outlet property="_codeInputView" destination="zxw-Qe-2bz" id="hWh-sp-xgJ"/>
                         <outlet property="_deductionView" destination="eFr-M6-RFZ" id="fPp-gV-U7V"/>
                         <outlet property="_goodsCellView" destination="POT-vt-Elx" id="07m-kN-tL3"/>
+                        <outlet property="_tableView" destination="AJv-df-MEo" id="0Y8-BF-59f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lT-vL-nFh" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -21,20 +21,20 @@
 #import "EPSaleBillingGoodsCellView.h"
 #import "EPGetIndividualApi.h"
 #import "EPSaleBillingModel.h"
+#import "EPSaleBillingItemModel.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
-                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate>
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     __weak IBOutlet EPSaleBillingDeductionView *_deductionView;
     __weak IBOutlet EPSaleBillingGoodsCellView *_goodsCellView;
-    
-    NSMutableArray *_goodsDetailModel;
+    __weak IBOutlet UITableView *_tableView;
     
     EPGetIndividualApi *_getIndividualApi;
-    
     EPSaleBillingModel *_saleBillingModel;
     
+    NSMutableArray *_saleBillingItemModels;
 }
 
 @end
@@ -56,12 +56,23 @@
     _deductionView.m_delegate = self;
     _goodsCellView.m_delegate = self;
     
-    _goodsDetailModel = [NSMutableArray array];
+    _saleBillingItemModels = [NSMutableArray array];
 }
 
-#pragma mark -
+#pragma mark - UITableViewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 5;
+}
 
-
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return _saleBillingItemModels.count;
+    }
+    
+    return 0;
+}
 
 
 -(void)onClickBackBtn:(id)sender
@@ -122,12 +133,12 @@
             [self showTips:goodsDetailApi.errorMessage];
             return;
         }
-
-        EPGoodsDetailModel *detailModel = [EPGoodsDetailModel MM_modelWithJSON:request.responseJSONObject];
-        [_goodsDetailModel addObject:detailModel];
+        
+        EPSaleBillingItemModel *itemModel = [EPSaleBillingItemModel MM_modelWithJSON:request.responseJSONObject];
+        [_saleBillingItemModels addObject:itemModel];
         
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf setTest:detailModel];
+        [strongSelf setTest:itemModel];
         
     } failure:^(YTKBaseRequest * request) {
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
@@ -135,39 +146,40 @@
     }];
 }
 
--(void)setTest:(EPGoodsDetailModel *)detailModel
+-(void)setTest:(EPSaleBillingItemModel *)itemModel
 {
-    [_goodsCellView setItemCode:detailModel.itemCode itemName:detailModel.itemName];
-    [_goodsCellView setRemarkString:@"备注： 无"];
-    [_goodsCellView setDiscountPreNumber:detailModel.listPrice];
-    [_goodsCellView setDiscountAfterNumber:detailModel.adjustPrice];
-    [_goodsCellView setDiscountRate:@(0.9)];
+    [_goodsCellView setItemCode:itemModel.itemCode itemName:itemModel.itemName];
+    [_goodsCellView setRemarkString:itemModel.remarks];
+    [_goodsCellView setDiscountPreNumber:itemModel.listPrice];
+    [_goodsCellView setDiscountAfterNumber:itemModel.receivablePrice];
+    [_goodsCellView setDiscountRate:itemModel.discount];
     
-    _goodsCellView.goodsModel = detailModel;
+    _goodsCellView.itemModel = itemModel;
 }
 
--(void)onClickGoodsCellView:(EPGoodsDetailModel *)goodsModel
+-(void)onClickGoodsCellView:(EPSaleBillingItemModel *)itemModel
 {
-    [self showSaleBillingGoodsEditView:goodsModel];
+    [self showSaleBillingGoodsEditView:itemModel];
 }
 
 //修改商品详情
--(void)showSaleBillingGoodsEditView:(EPGoodsDetailModel *)detailModel
+-(void)showSaleBillingGoodsEditView:(EPSaleBillingItemModel *)itemModel
 {
     EPSaleBillingGoodsEditView *goodsEditView = [EPSaleBillingGoodsEditView nibView];
     goodsEditView.m_delegate = self;
     goodsEditView.frame = MFAppWindow.bounds;
     [MFAppWindow addSubview:goodsEditView];
     
-    [goodsEditView setItemCode:detailModel.itemCode];
-    [goodsEditView setItemSize:detailModel.size];
-    [goodsEditView setItemName:detailModel.itemName];
-    [goodsEditView setGoodsModel:detailModel];
+    [goodsEditView setItemCode:itemModel.itemCode];
+    [goodsEditView setItemSize:itemModel.size];
+    [goodsEditView setItemName:itemModel.itemName];
+    
+    goodsEditView.itemModel = itemModel;
     
 }
 
 #pragma mark - EPSaleBillingGoodsEditViewDelegate
--(void)editGoodsWithSize:(NSNumber *)size rate:(NSNumber *)rate remark:(NSString *)remark goodsModel:(EPGoodsDetailModel *)goodsModel
+-(void)editGoodsWithSize:(NSNumber *)size rate:(NSNumber *)rate remark:(NSString *)remark itemModel:(EPSaleBillingItemModel *)itemModel
 {
     
 }

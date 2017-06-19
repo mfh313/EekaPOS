@@ -14,7 +14,7 @@
 @property (nonatomic,strong) NSNumber *saleBillingID;
 @property (nonatomic,strong) NSNumber *receivablePrice;
 @property (nonatomic,strong) NSNumber *discount;
-@property (nonatomic,strong) NSNumber *remarks;
+@property (nonatomic,strong) NSString *remarks;
 @property (nonatomic,strong) NSNumber *number;
 @property (nonatomic,assign) BOOL  isSpecialDiscount;
 
