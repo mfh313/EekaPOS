@@ -131,6 +131,8 @@
     [_goodsCellView setDiscountPreNumber:detailModel.listPrice];
     [_goodsCellView setDiscountAfterNumber:detailModel.adjustPrice];
     [_goodsCellView setDiscountRate:@(0.9)];
+    
+    _goodsCellView.goodsModel = detailModel;
 }
 
 -(void)onClickGoodsCellView:(EPGoodsDetailModel *)goodsModel
@@ -153,6 +155,7 @@
 }
 
 #pragma mark - EPSaleBillingGoodsEditViewDelegate
+
 
 //选择扣减
 -(void)showSaleBillingDeductionTypeSelectView
