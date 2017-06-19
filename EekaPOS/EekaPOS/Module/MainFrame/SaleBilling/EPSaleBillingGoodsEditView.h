@@ -8,15 +8,17 @@
 
 #import "MMUIBridgeView.h"
 
+@class EPGoodsDetailModel;
 @protocol EPSaleBillingGoodsEditViewDelegate <NSObject>
 
 @optional
-
+-(void)editGoodsWithSize:(NSNumber *)size rate:(NSNumber *)rate remark:(NSString *)remark goodsModel:(EPGoodsDetailModel *)goodsModel;
 
 @end
 
 @interface EPSaleBillingGoodsEditView : MMUIBridgeView
 
+@property (nonatomic,strong) EPGoodsDetailModel *goodsModel;
 @property (nonatomic,weak) id<EPSaleBillingGoodsEditViewDelegate> m_delegate;
 
 -(void)setItemCode:(NSString *)itemCode;

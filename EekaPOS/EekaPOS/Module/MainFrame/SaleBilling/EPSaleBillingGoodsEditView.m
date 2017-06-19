@@ -7,6 +7,7 @@
 //
 
 #import "EPSaleBillingGoodsEditView.h"
+#import "EPGoodsDetailModel.h"
 
 @interface EPSaleBillingGoodsEditView ()<UITextFieldDelegate>
 {
@@ -17,6 +18,8 @@
     __weak IBOutlet UITextField *_itemSizeInputTextField;
     __weak IBOutlet UITextField *_remarkTextField;
     __weak IBOutlet UIImageView *_rateBgImageView;
+    __weak IBOutlet UIImageView *_itemSizeBgImageView;
+    __weak IBOutlet UIImageView *_remarkBgImageView;
     
 }
 
@@ -29,6 +32,10 @@
     [super awakeFromNib];
     
     _bgImageView.image = MFImageStretchCenter(@"round");
+    _rateBgImageView.image = MFImageStretchCenter(@"border");
+    _remarkBgImageView.image = MFImageStretchCenter(@"border");
+    _itemSizeBgImageView.image = MFImageStretchCenter(@"border");
+    
     self.backgroundColor = [UIColor hx_colorWithHexString:@"#000" alpha:0.3];
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
@@ -74,5 +81,14 @@
     NSLog(@"此功能暂未开发");
 }
 
+- (IBAction)onClickCancelBtn:(id)sender {
+    [self removeFromSuperview];
+}
+
+- (IBAction)onClickDoneBtn:(id)sender {
+    if ([self.m_delegate respondsToSelector:@selector(editGoodsWithSize:rate:remark:goodsModel:)]) {
+        [self.m_delegate editGoodsWithSize:@(39) rate:@(0.47) remark:@"生日假期,尽快" goodsModel:self.goodsModel];
+    }
+}
 
 @end

@@ -151,11 +151,15 @@
     [goodsEditView setItemCode:detailModel.itemCode];
     [goodsEditView setItemSize:detailModel.size];
     [goodsEditView setItemName:detailModel.itemName];
+    [goodsEditView setGoodsModel:detailModel];
     
 }
 
 #pragma mark - EPSaleBillingGoodsEditViewDelegate
-
+-(void)editGoodsWithSize:(NSNumber *)size rate:(NSNumber *)rate remark:(NSString *)remark goodsModel:(EPGoodsDetailModel *)goodsModel
+{
+    
+}
 
 //选择扣减
 -(void)showSaleBillingDeductionTypeSelectView
