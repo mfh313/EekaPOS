@@ -20,4 +20,6 @@
 
 @property(nonatomic,weak) id<EPSaleGuideSelectViewControllerDelegate> m_delegate;
 
+@property(nonatomic,strong) NSMutableArray *selectedSallers;
+
 @end

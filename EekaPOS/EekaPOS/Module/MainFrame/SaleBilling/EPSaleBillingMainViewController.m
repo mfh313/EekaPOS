@@ -501,6 +501,7 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SaleBilling" bundle:nil];
     EPSaleGuideSelectViewController *guideSelectVC = [storyboard instantiateViewControllerWithIdentifier:@"EPSaleGuideSelectViewController"];
+    guideSelectVC.selectedSallers = _selectGuides;
     guideSelectVC.m_delegate = self;
     guideSelectVC.hidesBottomBarWhenPushed = YES;
     

@@ -39,8 +39,9 @@
     
     _entititySallerList = [entitityService getEntititySallerList];
     
-    _selectedSallers = [NSMutableArray array];
-    
+    if (!_selectedSallers) {
+        _selectedSallers = [NSMutableArray array];
+    }
 }
 
 -(void)onClickRightDoneBtn
