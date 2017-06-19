@@ -7,6 +7,7 @@
 //
 
 #import "EPSaleBillingGoodsCellView.h"
+#import "EPSaleBillingHelper.h"
 
 @interface EPSaleBillingGoodsCellView ()
 {
@@ -38,6 +39,21 @@
     _remarkLabel.text = remark;
 }
 
+-(void)setDiscountAfterNumber:(NSNumber *)number
+{
+    _discountAfterLabel.text = [EPSaleBillingHelper moneyDescWithNumber:number];
+}
+
+-(void)setDiscountPreNumber:(NSNumber *)number
+{
+    _discountPreLabel.text = [EPSaleBillingHelper moneyDescWithNumber:number];
+}
+
+-(void)setDiscountRate:(NSNumber *)rate
+{
+    _discountRateLabel.text = [NSString stringWithFormat:@"%@",rate];
+}
+
 -(void)setDiscountAfter:(NSString *)str
 {
     _discountAfterLabel.text = str;
@@ -48,7 +64,7 @@
     _discountPreLabel.text = str;
 }
 
--(void)setDiscountRate:(NSString *)str
+-(void)setDiscountRateString:(NSString *)str
 {
     _discountRateLabel.text = str;
 }

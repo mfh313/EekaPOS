@@ -28,7 +28,7 @@
 
 +(NSString *)moneyDescWithNumber:(NSNumber *)money
 {
-    return @"¥ 20.0";
+    return [NSString stringWithFormat:@"¥ %.1f ",money.floatValue];
 }
 
 +(NSMutableArray *)saleBillingDeductionModels

@@ -127,9 +127,9 @@
 {
     [_goodsCellView setItemCode:detailModel.itemCode itemName:detailModel.itemName];
     [_goodsCellView setRemarkString:@"备注： 无"];
-    [_goodsCellView setDiscountAfter:@"¥ 2151.0"];
-    [_goodsCellView setDiscountPre:@"¥ 2300.0"];
-    [_goodsCellView setDiscountRate:@"0.9"];
+    [_goodsCellView setDiscountPreNumber:detailModel.listPrice];
+    [_goodsCellView setDiscountAfterNumber:detailModel.adjustPrice];
+    [_goodsCellView setDiscountRate:@(0.9)];
 }
 
 //修改商品详情
