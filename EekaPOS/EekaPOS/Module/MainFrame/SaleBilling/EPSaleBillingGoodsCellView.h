@@ -24,6 +24,8 @@
 
 -(void)setItemCode:(NSString *)itemCode itemName:(NSString *)itemName;
 
+-(void)setDiscountRate:(NSNumber *)rate discountPreNumber:(NSNumber *)number;
+
 -(void)setRemarkString:(NSString *)remark;
 
 -(void)setDiscountAfterNumber:(NSNumber *)number;

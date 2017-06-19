@@ -53,11 +53,13 @@
     
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
+    _saleBillingModel = [EPSaleBillingModel new];
+    
+    _saleBillingItemModels = [NSMutableArray array];
+    
     _codeInputView.m_delegate = self;
     _deductionView.m_delegate = self;
     _goodsCellView.m_delegate = self;
-    
-    _saleBillingItemModels = [NSMutableArray array];
 }
 
 -(void)onClickBackBtn:(id)sender
@@ -117,12 +119,16 @@
     EPSaleBillingItemModel *itemModel = _saleBillingItemModels[indexPath.row];
 
     EPSaleBillingGoodsCellView *cellView = (EPSaleBillingGoodsCellView *)cell.m_subContentView;
+    
+    cellView.itemModel = itemModel;
+    
     [cellView setItemCode:itemModel.itemCode itemName:itemModel.itemName];
     [cellView setRemarkString:itemModel.remarks];
-    [cellView setDiscountPreNumber:itemModel.listPrice];
-    [cellView setDiscountAfterNumber:itemModel.receivablePrice];
-    [cellView setDiscountRate:itemModel.discount];
-    cellView.itemModel = itemModel;
+//    [cellView setDiscountPreNumber:itemModel.listPrice];
+//    [cellView setDiscountAfterNumber:itemModel.receivablePrice];
+//    [cellView setDiscountRate:itemModel.discount];
+    
+    [cellView setDiscountRate:itemModel.discount discountPreNumber:itemModel.listPrice];
     
     return cell;
 }
@@ -216,6 +222,8 @@
         }
         
         EPSaleBillingItemModel *itemModel = [EPSaleBillingItemModel MM_modelWithJSON:request.responseJSONObject];
+        itemModel.discount = @(0.90);
+        
         [_saleBillingItemModels addObject:itemModel];
         
         [_tableView reloadData];

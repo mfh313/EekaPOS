@@ -55,6 +55,15 @@
     _remarkLabel.text = [stringHeader stringByAppendingString:remark];
 }
 
+-(void)setDiscountRate:(NSNumber *)rate discountPreNumber:(NSNumber *)number
+{
+    [self setDiscountRate:rate];
+    
+    CGFloat rateAfter = (rate.floatValue) * (number.floatValue);
+    
+    [self setDiscountAfterNumber:@(rateAfter)];
+}
+
 -(void)setDiscountAfterNumber:(NSNumber *)number
 {
     _discountAfterLabel.text = [EPSaleBillingHelper moneyDescWithNumber:number];

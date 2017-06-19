@@ -25,6 +25,7 @@
 {
     [super awakeFromNib];
     _discountAfterLabel.textColor = [UIColor hx_colorWithHexString:@"0080C0"];
+    _discountInputTextField.text = @"1.0";
     _discountRateLabel.text = @"1.0";
 }
 
