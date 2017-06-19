@@ -36,6 +36,9 @@
     EPSaleBillingModel *_saleBillingModel;
     
     NSMutableArray *_saleBillingItemModels;
+    
+    CGFloat _deductionPrice;
+    CGFloat _allPrice;
 }
 
 @end
@@ -54,6 +57,7 @@
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
     _saleBillingModel = [EPSaleBillingModel new];
+    _saleBillingModel.discount = @(0.85);
     
     _saleBillingItemModels = [NSMutableArray array];
     
@@ -124,10 +128,6 @@
     
     [cellView setItemCode:itemModel.itemCode itemName:itemModel.itemName];
     [cellView setRemarkString:itemModel.remarks];
-//    [cellView setDiscountPreNumber:itemModel.listPrice];
-//    [cellView setDiscountAfterNumber:itemModel.receivablePrice];
-//    [cellView setDiscountRate:itemModel.discount];
-    
     [cellView setDiscountRate:itemModel.discount discountPreNumber:itemModel.listPrice];
     
     return cell;
@@ -148,9 +148,36 @@
     
     EPSaleBillingDiscountInputView *cellView = (EPSaleBillingDiscountInputView *)cell.m_subContentView;
 
+    [cellView setDiscountRate:_saleBillingModel.discount];
     
+    [self calculationAllPriceAndReceivablePrice];
+    
+    [cellView setReceivablePrice:@(_deductionPrice) allPrice:@(_allPrice)];
     
     return cell;
+}
+
+-(void)calculationAllPriceAndReceivablePrice
+{
+    _allPrice = 0;
+    _deductionPrice = 0;
+    
+    for (int i = 0; i < _saleBillingItemModels.count; i++)
+    {
+        EPSaleBillingItemModel *itemModel = _saleBillingItemModels[i];
+        
+        _allPrice += itemModel.listPrice.floatValue;
+        
+        if (itemModel.isSpecialDiscount) {
+            
+            _deductionPrice += itemModel.listPrice.floatValue * itemModel.discount.floatValue;
+        }
+        else
+        {
+            _deductionPrice += itemModel.listPrice.floatValue * _saleBillingModel.discount.floatValue;
+        }
+
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -222,7 +249,8 @@
         }
         
         EPSaleBillingItemModel *itemModel = [EPSaleBillingItemModel MM_modelWithJSON:request.responseJSONObject];
-        itemModel.discount = @(0.90);
+        itemModel.discount = _saleBillingModel.discount;
+        itemModel.isSpecialDiscount = NO;
         
         [_saleBillingItemModels addObject:itemModel];
         
@@ -327,30 +355,34 @@
     [self onClickCameraScanBtn];
 }
 
-//-(void)getIndividual:(NSString *)telephone
-//{
-//    __weak typeof(self) weakSelf = self;
-//    
-//    EPGetIndividualApi *getIndividualApi = [EPGetIndividualApi new];
-//    getIndividualApi.brandId = @(1001);
-//    getIndividualApi.telephone = telephone;
-//    
-//    [getIndividualApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
-//        
-//        if (!getIndividualApi.messageSuccess) {
-//            [self showTips:getIndividualApi.errorMessage];
-//            return;
-//        }
-//        
-//        __strong typeof(weakSelf) strongSelf = weakSelf;
-//        
-//        
-//    } failure:^(YTKBaseRequest * request) {
-//        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
-//        [self showTips:errorDesc];
-//    }];
-//}
+/*
 
+-(void)getIndividual:(NSString *)telephone
+{
+    __weak typeof(self) weakSelf = self;
+    
+    EPGetIndividualApi *getIndividualApi = [EPGetIndividualApi new];
+    getIndividualApi.brandId = @(1001);
+    getIndividualApi.telephone = telephone;
+    
+    [getIndividualApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        if (!getIndividualApi.messageSuccess) {
+            [self showTips:getIndividualApi.errorMessage];
+            return;
+        }
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        
+    } failure:^(YTKBaseRequest * request) {
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
+    }];
+}
+
+*/
+ 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     

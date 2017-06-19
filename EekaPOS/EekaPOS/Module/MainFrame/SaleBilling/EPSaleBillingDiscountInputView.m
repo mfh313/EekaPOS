@@ -32,6 +32,7 @@
 -(void)setDiscountRate:(NSNumber *)discountRate
 {
     _discountRateLabel.text = [NSString stringWithFormat:@"%@",discountRate];
+    _discountInputTextField.text = [NSString stringWithFormat:@"%@",discountRate];
 }
 
 -(void)setReceivablePrice:(NSNumber *)receivablePrice allPrice:(NSNumber *)discountPre

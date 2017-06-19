@@ -29,6 +29,8 @@
     
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapGoodsCellView)];
     [self addGestureRecognizer:tapGes];
+    
+    _discountPreLabel.textColor = [UIColor lightGrayColor];
 }
 
 -(void)onTapGoodsCellView
@@ -62,6 +64,7 @@
     CGFloat rateAfter = (rate.floatValue) * (number.floatValue);
     
     [self setDiscountAfterNumber:@(rateAfter)];
+    [self setDiscountPreNumber:number];
 }
 
 -(void)setDiscountAfterNumber:(NSNumber *)number
@@ -71,7 +74,11 @@
 
 -(void)setDiscountPreNumber:(NSNumber *)number
 {
-    _discountPreLabel.text = [EPSaleBillingHelper moneyDescWithNumber:number];
+    NSMutableAttributedString *price = [[NSMutableAttributedString alloc] initWithString:[EPSaleBillingHelper moneyDescWithNumber:number]];
+    [price addAttribute:NSStrikethroughStyleAttributeName value:@(NSUnderlinePatternSolid | NSUnderlineStyleSingle) range:NSMakeRange(0, price.length)];
+    
+    _discountPreLabel.attributedText = price;
+
 }
 
 -(void)setDiscountRate:(NSNumber *)rate
