@@ -24,9 +24,11 @@
 #import "EPSaleBillingItemModel.h"
 #import "EPSaleBillingDiscountInputView.h"
 #import "EPSaleBillingPhoneInputView.h"
+#import "EPSaleBillingCashierCellView.h"
+#import "EPSaleBillingGuidesCellView.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
-                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,UITableViewDataSource,UITableViewDelegate>
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     __weak IBOutlet EPSaleBillingDeductionView *_deductionView;
@@ -36,7 +38,12 @@
     EPGetIndividualApi *_getIndividualApi;
     EPSaleBillingModel *_saleBillingModel;
     
+
     NSMutableArray *_saleBillingItemModels;
+    NSMutableArray *_saleBillingDeductions;
+    
+    EPEntitityEmployeeModel *_selectCashier;
+    NSMutableArray *_selectGuides;
     
     CGFloat _deductionPrice;
     CGFloat _allPrice;
@@ -62,6 +69,8 @@
     _saleBillingModel.phone = @"15813818620";
     
     _saleBillingItemModels = [NSMutableArray array];
+    _saleBillingDeductions = [NSMutableArray array];
+    _selectGuides = [NSMutableArray array];
     
     _codeInputView.m_delegate = self;
     _deductionView.m_delegate = self;
@@ -92,6 +101,22 @@
     {
         return 1;
     }
+    else if (section == 3)
+    {
+        return 1;
+    }
+    else if (section == 4)
+    {
+        return _saleBillingDeductions.count;
+    }
+    else if (section == 5)
+    {
+        return 1;
+    }
+    else if (section == 6)
+    {
+        return 1;
+    }
     
     return 0;
 }
@@ -111,6 +136,22 @@
     else if (section == 2)
     {
         return [self tableView:tableView telePhoneCellForRowAtIndexPath:indexPath];
+    }
+    else if (section == 3)
+    {
+        return [self tableView:tableView saleBillingDeductionInputCellForRowAtIndexPath:indexPath];
+    }
+    else if (section == 4)
+    {
+        
+    }
+    else if (section == 5)
+    {
+        return [self tableView:tableView cashierCellForRowAtIndexPath:indexPath];
+    }
+    else if (section == 6)
+    {
+        return [self tableView:tableView guidesCellForRowAtIndexPath:indexPath];
     }
     
     return [UITableViewCell new];
@@ -215,6 +256,82 @@
     _saleBillingModel.phone = phone;
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView saleBillingDeductionInputCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingDeductionInput"];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingDeductionInput"];
+        EPSaleBillingDeductionView *cellView = [EPSaleBillingDeductionView nibView];
+        cellView.m_delegate = self;
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingDeductionView *cellView = (EPSaleBillingDeductionView *)cell.m_subContentView;
+    
+    return cell;
+}
+
+
+
+
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cashierCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingCashierCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingCashierCell"];
+        EPSaleBillingCashierCellView *cellView = [EPSaleBillingCashierCellView nibView];
+        cellView.m_delegate = self;
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingCashierCellView *cellView = (EPSaleBillingCashierCellView *)cell.m_subContentView;
+    [cellView setCashierString:_selectCashier.contactName];
+    
+    return cell;
+}
+
+#pragma mark - EPSaleBillingCashierCellViewDelegate
+-(void)onClickCashierCellView
+{
+    [self showSaleBillingEmployeeSelectView];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView guidesCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingCashierCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingCashierCell"];
+        EPSaleBillingGuidesCellView *cellView = [EPSaleBillingGuidesCellView nibView];
+        cellView.m_delegate = self;
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingGuidesCellView *cellView = (EPSaleBillingGuidesCellView *)cell.m_subContentView;
+    [cellView setGuidesString:[self selectGuiderNames]];
+    
+    return cell;
+}
+
+#pragma mark - EPSaleBillingGuidesCellViewDelegate
+-(void)onClickGuidesCellView
+{
+    [self showSaleGuidesVC];
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger section = indexPath.section;
@@ -227,6 +344,22 @@
         return 75.0;
     }
     else if (section == 2)
+    {
+        return 46.0;
+    }
+    else if (section == 3)
+    {
+        return 128.0;
+    }
+    else if (section == 4)
+    {
+        return 40.0;
+    }
+    else if (section == 5)
+    {
+        return 46.0;
+    }
+    else if (section == 6)
     {
         return 46.0;
     }
@@ -354,13 +487,16 @@
 #pragma mark - EPSaleBillingEmployeeSelectViewDelegate
 -(void)didSelectEmployee:(EPEntitityEmployeeModel *)selectEmployee view:(EPSaleBillingEmployeeSelectView *)view
 {
-    NSLog(@"选中收银员=%@",selectEmployee.contactName);
+    _selectCashier = selectEmployee;
+    _saleBillingModel.cashier = _selectCashier.contactID.stringValue;
+    
+    [_tableView reloadData];
     
     [view removeFromSuperview];
     view = nil;
 }
 
-//选择销售人员
+//选择导购员
 -(void)showSaleGuidesVC
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SaleBilling" bundle:nil];
@@ -374,24 +510,43 @@
 #pragma mark - EPSaleGuideSelectViewControllerDelegate
 -(void)didSelectEmployees:(NSMutableArray *)selectEmployees viewController:(EPSaleGuideSelectViewController *)viewController
 {
+    _selectGuides = selectEmployees;
+    
+    [_tableView reloadData];
+}
+
+-(NSString *)selectGuiderNames
+{
     NSMutableArray *nameArray = [NSMutableArray array];
-    for (int i = 0; i < selectEmployees.count; i++) {
-        EPEntitityEmployeeModel *employee = selectEmployees[i];
+    for (int i = 0; i < _selectGuides.count; i++) {
+        EPEntitityEmployeeModel *employee = _selectGuides[i];
         [nameArray addObject:employee.contactName];
     }
     
-    NSString *guiders = [nameArray componentsJoinedByString:@"、"];
-    NSLog(@"guiders=%@",guiders);
+    NSString *guiders = [nameArray componentsJoinedByString:@","];
+    return guiders;
 }
 
-- (IBAction)onClickSaveBtn:(id)sender {
-    [self showSaleBillingEmployeeSelectView];
-//    [self showSaleGuidesVC];
-//    [self showSaleBillingDeductionTypeSelectView];
+-(NSString *)selectGuiderIds
+{
+    NSMutableArray *contactIDs = [NSMutableArray array];
+    for (int i = 0; i < _selectGuides.count; i++) {
+        EPEntitityEmployeeModel *employee = _selectGuides[i];
+        [contactIDs addObject:employee.contactID];
+    }
+    
+    NSString *selectGuiderIds = [contactIDs componentsJoinedByString:@","];
+    return selectGuiderIds;
 }
 
-- (IBAction)onClickScanBtn:(id)sender {
+- (IBAction)onClickScanBtn:(id)sender
+{
     [self onClickCameraScanBtn];
+}
+
+- (IBAction)onClickSaveBtn:(id)sender
+{
+    
 }
 
 /*

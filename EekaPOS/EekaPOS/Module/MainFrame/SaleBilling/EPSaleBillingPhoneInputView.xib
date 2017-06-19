@@ -16,17 +16,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="会员手机号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfw-Vg-4xw">
-                    <rect key="frame" x="15" y="19.5" width="76.5" height="30"/>
+                    <rect key="frame" x="15" y="19.5" width="80" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="2mW-aU-RNp"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="Gjq-ow-KXh"/>
+                        <constraint firstAttribute="width" constant="80" id="gD5-WU-4K7"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1sV-br-eQ4">
-                    <rect key="frame" x="111.5" y="19" width="239.5" height="30"/>
+                    <rect key="frame" x="115" y="19" width="236" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="GvE-CG-k17"/>
                     </constraints>

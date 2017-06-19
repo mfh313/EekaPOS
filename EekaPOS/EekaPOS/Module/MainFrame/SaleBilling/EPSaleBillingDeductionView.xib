@@ -94,7 +94,6 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QAG-jb-TWS">
                             <rect key="frame" x="180" y="16" width="100" height="30"/>
-                            <color key="backgroundColor" red="0.5000192175" green="1" blue="0.39297160050000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="IuB-0b-y9L"/>
                                 <constraint firstAttribute="width" constant="100" id="ofo-6c-Vf8"/>
