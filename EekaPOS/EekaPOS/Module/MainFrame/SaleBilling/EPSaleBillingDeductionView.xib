@@ -15,13 +15,6 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="126"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-r8-jAO" customClass="MMOnePixLine">
-                    <rect key="frame" x="0.0" y="0.0" width="390" height="1"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="4J7-r5-40G"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wz9-kW-84n">
                     <rect key="frame" x="0.0" y="1" width="290" height="61"/>
                     <subviews>
@@ -133,7 +126,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="4Ri-r8-jAO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2xi-Sn-rrG"/>
+                <constraint firstItem="Wz9-kW-84n" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="1" id="Aad-A1-ay3"/>
                 <constraint firstItem="amN-h0-eNw" firstAttribute="leading" secondItem="Wz9-kW-84n" secondAttribute="trailing" id="Ckc-Yg-yxC"/>
                 <constraint firstAttribute="bottom" secondItem="pGK-ba-LUB" secondAttribute="bottom" id="J3I-Ob-m3A"/>
                 <constraint firstItem="UTC-7J-VvN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JIM-te-meU"/>
@@ -149,9 +142,6 @@
                 <constraint firstItem="UTC-7J-VvN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XAU-B2-GEV"/>
                 <constraint firstAttribute="bottom" secondItem="amN-h0-eNw" secondAttribute="bottom" id="ZbE-9g-lve"/>
                 <constraint firstItem="pGK-ba-LUB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ajN-Mc-Swv"/>
-                <constraint firstAttribute="trailing" secondItem="4Ri-r8-jAO" secondAttribute="trailing" id="e5h-JO-gWv"/>
-                <constraint firstItem="Wz9-kW-84n" firstAttribute="top" secondItem="4Ri-r8-jAO" secondAttribute="bottom" id="hjE-OB-tdu"/>
-                <constraint firstItem="4Ri-r8-jAO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lFj-bQ-cjp"/>
                 <constraint firstItem="amN-h0-eNw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uLJ-XH-bta"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
