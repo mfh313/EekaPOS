@@ -7,6 +7,7 @@
 //
 
 #import "EPSaleBillingDiscountInputView.h"
+#import "EPSaleBillingHelper.h"
 
 @interface EPSaleBillingDiscountInputView () <UITextFieldDelegate>
 {
@@ -37,8 +38,11 @@
 
 -(void)setReceivablePrice:(NSNumber *)receivablePrice allPrice:(NSNumber *)discountPre
 {
-    _discountPreLabel.text = [NSString stringWithFormat:@"%@",discountPre];
-    _discountAfterLabel.text = [NSString stringWithFormat:@"%@",receivablePrice];
+    _discountAfterLabel.text = [NSString stringWithFormat:@"%@",[EPSaleBillingHelper moneyDescWithNumber:receivablePrice]];
+    
+    NSMutableAttributedString *price = [[NSMutableAttributedString alloc] initWithString:[EPSaleBillingHelper moneyDescWithNumber:discountPre]];
+    [price addAttribute:NSStrikethroughStyleAttributeName value:@(NSUnderlinePatternSolid | NSUnderlineStyleSingle) range:NSMakeRange(0, price.length)];
+    _discountPreLabel.attributedText = price;
 }
 
 @end
