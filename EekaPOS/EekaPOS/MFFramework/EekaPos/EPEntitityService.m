@@ -52,4 +52,11 @@
     return m_employees;
 }
 
+
+-(NSMutableArray *)getEntititySallerList
+{
+    return m_employees;
+}
+
+
 @end

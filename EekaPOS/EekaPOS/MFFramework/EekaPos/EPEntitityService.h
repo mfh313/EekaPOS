@@ -15,5 +15,7 @@
 
 -(void)getEntitityDetail;
 -(NSMutableArray *)getEntitityEmployees;
+-(NSMutableArray *)getEntititySallerList;
+
 
 @end

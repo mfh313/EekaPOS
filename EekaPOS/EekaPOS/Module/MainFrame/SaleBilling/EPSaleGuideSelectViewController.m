@@ -16,9 +16,9 @@
     UISearchBar *_searchBar;
     __weak IBOutlet MFUITableView *_tableView;
     
-    NSMutableArray *_entitityEmployees;
+    NSMutableArray *_entititySallerList;
     
-    NSMutableArray *_selectedEmployees;
+    NSMutableArray *_selectedSallers;
     
 }
 
@@ -37,16 +37,16 @@
     
     EPEntitityService *entitityService = [[MMServiceCenter defaultCenter] getService:[EPEntitityService class]];
     
-    _entitityEmployees = [entitityService getEntitityEmployees];
+    _entititySallerList = [entitityService getEntititySallerList];
     
-    _selectedEmployees = [NSMutableArray array];
+    _selectedSallers = [NSMutableArray array];
     
 }
 
 -(void)onClickRightDoneBtn
 {
     if ([self.m_delegate respondsToSelector:@selector(didSelectEmployees:viewController:)]) {
-        [self.m_delegate didSelectEmployees:_selectedEmployees viewController:self];
+        [self.m_delegate didSelectEmployees:_selectedSallers viewController:self];
     }
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -59,7 +59,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _entitityEmployees.count;
+    return _entititySallerList.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,11 +77,11 @@
     
     EPSaleGuideSelectCellView *cellView = (EPSaleGuideSelectCellView *)cell.m_subContentView;
     
-    EPEntitityEmployeeModel *employeeModel = _entitityEmployees[indexPath.row];
+    EPEntitityEmployeeModel *employeeModel = _entititySallerList[indexPath.row];
     
     [cellView setName:employeeModel.contactName];
     
-    if ([_selectedEmployees containsObject:employeeModel]) {
+    if ([_selectedSallers containsObject:employeeModel]) {
         [cellView setItemSelected:YES];
     }
     else
@@ -96,14 +96,14 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    EPEntitityEmployeeModel *employeeModel = _entitityEmployees[indexPath.row];
+    EPEntitityEmployeeModel *employeeModel = _entititySallerList[indexPath.row];
     
-    if ([_selectedEmployees containsObject:employeeModel]) {
-        [_selectedEmployees removeObject:employeeModel];
+    if ([_selectedSallers containsObject:employeeModel]) {
+        [_selectedSallers removeObject:employeeModel];
     }
     else
     {
-       [_selectedEmployees addObject:employeeModel];
+       [_selectedSallers addObject:employeeModel];
     }
     
     [_tableView reloadData];
