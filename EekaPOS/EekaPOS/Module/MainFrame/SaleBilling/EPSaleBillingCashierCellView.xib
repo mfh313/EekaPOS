@@ -39,14 +39,24 @@
                     </constraints>
                     <state key="normal" image="more"/>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9oM-io-Nnb" customClass="MMOnePixLine">
+                    <rect key="frame" x="0.0" y="60" width="407" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ZpZ-Nu-L8f"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="5dP-2h-Rj4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="4JX-hT-mDZ"/>
+                <constraint firstAttribute="trailing" secondItem="9oM-io-Nnb" secondAttribute="trailing" id="4ar-nE-09A"/>
                 <constraint firstItem="zP2-Lb-eKf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="EIp-JR-Ufv"/>
+                <constraint firstItem="9oM-io-Nnb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ggc-gc-Xu0"/>
                 <constraint firstItem="zP2-Lb-eKf" firstAttribute="leading" secondItem="5dP-2h-Rj4" secondAttribute="trailing" constant="20" id="NM3-ee-2BD"/>
                 <constraint firstItem="5vw-16-cup" firstAttribute="leading" secondItem="zP2-Lb-eKf" secondAttribute="trailing" constant="20" id="Vfi-ZJ-r5u"/>
                 <constraint firstItem="zP2-Lb-eKf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dc2-Xn-yvo"/>
+                <constraint firstAttribute="bottom" secondItem="9oM-io-Nnb" secondAttribute="bottom" id="dfP-uQ-dNK"/>
                 <constraint firstItem="5dP-2h-Rj4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="glH-mF-Grk"/>
                 <constraint firstAttribute="trailing" secondItem="5vw-16-cup" secondAttribute="trailing" constant="20" id="igu-bS-SwH"/>
                 <constraint firstItem="5vw-16-cup" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nXJ-nB-UwG"/>

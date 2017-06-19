@@ -39,16 +39,26 @@
                     </constraints>
                     <state key="normal" image="more"/>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2A-9p-Ncj" customClass="MMOnePixLine">
+                    <rect key="frame" x="0.0" y="62" width="442" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="kPb-PB-bMC"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="7Oo-ms-SBU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="3hh-Ok-4RI"/>
                 <constraint firstItem="7Oo-ms-SBU" firstAttribute="leading" secondItem="8j9-Br-SuY" secondAttribute="trailing" constant="20" id="94M-fX-teq"/>
+                <constraint firstAttribute="trailing" secondItem="I2A-9p-Ncj" secondAttribute="trailing" id="9NH-4w-pCf"/>
                 <constraint firstAttribute="trailing" secondItem="oq7-5q-FbC" secondAttribute="trailing" constant="20" id="Cmg-yi-tmd"/>
                 <constraint firstItem="8j9-Br-SuY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WNc-Wb-hW6"/>
                 <constraint firstItem="7Oo-ms-SBU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bw2-bt-bte"/>
                 <constraint firstItem="oq7-5q-FbC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dQT-4H-iff"/>
+                <constraint firstAttribute="bottom" secondItem="I2A-9p-Ncj" secondAttribute="bottom" id="db9-8c-tN1"/>
                 <constraint firstItem="oq7-5q-FbC" firstAttribute="leading" secondItem="7Oo-ms-SBU" secondAttribute="trailing" constant="20" id="i8G-w4-gn2"/>
+                <constraint firstItem="I2A-9p-Ncj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kTv-lr-Z5M"/>
                 <constraint firstItem="8j9-Br-SuY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="ltH-Q5-SWg"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
