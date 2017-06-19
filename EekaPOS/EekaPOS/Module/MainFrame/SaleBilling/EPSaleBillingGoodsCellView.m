@@ -27,5 +27,30 @@
     [super awakeFromNib];
 }
 
+-(void)setItemCode:(NSString *)itemCode itemName:(NSString *)itemName
+{
+    _itemCodeLabel.text = itemCode;
+    _itemNameLabel.text = itemName;
+}
+
+-(void)setRemarkString:(NSString *)remark
+{
+    _remarkLabel.text = remark;
+}
+
+-(void)setDiscountAfter:(NSString *)str
+{
+    _discountAfterLabel.text = str;
+}
+
+-(void)setDiscountPre:(NSString *)str
+{
+    _discountPreLabel.text = str;
+}
+
+-(void)setDiscountRate:(NSString *)str
+{
+    _discountRateLabel.text = str;
+}
 
 @end

@@ -18,13 +18,14 @@
 #import "EPSaleGuideSelectViewController.h"
 #import "EPSaleBillingHelper.h"
 #import "EPSaleBillingGoodsEditView.h"
+#import "EPSaleBillingGoodsCellView.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
                                     EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
-    
     __weak IBOutlet EPSaleBillingDeductionView *_deductionView;
+    __weak IBOutlet EPSaleBillingGoodsCellView *_goodsCellView;
     
     NSMutableArray *_goodsDetailModel;
     
@@ -96,7 +97,7 @@
 
 -(void)getItemDetail:(NSString *)itemCode
 {
-//    __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     
     EPGetGoodsDetailApi *goodsDetailApi = [EPGetGoodsDetailApi new];
     goodsDetailApi.itemCode = itemCode;
@@ -113,13 +114,22 @@
         EPGoodsDetailModel *detailModel = [EPGoodsDetailModel MM_modelWithJSON:request.responseJSONObject];
         [_goodsDetailModel addObject:detailModel];
         
-//        __strong typeof(weakSelf) strongSelf = weakSelf;
-        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf setTest:detailModel];
         
     } failure:^(YTKBaseRequest * request) {
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];
     }];
+}
+
+-(void)setTest:(EPGoodsDetailModel *)detailModel
+{
+    [_goodsCellView setItemCode:detailModel.itemCode itemName:detailModel.itemName];
+    [_goodsCellView setRemarkString:@"备注： 无"];
+    [_goodsCellView setDiscountAfter:@"¥ 2151.0"];
+    [_goodsCellView setDiscountPre:@"¥ 2300.0"];
+    [_goodsCellView setDiscountRate:@"0.9"];
 }
 
 //修改商品详情

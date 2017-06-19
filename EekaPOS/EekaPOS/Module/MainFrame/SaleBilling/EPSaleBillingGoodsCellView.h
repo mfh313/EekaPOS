@@ -10,4 +10,14 @@
 
 @interface EPSaleBillingGoodsCellView : MMUIBridgeView
 
+-(void)setItemCode:(NSString *)itemCode itemName:(NSString *)itemName;
+
+-(void)setRemarkString:(NSString *)remark;
+
+-(void)setDiscountAfter:(NSString *)str;
+
+-(void)setDiscountPre:(NSString *)str;
+
+-(void)setDiscountRate:(NSString *)str;
+
 @end
