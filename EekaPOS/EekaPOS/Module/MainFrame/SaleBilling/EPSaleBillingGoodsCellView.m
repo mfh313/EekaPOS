@@ -46,7 +46,13 @@
 
 -(void)setRemarkString:(NSString *)remark
 {
-    _remarkLabel.text = remark;
+    NSString *stringHeader = @"备注：";
+    if (!remark) {
+        _remarkLabel.text = [stringHeader stringByAppendingString:@"无"];
+        return;
+    }
+    
+    _remarkLabel.text = [stringHeader stringByAppendingString:remark];
 }
 
 -(void)setDiscountAfterNumber:(NSNumber *)number

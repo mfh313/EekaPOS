@@ -22,6 +22,7 @@
 #import "EPGetIndividualApi.h"
 #import "EPSaleBillingModel.h"
 #import "EPSaleBillingItemModel.h"
+#import "EPSaleBillingDiscountInputView.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
                                     EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -59,10 +60,15 @@
     _saleBillingItemModels = [NSMutableArray array];
 }
 
+-(void)onClickBackBtn:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 7;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -70,15 +76,92 @@
     if (section == 0) {
         return _saleBillingItemModels.count;
     }
+    else if (section == 1)
+    {
+        return 1;
+    }
     
     return 0;
 }
 
 
--(void)onClickBackBtn:(id)sender
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    NSUInteger section = indexPath.section;
+    if (section == 0)
+    {
+        return [self tableView:tableView saleBillingDiscountCellForRowAtIndexPath:indexPath];
+    }
+    else if (section == 1)
+    {
+        return [self tableView:tableView discountInputCellForRowAtIndexPath:indexPath];
+    }
+    
+    return [UITableViewCell new];
 }
+
+-(UITableViewCell *)tableView:(UITableView *)tableView saleBillingDiscountCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingDiscountCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingDiscountCell"];
+        EPSaleBillingGoodsCellView *cellView = [EPSaleBillingGoodsCellView nibView];
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    
+    EPSaleBillingItemModel *itemModel = _saleBillingItemModels[indexPath.row];
+
+    EPSaleBillingGoodsCellView *cellView = (EPSaleBillingGoodsCellView *)cell.m_subContentView;
+    [cellView setItemCode:itemModel.itemCode itemName:itemModel.itemName];
+    [cellView setRemarkString:itemModel.remarks];
+    [cellView setDiscountPreNumber:itemModel.listPrice];
+    [cellView setDiscountAfterNumber:itemModel.receivablePrice];
+    [cellView setDiscountRate:itemModel.discount];
+    cellView.itemModel = itemModel;
+    
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView discountInputCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"discountInputCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"discountInputCell"];
+        EPSaleBillingDiscountInputView *cellView = [EPSaleBillingDiscountInputView nibView];
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingDiscountInputView *cellView = (EPSaleBillingDiscountInputView *)cell.m_subContentView;
+
+    
+    
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger section = indexPath.section;
+    if (section == 0)
+    {
+        return 80.0;
+    }
+    else if (section == 1)
+    {
+        return 75.0;
+    }
+    
+    return 0;
+}
+
 
 #pragma mark - EPSaleBillingDeductionViewDelegate
 -(void)onClickDeductionBtn:(EPSaleBillingDeductionView *)view
@@ -120,8 +203,6 @@
 
 -(void)getItemDetail:(NSString *)itemCode
 {
-    __weak typeof(self) weakSelf = self;
-    
     EPGetGoodsDetailApi *goodsDetailApi = [EPGetGoodsDetailApi new];
     goodsDetailApi.itemCode = itemCode;
     goodsDetailApi.animatingText = @"正在查询商品信息...";
@@ -137,24 +218,12 @@
         EPSaleBillingItemModel *itemModel = [EPSaleBillingItemModel MM_modelWithJSON:request.responseJSONObject];
         [_saleBillingItemModels addObject:itemModel];
         
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        [strongSelf setTest:itemModel];
+        [_tableView reloadData];
         
     } failure:^(YTKBaseRequest * request) {
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];
     }];
-}
-
--(void)setTest:(EPSaleBillingItemModel *)itemModel
-{
-    [_goodsCellView setItemCode:itemModel.itemCode itemName:itemModel.itemName];
-    [_goodsCellView setRemarkString:itemModel.remarks];
-    [_goodsCellView setDiscountPreNumber:itemModel.listPrice];
-    [_goodsCellView setDiscountAfterNumber:itemModel.receivablePrice];
-    [_goodsCellView setDiscountRate:itemModel.discount];
-    
-    _goodsCellView.itemModel = itemModel;
 }
 
 -(void)onClickGoodsCellView:(EPSaleBillingItemModel *)itemModel

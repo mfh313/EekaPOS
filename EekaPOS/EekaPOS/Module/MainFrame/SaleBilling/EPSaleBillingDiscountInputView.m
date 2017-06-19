@@ -28,6 +28,15 @@
     _discountRateLabel.text = @"1.0";
 }
 
+-(void)setDiscountRate:(NSNumber *)discountRate
+{
+    _discountRateLabel.text = [NSString stringWithFormat:@"%@",discountRate];
+}
 
+-(void)setReceivablePrice:(NSNumber *)receivablePrice allPrice:(NSNumber *)discountPre
+{
+    _discountPreLabel.text = [NSString stringWithFormat:@"%@",discountPre];
+    _discountAfterLabel.text = [NSString stringWithFormat:@"%@",receivablePrice];
+}
 
 @end

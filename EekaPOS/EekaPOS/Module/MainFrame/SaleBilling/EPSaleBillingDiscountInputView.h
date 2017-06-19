@@ -10,4 +10,8 @@
 
 @interface EPSaleBillingDiscountInputView : MMUIBridgeView
 
+-(void)setDiscountRate:(NSNumber *)discountRate;
+
+-(void)setReceivablePrice:(NSNumber *)receivablePrice allPrice:(NSNumber *)discountPre;
+
 @end
