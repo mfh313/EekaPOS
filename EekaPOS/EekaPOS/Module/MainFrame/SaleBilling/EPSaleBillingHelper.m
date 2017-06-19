@@ -26,6 +26,12 @@
 #pragma mark - EPSaleBillingHelper
 @implementation EPSaleBillingHelper
 
++(float)roundFloat:(float)price{
+    
+    NSString *floatString = [NSString stringWithFormat:@"%.2f",price];
+    return (floorf(price*100 + 0.5))/100;
+}
+
 +(NSString *)moneyDescWithNumber:(NSNumber *)money
 {
     return [NSString stringWithFormat:@"¥ %.1f ",money.floatValue];

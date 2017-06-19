@@ -244,7 +244,9 @@
                 <outlet property="_itemNameLabel" destination="tdj-5P-WwO" id="SvS-lv-sB3"/>
                 <outlet property="_itemSizeBgImageView" destination="OVz-Ol-fZc" id="QIr-gZ-gMt"/>
                 <outlet property="_itemSizeInputTextField" destination="jF9-Fs-f2b" id="hJw-Kz-8hE"/>
+                <outlet property="_mainBgView" destination="OZy-bQ-uM6" id="wkJ-hU-8ei"/>
                 <outlet property="_rateBgImageView" destination="hdU-98-cwX" id="Ca8-Ap-a33"/>
+                <outlet property="_rateTextField" destination="m83-Fr-bd5" id="UUS-p0-Ujt"/>
                 <outlet property="_remarkBgImageView" destination="una-Sp-3wS" id="5ul-x3-60m"/>
                 <outlet property="_remarkTextField" destination="Iz4-TE-bYD" id="H3M-Wp-7bS"/>
             </connections>

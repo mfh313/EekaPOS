@@ -8,6 +8,8 @@
 
 #import "EPSaleBillingGoodsEditView.h"
 #import "EPGoodsDetailModel.h"
+#import "TKeyBoardView.h"
+#import "EPSaleBillingHelper.h"
 
 @interface EPSaleBillingGoodsEditView ()<UITextFieldDelegate>
 {
@@ -17,10 +19,15 @@
     __weak IBOutlet UILabel *_itemNameLabel;
     __weak IBOutlet UITextField *_itemSizeInputTextField;
     __weak IBOutlet UITextField *_remarkTextField;
+    __weak IBOutlet UITextField *_rateTextField;
     __weak IBOutlet UIImageView *_rateBgImageView;
     __weak IBOutlet UIImageView *_itemSizeBgImageView;
     __weak IBOutlet UIImageView *_remarkBgImageView;
     
+    __weak IBOutlet UIView *_mainBgView;
+    
+    TKeyBoardView *_sizeBoardView;
+    TKeyBoardView *_rateBoardView;
 }
 
 @end
@@ -41,6 +48,22 @@
     
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
     [_bgTapView addGestureRecognizer:tapGes];
+    
+    UITapGestureRecognizer *tapMainGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapMainBgView)];
+    [_mainBgView addGestureRecognizer:tapMainGes];
+    
+    
+    
+    _sizeBoardView = [TKeyBoardView kBoardView];
+    _sizeBoardView.keyTextField = _itemSizeInputTextField;
+    
+    _rateBoardView = [TKeyBoardView kBoardView];
+    _rateBoardView.keyTextField = _rateTextField;
+}
+
+-(void)onTapMainBgView
+{
+    [self endEditing:YES];
 }
 
 -(void)onTap
@@ -86,8 +109,22 @@
 }
 
 - (IBAction)onClickDoneBtn:(id)sender {
+    
+    NSString *sizeString = _itemSizeInputTextField.text;
+    NSString *rateString = _rateTextField.text;
+    NSString *remarkString = _remarkTextField.text;
+    
+    NSNumber *sizeNumber = @(sizeString.intValue);
+    
+    if (remarkString.intValue > 1) {
+        return;
+    }
+    
+    float rateFloat = [EPSaleBillingHelper roundFloat:rateString.floatValue];
+    NSNumber *rateNumber = @(rateFloat);
+    
     if ([self.m_delegate respondsToSelector:@selector(editGoodsWithSize:rate:remark:goodsModel:)]) {
-        [self.m_delegate editGoodsWithSize:@(39) rate:@(0.47) remark:@"生日假期,尽快" goodsModel:self.goodsModel];
+        [self.m_delegate editGoodsWithSize:sizeNumber rate:rateNumber remark:remarkString goodsModel:self.goodsModel];
     }
 }
 
