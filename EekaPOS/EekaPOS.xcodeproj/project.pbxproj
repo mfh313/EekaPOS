@@ -103,6 +103,8 @@
 		AC34B9D01EF7C44100852993 /* TKeyBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC34B9CE1EF7C44100852993 /* TKeyBoardView.xib */; };
 		AC34B9D31EF7E88000852993 /* EPSaleBillingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34B9D21EF7E88000852993 /* EPSaleBillingModel.m */; };
 		AC34B9D61EF7EAA200852993 /* EPSaleBillingItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34B9D51EF7EAA200852993 /* EPSaleBillingItemModel.m */; };
+		AC34B9D91EF80C8700852993 /* EPSaleBillingPhoneInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34B9D81EF80C8700852993 /* EPSaleBillingPhoneInputView.m */; };
+		AC34B9DB1EF80E9000852993 /* EPSaleBillingPhoneInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC34B9DA1EF80E9000852993 /* EPSaleBillingPhoneInputView.xib */; };
 		AC7CC3591EF26CC300564823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3581EF26CC300564823 /* main.m */; };
 		AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */; };
 		AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3601EF26CC300564823 /* EekaPosMain.storyboard */; };
@@ -565,6 +567,9 @@
 		AC34B9D21EF7E88000852993 /* EPSaleBillingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingModel.m; sourceTree = "<group>"; };
 		AC34B9D41EF7EAA200852993 /* EPSaleBillingItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingItemModel.h; sourceTree = "<group>"; };
 		AC34B9D51EF7EAA200852993 /* EPSaleBillingItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingItemModel.m; sourceTree = "<group>"; };
+		AC34B9D71EF80C8700852993 /* EPSaleBillingPhoneInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingPhoneInputView.h; sourceTree = "<group>"; };
+		AC34B9D81EF80C8700852993 /* EPSaleBillingPhoneInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingPhoneInputView.m; sourceTree = "<group>"; };
+		AC34B9DA1EF80E9000852993 /* EPSaleBillingPhoneInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingPhoneInputView.xib; sourceTree = "<group>"; };
 		AC7CC3541EF26CC300564823 /* EekaPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EekaPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7CC3581EF26CC300564823 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC7CC35A1EF26CC300564823 /* EekaPosAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EekaPosAppDelegate.h; sourceTree = "<group>"; };
@@ -1735,6 +1740,9 @@
 				AC32BE791EF69565001A6291 /* EPSaleGuideSelectCellView.h */,
 				AC32BE7A1EF69565001A6291 /* EPSaleGuideSelectCellView.m */,
 				AC32BE7C1EF69736001A6291 /* EPSaleGuideSelectCellView.xib */,
+				AC34B9D71EF80C8700852993 /* EPSaleBillingPhoneInputView.h */,
+				AC34B9D81EF80C8700852993 /* EPSaleBillingPhoneInputView.m */,
+				AC34B9DA1EF80E9000852993 /* EPSaleBillingPhoneInputView.xib */,
 				AC32BE441EF600AD001A6291 /* EPGetGoodsDetailApi.h */,
 				AC32BE451EF600AD001A6291 /* EPGetGoodsDetailApi.m */,
 				AC32BE811EF6A207001A6291 /* EPSaleBillingHelper.h */,
@@ -2580,6 +2588,7 @@
 				AC32BE941EF6B7F6001A6291 /* EPSaleBillingGoodsEditView.xib in Resources */,
 				AC34B9CA1EF7C36400852993 /* keyboard.xcassets in Resources */,
 				AC32BE7D1EF69736001A6291 /* EPSaleGuideSelectCellView.xib in Resources */,
+				AC34B9DB1EF80E9000852993 /* EPSaleBillingPhoneInputView.xib in Resources */,
 				AC9514A91EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib in Resources */,
 				AC32BE701EF67227001A6291 /* EPSaleBillingEmployeeSelectView.xib in Resources */,
 				AC950EC11EF5227B003EEBD0 /* SaleBilling.storyboard in Resources */,
@@ -2632,6 +2641,7 @@
 				AC32BE5C1EF625AC001A6291 /* EPGetEntitityDetailApi.m in Sources */,
 				AC95146E1EF52D67003EEBD0 /* ZXPDF417ScanningDecoder.m in Sources */,
 				AC26E88E1EF3DDA600C4FAA6 /* YTKChainRequestAgent.m in Sources */,
+				AC34B9D91EF80C8700852993 /* EPSaleBillingPhoneInputView.m in Sources */,
 				AC95142A1EF52D67003EEBD0 /* ZXGenericMultipleBarcodeReader.m in Sources */,
 				AC950E911EF4D337003EEBD0 /* UIView+threadHook.m in Sources */,
 				AC9514891EF52D67003EEBD0 /* ZXQRCodeFinderPatternFinder.m in Sources */,

@@ -23,6 +23,7 @@
 #import "EPSaleBillingModel.h"
 #import "EPSaleBillingItemModel.h"
 #import "EPSaleBillingDiscountInputView.h"
+#import "EPSaleBillingPhoneInputView.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
                                     EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,UITableViewDataSource,UITableViewDelegate>
