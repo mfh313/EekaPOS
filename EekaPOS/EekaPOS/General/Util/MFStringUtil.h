@@ -12,4 +12,8 @@
 
 + (BOOL)isBlankString:(NSString *)string;
 
++(NSString *)URLEncodedString:(NSString *)str;
+
++(NSString *)URLDecodedString:(NSString *)str;
+
 @end
