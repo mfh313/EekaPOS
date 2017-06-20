@@ -10,6 +10,7 @@
 #import "EPAccountMgr.h"
 #import "EPMainFrameCellView.h"
 #import "EPSaleBillingMainViewController.h"
+#import "EPSaleBillingListViewController.h"
 
 @interface EPMainFrameViewController () 
 {
@@ -59,7 +60,10 @@
 
 -(void)pushBillingListVC
 {
-
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SaleBilling" bundle:nil];
+    EPSaleBillingListViewController *saleBillingListVC = [storyboard instantiateViewControllerWithIdentifier:@"EPSaleBillingListViewController"];
+    saleBillingListVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:saleBillingListVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

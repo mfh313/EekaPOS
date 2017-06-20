@@ -234,5 +234,30 @@
             </objects>
             <point key="canvasLocation" x="377" y="-15"/>
         </scene>
+        <!--Sale Billing List View Controller-->
+        <scene sceneID="RKN-HI-c7E">
+            <objects>
+                <viewController storyboardIdentifier="EPSaleBillingListViewController" id="vC8-sT-Inq" customClass="EPSaleBillingListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b3Z-GF-mjW"/>
+                        <viewControllerLayoutGuide type="bottom" id="GBG-Nd-7lE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="EPSaleBillingListViewController" id="8lV-SW-6mw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0B-dG-6HU">
+                                <rect key="frame" x="125" y="149" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O7D-fh-UQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1319" y="-58"/>
+        </scene>
     </scenes>
 </document>

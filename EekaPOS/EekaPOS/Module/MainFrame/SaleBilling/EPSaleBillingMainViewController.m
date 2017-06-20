@@ -287,7 +287,6 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView deductionItemCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"deductionItemCell"];
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     if (cell == nil) {
         cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"deductionItemCell"];
