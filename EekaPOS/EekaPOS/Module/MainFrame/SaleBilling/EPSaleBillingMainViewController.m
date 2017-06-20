@@ -602,7 +602,21 @@
 
 -(NSString *)selectDeductions
 {
-    return @"抹零:25.0&电子现金劵:60.0&纸质现金劵:90.0&公司满减:20.0";
+    NSMutableArray *deductionsArray = [NSMutableArray array];
+    for (int i = 0; i < _saleBillingDeductions.count; i++)
+    {
+        EPSaleBillingDeductionModel *model = _saleBillingDeductions[i];
+        NSString *name = model.name;
+        NSNumber *value = model.value;
+        
+        NSString *deduction = [NSString stringWithFormat:@"%@:%@",name,value];
+        [deductionsArray addObject:deduction];
+    }
+    
+    NSString *deductions = [deductionsArray componentsJoinedByString:@"&"];
+    return deductions;
+    
+//    return @"抹零:25.0&电子现金劵:60.0&纸质现金劵:90.0&公司满减:20.0";
 }
 
 -(BOOL)canSaveSaleBilling
