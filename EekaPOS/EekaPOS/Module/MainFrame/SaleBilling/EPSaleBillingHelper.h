@@ -26,6 +26,8 @@
 #pragma mark - EPSaleBillingHelper
 @interface EPSaleBillingHelper : NSObject
 
++(NSString *)dateStringWithDate:(NSDate *)date;
+
 +(float)roundFloat:(float)price;
 
 +(NSString *)moneyDescWithNumber:(NSNumber *)money;

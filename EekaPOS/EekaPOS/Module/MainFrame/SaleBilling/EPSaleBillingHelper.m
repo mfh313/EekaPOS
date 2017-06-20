@@ -27,6 +27,16 @@
 #pragma mark - EPSaleBillingHelper
 @implementation EPSaleBillingHelper
 
++(NSString *)dateStringWithDate:(NSDate *)date
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *strDate = [dateFormatter stringFromDate:date];
+    
+    //@"2017-06-20 09:25"
+    return strDate;
+}
+
 +(float)roundFloat:(float)price{
     
     NSString *floatString = [NSString stringWithFormat:@"%.2f",price];

@@ -600,6 +600,11 @@
     [self saveSaleBilling];
 }
 
+-(NSString *)selectDeductions
+{
+    return @"抹零:25.0&电子现金劵:60.0&纸质现金劵:90.0&公司满减:20.0";
+}
+
 -(void)saveSaleBilling
 {
     if (_saleBillingItemModels.count == 0) {
@@ -610,14 +615,10 @@
     _saleBillingModel.storeName = accountMgr.loginModel.fullname;
     _saleBillingModel.cashier = _selectCashier.contactName;
     _saleBillingModel.guider = [self selectGuiderNames];
-    _saleBillingModel.sellDate = @"2017-06-20 09:25";
-    _saleBillingModel.printDate = @"2017-06-20 09:25";
-    
-    
-    NSString *deductionStr = @"抹零:25.0&电子现金劵:60.0&纸质现金劵:90.0&公司满减:20.0";
-    _saleBillingModel.deductionStr = deductionStr;
+    _saleBillingModel.deductionStr = [self selectDeductions];
+    _saleBillingModel.sellDate = [EPSaleBillingHelper dateStringWithDate:[NSDate date]];
+    _saleBillingModel.printDate = [EPSaleBillingHelper dateStringWithDate:[NSDate date]];
 
-    
     _saleBillingModel.amountPrice = 7980;
     _saleBillingModel.trueRece = 10.0;
     _saleBillingModel.discount = @(0.85);
