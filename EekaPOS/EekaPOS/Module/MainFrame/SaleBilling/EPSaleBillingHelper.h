@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#define EPSaleBillingDeductionKey_1  @"NotCountTheSmallChange"
+#define EPSaleBillingDeductionKey_2  @"E-cash"
+#define EPSaleBillingDeductionKey_3  @"PaperCash"
+#define EPSaleBillingDeductionKey_4  @"CompanyFullDiscount"
+
 @interface EPSaleBillingDeductionModel : NSObject
 
 @property(nonatomic,strong) NSString *name;
 @property(nonatomic,strong) NSString *key;
+@property(nonatomic,strong) NSNumber *value;
 
 +(instancetype)objectWithName:(NSString *)name key:(NSString *)key;
 

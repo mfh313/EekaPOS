@@ -26,8 +26,12 @@
     [super awakeFromNib];
     
     _typeImageView.image = MFImage(@"sale1");
-    _typeNameLabel.text = @"抹零";
-    _deductionValueLabel.text = [EPSaleBillingHelper moneyDescWithNumber:@(10.0)];
+}
+
+-(void)setDeductionItemModel:(EPSaleBillingDeductionModel *)model
+{
+    _typeNameLabel.text = model.name;
+    _deductionValueLabel.text = [EPSaleBillingHelper moneyDescWithNumber:model.value];
 }
 
 @end

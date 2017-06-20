@@ -8,6 +8,9 @@
 
 #import "MMUIBridgeView.h"
 
+@class EPSaleBillingDeductionModel;
 @interface EPSaleBillingDeductionSelectedItemView : MMUIBridgeView
+
+-(void)setDeductionItemModel:(EPSaleBillingDeductionModel *)model;
 
 @end

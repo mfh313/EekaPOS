@@ -7,13 +7,14 @@
 //
 
 #import "MMUIBridgeView.h"
+#import "EPSaleBillingHelper.h"
 
 @class EPSaleBillingDeductionView;
 @protocol EPSaleBillingDeductionViewDelegate <NSObject>
 
 @optional
--(void)onClickDeductionBtn:(EPSaleBillingDeductionView *)view;
--(void)onClickAddBtn:(EPSaleBillingDeductionView *)view;
+-(void)onClickDeductionBtn:(EPSaleBillingDeductionView *)view deductionModel:(EPSaleBillingDeductionModel *)deductionModel;
+-(void)onClickAddBtn:(EPSaleBillingDeductionView *)view deductionModel:(EPSaleBillingDeductionModel *)deductionModel;
 
 @end
 
@@ -21,6 +22,6 @@
 
 @property (nonatomic,weak) id<EPSaleBillingDeductionViewDelegate> m_delegate;
 
--(void)setDeductionTypeName:(NSString *)type;
+-(void)setDeductionMode:(EPSaleBillingDeductionModel *)deductionModel;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "EPSaleBillingHelper.h"
 
+
 @implementation EPSaleBillingDeductionModel
 
 +(instancetype)objectWithName:(NSString *)name key:(NSString *)key
@@ -39,10 +40,10 @@
 
 +(NSMutableArray *)saleBillingDeductionModels
 {
-    EPSaleBillingDeductionModel *model1 = [EPSaleBillingDeductionModel objectWithName:@"抹零" key:@"1"];
-    EPSaleBillingDeductionModel *model2 = [EPSaleBillingDeductionModel objectWithName:@"电子现金劵" key:@"2"];
-    EPSaleBillingDeductionModel *model3 = [EPSaleBillingDeductionModel objectWithName:@"纸质现金劵" key:@"3"];
-    EPSaleBillingDeductionModel *model4 = [EPSaleBillingDeductionModel objectWithName:@"公司满减" key:@"4"];
+    EPSaleBillingDeductionModel *model1 = [EPSaleBillingDeductionModel objectWithName:@"抹零" key:EPSaleBillingDeductionKey_1];
+    EPSaleBillingDeductionModel *model2 = [EPSaleBillingDeductionModel objectWithName:@"电子现金劵" key:EPSaleBillingDeductionKey_2];
+    EPSaleBillingDeductionModel *model3 = [EPSaleBillingDeductionModel objectWithName:@"纸质现金劵" key:EPSaleBillingDeductionKey_3];
+    EPSaleBillingDeductionModel *model4 = [EPSaleBillingDeductionModel objectWithName:@"公司满减" key:EPSaleBillingDeductionKey_4];
     
     return [NSMutableArray arrayWithObjects:model1,model2,model3,model4, nil];
 }

@@ -26,6 +26,7 @@
 #import "EPSaleBillingPhoneInputView.h"
 #import "EPSaleBillingCashierCellView.h"
 #import "EPSaleBillingGuidesCellView.h"
+#import "EPSaleBillingDeductionSelectedItemView.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
                                     EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -49,6 +50,8 @@
     
     CGFloat _deductionPrice;
     CGFloat _allPrice;
+    
+    EPSaleBillingDeductionModel *_selectedDeductionModel;
 }
 
 @end
@@ -145,7 +148,7 @@
     }
     else if (section == 4)
     {
-        
+        return [self tableView:tableView deductionItemCellForRowAtIndexPath:indexPath];
     }
     else if (section == 5)
     {
@@ -274,14 +277,31 @@
     cell.m_subContentView.frame = cell.contentView.bounds;
     
     EPSaleBillingDeductionView *cellView = (EPSaleBillingDeductionView *)cell.m_subContentView;
+    [cellView setDeductionMode:_selectedDeductionModel];
     
     return cell;
 }
 
-
-
-
-
+-(UITableViewCell *)tableView:(UITableView *)tableView deductionItemCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"deductionItemCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"deductionItemCell"];
+        EPSaleBillingDeductionSelectedItemView *cellView = [EPSaleBillingDeductionSelectedItemView nibView];
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingDeductionSelectedItemView *cellView = (EPSaleBillingDeductionSelectedItemView *)cell.m_subContentView;
+    
+    EPSaleBillingDeductionModel *deductionModel = _saleBillingDeductions[indexPath.row];
+    [cellView setDeductionItemModel:deductionModel];
+    
+    return cell;
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cashierCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -372,13 +392,26 @@
 
 
 #pragma mark - EPSaleBillingDeductionViewDelegate
--(void)onClickDeductionBtn:(EPSaleBillingDeductionView *)view
+
+-(void)onClickDeductionBtn:(EPSaleBillingDeductionView *)view deductionModel:(EPSaleBillingDeductionModel *)deductionModel
 {
     [self showSaleBillingDeductionTypeSelectView];
 }
 
--(void)onClickAddBtn:(EPSaleBillingDeductionView *)view
+-(void)onClickAddBtn:(EPSaleBillingDeductionView *)view deductionModel:(EPSaleBillingDeductionModel *)deductionModel
 {
+    if (!_selectedDeductionModel) {
+        [self showTips:@"请选择扣减项目"];
+        return;
+    }
+
+    deductionModel.value = @(10.0);
+    
+    _selectedDeductionModel.value = deductionModel.value;
+    
+    [_saleBillingDeductions addObject:deductionModel];
+    
+    [_tableView reloadData];
     
 }
 
@@ -484,7 +517,9 @@
 
 -(void)didSelectSaleBillingDeductionType:(EPSaleBillingDeductionModel *)typemodel
 {
-    [_deductionView setDeductionTypeName:typemodel.name];
+    _selectedDeductionModel = typemodel;
+    
+    [_tableView reloadData];
 }
 
 //选择收银员

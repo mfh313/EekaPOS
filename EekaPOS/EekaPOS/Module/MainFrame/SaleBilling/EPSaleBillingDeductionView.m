@@ -13,6 +13,8 @@
     __weak IBOutlet UILabel *_deductionTypeLabel;
     __weak IBOutlet UITextField *_deductionTextField;
     __weak IBOutlet MFUIButton *_deductionTypeBtn;
+    
+    EPSaleBillingDeductionModel *_deductionModel;
 }
 
 @end
@@ -27,6 +29,13 @@
     
 }
 
+-(void)setDeductionMode:(EPSaleBillingDeductionModel *)deductionModel
+{
+    _deductionModel = deductionModel;
+    
+    [self setDeductionTypeName:deductionModel.name];
+}
+
 -(void)setDeductionTypeName:(NSString *)type
 {
     _deductionTypeLabel.text = type;
@@ -34,14 +43,14 @@
 
 -(void)onClickDeductionBtn
 {
-    if ([self.m_delegate respondsToSelector:@selector(onClickDeductionBtn:)]) {
-        [self.m_delegate onClickDeductionBtn:self];
+    if ([self.m_delegate respondsToSelector:@selector(onClickDeductionBtn:deductionModel:)]) {
+        [self.m_delegate onClickDeductionBtn:self deductionModel:_deductionModel];
     }
 }
 
 - (IBAction)onClickAddBtn:(id)sender {
-    if ([self.m_delegate respondsToSelector:@selector(onClickAddBtn:)]) {
-        [self.m_delegate onClickAddBtn:self];
+    if ([self.m_delegate respondsToSelector:@selector(onClickAddBtn:deductionModel:)]) {
+        [self.m_delegate onClickAddBtn:self deductionModel:_deductionModel];
     }
 }
 
