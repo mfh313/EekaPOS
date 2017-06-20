@@ -47,7 +47,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="应收金额：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6m3-hS-PEn">
-                                        <rect key="frame" x="201" y="11" width="76.5" height="18"/>
+                                        <rect key="frame" x="220" y="11" width="76.5" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" id="A7W-lK-wAq"/>
                                         </constraints>
@@ -55,8 +55,8 @@
                                         <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 4890.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGG-PU-MiI">
-                                        <rect key="frame" x="287.5" y="5" width="63.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGG-PU-MiI">
+                                        <rect key="frame" x="306.5" y="5" width="44.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" id="GGv-Ap-NNa"/>
                                             <constraint firstAttribute="height" constant="30" id="Qmr-HB-3oA"/>
@@ -189,6 +189,7 @@
                         <outlet property="_codeInputView" destination="zxw-Qe-2bz" id="hWh-sp-xgJ"/>
                         <outlet property="_deductionView" destination="eFr-M6-RFZ" id="fPp-gV-U7V"/>
                         <outlet property="_goodsCellView" destination="POT-vt-Elx" id="07m-kN-tL3"/>
+                        <outlet property="_receivablePriceLabel" destination="PGG-PU-MiI" id="xSg-45-xpF"/>
                         <outlet property="_tableView" destination="AJv-df-MEo" id="0Y8-BF-59f"/>
                     </connections>
                 </viewController>

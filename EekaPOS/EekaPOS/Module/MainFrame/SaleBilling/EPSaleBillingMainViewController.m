@@ -35,6 +35,8 @@
     __weak IBOutlet EPSaleBillingGoodsCellView *_goodsCellView;
     __weak IBOutlet UITableView *_tableView;
     
+    __weak IBOutlet UILabel *_receivablePriceLabel;
+    
     EPGetIndividualApi *_getIndividualApi;
     EPSaleBillingModel *_saleBillingModel;
     
