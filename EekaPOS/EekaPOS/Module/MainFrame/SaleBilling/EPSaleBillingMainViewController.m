@@ -602,6 +602,10 @@
 
 -(void)saveSaleBilling
 {
+    if (_saleBillingItemModels.count == 0) {
+        return;
+    }
+    
     EPAccountMgr *accountMgr = [[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
     _saleBillingModel.storeName = accountMgr.loginModel.fullname;
     _saleBillingModel.cashier = _selectCashier.contactName;
