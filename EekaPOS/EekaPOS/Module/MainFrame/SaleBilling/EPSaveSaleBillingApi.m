@@ -7,6 +7,7 @@
 //
 
 #import "EPSaveSaleBillingApi.h"
+#import "MFModelHelper.h"
 
 @implementation EPSaveSaleBillingApi
 
@@ -28,8 +29,29 @@
     
     params[@"token"] = token;
     
+    NSDictionary *modelJSON = [self.saleBillingModel MMmodelToJSONObject];
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:modelJSON
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    params[@"saleBillingStr"] = jsonString;
+    
     return params;
     
 }
+
+//- (NSString*)dictionaryToJson:(NSDictionary *)dic
+//
+//{
+//    NSError *parseError = nil;
+//    
+//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
+//    
+//    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+//    
+//}
 
 @end

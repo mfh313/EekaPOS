@@ -15,4 +15,6 @@
 
 + (instancetype)MM_modelWithDictionary:(NSDictionary *)dictionary;
 
+- (NSDictionary *)MMmodelToJSONObject;
+
 @end

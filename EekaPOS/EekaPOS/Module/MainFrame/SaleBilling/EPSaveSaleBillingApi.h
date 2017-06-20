@@ -7,7 +7,10 @@
 //
 
 #import "MFNetworkRequest.h"
+#import "EPSaleBillingModel.h"
 
 @interface EPSaveSaleBillingApi : MFNetworkRequest
+
+@property(nonatomic) EPSaleBillingModel *saleBillingModel;
 
 @end

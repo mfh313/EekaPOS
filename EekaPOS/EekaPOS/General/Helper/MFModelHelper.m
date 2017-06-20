@@ -18,6 +18,9 @@
     return [self yy_modelWithDictionary:dictionary];
 }
 
-
+-(NSDictionary *)MMmodelToJSONObject
+{
+    return (NSDictionary *)[self yy_modelToJSONObject];
+}
 
 @end

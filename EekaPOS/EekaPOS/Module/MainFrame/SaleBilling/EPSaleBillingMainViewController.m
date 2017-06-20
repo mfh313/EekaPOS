@@ -27,6 +27,7 @@
 #import "EPSaleBillingCashierCellView.h"
 #import "EPSaleBillingGuidesCellView.h"
 #import "EPSaleBillingDeductionSelectedItemView.h"
+#import "EPSaveSaleBillingApi.h"
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
                                     EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -52,6 +53,7 @@
     CGFloat _allPrice;
     
     EPSaleBillingDeductionModel *_selectedDeductionModel;
+    
 }
 
 @end
@@ -70,6 +72,7 @@
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
     _saleBillingModel = [EPSaleBillingModel new];
+    
     _saleBillingModel.discount = @(0.85);
     _saleBillingModel.phone = @"15813818620";
     
@@ -265,7 +268,6 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView saleBillingDeductionInputCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingDeductionInput"];
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     if (cell == nil) {
         cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingDeductionInput"];
@@ -600,7 +602,45 @@
 
 -(void)saveSaleBilling
 {
+    EPAccountMgr *accountMgr = [[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
+    _saleBillingModel.storeName = accountMgr.loginModel.fullname;
+    _saleBillingModel.cashier = _selectCashier.contactName;
+    _saleBillingModel.guider = [self selectGuiderNames];
+    _saleBillingModel.sellDate = @"2017-06-20 09:25";
+    _saleBillingModel.printDate = @"2017-06-20 09:25";
     
+    
+    NSString *deductionStr = @"抹零:25.0&电子现金劵:60.0&纸质现金劵:90.0&公司满减:20.0";
+    _saleBillingModel.deductionStr = deductionStr;
+
+    
+    _saleBillingModel.amountPrice = 7980;
+    _saleBillingModel.trueRece = 10.0;
+    _saleBillingModel.discount = @(0.85);
+    
+    _saleBillingModel.itemList = _saleBillingItemModels;
+    
+    __weak typeof(self) weakSelf = self;
+    
+    EPSaveSaleBillingApi *saveSaleBillingApi = [EPSaveSaleBillingApi new];
+    saveSaleBillingApi.saleBillingModel = _saleBillingModel;
+    saveSaleBillingApi.animatingText = @"正在销售开单...";
+    saveSaleBillingApi.animatingView = MFAppWindow;
+    [saveSaleBillingApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (!saveSaleBillingApi.messageSuccess) {
+            [strongSelf showTips:saveSaleBillingApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf showTips:@"销售开单成功"];
+        
+    } failure:^(YTKBaseRequest * request) {
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

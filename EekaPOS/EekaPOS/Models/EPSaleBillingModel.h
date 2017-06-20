@@ -18,8 +18,8 @@
 @property(nonatomic,strong) NSString *sellDate;
 @property(nonatomic,strong) NSString *printDate;
 
-@property(nonatomic,strong) NSNumber *amountPrice;
-@property(nonatomic,strong) NSNumber *trueRece;
+@property(nonatomic,assign) float amountPrice;
+@property(nonatomic,assign) float trueRece;
 @property(nonatomic,strong) NSNumber *discount;
 
 @property(nonatomic,assign) int status;
