@@ -3148,7 +3148,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.eeka.eekapos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = eekapos;
 				PROVISIONING_PROFILE = "e6dbaf96-1abe-4d7f-8ff4-b0fc6b4b55e3";
 				PROVISIONING_PROFILE_SPECIFIER = "EekaPOS开发描述文件";
 			};
@@ -3172,7 +3172,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.eeka.eekapos;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = eekapos;
 				PROVISIONING_PROFILE = "8981bcaf-fbca-46bc-b23b-9059ea3622a4";
 				PROVISIONING_PROFILE_SPECIFIER = "EekaPOS发布描述文件";
 			};
