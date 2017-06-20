@@ -9,6 +9,7 @@
 #import "EPSaleBillingListViewController.h"
 #import "EPSaleBillingHelper.h"
 #import "EPGetSaleBillingListApi.h"
+#import "EPSaleBillingListCellView.h"
 
 @interface EPSaleBillingListViewController ()
 {
@@ -74,6 +75,8 @@
         [self showTips:errorDesc];
     }];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

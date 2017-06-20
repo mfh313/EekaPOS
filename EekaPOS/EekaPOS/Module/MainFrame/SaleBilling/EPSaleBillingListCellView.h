@@ -10,4 +10,10 @@
 
 @interface EPSaleBillingListCellView : MMUIBridgeView
 
+-(void)setNames:(NSString *)names;
+
+-(void)setTimeString:(NSString *)time;
+
+-(void)setStatusString:(NSString *)status;
+
 @end
