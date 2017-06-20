@@ -165,6 +165,7 @@
     if (cell == nil) {
         cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingDiscountCell"];
         EPSaleBillingGoodsCellView *cellView = [EPSaleBillingGoodsCellView nibView];
+        cellView.m_delegate = self;
         cell.m_subContentView = cellView;
     }
     
