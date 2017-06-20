@@ -247,20 +247,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4p-Qg-KQA">
-                                <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWK-di-gXG">
-                                        <rect key="frame" x="0.0" y="0.0" width="186.5" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="186.5" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="前">
-                                            <color key="titleColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onClickSaveBtn:" destination="CHT-Nm-EaG" eventType="touchUpInside" id="sqs-C8-oFO"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQJ-RI-FFf" customClass="MMOnePixLine">
-                                        <rect key="frame" x="187" y="15" width="1" height="30"/>
+                                        <rect key="frame" x="187" y="10" width="1" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="fVn-vt-VP5"/>
@@ -268,29 +269,40 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AB-lE-uCy">
-                                        <rect key="frame" x="188.5" y="0.0" width="186.5" height="60"/>
+                                        <rect key="frame" x="188.5" y="0.0" width="186.5" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="后">
-                                            <color key="titleColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="onClickSaveBtn:" destination="CHT-Nm-EaG" eventType="touchUpInside" id="2cR-pk-OGO"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQu-aO-67y" customClass="MMOnePixLine">
+                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="pub-y0-Cdi"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="4Bs-ff-UbF"/>
+                                    <constraint firstAttribute="height" constant="50" id="4Bs-ff-UbF"/>
                                     <constraint firstItem="MQJ-RI-FFf" firstAttribute="centerY" secondItem="I4p-Qg-KQA" secondAttribute="centerY" id="5nc-a7-eUm"/>
                                     <constraint firstItem="dWK-di-gXG" firstAttribute="top" secondItem="I4p-Qg-KQA" secondAttribute="top" id="GkT-cS-1gm"/>
                                     <constraint firstItem="dWK-di-gXG" firstAttribute="width" secondItem="8AB-lE-uCy" secondAttribute="width" id="HGP-3p-38y"/>
                                     <constraint firstItem="dWK-di-gXG" firstAttribute="leading" secondItem="I4p-Qg-KQA" secondAttribute="leading" id="Hsd-6E-hx2"/>
                                     <constraint firstItem="dWK-di-gXG" firstAttribute="centerY" secondItem="I4p-Qg-KQA" secondAttribute="centerY" id="Stl-dO-KgC"/>
+                                    <constraint firstAttribute="bottom" secondItem="JQu-aO-67y" secondAttribute="bottom" id="Y9r-pg-jjU"/>
                                     <constraint firstItem="8AB-lE-uCy" firstAttribute="top" secondItem="I4p-Qg-KQA" secondAttribute="top" id="Yyc-QG-Gq6"/>
                                     <constraint firstItem="MQJ-RI-FFf" firstAttribute="centerX" secondItem="I4p-Qg-KQA" secondAttribute="centerX" id="Z6R-pO-FbX"/>
                                     <constraint firstItem="8AB-lE-uCy" firstAttribute="centerY" secondItem="I4p-Qg-KQA" secondAttribute="centerY" id="lza-4b-raR"/>
+                                    <constraint firstAttribute="trailing" secondItem="JQu-aO-67y" secondAttribute="trailing" id="mgr-6G-U3G"/>
                                     <constraint firstAttribute="trailing" secondItem="8AB-lE-uCy" secondAttribute="trailing" id="rHS-Z0-dQe"/>
                                     <constraint firstItem="8AB-lE-uCy" firstAttribute="leading" secondItem="dWK-di-gXG" secondAttribute="trailing" constant="2" id="tMY-0w-aPS"/>
+                                    <constraint firstItem="JQu-aO-67y" firstAttribute="leading" secondItem="I4p-Qg-KQA" secondAttribute="leading" id="u48-sR-3AY"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -301,6 +313,10 @@
                             <constraint firstAttribute="trailing" secondItem="I4p-Qg-KQA" secondAttribute="trailing" id="ABM-a8-Igr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_dateBeginBtn" destination="dWK-di-gXG" id="Qcu-fN-pc3"/>
+                        <outlet property="_dateEndBtn" destination="8AB-lE-uCy" id="fsm-qd-CoD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7D-fh-UQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

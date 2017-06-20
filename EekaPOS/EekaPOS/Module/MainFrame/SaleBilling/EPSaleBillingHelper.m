@@ -37,6 +37,15 @@
     return strDate;
 }
 
++(NSString *)yMDdateStringWithDate:(NSDate *)date
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *strDate = [dateFormatter stringFromDate:date];
+    
+    return strDate;
+}
+
 +(float)roundFloat:(float)price{
     
     NSString *floatString = [NSString stringWithFormat:@"%.2f",price];

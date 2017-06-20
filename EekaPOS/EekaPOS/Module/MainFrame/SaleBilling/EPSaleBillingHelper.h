@@ -28,6 +28,8 @@
 
 +(NSString *)dateStringWithDate:(NSDate *)date;
 
++(NSString *)yMDdateStringWithDate:(NSDate *)date;
+
 +(float)roundFloat:(float)price;
 
 +(NSString *)moneyDescWithNumber:(NSNumber *)money;
