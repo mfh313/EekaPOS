@@ -32,9 +32,8 @@
     self.title = @"开单列表";
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
-    _dateBegin = [EPSaleBillingHelper yMDdateStringWithDate:[NSDate date]];
     _dateEnd = [EPSaleBillingHelper yMDdateStringWithDate:[NSDate date]];
-    
+    _dateBegin = [EPSaleBillingHelper getMonthBeginWith:_dateEnd];
     
     NSString *dateBeginBtnTitle = [NSString stringWithFormat:@"%@ 开始",_dateBegin];
     NSString *dateEndBtnTitle = [NSString stringWithFormat:@"%@ 结束",_dateEnd];
@@ -42,7 +41,6 @@
     [_dateEndBtn setTitle:dateEndBtnTitle forState:UIControlStateNormal];
     
     _saleBillingList = [NSMutableArray array];
-    
     [self getSaleBillingList];
     
 }

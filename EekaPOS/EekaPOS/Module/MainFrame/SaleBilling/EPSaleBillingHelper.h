@@ -26,6 +26,8 @@
 #pragma mark - EPSaleBillingHelper
 @interface EPSaleBillingHelper : NSObject
 
++(NSString *)getMonthBeginWith:(NSString *)dateStr;
+
 +(NSString *)dateStringWithDate:(NSDate *)date;
 
 +(NSString *)yMDdateStringWithDate:(NSDate *)date;
