@@ -11,7 +11,7 @@
 #import "EPGetSaleBillingListApi.h"
 #import "EPSaleBillingListCellView.h"
 
-@interface EPSaleBillingListViewController ()
+@interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UIButton *_dateBeginBtn;
     __weak IBOutlet UIButton *_dateEndBtn;
@@ -20,6 +20,9 @@
     NSString *_dateEnd;
     
     NSMutableArray *_saleBillingList;
+    
+    __weak IBOutlet MFUITableView *_tableView;
+    
 }
 
 @end

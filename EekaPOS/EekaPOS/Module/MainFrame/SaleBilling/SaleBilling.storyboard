@@ -305,17 +305,26 @@
                                     <constraint firstItem="JQu-aO-67y" firstAttribute="leading" secondItem="I4p-Qg-KQA" secondAttribute="leading" id="u48-sR-3AY"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y4K-2i-ggf" customClass="MFUITableView">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="I4p-Qg-KQA" firstAttribute="leading" secondItem="8lV-SW-6mw" secondAttribute="leading" id="2gV-mU-HNV"/>
                             <constraint firstItem="I4p-Qg-KQA" firstAttribute="top" secondItem="b3Z-GF-mjW" secondAttribute="bottom" id="4cS-Ca-P46"/>
                             <constraint firstAttribute="trailing" secondItem="I4p-Qg-KQA" secondAttribute="trailing" id="ABM-a8-Igr"/>
+                            <constraint firstItem="GBG-Nd-7lE" firstAttribute="top" secondItem="Y4K-2i-ggf" secondAttribute="bottom" id="AZq-UD-WWN"/>
+                            <constraint firstItem="Y4K-2i-ggf" firstAttribute="leading" secondItem="8lV-SW-6mw" secondAttribute="leading" id="aDm-ow-F6V"/>
+                            <constraint firstItem="Y4K-2i-ggf" firstAttribute="centerX" secondItem="8lV-SW-6mw" secondAttribute="centerX" id="hux-WR-4Aa"/>
+                            <constraint firstItem="Y4K-2i-ggf" firstAttribute="top" secondItem="I4p-Qg-KQA" secondAttribute="bottom" id="icy-FX-wej"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="_dateBeginBtn" destination="dWK-di-gXG" id="Qcu-fN-pc3"/>
                         <outlet property="_dateEndBtn" destination="8AB-lE-uCy" id="fsm-qd-CoD"/>
+                        <outlet property="_tableView" destination="Y4K-2i-ggf" id="ilM-wf-hAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7D-fh-UQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
