@@ -605,9 +605,21 @@
     return @"抹零:25.0&电子现金劵:60.0&纸质现金劵:90.0&公司满减:20.0";
 }
 
--(void)saveSaleBilling
+-(BOOL)canSaveSaleBilling
 {
     if (_saleBillingItemModels.count == 0) {
+        [self showTips:@""];
+        return NO;
+    }
+    
+    return YES;
+}
+
+-(void)saveSaleBilling
+{
+    
+    BOOL canSaveSaleBilling = [self canSaveSaleBilling];
+    if (!canSaveSaleBilling) {
         return;
     }
     
