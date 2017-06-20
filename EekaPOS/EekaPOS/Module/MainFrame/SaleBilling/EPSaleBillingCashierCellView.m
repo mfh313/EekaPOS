@@ -22,8 +22,7 @@
     [super awakeFromNib];
     
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapCashierLabel)];
-    _cashierLabel.userInteractionEnabled = YES;
-    [_cashierLabel addGestureRecognizer:tapGes];
+    [self addGestureRecognizer:tapGes];
 }
 
 -(void)onTapCashierLabel
