@@ -461,9 +461,14 @@
                          size:(NSNumber *)size
                          rate:(NSNumber *)rate
             isSpecialDiscount:(BOOL)isSpecialDiscount
-                       remark:(NSString *)remark;
+                       remark:(NSString *)remark
 {
+    itemModel.size = size;
+    itemModel.discount = rate;
+    itemModel.remarks = remark;
+    itemModel.isSpecialDiscount = isSpecialDiscount;
     
+    [_tableView reloadData];
 }
 
 //选择扣减
