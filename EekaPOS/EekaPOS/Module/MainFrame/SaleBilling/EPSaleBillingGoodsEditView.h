@@ -12,7 +12,11 @@
 @protocol EPSaleBillingGoodsEditViewDelegate <NSObject>
 
 @optional
--(void)editGoodsWithSize:(NSNumber *)size rate:(NSNumber *)rate remark:(NSString *)remark itemModel:(EPSaleBillingItemModel *)itemModel;
+-(void)editGoodsWithitemModel:(EPSaleBillingItemModel *)itemModel
+                         size:(NSNumber *)size
+                         rate:(NSNumber *)rate
+            isSpecialDiscount:(BOOL)isSpecialDiscount
+                       remark:(NSString *)remark;
 
 @end
 

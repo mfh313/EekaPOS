@@ -53,7 +53,6 @@
     [_mainBgView addGestureRecognizer:tapMainGes];
     
     
-    
     _sizeBoardView = [TKeyBoardView kBoardView];
     _sizeBoardView.keyTextField = _itemSizeInputTextField;
     
@@ -123,8 +122,8 @@
     float rateFloat = [EPSaleBillingHelper roundFloat:rateString.floatValue];
     NSNumber *rateNumber = @(rateFloat);
     
-    if ([self.m_delegate respondsToSelector:@selector(editGoodsWithSize:rate:remark:itemModel:)]) {
-        [self.m_delegate editGoodsWithSize:sizeNumber rate:rateNumber remark:remarkString itemModel:self.itemModel];
+    if ([self.m_delegate respondsToSelector:@selector(editGoodsWithitemModel:size:rate:isSpecialDiscount:remark:)]) {
+        [self.m_delegate editGoodsWithitemModel:self.itemModel size:sizeNumber rate:rateNumber isSpecialDiscount:NO remark:remarkString];
     }
 }
 
