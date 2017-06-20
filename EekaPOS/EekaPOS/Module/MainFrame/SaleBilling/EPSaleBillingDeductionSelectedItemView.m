@@ -25,7 +25,7 @@
 {
     [super awakeFromNib];
     
-    _typeImageView.image = MFImage(@"sale1");
+    _typeImageView.image = MFImage(@"sale4");
 }
 
 -(void)setDeductionItemModel:(EPSaleBillingDeductionModel *)model
