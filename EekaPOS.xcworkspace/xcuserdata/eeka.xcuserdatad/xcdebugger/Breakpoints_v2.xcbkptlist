@@ -41,28 +41,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EekaPOS/EekaPOS/Module/MainFrame/SaleBilling/EPSaleBillingDeductionView.m"
-            timestampString = "519616261.692303"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "-onClickAddBtn:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "EekaPOS/EekaPOS/Module/MainFrame/SaleBilling/EPSaleBillingMainViewController.m"
-            timestampString = "519616971.593915"
+            timestampString = "519617202.261781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "604"
-            endingLineNumber = "604"
+            startingLineNumber = "603"
+            endingLineNumber = "603"
             landmarkName = "-saveSaleBilling"
             landmarkType = "7">
          </BreakpointContent>
