@@ -120,11 +120,17 @@
     }
     
     float rateFloat = [EPSaleBillingHelper roundFloat:rateString.floatValue];
+    
+    rateFloat = 0.55;
+    BOOL isSpecialDiscount = YES;
+    
     NSNumber *rateNumber = @(rateFloat);
     
     if ([self.m_delegate respondsToSelector:@selector(editGoodsWithitemModel:size:rate:isSpecialDiscount:remark:)]) {
-        [self.m_delegate editGoodsWithitemModel:self.itemModel size:sizeNumber rate:rateNumber isSpecialDiscount:NO remark:remarkString];
+        [self.m_delegate editGoodsWithitemModel:self.itemModel size:sizeNumber rate:rateNumber isSpecialDiscount:isSpecialDiscount remark:remarkString];
     }
+    
+    [self removeFromSuperview];
 }
 
 @end
