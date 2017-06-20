@@ -24,6 +24,7 @@
 
 - (IBAction)onClickLogutBtn:(id)sender {
     [[EPAppViewControllerManager getAppViewControllerManager] jumpToLoginViewController];
+    [[EPAppViewControllerManager getAppViewControllerManager] userLogOut];
 }
 
 

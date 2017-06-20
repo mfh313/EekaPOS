@@ -71,6 +71,11 @@
     return [[self getAppViewControllerManager] getTabBarController];
 }
 
+-(void)userLogOut
+{
+    m_tabbarController = nil;
+}
+
 - (id)getTabBarController
 {
     if (!m_tabbarController) {
