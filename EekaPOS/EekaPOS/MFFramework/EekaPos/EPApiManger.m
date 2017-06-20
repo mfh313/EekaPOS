@@ -43,4 +43,9 @@ NSString const *EPApiUrl = @"https://pos.szyingjia.cn:8888/";
     return MFURLWithPara(@"pos/employee/getIndividual.json");
 }
 
++(NSString *)saveSaleBillingURL
+{
+    return MFURLWithPara(@"pos/employee/saveSaleBilling.json");
+}
+
 @end

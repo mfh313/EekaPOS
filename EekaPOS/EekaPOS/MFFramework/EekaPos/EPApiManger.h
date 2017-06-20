@@ -19,4 +19,6 @@
 
 +(NSString *)getIndividualDetailURL;
 
++(NSString *)saveSaleBillingURL;
+
 @end

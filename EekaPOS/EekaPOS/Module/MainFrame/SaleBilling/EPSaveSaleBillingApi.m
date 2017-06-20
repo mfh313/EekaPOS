@@ -1,18 +1,18 @@
 //
-//  EPGetGoodsDetailApi.m
+//  EPSaveSaleBillingApi.m
 //  EekaPOS
 //
-//  Created by EEKA on 2017/6/18.
+//  Created by EEKA on 2017/6/20.
 //  Copyright © 2017年 eeka. All rights reserved.
 //
 
-#import "EPGetGoodsDetailApi.h"
+#import "EPSaveSaleBillingApi.h"
 
-@implementation EPGetGoodsDetailApi
+@implementation EPSaveSaleBillingApi
 
 -(NSString *)requestUrl
 {
-    return [EPApiManger getItemDetailURL];
+    return [EPApiManger saveSaleBillingURL];
 }
 
 - (YTKRequestMethod)requestMethod {
@@ -27,10 +27,9 @@
     NSString *token = accountMgr.token;
     
     params[@"token"] = token;
-    params[@"itemCode"] = self.itemCode;
     
     return params;
-
+    
 }
 
 @end
