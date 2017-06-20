@@ -413,6 +413,8 @@
     
     [_tableView reloadData];
     
+    _selectedDeductionModel = nil;
+    
 }
 
 #pragma mark - EPSaleBillingItemCodeInputViewDelegate
