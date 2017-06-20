@@ -58,5 +58,32 @@
     return m_employees;
 }
 
+/*
+ 
+ -(void)getIndividual:(NSString *)telephone
+ {
+ __weak typeof(self) weakSelf = self;
+ 
+ EPGetIndividualApi *getIndividualApi = [EPGetIndividualApi new];
+ getIndividualApi.brandId = @(1001);
+ getIndividualApi.telephone = telephone;
+ 
+ [getIndividualApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+ 
+ if (!getIndividualApi.messageSuccess) {
+ [self showTips:getIndividualApi.errorMessage];
+ return;
+ }
+ 
+ __strong typeof(weakSelf) strongSelf = weakSelf;
+ 
+ 
+ } failure:^(YTKBaseRequest * request) {
+ NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+ [self showTips:errorDesc];
+ }];
+ }
+ 
+ */
 
 @end
