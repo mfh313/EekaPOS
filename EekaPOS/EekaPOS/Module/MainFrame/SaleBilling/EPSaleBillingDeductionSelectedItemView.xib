@@ -15,15 +15,12 @@
             <rect key="frame" x="0.0" y="0.0" width="382" height="54"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QY2-Ya-6dE">
-                    <rect key="frame" x="10" y="18.5" width="22" height="17"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="17" id="Skt-TC-Y2b"/>
-                        <constraint firstAttribute="width" constant="22" id="y6Z-ST-PnA"/>
-                    </constraints>
-                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd0-Dc-O4O">
+                    <rect key="frame" x="10" y="16" width="16" height="22"/>
+                    <state key="normal" image="sale4"/>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电子现金劵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BT4-BF-6nz">
-                    <rect key="frame" x="42" y="17" width="77" height="20"/>
+                    <rect key="frame" x="36" y="17" width="77" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Fvj-aU-GEG"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="hdK-5W-JhO"/>
@@ -33,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ¥123.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AJ-07-NTy">
-                    <rect key="frame" x="323" y="17" width="51" height="20"/>
+                    <rect key="frame" x="321" y="17" width="51" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="GJH-SV-2m4"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="Nby-dM-gPD"/>
@@ -45,12 +42,12 @@
             </subviews>
             <color key="backgroundColor" red="0.59607843137254901" green="0.59607843137254901" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="8AJ-07-NTy" secondAttribute="trailing" constant="8" id="3we-I9-1C5"/>
-                <constraint firstItem="BT4-BF-6nz" firstAttribute="leading" secondItem="QY2-Ya-6dE" secondAttribute="trailing" constant="10" id="4vK-co-Lgc"/>
+                <constraint firstAttribute="trailing" secondItem="8AJ-07-NTy" secondAttribute="trailing" constant="10" id="3we-I9-1C5"/>
                 <constraint firstItem="8AJ-07-NTy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Jg3-E1-oBb"/>
-                <constraint firstItem="BT4-BF-6nz" firstAttribute="centerY" secondItem="QY2-Ya-6dE" secondAttribute="centerY" id="U1q-Mq-s5m"/>
-                <constraint firstItem="QY2-Ya-6dE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="u3i-2p-pEQ"/>
-                <constraint firstItem="QY2-Ya-6dE" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ugf-j7-pWb"/>
+                <constraint firstItem="fd0-Dc-O4O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Jqi-a1-SIP"/>
+                <constraint firstItem="BT4-BF-6nz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cr1-np-bFI"/>
+                <constraint firstItem="BT4-BF-6nz" firstAttribute="leading" secondItem="fd0-Dc-O4O" secondAttribute="trailing" constant="10" id="cvU-Xz-woS"/>
+                <constraint firstItem="fd0-Dc-O4O" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pjf-Wc-NV8"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -58,10 +55,13 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="_deductionValueLabel" destination="8AJ-07-NTy" id="BuP-EW-d1G"/>
-                <outlet property="_typeImageView" destination="QY2-Ya-6dE" id="q0S-Vi-200"/>
+                <outlet property="_typeBtn" destination="fd0-Dc-O4O" id="vEe-eI-hKx"/>
                 <outlet property="_typeNameLabel" destination="BT4-BF-6nz" id="TuR-B5-G9x"/>
             </connections>
             <point key="canvasLocation" x="37" y="360"/>
         </view>
     </objects>
+    <resources>
+        <image name="sale4" width="16" height="22"/>
+    </resources>
 </document>

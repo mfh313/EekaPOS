@@ -11,7 +11,7 @@
 
 @interface EPSaleBillingDeductionSelectedItemView ()
 {
-    __weak IBOutlet UIImageView *_typeImageView;
+    __weak IBOutlet UIButton *_typeBtn;
     __weak IBOutlet UILabel *_typeNameLabel;
     __weak IBOutlet UILabel *_deductionValueLabel;
     
@@ -25,7 +25,7 @@
 {
     [super awakeFromNib];
     
-    _typeImageView.image = MFImage(@"sale4");
+    [_typeBtn setImage:MFImage(@"sale4") forState:UIControlStateNormal];
 }
 
 -(void)setDeductionItemModel:(EPSaleBillingDeductionModel *)model
