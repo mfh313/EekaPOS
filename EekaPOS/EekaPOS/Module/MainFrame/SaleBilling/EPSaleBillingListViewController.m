@@ -53,7 +53,7 @@
     EPAccountMgr *accountMgr = [[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
 
     EPGetSaleBillingListApi *listApi = [EPGetSaleBillingListApi new];
-    listApi.startDate = _dateBegin;
+    listApi.startDate = _dateEnd;
     listApi.endDate = _dateEnd;
     listApi.entityName = accountMgr.loginModel.fullname;
     
@@ -77,6 +77,35 @@
     }];
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _saleBillingList.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingEmployeeSelectView"];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingEmployeeSelectView"];
+        EPSaleBillingListCellView *cellView = [EPSaleBillingListCellView nibView];
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingListCellView *cellView = (EPSaleBillingListCellView *)cell.m_subContentView;
+    
+    
+    
+    return cell;
+}
 
 
 - (void)didReceiveMemoryWarning {
