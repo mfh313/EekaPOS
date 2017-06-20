@@ -21,4 +21,6 @@
 
 +(NSString *)saveSaleBillingURL;
 
++(NSString *)getSaleBillingListURL;
+
 @end

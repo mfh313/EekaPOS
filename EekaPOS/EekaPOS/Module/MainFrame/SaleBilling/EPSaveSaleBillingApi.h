@@ -11,6 +11,7 @@
 
 @interface EPSaveSaleBillingApi : MFNetworkRequest
 
-@property(nonatomic) EPSaleBillingModel *saleBillingModel;
+@property(nonatomic,strong) EPSaleBillingModel *saleBillingModel;
 
 @end
+

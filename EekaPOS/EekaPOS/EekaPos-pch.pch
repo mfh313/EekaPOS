@@ -40,5 +40,7 @@
 
 #import "MFCategorys.h"
 
+#import "UIImageView+WebCache.h"
+
 
 #endif /* EekaPos_pch_pch */

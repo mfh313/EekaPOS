@@ -8,6 +8,7 @@
 
 #import "EPSaleBillingListViewController.h"
 #import "EPSaleBillingHelper.h"
+#import "EPGetSaleBillingListApi.h"
 
 @interface EPSaleBillingListViewController ()
 {
@@ -16,6 +17,8 @@
     
     NSString *_dateBegin;
     NSString *_dateEnd;
+    
+    NSMutableArray *_saleBillingList;
 }
 
 @end
@@ -37,6 +40,39 @@
     [_dateBeginBtn setTitle:dateBeginBtnTitle forState:UIControlStateNormal];
     [_dateEndBtn setTitle:dateEndBtnTitle forState:UIControlStateNormal];
     
+    _saleBillingList = [NSMutableArray array];
+    
+    [self getSaleBillingList];
+    
+}
+
+-(void)getSaleBillingList
+{
+    EPAccountMgr *accountMgr = [[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
+
+    EPGetSaleBillingListApi *listApi = [EPGetSaleBillingListApi new];
+    listApi.startDate = _dateBegin;
+    listApi.endDate = _dateEnd;
+    listApi.entityName = accountMgr.loginModel.fullname;
+    
+    __weak typeof(self) weakSelf = self;
+    listApi.animatingText = @"正在获取开单列表...";
+    listApi.animatingView = MFAppWindow;
+    [listApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        if (!listApi.messageSuccess) {
+            NSLog(@"错误描述=%@",listApi.errorMessage);
+            return;
+        }
+                
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        
+    } failure:^(YTKBaseRequest * request) {
+        
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

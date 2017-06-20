@@ -111,6 +111,7 @@
 		AC3AB0341EF8BBF00052EB95 /* EPSaveSaleBillingApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3AB0331EF8BBF00052EB95 /* EPSaveSaleBillingApi.m */; };
 		AC3AB0371EF8BCC00052EB95 /* EPGetGoodsDetailApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3AB0351EF8BCC00052EB95 /* EPGetGoodsDetailApi.m */; };
 		AC4EB2961EF8EA4A003AD128 /* EPSaleBillingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB2951EF8EA4A003AD128 /* EPSaleBillingListViewController.m */; };
+		AC4EB2991EF8F155003AD128 /* EPGetSaleBillingListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB2981EF8F155003AD128 /* EPGetSaleBillingListApi.m */; };
 		AC7CC3591EF26CC300564823 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC3581EF26CC300564823 /* main.m */; };
 		AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7CC35B1EF26CC300564823 /* EekaPosAppDelegate.m */; };
 		AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3601EF26CC300564823 /* EekaPosMain.storyboard */; };
@@ -586,6 +587,8 @@
 		AC3AB0361EF8BCC00052EB95 /* EPGetGoodsDetailApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPGetGoodsDetailApi.h; sourceTree = "<group>"; };
 		AC4EB2941EF8EA4A003AD128 /* EPSaleBillingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingListViewController.h; sourceTree = "<group>"; };
 		AC4EB2951EF8EA4A003AD128 /* EPSaleBillingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingListViewController.m; sourceTree = "<group>"; };
+		AC4EB2971EF8F155003AD128 /* EPGetSaleBillingListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPGetSaleBillingListApi.h; sourceTree = "<group>"; };
+		AC4EB2981EF8F155003AD128 /* EPGetSaleBillingListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPGetSaleBillingListApi.m; sourceTree = "<group>"; };
 		AC7CC3541EF26CC300564823 /* EekaPOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EekaPOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7CC3581EF26CC300564823 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC7CC35A1EF26CC300564823 /* EekaPosAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EekaPosAppDelegate.h; sourceTree = "<group>"; };
@@ -1769,6 +1772,8 @@
 				AC34B9E71EF81B8D00852993 /* EPSaleBillingGuidesCellView.xib */,
 				AC3AB0321EF8BBF00052EB95 /* EPSaveSaleBillingApi.h */,
 				AC3AB0331EF8BBF00052EB95 /* EPSaveSaleBillingApi.m */,
+				AC4EB2971EF8F155003AD128 /* EPGetSaleBillingListApi.h */,
+				AC4EB2981EF8F155003AD128 /* EPGetSaleBillingListApi.m */,
 				AC32BE811EF6A207001A6291 /* EPSaleBillingHelper.h */,
 				AC32BE821EF6A207001A6291 /* EPSaleBillingHelper.m */,
 				AC4EB2941EF8EA4A003AD128 /* EPSaleBillingListViewController.h */,
@@ -2785,6 +2790,7 @@
 				AC9514351EF52D67003EEBD0 /* ZXAnyAIDecoder.m in Sources */,
 				AC9514471EF52D67003EEBD0 /* ZXRSSUtils.m in Sources */,
 				AC950E9A1EF4D5D7003EEBD0 /* EPMainFrameViewController.m in Sources */,
+				AC4EB2991EF8F155003AD128 /* EPGetSaleBillingListApi.m in Sources */,
 				AC9513ED1EF52D67003EEBD0 /* ZXImage.m in Sources */,
 				AC9513F51EF52D67003EEBD0 /* ZXBitArray.m in Sources */,
 				AC9514821EF52D67003EEBD0 /* ZXQRCodeFormatInformation.m in Sources */,
