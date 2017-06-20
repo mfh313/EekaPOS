@@ -608,9 +608,10 @@
 -(BOOL)canSaveSaleBilling
 {
     if (_saleBillingItemModels.count == 0) {
-        [self showTips:@""];
+        [self showTips:@"请录入商品！"];
         return NO;
     }
+    
     
     return YES;
 }
