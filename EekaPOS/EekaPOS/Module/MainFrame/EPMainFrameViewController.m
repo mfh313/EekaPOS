@@ -36,13 +36,13 @@
     
     __weak typeof(self) weakSelf = self;
     
-    [_saleBillingView setContentView:MFImage(@"home") desc:@"销售开单"];
+    [_saleBillingView setContentView:MFImage(@"pos3") desc:@"销售开单"];
     [_saleBillingView setClickBlock:^() {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf pushSaleBillingMainVC];
     }];
     
-    [_billingListView setContentView:MFImage(@"home") desc:@"开单列表"];
+    [_billingListView setContentView:MFImage(@"pos4") desc:@"开单列表"];
     [_billingListView setClickBlock:^() {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf pushBillingListVC];
