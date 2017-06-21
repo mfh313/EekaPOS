@@ -11,7 +11,7 @@
 @protocol EPSaleBillingDiscountInputViewDelegate <NSObject>
 
 @optional
-
+-(void)didSetDiscount:(CGFloat)allDiscount;
 
 @end
 

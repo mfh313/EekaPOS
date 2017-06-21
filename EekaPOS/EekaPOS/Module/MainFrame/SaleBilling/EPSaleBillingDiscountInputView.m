@@ -8,16 +8,15 @@
 
 #import "EPSaleBillingDiscountInputView.h"
 #import "EPSaleBillingHelper.h"
-#import "TKeyBoardView.h"
+#import "RYNumberkeyboard.h"
+#import "UITextField+RYNumberKeyboard.h"
 
-@interface EPSaleBillingDiscountInputView () <UITextFieldDelegate>
+@interface EPSaleBillingDiscountInputView () <UITextFieldDelegate,RYNumberKeyboardDelegate>
 {
     __weak IBOutlet UILabel *_discountAfterLabel;
     __weak IBOutlet UILabel *_discountPreLabel;
     __weak IBOutlet UILabel *_discountRateLabel;
     __weak IBOutlet UITextField *_discountInputTextField;
-    
-    TKeyBoardView *_rateBoardView;
 }
 
 @end
@@ -29,8 +28,29 @@
     [super awakeFromNib];
     _discountAfterLabel.textColor = [UIColor hx_colorWithHexString:@"0080C0"];
     
-    _rateBoardView = [TKeyBoardView kBoardView];
-    _rateBoardView.keyTextField = _discountInputTextField;
+    _discountInputTextField.ry_inputType = RYFloatZeroToOneInputType;
+    RYNumberKeyboard *rateKeyBoard = (RYNumberKeyboard *)_discountInputTextField.inputView;
+    rateKeyBoard.ryDelegate = self;
+    rateKeyBoard.inputType = RYFloatZeroToOneInputType;
+    _discountInputTextField.tag = 1101;
+}
+
+- (void)ryNumberKeyboardValueChange:(NSString *)string tag:(NSInteger)tag
+{
+    if (tag == 1100) {
+        
+    }
+    else if (tag == 1101) {
+        
+    }
+}
+
+
+- (void)ryNumberKeyboardSubmit:(NSString *)string tag:(NSInteger)tag
+{
+    if ([self.m_delegate respondsToSelector:@selector(didSetDiscount:)]) {
+        [self.m_delegate didSetDiscount:string.floatValue];
+    }
 }
 
 -(void)setDiscountRate:(NSNumber *)discountRate

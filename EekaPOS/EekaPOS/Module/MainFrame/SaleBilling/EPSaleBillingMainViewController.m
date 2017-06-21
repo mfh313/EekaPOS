@@ -451,6 +451,14 @@
     
 }
 
+#pragma mark - EPSaleBillingDiscountInputViewDelegate
+-(void)didSetDiscount:(CGFloat)allDiscount
+{
+    _saleBillingModel.discount = @(allDiscount);
+    
+    [self reSetTableSubViews];
+}
+
 #pragma mark - EPSaleBillingGoodsEditViewDelegate
 -(void)editGoodsWithitemModel:(EPSaleBillingItemModel *)itemModel
                          size:(NSNumber *)size
