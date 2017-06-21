@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqh-lo-1v7">
-                    <rect key="frame" x="50" y="11" width="266.5" height="30"/>
+                    <rect key="frame" x="50" y="11" width="31" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="11f-ih-udQ"/>
                         <constraint firstAttribute="height" constant="30" id="C3N-3b-Ekt"/>
@@ -35,7 +35,7 @@
                     <color key="textColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="¥ 2390.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gD-6J-nu5">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="¥ 2390.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gD-6J-nu5">
                     <rect key="frame" x="336.5" y="11" width="62.5" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="l9a-6T-uai"/>
@@ -76,7 +76,7 @@
                 <constraint firstItem="9og-0X-Zhh" firstAttribute="leading" secondItem="kqh-lo-1v7" secondAttribute="leading" id="kXw-Nh-PvP"/>
                 <constraint firstItem="kqh-lo-1v7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="n73-BL-aAz"/>
                 <constraint firstAttribute="bottom" secondItem="GWa-xp-ff5" secondAttribute="bottom" id="wiV-eV-6O9"/>
-                <constraint firstItem="2gD-6J-nu5" firstAttribute="leading" secondItem="kqh-lo-1v7" secondAttribute="trailing" constant="20" id="y8L-NF-Bkk"/>
+                <constraint firstItem="2gD-6J-nu5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kqh-lo-1v7" secondAttribute="trailing" constant="20" id="y8L-NF-Bkk"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
