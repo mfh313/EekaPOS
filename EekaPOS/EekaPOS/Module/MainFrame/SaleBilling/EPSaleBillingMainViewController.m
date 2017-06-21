@@ -386,17 +386,15 @@
         [self showTips:@"请选择扣减项目"];
         return;
     }
-
-    deductionModel.value = @(10.0);
     
     _selectedDeductionModel.value = deductionModel.value;
     
     [_saleBillingDeductions addObject:deductionModel];
     
+    _selectedDeductionModel = nil;
     [self reSetTableSubViews];
     
-    _selectedDeductionModel = nil;
-    
+
 }
 
 #pragma mark - EPSaleBillingItemCodeInputViewDelegate
