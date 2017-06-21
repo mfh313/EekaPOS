@@ -30,6 +30,11 @@
     _timeLabel.text = time;
 }
 
+-(void)setMoneyString:(NSString *)money
+{
+    _moneyLabel.text = money;
+}
+
 -(void)setStatusString:(NSString *)status
 {
     _statusLabel.text = status;

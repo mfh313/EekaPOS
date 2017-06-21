@@ -10,6 +10,7 @@
 #import "EPSaleBillingHelper.h"
 #import "EPGetSaleBillingListApi.h"
 #import "EPSaleBillingListCellView.h"
+#import "EPSaleBillingModel.h"
 
 @interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -34,6 +35,8 @@
     
     self.title = @"开单列表";
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
+    
+    _tableView.rowHeight = 80.0;
     
     _dateEnd = [EPSaleBillingHelper yMDdateStringWithDate:[NSDate date]];
     _dateBegin = [EPSaleBillingHelper getMonthBeginWith:_dateEnd];
@@ -66,7 +69,16 @@
             NSLog(@"错误描述=%@",listApi.errorMessage);
             return;
         }
-                
+        
+        [_saleBillingList removeAllObjects];
+        NSArray *saleBillingLists = request.responseJSONObject[@"saleBillingList"];
+        for (int i = 0; i < saleBillingLists.count; i++) {
+            EPSaleBillingModel *model = [EPSaleBillingModel MM_modelWithJSON:saleBillingLists[i]];
+            [_saleBillingList addObject:model];
+        }
+        
+        [_tableView reloadData];
+        
         __strong typeof(weakSelf) strongSelf = weakSelf;
         
         
@@ -100,9 +112,13 @@
     
     cell.m_subContentView.frame = cell.contentView.bounds;
     
+    EPSaleBillingModel *model = _saleBillingList[indexPath.row];
     EPSaleBillingListCellView *cellView = (EPSaleBillingListCellView *)cell.m_subContentView;
     
-    
+    [cellView setNames:model.guider];
+    [cellView setTimeString:model.sellDate];
+    [cellView setStatusString:@"已开单"];
+    [cellView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:@(model.trueRece)]];
     
     return cell;
 }

@@ -14,6 +14,8 @@
 
 -(void)setTimeString:(NSString *)time;
 
+-(void)setMoneyString:(NSString *)money;
+
 -(void)setStatusString:(NSString *)status;
 
 @end
