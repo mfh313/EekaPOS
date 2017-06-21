@@ -54,8 +54,7 @@
 
 -(void)setDiscountRate:(NSNumber *)discountRate
 {
-    _discountRateLabel.text = [EPSaleBillingHelper moneyDescWithNumber:discountRate];
-    _discountInputTextField.text = [NSString stringWithFormat:@"%@",discountRate];
+    _discountInputTextField.text = [NSString stringWithFormat:@"%@",@([EPSaleBillingHelper roundFloat:discountRate.floatValue])];
 }
 
 -(void)setReceivablePrice:(NSNumber *)receivablePrice allPrice:(NSNumber *)discountPre
