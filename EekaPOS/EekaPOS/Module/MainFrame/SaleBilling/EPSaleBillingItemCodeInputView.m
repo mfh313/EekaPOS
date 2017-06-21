@@ -22,8 +22,21 @@
 {
     [super awakeFromNib];
     _textFieldBgView.image = MFImageStretchCenter(@"border");
+    _itemCodeTextField.delegate = self;
     
 }
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if ([string isEqualToString:@"\n"]) {
+        [self endEditing:YES];
+        [self onClickDoneBtn:nil];
+        return NO;
+    }
+    
+    return YES;
+}
+
 
 - (IBAction)onClickScanBtn:(id)sender {
     if ([self.m_delegate respondsToSelector:@selector(onClickCameraScanBtn)]) {

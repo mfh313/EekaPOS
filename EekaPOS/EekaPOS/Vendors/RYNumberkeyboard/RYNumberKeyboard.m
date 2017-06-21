@@ -67,7 +67,7 @@
         case RYIntInputType:
         {
             negativeBtn.hidden = YES;
-            dotBtn.hidden = NO;
+            dotBtn.hidden = YES;
             break;
         }// 浮点数键盘 0 到 1
         case RYFloatZeroToOneInputType:
@@ -151,10 +151,12 @@
             if(self.inputType == RYFloatZeroToOneInputType)
             {
                predicate  = [NSPredicate predicateWithFormat:@"self MATCHES %@",@"^([01](\.0+)?|0\.[0-9]+)$"];
-            }else
+            }
+            else
             {
                predicate = [NSPredicate predicateWithFormat:@"self MATCHES %@",@"^-?[0-9]{0,9}[.]?[0-9]{0,4}$"];
             }
+            
             if ([predicate evaluateWithObject:strTmp]) {
                 self.textInput.text = strTmp;
             }

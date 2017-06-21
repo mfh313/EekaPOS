@@ -42,4 +42,6 @@
 
 +(CGFloat)saleBillingSelectDeductionsValue:(NSMutableArray *)saleBillingDeductions;
 
++(NSMutableArray *)remarkModelStrings;
+
 @end

@@ -95,6 +95,11 @@
     return [NSMutableArray arrayWithObjects:model1,model2,model3,model4, nil];
 }
 
++(NSMutableArray *)remarkModelStrings
+{
+    return [NSMutableArray arrayWithObjects:@"调货",@"修改",@"退货",@"生日折扣", nil];
+}
+
 +(NSString *)saleBillingSelectDeductionsStr:(NSMutableArray *)saleBillingDeductions
 {
     NSMutableArray *deductionsArray = [NSMutableArray array];

@@ -9,9 +9,11 @@
 #import "EPSaleBillingGoodsEditView.h"
 #import "EPSaleBillingItemModel.h"
 #import "EPSaleBillingHelper.h"
-#import "TKeyBoardView.h"
+#import "RYNumberkeyboard.h"
+#import "UITextField+RYNumberKeyboard.h"
+#import "EPSaleBillingGoodsRemarkSelectView.h"
 
-@interface EPSaleBillingGoodsEditView ()<UITextFieldDelegate>
+@interface EPSaleBillingGoodsEditView ()<UITextFieldDelegate,RYNumberKeyboardDelegate,EPSaleBillingGoodsRemarkSelectViewDelegate>
 {
     __weak IBOutlet UIImageView *_bgImageView;
     __weak IBOutlet UIView *_bgTapView;
@@ -26,8 +28,6 @@
     
     __weak IBOutlet UIView *_mainBgView;
     
-    TKeyBoardView *_sizeBoardView;
-    TKeyBoardView *_rateBoardView;
 }
 
 @end
@@ -53,11 +53,33 @@
     [_mainBgView addGestureRecognizer:tapMainGes];
     
     
-    _sizeBoardView = [TKeyBoardView kBoardView];
-    _sizeBoardView.keyTextField = _itemSizeInputTextField;
+    _itemSizeInputTextField.ry_inputType = RYIntInputType;
+    RYNumberKeyboard *sizeKeyBoard = (RYNumberKeyboard *)_itemSizeInputTextField.inputView;
+    sizeKeyBoard.ryDelegate = self;
+    sizeKeyBoard.inputType = RYIntInputType;
+    _itemSizeInputTextField.tag = 1100;
     
-    _rateBoardView = [TKeyBoardView kBoardView];
-    _rateBoardView.keyTextField = _rateTextField;
+    _rateTextField.ry_inputType = RYFloatZeroToOneInputType;
+    RYNumberKeyboard *rateKeyBoard = (RYNumberKeyboard *)_rateTextField.inputView;
+    rateKeyBoard.ryDelegate = self;
+    rateKeyBoard.inputType = RYFloatZeroToOneInputType;
+    _rateTextField.tag = 1101;
+}
+
+- (void)ryNumberKeyboardValueChange:(NSString *)string tag:(NSInteger)tag
+{
+    if (tag == 1100) {
+        
+    }
+    else if (tag == 1101) {
+        
+    }
+}
+
+
+- (void)ryNumberKeyboardSubmit:(NSString *)string tag:(NSInteger)tag
+{
+    
 }
 
 -(void)onTapMainBgView
@@ -100,7 +122,16 @@
 }
 
 - (IBAction)onClickSelectRemark:(id)sender {
-    NSLog(@"此功能暂未开发");
+    
+    EPSaleBillingGoodsRemarkSelectView *remarkSelectView = [EPSaleBillingGoodsRemarkSelectView nibView];
+    remarkSelectView.m_delegate = self;
+    remarkSelectView.frame = self.bounds;
+    [self addSubview:remarkSelectView];
+}
+
+-(void)didSelectRemark:(NSString *)remark
+{
+    _remarkTextField.text = remark;
 }
 
 - (IBAction)onClickCancelBtn:(id)sender {
@@ -122,8 +153,6 @@
     
     float rateFloat = [EPSaleBillingHelper roundFloat:rateString.floatValue];
     
-    remarkString = @"假想的备注";
-    rateFloat = 0.55;
     
     NSNumber *rateNumber = @(rateFloat);
     
