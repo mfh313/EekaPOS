@@ -112,6 +112,7 @@
     NSString *sizeString = _itemSizeInputTextField.text;
     NSString *rateString = _rateTextField.text;
     NSString *remarkString = _remarkTextField.text;
+    BOOL isSpecialDiscount = YES;
     
     NSNumber *sizeNumber = @(sizeString.intValue);
     
@@ -121,8 +122,8 @@
     
     float rateFloat = [EPSaleBillingHelper roundFloat:rateString.floatValue];
     
+    remarkString = @"假想的备注";
     rateFloat = 0.55;
-    BOOL isSpecialDiscount = YES;
     
     NSNumber *rateNumber = @(rateFloat);
     
