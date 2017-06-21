@@ -7,6 +7,7 @@
 //
 
 #import "EPSaleBillingDeductionView.h"
+#import "TKeyBoardView.h"
 
 @interface EPSaleBillingDeductionView () <UITextFieldDelegate>
 {
@@ -15,6 +16,8 @@
     __weak IBOutlet MFUIButton *_deductionTypeBtn;
     
     EPSaleBillingDeductionModel *_deductionModel;
+    
+    TKeyBoardView *_keyBoardView;
 }
 
 @end
@@ -26,6 +29,9 @@
     [super awakeFromNib];
     
     [_deductionTypeBtn addTarget:self action:@selector(onClickDeductionBtn) forControlEvents:UIControlEventTouchUpInside];
+    
+    _keyBoardView = [TKeyBoardView kBoardView];
+    _keyBoardView.keyTextField = _deductionTextField;
     
 }
 
