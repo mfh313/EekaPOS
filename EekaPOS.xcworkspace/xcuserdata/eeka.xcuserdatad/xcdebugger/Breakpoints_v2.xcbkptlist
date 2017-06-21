@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EekaPOS/EekaPOS/Module/MainFrame/SaleBilling/EPSaleBillingMainViewController.m"
-            timestampString = "519720064.894776"
+            timestampString = "519720248.456633"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "629"
-            endingLineNumber = "629"
+            startingLineNumber = "627"
+            endingLineNumber = "627"
             landmarkName = "-canSaveSaleBilling"
             landmarkType = "7">
          </BreakpointContent>

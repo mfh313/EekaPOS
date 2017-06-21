@@ -71,7 +71,6 @@
     _saleBillingModel = [EPSaleBillingModel new];
     _saleBillingModel.discount = @(1.0);
     
-    
     _saleBillingItemModels = [NSMutableArray array];
     _saleBillingDeductions = [NSMutableArray array];
     _selectGuides = [NSMutableArray array];
@@ -194,6 +193,7 @@
     if (cell == nil) {
         cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"discountInputCell"];
         EPSaleBillingDiscountInputView *cellView = [EPSaleBillingDiscountInputView nibView];
+        cellView.m_delegate = self;
         cell.m_subContentView = cellView;
     }
     
@@ -212,8 +212,6 @@
 
 
 #pragma mark - EPSaleBillingDiscountInputViewDelegate
-
-
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView telePhoneCellForRowAtIndexPath:(NSIndexPath *)indexPath
