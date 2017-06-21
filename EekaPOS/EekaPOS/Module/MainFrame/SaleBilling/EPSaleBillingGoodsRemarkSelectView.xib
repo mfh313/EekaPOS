@@ -20,10 +20,10 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZV7-oc-o1q">
-                    <rect key="frame" x="95.5" y="92" width="264" height="200"/>
+                    <rect key="frame" x="95.5" y="112" width="264" height="160"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wkU-8u-rYf">
-                            <rect key="frame" x="0.0" y="0.0" width="264" height="200"/>
+                            <rect key="frame" x="0.0" y="0.0" width="264" height="160"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbu-7g-fHS">
                             <rect key="frame" x="-0.5" y="0.0" width="265" height="40"/>
@@ -175,7 +175,7 @@
                         <constraint firstItem="qi9-sx-kJX" firstAttribute="leading" secondItem="ZV7-oc-o1q" secondAttribute="leading" id="oHY-X0-BAi"/>
                         <constraint firstItem="wkU-8u-rYf" firstAttribute="leading" secondItem="ZV7-oc-o1q" secondAttribute="leading" id="oVl-cn-LHm"/>
                         <constraint firstItem="iQC-YM-zUT" firstAttribute="top" secondItem="Sbu-7g-fHS" secondAttribute="bottom" id="ocj-JA-zkQ"/>
-                        <constraint firstAttribute="height" constant="200" id="t9l-Dn-9oj"/>
+                        <constraint firstAttribute="height" constant="160" id="t9l-Dn-9oj"/>
                         <constraint firstItem="qi9-sx-kJX" firstAttribute="centerX" secondItem="ZV7-oc-o1q" secondAttribute="centerX" id="wZG-v1-7jQ"/>
                         <constraint firstItem="Sbu-7g-fHS" firstAttribute="centerX" secondItem="ZV7-oc-o1q" secondAttribute="centerX" id="xcd-hd-gOW"/>
                     </constraints>

@@ -44,6 +44,8 @@
     if ([self.m_delegate respondsToSelector:@selector(didSelectRemark:)]) {
         [self.m_delegate didSelectRemark:title];
     }
+    
+    [self removeFromSuperview];
 }
 
 
