@@ -391,10 +391,8 @@
     
     [_saleBillingDeductions addObject:deductionModel];
     
-    _selectedDeductionModel = nil;
     [self reSetTableSubViews];
     
-
 }
 
 #pragma mark - EPSaleBillingItemCodeInputViewDelegate

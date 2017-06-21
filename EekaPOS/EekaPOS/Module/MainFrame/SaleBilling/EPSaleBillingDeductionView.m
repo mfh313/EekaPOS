@@ -40,12 +40,7 @@
 
 - (void)ryNumberKeyboardValueChange:(NSString *)string tag:(NSInteger)tag
 {
-    if (tag == 1100) {
-        
-    }
-    else if (tag == 1101) {
-        
-    }
+    _deductionModel.value = @(string.floatValue);
 }
 
 

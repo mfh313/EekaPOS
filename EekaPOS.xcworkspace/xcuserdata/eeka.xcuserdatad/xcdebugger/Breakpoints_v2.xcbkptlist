@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EekaPOS/EekaPOS/Module/MainFrame/SaleBilling/EPSaleBillingMainViewController.m"
-            timestampString = "519721253.387572"
+            timestampString = "519722470.485402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "625"
-            endingLineNumber = "625"
+            startingLineNumber = "623"
+            endingLineNumber = "623"
             landmarkName = "-canSaveSaleBilling"
             landmarkType = "7">
          </BreakpointContent>
@@ -64,6 +64,22 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "-setMoneyString:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EekaPOS/EekaPOS/Module/MainFrame/SaleBilling/EPSaleBillingMainViewController.m"
+            timestampString = "519722410.420574"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
+            landmarkName = "-onClickAddBtn:deductionModel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
