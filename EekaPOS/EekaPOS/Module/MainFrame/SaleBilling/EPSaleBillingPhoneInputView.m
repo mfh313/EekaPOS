@@ -21,6 +21,14 @@
 {
     [super awakeFromNib];
     _phoneTextField.delegate = self;
+    
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapCashierLabel)];
+    [self addGestureRecognizer:tapGes];
+}
+
+-(void)onTapCashierLabel
+{
+    [_phoneTextField becomeFirstResponder];
 }
 
 -(void)setPhone:(NSString *)phone
@@ -53,6 +61,8 @@
         if ([phoneNumberPredicate evaluateWithObject:resultString]) {
             
             [textField resignFirstResponder];
+            
+            _phoneTextField.text = resultString;
             
             if ([self.m_delegate respondsToSelector:@selector(didInputPhone:)]) {
                 [self.m_delegate didInputPhone:resultString];
