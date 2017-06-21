@@ -33,16 +33,13 @@
                                     EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
-    __weak IBOutlet EPSaleBillingDeductionView *_deductionView;
-    __weak IBOutlet EPSaleBillingGoodsCellView *_goodsCellView;
-    __weak IBOutlet UITableView *_tableView;
     
+    __weak IBOutlet UITableView *_tableView;
     __weak IBOutlet UILabel *_receivablePriceLabel;
     
     EPGetIndividualApi *_getIndividualApi;
     EPSaleBillingModel *_saleBillingModel;
     
-
     NSMutableArray *_saleBillingItemModels;
     NSMutableArray *_saleBillingDeductions;
     
@@ -72,17 +69,16 @@
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
     _saleBillingModel = [EPSaleBillingModel new];
-    
     _saleBillingModel.discount = @(1.0);
-    _saleBillingModel.phone = @"15813818620";
+    
     
     _saleBillingItemModels = [NSMutableArray array];
     _saleBillingDeductions = [NSMutableArray array];
     _selectGuides = [NSMutableArray array];
     
     _codeInputView.m_delegate = self;
-    _deductionView.m_delegate = self;
-    _goodsCellView.m_delegate = self;
+    
+//    _saleBillingModel.phone = @"15813818620";
 }
 
 -(void)onClickBackBtn:(id)sender
@@ -645,7 +641,12 @@
 -(BOOL)canSaveSaleBilling
 {
     if (_saleBillingItemModels.count == 0) {
-        [self showTips:@"请录入商品！"];
+        [self showTips:@"请录入商品"];
+        return NO;
+    }
+    
+    if ([MFStringUtil isBlankString:_saleBillingModel.phone]) {
+        [self showTips:@"请输入会员手机号码"];
         return NO;
     }
     
