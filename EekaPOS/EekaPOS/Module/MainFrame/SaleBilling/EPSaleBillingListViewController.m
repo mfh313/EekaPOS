@@ -56,7 +56,7 @@
     EPAccountMgr *accountMgr = [[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
 
     EPGetSaleBillingListApi *listApi = [EPGetSaleBillingListApi new];
-    listApi.startDate = _dateEnd;
+    listApi.startDate = _dateBegin;
     listApi.endDate = _dateEnd;
     listApi.entityName = accountMgr.loginModel.fullname;
     
@@ -117,7 +117,7 @@
     
     [cellView setNames:model.guider];
     [cellView setTimeString:model.sellDate];
-    [cellView setStatusString:@"已开单"];
+    [cellView setStatus:model.status];
     [cellView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:@(model.trueRece)]];
     
     return cell;

@@ -16,6 +16,6 @@
 
 -(void)setMoneyString:(NSString *)money;
 
--(void)setStatusString:(NSString *)status;
+-(void)setStatus:(int)status;
 
 @end

@@ -35,6 +35,30 @@
     _moneyLabel.text = money;
 }
 
+-(void)setStatus:(int)status
+{
+    NSString *statusString = nil;
+    UIColor *textColor = nil;
+    
+    if (status == 10) {
+        statusString = @"未开单";
+        textColor = [UIColor hx_colorWithHexString:@"ea3d2e"];
+    }
+    else if(status == 20)
+    {
+        statusString = @"已开单";
+        textColor = [UIColor hx_colorWithHexString:@"989898"];
+    }
+    else if(status == 30)
+    {
+        statusString = @"已收款";
+        textColor = [UIColor hx_colorWithHexString:@"989898"];
+    }
+    
+    _statusLabel.textColor = textColor;
+    [self setStatusString:statusString];
+}
+
 -(void)setStatusString:(NSString *)status
 {
     _statusLabel.text = status;
