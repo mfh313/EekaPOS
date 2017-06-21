@@ -8,7 +8,16 @@
 
 #import "MMUIBridgeView.h"
 
+@protocol EPSaleBillingDiscountInputViewDelegate <NSObject>
+
+@optional
+
+
+@end
+
 @interface EPSaleBillingDiscountInputView : MMUIBridgeView
+
+@property (nonatomic,weak) id<EPSaleBillingDiscountInputViewDelegate> m_delegate;
 
 -(void)setDiscountRate:(NSNumber *)discountRate;
 

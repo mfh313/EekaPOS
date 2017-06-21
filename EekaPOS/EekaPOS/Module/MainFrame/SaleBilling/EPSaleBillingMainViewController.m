@@ -29,8 +29,9 @@
 #import "EPSaleBillingDeductionSelectedItemView.h"
 #import "EPSaveSaleBillingApi.h"
 
+
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
-                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,UITableViewDataSource,UITableViewDelegate>
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,EPSaleBillingDiscountInputViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     
@@ -162,7 +163,6 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView saleBillingDiscountCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingDiscountCell"];
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     if (cell == nil) {
         cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingDiscountCell"];
@@ -190,7 +190,6 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView discountInputCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"discountInputCell"];
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     if (cell == nil) {
         cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"discountInputCell"];
@@ -210,6 +209,10 @@
     
     return cell;
 }
+
+
+#pragma mark - EPSaleBillingDiscountInputViewDelegate
+
 
 
 

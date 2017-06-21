@@ -8,6 +8,7 @@
 
 #import "EPSaleBillingDiscountInputView.h"
 #import "EPSaleBillingHelper.h"
+#import "TKeyBoardView.h"
 
 @interface EPSaleBillingDiscountInputView () <UITextFieldDelegate>
 {
@@ -16,6 +17,7 @@
     __weak IBOutlet UILabel *_discountRateLabel;
     __weak IBOutlet UITextField *_discountInputTextField;
     
+    TKeyBoardView *_rateBoardView;
 }
 
 @end
@@ -26,8 +28,9 @@
 {
     [super awakeFromNib];
     _discountAfterLabel.textColor = [UIColor hx_colorWithHexString:@"0080C0"];
-    _discountInputTextField.text = @"1.0";
-    _discountRateLabel.text = @"1.0";
+    
+    _rateBoardView = [TKeyBoardView kBoardView];
+    _rateBoardView.keyTextField = _discountInputTextField;
 }
 
 -(void)setDiscountRate:(NSNumber *)discountRate
