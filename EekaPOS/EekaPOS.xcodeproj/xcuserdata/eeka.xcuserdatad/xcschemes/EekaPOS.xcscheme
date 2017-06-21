@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AC7CC3531EF26CC300564823"
-               BuildableName = "EekaPOS.app"
+               BuildableName = "eekapos.app"
                BlueprintName = "EekaPOS"
                ReferencedContainer = "container:EekaPOS.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC7CC3531EF26CC300564823"
-            BuildableName = "EekaPOS.app"
+            BuildableName = "eekapos.app"
             BlueprintName = "EekaPOS"
             ReferencedContainer = "container:EekaPOS.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC7CC3531EF26CC300564823"
-            BuildableName = "EekaPOS.app"
+            BuildableName = "eekapos.app"
             BlueprintName = "EekaPOS"
             ReferencedContainer = "container:EekaPOS.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AC7CC3531EF26CC300564823"
-            BuildableName = "EekaPOS.app"
+            BuildableName = "eekapos.app"
             BlueprintName = "EekaPOS"
             ReferencedContainer = "container:EekaPOS.xcodeproj">
          </BuildableReference>

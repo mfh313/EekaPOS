@@ -28,7 +28,7 @@
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tss-4s-dTU">
                     <rect key="frame" x="282" y="8.5" width="40" height="40"/>
@@ -43,12 +43,11 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Km3-Ee-jf1">
                     <rect key="frame" x="332" y="6.5" width="44" height="44"/>
-                    <color key="backgroundColor" red="0.5000192175" green="1" blue="0.39297160050000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="ZoO-Vd-Une"/>
                         <constraint firstAttribute="width" constant="44" id="ekh-1S-Uhg"/>
                     </constraints>
-                    <state key="normal" image="check"/>
+                    <state key="normal" image="btn_add"/>
                     <connections>
                         <action selector="onClickDoneBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="8Yc-Ni-iG9"/>
                     </connections>
@@ -89,7 +88,7 @@
         </view>
     </objects>
     <resources>
-        <image name="check" width="15" height="14"/>
+        <image name="btn_add" width="37" height="37"/>
         <image name="scan" width="23" height="23"/>
     </resources>
 </document>
