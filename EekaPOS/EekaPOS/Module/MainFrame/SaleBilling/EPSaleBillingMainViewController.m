@@ -233,6 +233,7 @@
     return cell;
 }
 
+#pragma mark - EPSaleBillingPhoneInputView
 -(void)didInputPhone:(NSString *)phone
 {
     _saleBillingModel.phone = phone;

@@ -24,6 +24,11 @@
     return NO;
 }
 
+-(BOOL)isPhoneString:(NSString *)string
+{
+    return YES;
+}
+
 +(NSString *)URLEncodedString:(NSString *)str
 {
     NSString *encodedString = (NSString *)

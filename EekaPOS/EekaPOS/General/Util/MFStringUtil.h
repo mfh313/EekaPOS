@@ -10,7 +10,9 @@
 
 @interface MFStringUtil : NSObject
 
-+ (BOOL)isBlankString:(NSString *)string;
++(BOOL)isBlankString:(NSString *)string;
+
++(BOOL)isPhoneString:(NSString *)string;
 
 +(NSString *)URLEncodedString:(NSString *)str;
 
