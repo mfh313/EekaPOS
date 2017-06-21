@@ -44,13 +44,12 @@
     NSMutableArray *_saleBillingDeductions;
     
     EPEntitityEmployeeModel *_selectCashier;
+    EPSaleBillingDeductionModel *_selectedDeductionModel;
     NSMutableArray *_selectGuides;
     
-    CGFloat _deductionPrice;
+    CGFloat _discountPrice;
     CGFloat _allPrice;
-    
-    EPSaleBillingDeductionModel *_selectedDeductionModel;
-    
+    CGFloat _deductionPrice;
 }
 
 @end
@@ -124,7 +123,6 @@
     
     return 0;
 }
-
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -208,33 +206,12 @@
     
     [self calculationAllPriceAndReceivablePrice];
     
-    [cellView setReceivablePrice:@(_deductionPrice) allPrice:@(_allPrice)];
+    [cellView setReceivablePrice:@(_discountPrice) allPrice:@(_allPrice)];
     
     return cell;
 }
 
--(void)calculationAllPriceAndReceivablePrice
-{
-    _allPrice = 0;
-    _deductionPrice = 0;
-    
-    for (int i = 0; i < _saleBillingItemModels.count; i++)
-    {
-        EPSaleBillingItemModel *itemModel = _saleBillingItemModels[i];
-        
-        _allPrice += itemModel.listPrice.floatValue;
-        
-        if (itemModel.isSpecialDiscount) {
-            
-            _deductionPrice += itemModel.listPrice.floatValue * itemModel.discount.floatValue;
-        }
-        else
-        {
-            _deductionPrice += itemModel.listPrice.floatValue * _saleBillingModel.discount.floatValue;
-        }
 
-    }
-}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView telePhoneCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -327,11 +304,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView guidesCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingCashierCell"];
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillinGuidesCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     if (cell == nil) {
-        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingCashierCell"];
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillinGuidesCell"];
         EPSaleBillingGuidesCellView *cellView = [EPSaleBillingGuidesCellView nibView];
         cellView.m_delegate = self;
         cell.m_subContentView = cellView;
@@ -407,7 +384,7 @@
     
     [_saleBillingDeductions addObject:deductionModel];
     
-    [_tableView reloadData];
+    [self reSetTableSubViews];
     
     _selectedDeductionModel = nil;
     
@@ -438,34 +415,6 @@
     }
     
     [self getItemDetail:itemCode];
-}
-
--(void)getItemDetail:(NSString *)itemCode
-{
-    EPGetGoodsDetailApi *goodsDetailApi = [EPGetGoodsDetailApi new];
-    goodsDetailApi.itemCode = itemCode;
-    goodsDetailApi.animatingText = @"正在查询商品信息...";
-    goodsDetailApi.animatingView = MFAppWindow;
-    
-    [goodsDetailApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
-        
-        if (!goodsDetailApi.messageSuccess) {
-            [self showTips:goodsDetailApi.errorMessage];
-            return;
-        }
-        
-        EPSaleBillingItemModel *itemModel = [EPSaleBillingItemModel MM_modelWithJSON:request.responseJSONObject];
-        itemModel.discount = _saleBillingModel.discount;
-        itemModel.isSpecialDiscount = NO;
-        
-        [_saleBillingItemModels addObject:itemModel];
-        
-        [_tableView reloadData];
-        
-    } failure:^(YTKBaseRequest * request) {
-        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
-        [self showTips:errorDesc];
-    }];
 }
 
 -(void)onClickGoodsCellView:(EPSaleBillingItemModel *)itemModel
@@ -501,7 +450,7 @@
     itemModel.remarks = remark;
     itemModel.isSpecialDiscount = isSpecialDiscount;
     
-    [_tableView reloadData];
+    [self reSetTableSubViews];
 }
 
 //选择扣减
@@ -517,7 +466,7 @@
 {
     _selectedDeductionModel = typemodel;
     
-    [_tableView reloadData];
+    [self reSetTableSubViews];
 }
 
 //选择收银员
@@ -535,7 +484,7 @@
     _selectCashier = selectEmployee;
     _saleBillingModel.cashier = _selectCashier.contactID.stringValue;
     
-    [_tableView reloadData];
+    [self reSetTableSubViews];
     
     [view removeFromSuperview];
     view = nil;
@@ -558,7 +507,7 @@
 {
     _selectGuides = selectEmployees;
     
-    [_tableView reloadData];
+    [self reSetTableSubViews];
 }
 
 -(NSString *)selectGuiderNames
@@ -610,8 +559,8 @@
     _saleBillingModel.deductionStr = [EPSaleBillingHelper saleBillingSelectDeductionsStr:_saleBillingDeductions];
     _saleBillingModel.sellDate = [EPSaleBillingHelper dateStringWithDate:[NSDate date]];
     _saleBillingModel.printDate = [EPSaleBillingHelper dateStringWithDate:[NSDate date]];
-    _saleBillingModel.amountPrice = 7980;
-    _saleBillingModel.trueRece = 10.0;
+    _saleBillingModel.amountPrice = _allPrice;
+    _saleBillingModel.trueRece = [self receivablePrice];
     _saleBillingModel.discount = @(0.85);
     _saleBillingModel.itemList = _saleBillingItemModels;
     
@@ -651,6 +600,74 @@
     }
     
     return YES;
+}
+
+-(void)calculationAllPriceAndReceivablePrice
+{
+    _allPrice = 0;
+    _discountPrice = 0;
+    
+    for (int i = 0; i < _saleBillingItemModels.count; i++)
+    {
+        EPSaleBillingItemModel *itemModel = _saleBillingItemModels[i];
+        
+        _allPrice += itemModel.listPrice.floatValue;
+        
+        if (itemModel.isSpecialDiscount) {
+            
+            _discountPrice += itemModel.listPrice.floatValue * itemModel.discount.floatValue;
+        }
+        else
+        {
+            _discountPrice += itemModel.listPrice.floatValue * _saleBillingModel.discount.floatValue;
+        }
+        
+    }
+    
+    _deductionPrice = [EPSaleBillingHelper saleBillingSelectDeductionsValue:_saleBillingDeductions];
+}
+
+-(void)reSetTableSubViews
+{
+    [_tableView reloadData];
+    [_receivablePriceLabel setText:[EPSaleBillingHelper moneyDescWithNumber:@([self receivablePrice])]];
+}
+
+-(CGFloat)receivablePrice
+{
+    return (_discountPrice - _deductionPrice);
+}
+
+-(void)getItemDetail:(NSString *)itemCode
+{
+    __weak typeof(self) weakSelf = self;
+    
+    EPGetGoodsDetailApi *goodsDetailApi = [EPGetGoodsDetailApi new];
+    goodsDetailApi.itemCode = itemCode;
+    goodsDetailApi.animatingText = @"正在查询商品信息...";
+    goodsDetailApi.animatingView = MFAppWindow;
+    [goodsDetailApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (!goodsDetailApi.messageSuccess) {
+            [strongSelf showTips:goodsDetailApi.errorMessage];
+            return;
+        }
+        
+        EPSaleBillingItemModel *itemModel = [EPSaleBillingItemModel MM_modelWithJSON:request.responseJSONObject];
+        itemModel.discount = _saleBillingModel.discount;
+        itemModel.isSpecialDiscount = NO;
+        
+        [_saleBillingItemModels addObject:itemModel];
+        
+        [strongSelf calculationAllPriceAndReceivablePrice];
+        [strongSelf reSetTableSubViews];
+        
+    } failure:^(YTKBaseRequest * request) {
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

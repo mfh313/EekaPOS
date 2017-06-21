@@ -40,4 +40,6 @@
 
 +(NSString *)saleBillingSelectDeductionsStr:(NSMutableArray *)saleBillingDeductions;
 
++(CGFloat)saleBillingSelectDeductionsValue:(NSMutableArray *)saleBillingDeductions;
+
 @end

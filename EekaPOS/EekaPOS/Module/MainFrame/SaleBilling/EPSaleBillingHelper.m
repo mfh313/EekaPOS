@@ -97,8 +97,6 @@
 
 +(NSString *)saleBillingSelectDeductionsStr:(NSMutableArray *)saleBillingDeductions
 {
-//    return @"抹零:25.0&电子现金劵:60.0&纸质现金劵:90.0&公司满减:20.0";
-    
     NSMutableArray *deductionsArray = [NSMutableArray array];
     for (int i = 0; i < saleBillingDeductions.count; i++)
     {
@@ -112,6 +110,21 @@
     
     NSString *deductions = [deductionsArray componentsJoinedByString:@"&"];
     return deductions;
+    
+//    return @"抹零:25.0&电子现金劵:60.0&纸质现金劵:90.0&公司满减:20.0";
+}
+
++(CGFloat)saleBillingSelectDeductionsValue:(NSMutableArray *)saleBillingDeductions
+{
+    CGFloat deductionsValue = 0.00;
+    
+    for (int i = 0; i < saleBillingDeductions.count; i++)
+    {
+        EPSaleBillingDeductionModel *model = saleBillingDeductions[i];
+        deductionsValue += model.value.floatValue;
+    }
+    
+    return deductionsValue;
 }
 
 @end
