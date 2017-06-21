@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="100" id="TjM-WZ-xwa"/>
                                     <constraint firstAttribute="width" constant="100" id="ypX-gm-4a1"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="login"/>
+                                <state key="normal" image="pos_logo"/>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KnL-s5-Rsy" customClass="MMOnePixLine">
                                 <rect key="frame" x="62" y="198" width="250" height="1"/>
@@ -152,6 +152,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="login" width="83" height="39"/>
+        <image name="pos_logo" width="84" height="35"/>
     </resources>
 </document>

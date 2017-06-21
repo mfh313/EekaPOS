@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EekaPOS/EekaPOS/Module/MainFrame/SaleBilling/EPSaleBillingDiscountInputView.m"
-            timestampString = "519719841.364661"
+            timestampString = "519721094.334981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-ryNumberKeyboardValueChange:tag:"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-ryNumberKeyboardSubmit:tag:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

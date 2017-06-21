@@ -109,12 +109,12 @@
 
 -(void)setDiscount:(NSNumber *)discountNumber
 {
-    
+    _rateTextField.text = [NSString stringWithFormat:@"%.2f",discountNumber.floatValue];;
 }
 
 -(void)setRemarkString:(NSString *)remark
 {
-    
+    _remarkTextField.text = remark;
 }
 
 - (IBAction)onClickSelectDiscount:(id)sender {

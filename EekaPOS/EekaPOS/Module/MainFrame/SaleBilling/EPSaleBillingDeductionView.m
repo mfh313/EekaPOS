@@ -7,9 +7,10 @@
 //
 
 #import "EPSaleBillingDeductionView.h"
-#import "TKeyBoardView.h"
+#import "RYNumberkeyboard.h"
+#import "UITextField+RYNumberKeyboard.h"
 
-@interface EPSaleBillingDeductionView () <UITextFieldDelegate>
+@interface EPSaleBillingDeductionView () <UITextFieldDelegate,RYNumberKeyboardDelegate>
 {
     __weak IBOutlet UILabel *_deductionTypeLabel;
     __weak IBOutlet UITextField *_deductionTextField;
@@ -17,7 +18,7 @@
     
     EPSaleBillingDeductionModel *_deductionModel;
     
-    TKeyBoardView *_keyBoardView;
+    
 }
 
 @end
@@ -30,9 +31,27 @@
     
     [_deductionTypeBtn addTarget:self action:@selector(onClickDeductionBtn) forControlEvents:UIControlEventTouchUpInside];
     
-    _keyBoardView = [TKeyBoardView kBoardView];
-    _keyBoardView.keyTextField = _deductionTextField;
+    _deductionTextField.ry_inputType = RYIntInputType;
+    RYNumberKeyboard *rateKeyBoard = (RYNumberKeyboard *)_deductionTextField.inputView;
+    rateKeyBoard.ryDelegate = self;
+    rateKeyBoard.inputType = RYIntInputType;
     
+}
+
+- (void)ryNumberKeyboardValueChange:(NSString *)string tag:(NSInteger)tag
+{
+    if (tag == 1100) {
+        
+    }
+    else if (tag == 1101) {
+        
+    }
+}
+
+
+- (void)ryNumberKeyboardSubmit:(NSString *)string tag:(NSInteger)tag
+{
+    _deductionModel.value = @(string.floatValue);
 }
 
 -(void)setDeductionMode:(EPSaleBillingDeductionModel *)deductionModel

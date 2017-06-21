@@ -212,8 +212,6 @@
 
 
 #pragma mark - EPSaleBillingDiscountInputViewDelegate
-
-
 -(UITableViewCell *)tableView:(UITableView *)tableView telePhoneCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"telePhoneCell"];
@@ -444,6 +442,8 @@
     [goodsEditView setItemCode:itemModel.itemCode];
     [goodsEditView setItemSize:itemModel.size];
     [goodsEditView setItemName:itemModel.itemName];
+    [goodsEditView setRemarkString:itemModel.remarks];
+    [goodsEditView setDiscount:itemModel.discount];
     
     goodsEditView.itemModel = itemModel;
     

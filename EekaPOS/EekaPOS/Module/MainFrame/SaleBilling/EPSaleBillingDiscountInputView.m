@@ -45,17 +45,16 @@
     }
 }
 
-
 - (void)ryNumberKeyboardSubmit:(NSString *)string tag:(NSInteger)tag
 {
     if ([self.m_delegate respondsToSelector:@selector(didSetDiscount:)]) {
-        [self.m_delegate didSetDiscount:string.floatValue];
+        [self.m_delegate didSetDiscount:[EPSaleBillingHelper roundFloat:string.floatValue]];
     }
 }
 
 -(void)setDiscountRate:(NSNumber *)discountRate
 {
-    _discountRateLabel.text = [NSString stringWithFormat:@"%@",discountRate];
+    _discountRateLabel.text = [EPSaleBillingHelper moneyDescWithNumber:discountRate];
     _discountInputTextField.text = [NSString stringWithFormat:@"%@",discountRate];
 }
 
