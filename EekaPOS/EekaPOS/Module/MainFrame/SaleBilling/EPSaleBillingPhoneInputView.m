@@ -55,7 +55,7 @@
             [textField resignFirstResponder];
             
             if ([self.m_delegate respondsToSelector:@selector(didInputPhone:)]) {
-                [self.m_delegate didInputPhone:text];
+                [self.m_delegate didInputPhone:resultString];
             }
             
             return YES;
