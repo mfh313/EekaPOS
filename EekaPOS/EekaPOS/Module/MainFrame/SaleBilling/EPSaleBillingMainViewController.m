@@ -73,7 +73,7 @@
     
     _saleBillingModel = [EPSaleBillingModel new];
     
-    _saleBillingModel.discount = @(0.85);
+    _saleBillingModel.discount = @(1.0);
     _saleBillingModel.phone = @"15813818620";
     
     _saleBillingItemModels = [NSMutableArray array];
@@ -599,38 +599,9 @@
     [self saveSaleBilling];
 }
 
--(NSString *)selectDeductions
-{
-    NSMutableArray *deductionsArray = [NSMutableArray array];
-    for (int i = 0; i < _saleBillingDeductions.count; i++)
-    {
-        EPSaleBillingDeductionModel *model = _saleBillingDeductions[i];
-        NSString *name = model.name;
-        NSNumber *value = model.value;
-        
-        NSString *deduction = [NSString stringWithFormat:@"%@:%@",name,value];
-        [deductionsArray addObject:deduction];
-    }
-    
-    NSString *deductions = [deductionsArray componentsJoinedByString:@"&"];
-    return deductions;
-    
-//    return @"抹零:25.0&电子现金劵:60.0&纸质现金劵:90.0&公司满减:20.0";
-}
-
--(BOOL)canSaveSaleBilling
-{
-    if (_saleBillingItemModels.count == 0) {
-        [self showTips:@"请录入商品！"];
-        return NO;
-    }
-    
-    return YES;
-}
 
 -(void)saveSaleBilling
 {
-    
     BOOL canSaveSaleBilling = [self canSaveSaleBilling];
     if (!canSaveSaleBilling) {
         return;
@@ -640,14 +611,12 @@
     _saleBillingModel.storeName = accountMgr.loginModel.fullname;
     _saleBillingModel.cashier = _selectCashier.contactName;
     _saleBillingModel.guider = [self selectGuiderNames];
-    _saleBillingModel.deductionStr = [self selectDeductions];
+    _saleBillingModel.deductionStr = [EPSaleBillingHelper saleBillingSelectDeductionsStr:_saleBillingDeductions];
     _saleBillingModel.sellDate = [EPSaleBillingHelper dateStringWithDate:[NSDate date]];
     _saleBillingModel.printDate = [EPSaleBillingHelper dateStringWithDate:[NSDate date]];
-
     _saleBillingModel.amountPrice = 7980;
     _saleBillingModel.trueRece = 10.0;
     _saleBillingModel.discount = @(0.85);
-    
     _saleBillingModel.itemList = _saleBillingItemModels;
     
     __weak typeof(self) weakSelf = self;
@@ -671,6 +640,16 @@
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];
     }];
+}
+
+-(BOOL)canSaveSaleBilling
+{
+    if (_saleBillingItemModels.count == 0) {
+        [self showTips:@"请录入商品！"];
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

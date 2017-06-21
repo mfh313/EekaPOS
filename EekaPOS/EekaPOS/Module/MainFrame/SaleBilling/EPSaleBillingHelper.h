@@ -38,4 +38,6 @@
 
 +(NSMutableArray *)saleBillingDeductionModels;
 
++(NSString *)saleBillingSelectDeductionsStr:(NSMutableArray *)saleBillingDeductions;
+
 @end
