@@ -632,6 +632,7 @@
 
 -(void)reSetTableSubViews
 {
+    [self calculationAllPriceAndReceivablePrice];
     [_tableView reloadData];
     [_receivablePriceLabel setText:[EPSaleBillingHelper moneyDescWithNumber:@([self receivablePrice])]];
 }
@@ -664,7 +665,6 @@
         
         [_saleBillingItemModels addObject:itemModel];
         
-        [strongSelf calculationAllPriceAndReceivablePrice];
         [strongSelf reSetTableSubViews];
         
     } failure:^(YTKBaseRequest * request) {
