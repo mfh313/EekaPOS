@@ -366,11 +366,21 @@
     return 0;
 }
 
+-(NSIndexPath *)indexPathForsaleBillingDeductionView
+{
+    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:0 inSection:3];
+    return indexpath;
+}
 
 #pragma mark - EPSaleBillingDeductionViewDelegate
 
 -(void)onClickDeductionBtn:(EPSaleBillingDeductionView *)view deductionModel:(EPSaleBillingDeductionModel *)deductionModel
 {
+    [self.view endEditing:YES];
+    
+    NSIndexPath *deductionIndexPath = [self indexPathForsaleBillingDeductionView];
+    [_tableView scrollToRowAtIndexPath:deductionIndexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
+    
     [self showSaleBillingDeductionTypeSelectView];
 }
 
@@ -550,11 +560,6 @@
 
 -(void)saveSaleBilling
 {
-    BOOL canSaveSaleBilling = [self canSaveSaleBilling];
-    if (!canSaveSaleBilling) {
-        return;
-    }
-    
     EPAccountMgr *accountMgr = [[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
     _saleBillingModel.storeName = accountMgr.loginModel.fullname;
     _saleBillingModel.cashier = _selectCashier.contactName;
@@ -566,6 +571,11 @@
     _saleBillingModel.trueRece = [self receivablePrice];
     _saleBillingModel.discount = @(0.85);
     _saleBillingModel.itemList = _saleBillingItemModels;
+    
+    BOOL canSaveSaleBilling = [self canSaveSaleBilling];
+    if (!canSaveSaleBilling) {
+        return;
+    }
     
     __weak typeof(self) weakSelf = self;
     
@@ -599,6 +609,16 @@
     
     if ([MFStringUtil isBlankString:_saleBillingModel.phone]) {
         [self showTips:@"请输入会员手机号码"];
+        return NO;
+    }
+    
+    if ([MFStringUtil isBlankString:_saleBillingModel.cashier]) {
+        [self showTips:@"请选择收银员"];
+        return NO;
+    }
+    
+    if ([MFStringUtil isBlankString:_saleBillingModel.guider]) {
+        [self showTips:@"请选择导购员"];
         return NO;
     }
     
