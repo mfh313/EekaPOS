@@ -13,6 +13,7 @@
 @interface EPSaleBillingDetailViewController ()
 {
     __weak IBOutlet UITableView *_tableView;
+    EPSaleBillingModel *_saleModel;
 }
 
 @end
@@ -28,6 +29,12 @@
     
     [self getSaleBillingById];
 }
+
+
+
+
+
+
 
 -(void)getSaleBillingById
 {
@@ -46,7 +53,7 @@
             return;
         }
         
-        EPSaleBillingModel *model = [EPSaleBillingModel MM_modelWithJSON:request.responseJSONObject];
+        _saleModel = [EPSaleBillingModel MM_modelWithJSON:request.responseJSONObject];
         
         
     } failure:^(YTKBaseRequest * request) {
