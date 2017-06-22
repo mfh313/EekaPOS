@@ -67,7 +67,7 @@
     self.edgesForExtendedLayout = UIRectEdgeAll;
     
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
     
     _saleBillingItemModels = [NSMutableArray array];
     _saleBillingDeductions = [NSMutableArray array];
