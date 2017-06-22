@@ -110,7 +110,6 @@
 		AC34B9E81EF81B8D00852993 /* EPSaleBillingGuidesCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC34B9E71EF81B8D00852993 /* EPSaleBillingGuidesCellView.xib */; };
 		AC3AB0371EF8BCC00052EB95 /* EPGetGoodsDetailApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3AB0351EF8BCC00052EB95 /* EPGetGoodsDetailApi.m */; };
 		AC4EB2961EF8EA4A003AD128 /* EPSaleBillingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB2951EF8EA4A003AD128 /* EPSaleBillingListViewController.m */; };
-		AC4EB2991EF8F155003AD128 /* EPGetSaleBillingListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB2981EF8F155003AD128 /* EPGetSaleBillingListApi.m */; };
 		AC4EB29C1EF8F64B003AD128 /* EPSaleBillingListCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB29B1EF8F64B003AD128 /* EPSaleBillingListCellView.m */; };
 		AC4EB29E1EF90AC5003AD128 /* EPSaleBillingListCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC4EB29D1EF90AC5003AD128 /* EPSaleBillingListCellView.xib */; };
 		AC6646191EFB70610096C31E /* EPGetSallerListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6646181EFB70610096C31E /* EPGetSallerListApi.m */; };
@@ -119,6 +118,7 @@
 		AC6646221EFB9C280096C31E /* EPSaveSaleBillingApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6646211EFB9C280096C31E /* EPSaveSaleBillingApi.m */; };
 		AC6646251EFB9D590096C31E /* EPDeleteSaleBillingApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6646241EFB9D590096C31E /* EPDeleteSaleBillingApi.m */; };
 		AC6646281EFB9ED70096C31E /* EPSaleBillingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6646271EFB9ED70096C31E /* EPSaleBillingDetailViewController.m */; };
+		AC66462B1EFBB26C0096C31E /* EPGetSaleBillingListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC66462A1EFBB26C0096C31E /* EPGetSaleBillingListApi.m */; };
 		AC6687901EFA1B3D008AE45D /* RYNumbeKeyboard.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC66878A1EFA1B3D008AE45D /* RYNumbeKeyboard.bundle */; };
 		AC6687911EFA1B3D008AE45D /* RYNumberKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = AC66878C1EFA1B3D008AE45D /* RYNumberKeyboard.m */; };
 		AC6687921EFA1B3D008AE45D /* RYNumberKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC66878D1EFA1B3D008AE45D /* RYNumberKeyboard.xib */; };
@@ -598,8 +598,6 @@
 		AC3AB0361EF8BCC00052EB95 /* EPGetGoodsDetailApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPGetGoodsDetailApi.h; sourceTree = "<group>"; };
 		AC4EB2941EF8EA4A003AD128 /* EPSaleBillingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingListViewController.h; sourceTree = "<group>"; };
 		AC4EB2951EF8EA4A003AD128 /* EPSaleBillingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingListViewController.m; sourceTree = "<group>"; };
-		AC4EB2971EF8F155003AD128 /* EPGetSaleBillingListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPGetSaleBillingListApi.h; sourceTree = "<group>"; };
-		AC4EB2981EF8F155003AD128 /* EPGetSaleBillingListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPGetSaleBillingListApi.m; sourceTree = "<group>"; };
 		AC4EB29A1EF8F64B003AD128 /* EPSaleBillingListCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingListCellView.h; sourceTree = "<group>"; };
 		AC4EB29B1EF8F64B003AD128 /* EPSaleBillingListCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingListCellView.m; sourceTree = "<group>"; };
 		AC4EB29D1EF90AC5003AD128 /* EPSaleBillingListCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingListCellView.xib; sourceTree = "<group>"; };
@@ -615,6 +613,8 @@
 		AC6646241EFB9D590096C31E /* EPDeleteSaleBillingApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPDeleteSaleBillingApi.m; sourceTree = "<group>"; };
 		AC6646261EFB9ED70096C31E /* EPSaleBillingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingDetailViewController.h; sourceTree = "<group>"; };
 		AC6646271EFB9ED70096C31E /* EPSaleBillingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingDetailViewController.m; sourceTree = "<group>"; };
+		AC6646291EFBB26C0096C31E /* EPGetSaleBillingListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPGetSaleBillingListApi.h; sourceTree = "<group>"; };
+		AC66462A1EFBB26C0096C31E /* EPGetSaleBillingListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPGetSaleBillingListApi.m; sourceTree = "<group>"; };
 		AC66878A1EFA1B3D008AE45D /* RYNumbeKeyboard.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RYNumbeKeyboard.bundle; sourceTree = "<group>"; };
 		AC66878B1EFA1B3D008AE45D /* RYNumberKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYNumberKeyboard.h; sourceTree = "<group>"; };
 		AC66878C1EFA1B3D008AE45D /* RYNumberKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYNumberKeyboard.m; sourceTree = "<group>"; };
@@ -1721,6 +1721,8 @@
 				AC66461E1EFB9BC50096C31E /* EPUpdateSaleBillingApi.m */,
 				AC6646231EFB9D590096C31E /* EPDeleteSaleBillingApi.h */,
 				AC6646241EFB9D590096C31E /* EPDeleteSaleBillingApi.m */,
+				AC6646291EFBB26C0096C31E /* EPGetSaleBillingListApi.h */,
+				AC66462A1EFBB26C0096C31E /* EPGetSaleBillingListApi.m */,
 			);
 			path = EekaPos;
 			sourceTree = "<group>";
@@ -1786,6 +1788,8 @@
 			isa = PBXGroup;
 			children = (
 				AC950EC01EF5227B003EEBD0 /* SaleBilling.storyboard */,
+				AC32BE811EF6A207001A6291 /* EPSaleBillingHelper.h */,
+				AC32BE821EF6A207001A6291 /* EPSaleBillingHelper.m */,
 				AC950EBD1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.h */,
 				AC950EBE1EF51F5B003EEBD0 /* EPSaleBillingMainViewController.m */,
 				AC9514A51EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.h */,
@@ -1832,10 +1836,6 @@
 				AC34B9E41EF81AFA00852993 /* EPSaleBillingGuidesCellView.h */,
 				AC34B9E51EF81AFA00852993 /* EPSaleBillingGuidesCellView.m */,
 				AC34B9E71EF81B8D00852993 /* EPSaleBillingGuidesCellView.xib */,
-				AC4EB2971EF8F155003AD128 /* EPGetSaleBillingListApi.h */,
-				AC4EB2981EF8F155003AD128 /* EPGetSaleBillingListApi.m */,
-				AC32BE811EF6A207001A6291 /* EPSaleBillingHelper.h */,
-				AC32BE821EF6A207001A6291 /* EPSaleBillingHelper.m */,
 				AC4EB2941EF8EA4A003AD128 /* EPSaleBillingListViewController.h */,
 				AC4EB2951EF8EA4A003AD128 /* EPSaleBillingListViewController.m */,
 				AC4EB29A1EF8F64B003AD128 /* EPSaleBillingListCellView.h */,
@@ -2859,11 +2859,11 @@
 				AC9513D31EF52D67003EEBD0 /* ZXGeoParsedResult.m in Sources */,
 				AC9514681EF52D67003EEBD0 /* ZXPDF417Codeword.m in Sources */,
 				AC9514601EF52D67003EEBD0 /* ZXUPCEANWriter.m in Sources */,
+				AC66462B1EFBB26C0096C31E /* EPGetSaleBillingListApi.m in Sources */,
 				AC9513F91EF52D67003EEBD0 /* ZXByteArray.m in Sources */,
 				AC9514351EF52D67003EEBD0 /* ZXAnyAIDecoder.m in Sources */,
 				AC9514471EF52D67003EEBD0 /* ZXRSSUtils.m in Sources */,
 				AC950E9A1EF4D5D7003EEBD0 /* EPMainFrameViewController.m in Sources */,
-				AC4EB2991EF8F155003AD128 /* EPGetSaleBillingListApi.m in Sources */,
 				AC9513ED1EF52D67003EEBD0 /* ZXImage.m in Sources */,
 				AC9513F51EF52D67003EEBD0 /* ZXBitArray.m in Sources */,
 				AC9514821EF52D67003EEBD0 /* ZXQRCodeFormatInformation.m in Sources */,
