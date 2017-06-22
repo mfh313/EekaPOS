@@ -73,7 +73,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKa-Nt-ozV">
                     <rect key="frame" x="421.5" y="48" width="21.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -96,11 +96,11 @@
                 <constraint firstAttribute="trailing" secondItem="agW-9R-WXY" secondAttribute="trailing" id="Qpt-wo-Zw3"/>
                 <constraint firstItem="6Xh-os-6xJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RcZ-Hs-E5v"/>
                 <constraint firstItem="yRF-am-wRL" firstAttribute="top" secondItem="AZ8-bl-NDf" secondAttribute="bottom" id="Trn-xB-KcO"/>
+                <constraint firstItem="aKa-Nt-ozV" firstAttribute="trailing" secondItem="nX2-m8-3bV" secondAttribute="trailing" id="Wqe-dt-6Zy"/>
                 <constraint firstItem="wEX-x6-Vov" firstAttribute="top" secondItem="yRF-am-wRL" secondAttribute="bottom" constant="1" id="ZE6-ea-o5k"/>
                 <constraint firstItem="MGH-hM-YeS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ahp-mb-2wo"/>
                 <constraint firstItem="aKa-Nt-ozV" firstAttribute="width" secondItem="nX2-m8-3bV" secondAttribute="width" id="fFf-Sm-3x7"/>
                 <constraint firstItem="agW-9R-WXY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kO3-xb-uCc"/>
-                <constraint firstItem="aKa-Nt-ozV" firstAttribute="centerX" secondItem="nX2-m8-3bV" secondAttribute="centerX" id="nZU-A4-R6A"/>
                 <constraint firstAttribute="trailing" secondItem="nX2-m8-3bV" secondAttribute="trailing" constant="20" id="r7s-j1-Qhj"/>
                 <constraint firstItem="wEX-x6-Vov" firstAttribute="leading" secondItem="yRF-am-wRL" secondAttribute="leading" id="tE4-JO-BoR"/>
                 <constraint firstItem="wEX-x6-Vov" firstAttribute="trailing" secondItem="yRF-am-wRL" secondAttribute="trailing" id="yOE-gT-4Ih"/>

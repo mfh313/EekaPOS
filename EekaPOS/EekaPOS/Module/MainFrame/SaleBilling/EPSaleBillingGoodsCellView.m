@@ -83,7 +83,7 @@
 
 -(void)setDiscountRate:(NSNumber *)rate
 {
-    _discountRateLabel.text = [NSString stringWithFormat:@"%.2f",rate.floatValue];
+    _discountRateLabel.text = [MFStringUtil floatStringWithTwoPoint:rate.floatValue];
 }
 
 -(void)setDiscountAfter:(NSString *)str

@@ -129,7 +129,7 @@
     NSUInteger section = indexPath.section;
     if (section == 0)
     {
-        return [self tableView:tableView saleBillingDiscountCellForRowAtIndexPath:indexPath];
+        return [self tableView:tableView saleBillingGoodsCellForRowAtIndexPath:indexPath];
     }
     else if (section == 1)
     {
@@ -159,12 +159,12 @@
     return [UITableViewCell new];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView saleBillingDiscountCellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell *)tableView:(UITableView *)tableView saleBillingGoodsCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingDiscountCell"];
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingGoodsCell"];
     
     if (cell == nil) {
-        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingDiscountCell"];
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingGoodsCell"];
         EPSaleBillingGoodsCellView *cellView = [EPSaleBillingGoodsCellView nibView];
         cellView.m_delegate = self;
         cell.m_subContentView = cellView;
@@ -210,8 +210,6 @@
     return cell;
 }
 
-
-#pragma mark - EPSaleBillingDiscountInputViewDelegate
 -(UITableViewCell *)tableView:(UITableView *)tableView telePhoneCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"telePhoneCell"];
@@ -392,6 +390,8 @@
     [_saleBillingDeductions addObject:deductionModel];
     
     [self reSetTableSubViews];
+    
+    _selectedDeductionModel = nil;
     
 }
 
@@ -643,6 +643,7 @@
         }
         else
         {
+            itemModel.discount = _saleBillingModel.discount;
             _discountPrice += itemModel.listPrice.floatValue * _saleBillingModel.discount.floatValue;
         }
         
@@ -692,6 +693,11 @@
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];
     }];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {

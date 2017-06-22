@@ -20,6 +20,17 @@
     return model;
 }
 
+-(id)copyWithZone:(NSZone *)zone
+{
+    EPSaleBillingDeductionModel *model = [[self class] allocWithZone:zone];
+    
+    model.value = self.value;
+    model.key = self.key;
+    model.name = self.name;
+    
+    return model;
+}
+
 @end
 
 

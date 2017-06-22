@@ -14,11 +14,11 @@
 {
     __weak IBOutlet UILabel *_deductionTypeLabel;
     __weak IBOutlet UITextField *_deductionTextField;
-    __weak IBOutlet MFUIButton *_deductionTypeBtn;
+
+    __weak IBOutlet UIView *_typeNameView;
+    __weak IBOutlet UIView *_deductionValueView;
     
     EPSaleBillingDeductionModel *_deductionModel;
-    
-    
 }
 
 @end
@@ -29,20 +29,22 @@
 {
     [super awakeFromNib];
     
-    [_deductionTypeBtn addTarget:self action:@selector(onClickDeductionBtn) forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer *typeNameGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickDeductionBtn)];
+    [_typeNameView addGestureRecognizer:typeNameGes];
     
-    _deductionTextField.ry_inputType = RYIntInputType;
+    UITapGestureRecognizer *valueGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickDeductionValue)];
+    [_deductionValueView addGestureRecognizer:valueGes];
+    
+    _deductionTextField.ry_inputType = RYFloat2DigitInputType;
     RYNumberKeyboard *rateKeyBoard = (RYNumberKeyboard *)_deductionTextField.inputView;
     rateKeyBoard.ryDelegate = self;
-    rateKeyBoard.inputType = RYIntInputType;
-    
+    rateKeyBoard.inputType = RYFloat2DigitInputType;
 }
 
 - (void)ryNumberKeyboardValueChange:(NSString *)string tag:(NSInteger)tag
 {
     _deductionModel.value = @(string.floatValue);
 }
-
 
 - (void)ryNumberKeyboardSubmit:(NSString *)string tag:(NSInteger)tag
 {
@@ -54,11 +56,24 @@
     _deductionModel = deductionModel;
     
     [self setDeductionTypeName:deductionModel.name];
+    
+    if (deductionModel.value) {
+        _deductionTextField.text = [MFStringUtil floatStringWithTwoPoint:deductionModel.value.floatValue];
+    }
+    else
+    {
+        _deductionTextField.text = nil;
+    }
 }
 
 -(void)setDeductionTypeName:(NSString *)type
 {
     _deductionTypeLabel.text = type;
+}
+
+-(void)onClickDeductionValue
+{
+    [_deductionTextField becomeFirstResponder];
 }
 
 -(void)onClickDeductionBtn
@@ -70,7 +85,8 @@
 
 - (IBAction)onClickAddBtn:(id)sender {
     if ([self.m_delegate respondsToSelector:@selector(onClickAddBtn:deductionModel:)]) {
-        [self.m_delegate onClickAddBtn:self deductionModel:_deductionModel];
+
+        [self.m_delegate onClickAddBtn:self deductionModel:[_deductionModel copy]];
     }
 }
 

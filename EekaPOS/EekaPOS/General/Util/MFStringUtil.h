@@ -14,6 +14,8 @@
 
 +(BOOL)isPhoneString:(NSString *)string;
 
++(NSString *)floatStringWithTwoPoint:(CGFloat)aFloat;
+
 +(NSString *)URLEncodedString:(NSString *)str;
 
 +(NSString *)URLDecodedString:(NSString *)str;

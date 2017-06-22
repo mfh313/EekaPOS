@@ -123,6 +123,8 @@
 
 - (IBAction)onClickSelectRemark:(id)sender {
     
+    [self endEditing:YES];
+    
     EPSaleBillingGoodsRemarkSelectView *remarkSelectView = [EPSaleBillingGoodsRemarkSelectView nibView];
     remarkSelectView.m_delegate = self;
     remarkSelectView.frame = self.bounds;

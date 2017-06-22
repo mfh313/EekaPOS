@@ -28,7 +28,7 @@
                             <color key="textColor" red="0.0" green="0.50196078430000002" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mF-vj-ucq" customClass="MFUIButton">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mF-vj-ucq">
                             <rect key="frame" x="115" y="0.0" width="175" height="61"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwg-8q-UCB">
@@ -48,6 +48,9 @@
                                     </constraints>
                                 </imageView>
                             </subviews>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" notEnabled="YES"/>
+                            </accessibility>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="cwg-8q-UCB" secondAttribute="trailing" constant="20" id="3Uy-YT-XpW"/>
                                 <constraint firstItem="8od-bb-e7w" firstAttribute="centerY" secondItem="2mF-vj-ucq" secondAttribute="centerY" id="4jt-y7-A68"/>
@@ -150,8 +153,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="_deductionTextField" destination="QAG-jb-TWS" id="BU3-HG-Km5"/>
-                <outlet property="_deductionTypeBtn" destination="2mF-vj-ucq" id="uvT-St-a5b"/>
                 <outlet property="_deductionTypeLabel" destination="cwg-8q-UCB" id="Mke-Ov-E3T"/>
+                <outlet property="_deductionValueView" destination="pGK-ba-LUB" id="qAr-bH-d1H"/>
+                <outlet property="_typeNameView" destination="Wz9-kW-84n" id="ejZ-z1-7u4"/>
             </connections>
             <point key="canvasLocation" x="-3" y="5"/>
         </view>

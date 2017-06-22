@@ -13,7 +13,7 @@
 #define EPSaleBillingDeductionKey_3  @"PaperCash"
 #define EPSaleBillingDeductionKey_4  @"CompanyFullDiscount"
 
-@interface EPSaleBillingDeductionModel : NSObject
+@interface EPSaleBillingDeductionModel : NSObject <NSCopying>
 
 @property(nonatomic,strong) NSString *name;
 @property(nonatomic,strong) NSString *key;

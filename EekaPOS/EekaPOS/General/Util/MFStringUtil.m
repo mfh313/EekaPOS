@@ -48,4 +48,9 @@
     return decodedString;
 }
 
++(NSString *)floatStringWithTwoPoint:(CGFloat)aFloat
+{
+    return [NSString stringWithFormat:@"%.2f",aFloat];
+}
+
 @end
