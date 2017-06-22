@@ -603,8 +603,9 @@
         
         [strongSelf showTips:@"销售开单成功"];
         
-        [strongSelf pres]
-        [[EPAppViewControllerManager getAppViewControllerManager] pushSaleBillingListViewController];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[EPAppViewControllerManager getAppViewControllerManager] pushSaleBillingListViewController];
+        });
         
     } failure:^(YTKBaseRequest * request) {
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
