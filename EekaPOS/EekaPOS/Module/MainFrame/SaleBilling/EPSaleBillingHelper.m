@@ -61,7 +61,6 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSString *strDate = [dateFormatter stringFromDate:date];
     
-    //@"2017-06-20 09:25"
     return strDate;
 }
 
@@ -76,7 +75,7 @@
 
 +(float)roundFloat:(float)price{
     
-    NSString *floatString = [NSString stringWithFormat:@"%.2f",price];
+    NSString *floatString = [NSString stringWithFormat:@"%0.2f",price];
     return (floorf(price*100 + 0.5))/100;
 }
 

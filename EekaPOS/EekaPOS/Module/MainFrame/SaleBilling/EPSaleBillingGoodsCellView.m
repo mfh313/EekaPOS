@@ -83,7 +83,7 @@
 
 -(void)setDiscountRate:(NSNumber *)rate
 {
-    _discountRateLabel.text = [NSString stringWithFormat:@"%.2f",[EPSaleBillingHelper roundFloat:rate.floatValue]];
+    _discountRateLabel.text = [NSString stringWithFormat:@"%.2f",rate.floatValue];
 }
 
 -(void)setDiscountAfter:(NSString *)str

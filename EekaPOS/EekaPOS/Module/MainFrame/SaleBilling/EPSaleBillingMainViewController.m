@@ -68,8 +68,6 @@
     
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
-    _saleBillingModel = [EPSaleBillingModel new];
-    _saleBillingModel.discount = @(1.0);
     
     _saleBillingItemModels = [NSMutableArray array];
     _saleBillingDeductions = [NSMutableArray array];
@@ -77,7 +75,9 @@
     
     _codeInputView.m_delegate = self;
     
-//    _saleBillingModel.phone = @"15813818620";
+    _saleBillingModel = [EPSaleBillingModel new];
+    _saleBillingModel.discount = @(1.00);
+
 }
 
 -(void)onClickBackBtn:(id)sender
@@ -571,7 +571,6 @@
     _saleBillingModel.printDate = [EPSaleBillingHelper dateStringWithDate:[NSDate date]];
     _saleBillingModel.amountPrice = _allPrice;
     _saleBillingModel.trueRece = [self receivablePrice];
-    _saleBillingModel.discount = @(0.85);
     _saleBillingModel.itemList = _saleBillingItemModels;
     
     BOOL canSaveSaleBilling = [self canSaveSaleBilling];
