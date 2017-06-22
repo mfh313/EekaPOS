@@ -67,7 +67,7 @@
     self.edgesForExtendedLayout = UIRectEdgeAll;
     
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
-    
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
     
     _saleBillingItemModels = [NSMutableArray array];
     _saleBillingDeductions = [NSMutableArray array];
@@ -346,7 +346,7 @@
     }
     else if (section == 4)
     {
-        return 40.0;
+        return 46.0;
     }
     else if (section == 5)
     {
@@ -385,6 +385,11 @@
         return;
     }
     
+    if (!deductionModel.value) {
+        [self showTips:@"请输入扣减金额"];
+        return;
+    }
+    
     _selectedDeductionModel.value = deductionModel.value;
     
     [_saleBillingDeductions addObject:deductionModel];
@@ -392,7 +397,6 @@
     [self reSetTableSubViews];
     
     _selectedDeductionModel = nil;
-    
 }
 
 #pragma mark - EPSaleBillingItemCodeInputViewDelegate
