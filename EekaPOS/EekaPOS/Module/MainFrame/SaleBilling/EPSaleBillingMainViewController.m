@@ -603,6 +603,9 @@
         
         [strongSelf showTips:@"销售开单成功"];
         
+        [strongSelf pres]
+        [[EPAppViewControllerManager getAppViewControllerManager] pushSaleBillingListViewController];
+        
     } failure:^(YTKBaseRequest * request) {
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];

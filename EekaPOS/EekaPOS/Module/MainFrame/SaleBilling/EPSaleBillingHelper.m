@@ -92,7 +92,7 @@
 
 +(NSString *)moneyDescWithNumber:(NSNumber *)money
 {
-    return [NSString stringWithFormat:@"¥ %.1f ",money.floatValue];
+    return [NSString stringWithFormat:@"¥ %.2f ",money.floatValue];
 }
 
 +(NSMutableArray *)saleBillingDeductionModels

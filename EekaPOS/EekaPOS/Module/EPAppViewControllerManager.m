@@ -85,4 +85,13 @@
     return m_tabbarController;
 }
 
+-(void)pushSaleBillingListViewController
+{
+    MMNavigationController *rootNav = m_tabbarController.viewControllers[0];
+    [rootNav popToRootViewControllerAnimated:NO];
+    
+    EPMainFrameViewController *mainFrameVC = (EPMainFrameViewController *)rootNav.viewControllers[0];
+    [mainFrameVC pushBillingListVC];
+}
+
 @end

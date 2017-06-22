@@ -16,11 +16,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fd0-Dc-O4O">
-                    <rect key="frame" x="10" y="16" width="16" height="22"/>
+                    <rect key="frame" x="15" y="16" width="16" height="22"/>
                     <state key="normal" image="sale4"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电子现金劵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BT4-BF-6nz">
-                    <rect key="frame" x="36" y="17" width="77" height="20"/>
+                    <rect key="frame" x="41" y="17" width="77" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Fvj-aU-GEG"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" id="hdK-5W-JhO"/>
@@ -44,7 +44,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="8AJ-07-NTy" secondAttribute="trailing" constant="10" id="3we-I9-1C5"/>
                 <constraint firstItem="8AJ-07-NTy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Jg3-E1-oBb"/>
-                <constraint firstItem="fd0-Dc-O4O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Jqi-a1-SIP"/>
+                <constraint firstItem="fd0-Dc-O4O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Jqi-a1-SIP"/>
                 <constraint firstItem="BT4-BF-6nz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cr1-np-bFI"/>
                 <constraint firstItem="BT4-BF-6nz" firstAttribute="leading" secondItem="fd0-Dc-O4O" secondAttribute="trailing" constant="10" id="cvU-Xz-woS"/>
                 <constraint firstItem="fd0-Dc-O4O" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pjf-Wc-NV8"/>

@@ -21,4 +21,6 @@
 -(void)jumpToLoginViewController;
 -(void)createMainTabViewController;
 
+-(void)pushSaleBillingListViewController;
+
 @end

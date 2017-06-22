@@ -83,7 +83,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNA-DJ-11F">
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNA-DJ-11F">
                                     <rect key="frame" x="200" y="0.0" width="40" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="sFX-Vs-FVB"/>
@@ -167,7 +167,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjA-5g-7b4">
-                            <rect key="frame" x="20" y="230" width="101" height="50"/>
+                            <rect key="frame" x="20" y="224.5" width="101" height="50"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Lyj-Oh-2M8"/>
@@ -181,7 +181,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV6-VR-3eL">
-                            <rect key="frame" x="143" y="230" width="101" height="50"/>
+                            <rect key="frame" x="143" y="224.5" width="101" height="50"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="X0k-0s-qZ9"/>
@@ -206,9 +206,9 @@
                         <constraint firstItem="IEr-CL-Sh2" firstAttribute="centerX" secondItem="OZy-bQ-uM6" secondAttribute="centerX" id="Ma2-Dr-AJ9"/>
                         <constraint firstItem="jF9-Fs-f2b" firstAttribute="leading" secondItem="grT-0Z-q5n" secondAttribute="trailing" constant="10" id="Rti-5c-Jja"/>
                         <constraint firstItem="jF9-Fs-f2b" firstAttribute="centerY" secondItem="grT-0Z-q5n" secondAttribute="centerY" id="TAy-fN-LCi"/>
+                        <constraint firstItem="vV6-VR-3eL" firstAttribute="top" secondItem="LsW-Ka-Vpw" secondAttribute="bottom" constant="30" id="UOg-hD-R8n"/>
                         <constraint firstItem="qjA-5g-7b4" firstAttribute="leading" secondItem="OZy-bQ-uM6" secondAttribute="leading" constant="20" id="V2O-v8-hIe"/>
                         <constraint firstItem="grT-0Z-q5n" firstAttribute="top" secondItem="OZy-bQ-uM6" secondAttribute="top" constant="20" id="YID-By-G50"/>
-                        <constraint firstAttribute="bottom" secondItem="vV6-VR-3eL" secondAttribute="bottom" constant="40" id="bix-ym-OTU"/>
                         <constraint firstItem="OVz-Ol-fZc" firstAttribute="top" secondItem="jF9-Fs-f2b" secondAttribute="top" constant="-5" id="drv-DE-bFu"/>
                         <constraint firstItem="LsW-Ka-Vpw" firstAttribute="centerX" secondItem="IEr-CL-Sh2" secondAttribute="centerX" id="eQ5-jp-Qer"/>
                         <constraint firstItem="ZqA-U4-Ezs" firstAttribute="top" secondItem="OZy-bQ-uM6" secondAttribute="top" id="g22-sL-ejD"/>
