@@ -26,6 +26,11 @@
     
 }
 
+-(void)setItemCode:(NSString *)itemCode
+{
+    _itemCodeTextField.text = itemCode;
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     if ([string isEqualToString:@"\n"]) {

@@ -20,4 +20,6 @@
 
 @property (nonatomic,weak) id<EPSaleBillingItemCodeInputViewDelegate> m_delegate;
 
+-(void)setItemCode:(NSString *)itemCode;
+
 @end

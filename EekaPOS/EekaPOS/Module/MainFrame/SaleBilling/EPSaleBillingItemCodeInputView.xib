@@ -22,19 +22,18 @@
                     </constraints>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入商品条码或扫一扫" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UVb-YT-V0O">
-                    <rect key="frame" x="20" y="16.5" width="252" height="24"/>
+                    <rect key="frame" x="20" y="18" width="257" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="iTX-Ls-KYT"/>
+                        <constraint firstAttribute="height" constant="21" id="iTX-Ls-KYT"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" returnKeyType="search"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tss-4s-dTU">
-                    <rect key="frame" x="282" y="8.5" width="40" height="40"/>
+                    <rect key="frame" x="282" y="0.0" width="40" height="57"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="eRS-eE-MAf"/>
-                        <constraint firstAttribute="height" constant="40" id="hbU-xl-fz1"/>
                     </constraints>
                     <state key="normal" image="scan"/>
                     <connections>
@@ -42,9 +41,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Km3-Ee-jf1">
-                    <rect key="frame" x="332" y="6.5" width="44" height="44"/>
+                    <rect key="frame" x="332" y="0.0" width="44" height="57"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="ZoO-Vd-Une"/>
                         <constraint firstAttribute="width" constant="44" id="ekh-1S-Uhg"/>
                     </constraints>
                     <state key="normal" image="btn_add"/>
@@ -66,13 +64,16 @@
                 <constraint firstAttribute="trailing" secondItem="bRc-y0-XeZ" secondAttribute="trailing" id="9LV-8G-X4h"/>
                 <constraint firstAttribute="bottom" secondItem="bRc-y0-XeZ" secondAttribute="bottom" constant="1" id="Dzl-1w-AVa"/>
                 <constraint firstItem="Tss-4s-dTU" firstAttribute="centerY" secondItem="ZUx-Lo-3wX" secondAttribute="centerY" id="Oa4-8O-plR"/>
-                <constraint firstItem="Tss-4s-dTU" firstAttribute="leading" secondItem="UVb-YT-V0O" secondAttribute="trailing" constant="10" id="Vp1-1p-T7B"/>
+                <constraint firstItem="Tss-4s-dTU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Twc-DQ-3lg"/>
+                <constraint firstItem="Tss-4s-dTU" firstAttribute="leading" secondItem="UVb-YT-V0O" secondAttribute="trailing" constant="5" id="Vp1-1p-T7B"/>
                 <constraint firstItem="bRc-y0-XeZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a3N-rf-FJl"/>
                 <constraint firstAttribute="trailing" secondItem="Km3-Ee-jf1" secondAttribute="trailing" constant="10" id="meG-kA-Kgp"/>
+                <constraint firstItem="Km3-Ee-jf1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nkE-se-LWa"/>
                 <constraint firstItem="ZUx-Lo-3wX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nue-hU-QkV"/>
                 <constraint firstItem="Tss-4s-dTU" firstAttribute="trailing" secondItem="ZUx-Lo-3wX" secondAttribute="trailing" id="onk-0A-jYM"/>
                 <constraint firstItem="UVb-YT-V0O" firstAttribute="leading" secondItem="ZUx-Lo-3wX" secondAttribute="leading" constant="10" id="otg-cF-CPK"/>
                 <constraint firstItem="Km3-Ee-jf1" firstAttribute="leading" secondItem="ZUx-Lo-3wX" secondAttribute="trailing" constant="10" id="tGt-n8-Ckj"/>
+                <constraint firstItem="Tss-4s-dTU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="twd-Up-YY0"/>
                 <constraint firstItem="ZUx-Lo-3wX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="v3e-98-PzY"/>
                 <constraint firstItem="UVb-YT-V0O" firstAttribute="centerY" secondItem="ZUx-Lo-3wX" secondAttribute="centerY" id="xty-AF-uba"/>
             </constraints>
