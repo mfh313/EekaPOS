@@ -114,6 +114,7 @@
 		AC4EB2991EF8F155003AD128 /* EPGetSaleBillingListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB2981EF8F155003AD128 /* EPGetSaleBillingListApi.m */; };
 		AC4EB29C1EF8F64B003AD128 /* EPSaleBillingListCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB29B1EF8F64B003AD128 /* EPSaleBillingListCellView.m */; };
 		AC4EB29E1EF90AC5003AD128 /* EPSaleBillingListCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC4EB29D1EF90AC5003AD128 /* EPSaleBillingListCellView.xib */; };
+		AC6646191EFB70610096C31E /* EPGetSallerListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6646181EFB70610096C31E /* EPGetSallerListApi.m */; };
 		AC6687901EFA1B3D008AE45D /* RYNumbeKeyboard.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC66878A1EFA1B3D008AE45D /* RYNumbeKeyboard.bundle */; };
 		AC6687911EFA1B3D008AE45D /* RYNumberKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = AC66878C1EFA1B3D008AE45D /* RYNumberKeyboard.m */; };
 		AC6687921EFA1B3D008AE45D /* RYNumberKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC66878D1EFA1B3D008AE45D /* RYNumberKeyboard.xib */; };
@@ -600,6 +601,8 @@
 		AC4EB29A1EF8F64B003AD128 /* EPSaleBillingListCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingListCellView.h; sourceTree = "<group>"; };
 		AC4EB29B1EF8F64B003AD128 /* EPSaleBillingListCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingListCellView.m; sourceTree = "<group>"; };
 		AC4EB29D1EF90AC5003AD128 /* EPSaleBillingListCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingListCellView.xib; sourceTree = "<group>"; };
+		AC6646171EFB70610096C31E /* EPGetSallerListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPGetSallerListApi.h; sourceTree = "<group>"; };
+		AC6646181EFB70610096C31E /* EPGetSallerListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPGetSallerListApi.m; sourceTree = "<group>"; };
 		AC66878A1EFA1B3D008AE45D /* RYNumbeKeyboard.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RYNumbeKeyboard.bundle; sourceTree = "<group>"; };
 		AC66878B1EFA1B3D008AE45D /* RYNumberKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYNumberKeyboard.h; sourceTree = "<group>"; };
 		AC66878C1EFA1B3D008AE45D /* RYNumberKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYNumberKeyboard.m; sourceTree = "<group>"; };
@@ -1692,6 +1695,8 @@
 				AC32BE671EF6648A001A6291 /* EPEntitityService.m */,
 				AC32BE571EF6210B001A6291 /* EPGetIndividualApi.h */,
 				AC32BE581EF6210B001A6291 /* EPGetIndividualApi.m */,
+				AC6646171EFB70610096C31E /* EPGetSallerListApi.h */,
+				AC6646181EFB70610096C31E /* EPGetSallerListApi.m */,
 				AC32BE5A1EF625AC001A6291 /* EPGetEntitityDetailApi.h */,
 				AC32BE5B1EF625AC001A6291 /* EPGetEntitityDetailApi.m */,
 				AC3AB0361EF8BCC00052EB95 /* EPGetGoodsDetailApi.h */,
@@ -2858,6 +2863,7 @@
 				AC26E88A1EF3DDA600C4FAA6 /* YTKBaseRequest.m in Sources */,
 				AC9514741EF52D67003EEBD0 /* ZXPDF417Dimensions.m in Sources */,
 				AC950E8F1EF4D337003EEBD0 /* NSString+MMWidth.m in Sources */,
+				AC6646191EFB70610096C31E /* EPGetSallerListApi.m in Sources */,
 				AC9513FB1EF52D67003EEBD0 /* ZXDecoderResult.m in Sources */,
 				AC32BE6E1EF671D7001A6291 /* EPSaleBillingEmployeeSelectView.m in Sources */,
 				AC9513E01EF52D67003EEBD0 /* ZXTelResultParser.m in Sources */,

@@ -23,4 +23,6 @@
 
 +(NSString *)getSaleBillingListURL;
 
++(NSString *)getSallerListURL;
+
 @end

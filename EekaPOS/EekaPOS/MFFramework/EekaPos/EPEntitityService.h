@@ -11,10 +11,12 @@
 @interface EPEntitityService : MMService
 {
     NSMutableArray *m_employees;
+    NSMutableArray *m_sallers;
     NSMutableArray *m_brand;
 }
 
 -(void)getEntitityDetail;
+-(void)getEntititySallers:(NSString *)strEntityId;
 -(NSMutableArray *)getEntitityEmployees;
 -(NSMutableArray *)getEntititySallerList;
 -(NSNumber *)getEntitityFirstBrandId;

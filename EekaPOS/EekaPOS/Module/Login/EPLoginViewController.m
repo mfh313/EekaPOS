@@ -86,6 +86,11 @@
     
     EPEntitityService *entitityService = [[MMServiceCenter defaultCenter] getService:[EPEntitityService class]];
     [entitityService getEntitityDetail];
+    
+    EPAccountMgr *accountMgr = [[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
+    NSString *strEntityId = [NSString stringWithFormat:@"%@",accountMgr.loginModel.entityId];
+    
+    [entitityService getEntititySallers:strEntityId];
 }
 
 - (void)didReceiveMemoryWarning {
