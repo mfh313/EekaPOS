@@ -11,6 +11,7 @@
 #import "EPGetSaleBillingListApi.h"
 #import "EPSaleBillingListCellView.h"
 #import "EPSaleBillingModel.h"
+#import "EPGetSaleBillingByIdApi.h"
 
 @interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -65,8 +66,10 @@
     listApi.animatingView = MFAppWindow;
     [listApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
         
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
         if (!listApi.messageSuccess) {
-            NSLog(@"错误描述=%@",listApi.errorMessage);
+            [strongSelf showTips:listApi.errorMessage];
             return;
         }
         
@@ -79,7 +82,7 @@
         
         [_tableView reloadData];
         
-        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
         
         
     } failure:^(YTKBaseRequest * request) {
@@ -123,6 +126,37 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    EPSaleBillingModel *model = _saleBillingList[indexPath.row];
+    
+    
+    EPGetSaleBillingByIdApi *getSaleBillingByIdApi = [EPGetSaleBillingByIdApi new];
+    getSaleBillingByIdApi.saleBillingId = model.saleBillingID;;
+    getSaleBillingByIdApi.animatingText = @"正在获取开单信息...";
+    getSaleBillingByIdApi.animatingView = MFAppWindow;
+    
+    __weak typeof(self) weakSelf = self;
+    [getSaleBillingByIdApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (!getSaleBillingByIdApi.messageSuccess) {
+            NSLog(@"错误描述=%@",getSaleBillingByIdApi.errorMessage);
+            return;
+        }
+        
+        EPSaleBillingModel *model = [EPSaleBillingModel MM_modelWithJSON:request.responseJSONObject];
+        
+        [_tableView reloadData];
+        
+
+    } failure:^(YTKBaseRequest * request) {
+        
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

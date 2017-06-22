@@ -25,4 +25,10 @@
 
 +(NSString *)getSallerListURL;
 
++(NSString *)getSaleBillingByIdURL;
+
++(NSString *)updateSaleBillingURL;
+
++(NSString *)deleteSaleBillingURL;
+
 @end

@@ -697,6 +697,7 @@
         EPSaleBillingItemModel *itemModel = [EPSaleBillingItemModel MM_modelWithJSON:request.responseJSONObject];
         itemModel.discount = _saleBillingModel.discount;
         itemModel.isSpecialDiscount = NO;
+        itemModel.number = @(1);
         
         [_saleBillingItemModels addObject:itemModel];
         

@@ -26,37 +26,53 @@ NSString const *EPApiUrl = @"https://pos.szyingjia.cn:8888/";
 
 +(NSString *)loginURL
 {
-    return MFURLWithPara(@"pos/employee/login.json");
+    return MFURLWithPara(@"pos/employee/login");
 }
 
 +(NSString *)getItemDetailURL
 {
-    return MFURLWithPara(@"pos/employee/getItemDetail.json");
+    return MFURLWithPara(@"pos/employee/getItemDetail");
 }
 
 +(NSString *)getEntitityDetailURL
 {
-    return MFURLWithPara(@"pos/employee/getEntitityDetail.json");
-}
-
-+(NSString *)getIndividualDetailURL
-{
-    return MFURLWithPara(@"pos/employee/getIndividual.json");
-}
-
-+(NSString *)saveSaleBillingURL
-{
-    return MFURLWithPara(@"pos/employee/saveSaleBilling.json");
-}
-
-+(NSString *)getSaleBillingListURL
-{
-    return MFURLWithPara(@"pos/employee/getSaleBillingList.json");
+    return MFURLWithPara(@"pos/employee/getEntitityDetail");
 }
 
 +(NSString *)getSallerListURL
 {
-    return MFURLWithPara(@"pos/employee/getSallerList.json");
+    return MFURLWithPara(@"pos/employee/getSallerList");
 }
+
++(NSString *)getIndividualDetailURL
+{
+    return MFURLWithPara(@"pos/employee/getIndividual");
+}
+
++(NSString *)saveSaleBillingURL
+{
+    return MFURLWithPara(@"pos/employee/saveSaleBilling");
+}
+
++(NSString *)getSaleBillingListURL
+{
+    return MFURLWithPara(@"pos/employee/getSaleBillingList");
+}
+
++(NSString *)getSaleBillingByIdURL
+{
+    return MFURLWithPara(@"pos/employee/getSaleBillingById");
+}
+
++(NSString *)updateSaleBillingURL
+{
+    return MFURLWithPara(@"pos/employee/updateSaleBilling");
+}
+
++(NSString *)deleteSaleBillingURL
+{
+    return MFURLWithPara(@"pos/employee/deleteSaleBilling");
+}
+
 
 @end

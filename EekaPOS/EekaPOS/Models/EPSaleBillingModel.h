@@ -11,6 +11,7 @@
 @interface EPSaleBillingModel : NSObject
 
 @property(nonatomic,strong) NSNumber *saleBillingID;
+@property(nonatomic,strong) NSString *saleNo;
 @property(nonatomic,strong) NSString *storeName;
 @property(nonatomic,strong) NSString *guider;
 @property(nonatomic,strong) NSString *guiderIds;
