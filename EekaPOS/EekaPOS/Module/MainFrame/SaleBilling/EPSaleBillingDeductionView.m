@@ -68,7 +68,14 @@
 
 -(void)setDeductionTypeName:(NSString *)type
 {
+    if (!type) {
+        _deductionTypeLabel.text = @"请点击选择";
+        _deductionTypeLabel.textColor = [UIColor hx_colorWithHexString:@"686868"];
+        return;
+    }
+    
     _deductionTypeLabel.text = type;
+    _deductionTypeLabel.textColor = [UIColor hx_colorWithHexString:@"282828"];
 }
 
 -(void)onClickDeductionValue

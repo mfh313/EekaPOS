@@ -706,8 +706,6 @@
 
 -(void)getIndividual:(NSString *)telephone
 {
-    telephone = @"15813818620";
-    
     __weak typeof(self) weakSelf = self;
     
     EPEntitityService *entitityService = [[MMServiceCenter defaultCenter] getService:[EPEntitityService class]];
@@ -728,15 +726,16 @@
         
         __strong typeof(weakSelf) strongSelf = weakSelf;
         
-        if (request.responseJSONObject[@"individualID"] &&
-            ![request.responseJSONObject[@"individualID"] isKindOfClass:[NSNull class]]) {
+        id individualID = request.responseJSONObject[@"individualID"];
+        
+        if (individualID && ![individualID isKindOfClass:[NSNull class]]) {
             
             _saleBillingModel.phone = telephone;
+            _currrentIndividualName = request.responseJSONObject[@"individualName"];
             
-            NSString *individualName = request.responseJSONObject[@"individualName"];
-            [strongSelf setIndividualName:individualName];
+            [strongSelf reSetTableSubViews];
             
-        }
+        }        
         
     } failure:^(YTKBaseRequest * request) {
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
@@ -744,11 +743,6 @@
     }];
 }
 
-
--(void)setIndividualName:(NSString *)individualName
-{
-    _currrentIndividualName = individualName;
-}
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
