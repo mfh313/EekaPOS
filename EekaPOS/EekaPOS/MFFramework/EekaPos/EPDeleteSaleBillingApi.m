@@ -1,20 +1,18 @@
 //
-//  EPUpdateSaleBillingApi.m
+//  EPDeleteSaleBillingApi.m
 //  EekaPOS
 //
 //  Created by EEKA on 2017/6/22.
 //  Copyright © 2017年 eeka. All rights reserved.
 //
 
-#import "EPUpdateSaleBillingApi.h"
-#import "EPSaleBillingModel.h"
-#import "EPSaleBillingHelper.h"
+#import "EPDeleteSaleBillingApi.h"
 
-@implementation EPUpdateSaleBillingApi
+@implementation EPDeleteSaleBillingApi
 
 -(NSString *)requestUrl
 {
-    return [EPApiManger updateSaleBillingURL];
+    return [EPApiManger deleteSaleBillingURL];
 }
 
 - (YTKRequestMethod)requestMethod {
@@ -29,9 +27,7 @@
     NSString *token = accountMgr.token;
     
     params[@"token"] = token;
-    
-    NSDictionary *modelJSON = [self.saleBillingModel MMmodelToJSONObject];
-    params[@"saleBillingStr"] = [EPSaleBillingHelper dictionaryToJson:modelJSON];
+    params[@"saleBillingID"] = self.saleBillingID;
     
     return params;
     

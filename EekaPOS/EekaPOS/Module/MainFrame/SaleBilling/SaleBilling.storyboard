@@ -281,5 +281,38 @@
             </objects>
             <point key="canvasLocation" x="1317.5999999999999" y="-58.020989505247378"/>
         </scene>
+        <!--Sale Billing Detail View Controller-->
+        <scene sceneID="fgB-eO-BHA">
+            <objects>
+                <viewController storyboardIdentifier="EPSaleBillingDetailViewController" id="Pkg-3G-B70" customClass="EPSaleBillingDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dwi-f5-gS5"/>
+                        <viewControllerLayoutGuide type="bottom" id="zdo-gt-Gm7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6mv-RX-tLT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XeS-3j-I9g">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XeS-3j-I9g" firstAttribute="top" secondItem="dwi-f5-gS5" secondAttribute="bottom" id="0sk-3g-qYr"/>
+                            <constraint firstItem="zdo-gt-Gm7" firstAttribute="top" secondItem="XeS-3j-I9g" secondAttribute="bottom" id="HbB-2k-KlV"/>
+                            <constraint firstItem="XeS-3j-I9g" firstAttribute="centerX" secondItem="6mv-RX-tLT" secondAttribute="centerX" id="KpQ-pM-pRa"/>
+                            <constraint firstItem="XeS-3j-I9g" firstAttribute="leading" secondItem="6mv-RX-tLT" secondAttribute="leading" id="sos-v2-6cU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="_tableView" destination="XeS-3j-I9g" id="7k0-TO-2U9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRK-Yj-xA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2370" y="-65"/>
+        </scene>
     </scenes>
 </document>

@@ -44,4 +44,6 @@
 
 +(NSMutableArray *)remarkModelStrings;
 
++(NSString*)dictionaryToJson:(NSDictionary *)dic;
+
 @end
