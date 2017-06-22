@@ -11,6 +11,7 @@
 @interface EPSaleBillingPhoneInputView () <UITextFieldDelegate>
 {
     __weak IBOutlet UITextField *_phoneTextField;
+    __weak IBOutlet UILabel *_nameLabel;
 }
 
 @end
@@ -34,6 +35,16 @@
 -(void)setPhone:(NSString *)phone
 {
     _phoneTextField.text = phone;
+}
+
+-(void)setName:(NSString *)name
+{
+    if ([MFStringUtil isBlankString:name]) {
+        _nameLabel.text = nil;
+        return;
+    }
+    
+    _nameLabel.text = name;
 }
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string

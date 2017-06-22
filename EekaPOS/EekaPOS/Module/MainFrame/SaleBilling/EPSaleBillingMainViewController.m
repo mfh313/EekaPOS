@@ -28,6 +28,7 @@
 #import "EPSaleBillingGuidesCellView.h"
 #import "EPSaleBillingDeductionSelectedItemView.h"
 #import "EPSaveSaleBillingApi.h"
+#import "EPEntitityService.h"
 
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
@@ -47,6 +48,8 @@
     EPEntitityEmployeeModel *_selectCashier;
     EPSaleBillingDeductionModel *_selectedDeductionModel;
     NSMutableArray *_selectGuides;
+    
+    NSString *_currrentIndividualName;
     
     CGFloat _discountPrice;
     CGFloat _allPrice;
@@ -225,6 +228,7 @@
     
     EPSaleBillingPhoneInputView *cellView = (EPSaleBillingPhoneInputView *)cell.m_subContentView;
     [cellView setPhone:_saleBillingModel.phone];
+    [cellView setName:_currrentIndividualName];
     
     return cell;
 }
@@ -232,7 +236,7 @@
 #pragma mark - EPSaleBillingPhoneInputView
 -(void)didInputPhone:(NSString *)phone
 {
-    _saleBillingModel.phone = phone;
+    [self getIndividual:phone];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView saleBillingDeductionInputCellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -697,6 +701,53 @@
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];
     }];
+}
+
+
+-(void)getIndividual:(NSString *)telephone
+{
+    telephone = @"15813818620";
+    
+    __weak typeof(self) weakSelf = self;
+    
+    EPEntitityService *entitityService = [[MMServiceCenter defaultCenter] getService:[EPEntitityService class]];
+    
+    EPGetIndividualApi *getIndividualApi = [EPGetIndividualApi new];
+    getIndividualApi.animatingText = @"正在查询顾客...";
+    getIndividualApi.animatingView = MFAppWindow;
+    
+    getIndividualApi.brandId = [NSString stringWithFormat:@"%@",[entitityService getEntitityFirstBrandId]];
+    getIndividualApi.telephone = telephone;
+    
+    [getIndividualApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        if (!getIndividualApi.messageSuccess) {
+            [self showTips:getIndividualApi.errorMessage];
+            return;
+        }
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (request.responseJSONObject[@"individualID"] &&
+            ![request.responseJSONObject[@"individualID"] isKindOfClass:[NSNull class]]) {
+            
+            _saleBillingModel.phone = telephone;
+            
+            NSString *individualName = request.responseJSONObject[@"individualName"];
+            [strongSelf setIndividualName:individualName];
+            
+        }
+        
+    } failure:^(YTKBaseRequest * request) {
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
+    }];
+}
+
+
+-(void)setIndividualName:(NSString *)individualName
+{
+    _currrentIndividualName = individualName;
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView

@@ -21,4 +21,6 @@
 
 -(void)setPhone:(NSString *)phone;
 
+-(void)setName:(NSString *)name;
+
 @end
