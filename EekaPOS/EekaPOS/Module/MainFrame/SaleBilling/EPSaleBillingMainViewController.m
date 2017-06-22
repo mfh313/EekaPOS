@@ -603,6 +603,7 @@
         
         [strongSelf showTips:@"销售开单成功"];
         
+        //15813818620
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [[EPAppViewControllerManager getAppViewControllerManager] pushSaleBillingListViewController];
         });
@@ -671,7 +672,7 @@
     [_receivablePriceLabel setText:[EPSaleBillingHelper moneyDescWithNumber:@([self receivablePrice])]];
 }
 
--(CGFloat)receivablePrice
+-(double)receivablePrice
 {
     return (_discountPrice - _deductionPrice);
 }
