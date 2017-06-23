@@ -182,9 +182,9 @@
     
     cellView.itemModel = itemModel;
     
-    [cellView setItemCode:itemModel.itemCode itemName:itemModel.itemName];
-    [cellView setRemarkString:itemModel.remarks];
-    [cellView setDiscountRate:itemModel.discount discountPreNumber:itemModel.listPrice];
+//    [cellView setItemCode:itemModel.itemCode itemName:itemModel.itemName];
+//    [cellView setRemarkString:itemModel.remarks];
+//    [cellView setDiscountRate:itemModel.discount discountPreNumber:itemModel.listPrice];
     
     return cell;
 }
@@ -652,12 +652,12 @@
         
         if (itemModel.isSpecialDiscount) {
             
-            _discountPrice += itemModel.listPrice.floatValue * itemModel.discount.floatValue;
+            _discountPrice += itemModel.listPrice.floatValue * itemModel.discount.floatValue * itemModel.number.floatValue;
         }
         else
         {
             itemModel.discount = _saleBillingModel.discount;
-            _discountPrice += itemModel.listPrice.floatValue * _saleBillingModel.discount.floatValue;
+            _discountPrice += itemModel.listPrice.floatValue * _saleBillingModel.discount.floatValue * itemModel.number.floatValue;
         }
         
     }

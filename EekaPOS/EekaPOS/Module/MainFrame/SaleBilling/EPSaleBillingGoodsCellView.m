@@ -40,6 +40,15 @@
     }
 }
 
+-(void)setItemModel:(EPSaleBillingItemModel *)itemModel
+{
+    _itemModel = itemModel;
+    
+    [self setItemCode:itemModel.itemCode itemName:itemModel.itemName];
+    [self setRemarkString:itemModel.remarks];
+    [self setDiscountRate:itemModel.discount listPrice:itemModel.listPrice number:itemModel.number];
+}
+
 -(void)setItemCode:(NSString *)itemCode itemName:(NSString *)itemName
 {
     _itemCodeLabel.text = itemCode;
@@ -57,14 +66,14 @@
     _remarkLabel.text = [stringHeader stringByAppendingString:remark];
 }
 
--(void)setDiscountRate:(NSNumber *)rate discountPreNumber:(NSNumber *)number
+-(void)setDiscountRate:(NSNumber *)rate listPrice:(NSNumber *)listPrice number:(NSNumber *)number
 {
     [self setDiscountRate:rate];
     
-    CGFloat rateAfter = (rate.floatValue) * (number.floatValue);
+    CGFloat rateAfter = rate.floatValue * listPrice.floatValue * number.floatValue;
     
     [self setDiscountAfterNumber:@(rateAfter)];
-    [self setDiscountPreNumber:number];
+    [self setDiscountPreNumber:listPrice];
 }
 
 -(void)setDiscountAfterNumber:(NSNumber *)number
