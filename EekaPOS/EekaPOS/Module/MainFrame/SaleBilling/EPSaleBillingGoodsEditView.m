@@ -28,6 +28,8 @@
     
     __weak IBOutlet UIView *_mainBgView;
     
+    BOOL _isNegative;
+    
 }
 
 @end
@@ -131,8 +133,9 @@
     [self addSubview:remarkSelectView];
 }
 
--(void)didSelectRemark:(NSString *)remark
+-(void)didSelectRemark:(NSString *)remark isNegative:(BOOL)isNegative
 {
+    _isNegative = isNegative;
     _remarkTextField.text = remark;
 }
 
@@ -155,8 +158,15 @@
     
     float rateFloat = [EPSaleBillingHelper roundFloat:rateString.floatValue];
     
-    
     NSNumber *rateNumber = @(rateFloat);
+    
+    if (_isNegative) {
+        self.itemModel.number = @(-1);
+    }
+    else
+    {
+        self.itemModel.number = @(1);
+    }
     
     if ([self.m_delegate respondsToSelector:@selector(editGoodsWithitemModel:size:rate:isSpecialDiscount:remark:)]) {
         [self.m_delegate editGoodsWithitemModel:self.itemModel size:sizeNumber rate:rateNumber isSpecialDiscount:isSpecialDiscount remark:remarkString];

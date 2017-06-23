@@ -38,17 +38,22 @@
     [self removeFromSuperview];
 }
 
-- (IBAction)onClickBtn:(id)sender {
+- (IBAction)onClickBtn:(id)sender
+{
     NSString *title = ((UIButton *)sender).titleLabel.text;
+    BOOL isNegative = [self isNegativeForRemark:title];
     
-    if ([self.m_delegate respondsToSelector:@selector(didSelectRemark:)]) {
-        [self.m_delegate didSelectRemark:title];
+    if ([self.m_delegate respondsToSelector:@selector(didSelectRemark:isNegative:)]) {
+        [self.m_delegate didSelectRemark:title isNegative:isNegative];
     }
     
     [self removeFromSuperview];
 }
 
-
+-(BOOL)isNegativeForRemark:(NSString *)remark
+{
+    return [remark isEqualToString:@"退货"];
+}
 
 
 @end

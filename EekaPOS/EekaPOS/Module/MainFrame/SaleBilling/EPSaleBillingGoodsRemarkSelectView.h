@@ -11,7 +11,7 @@
 @protocol EPSaleBillingGoodsRemarkSelectViewDelegate <NSObject>
 
 @optional
--(void)didSelectRemark:(NSString *)remark;
+-(void)didSelectRemark:(NSString *)remark isNegative:(BOOL)isNegative;
 
 @end
 

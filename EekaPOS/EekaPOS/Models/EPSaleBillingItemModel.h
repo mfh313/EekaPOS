@@ -16,7 +16,6 @@
 @property (nonatomic,strong) NSNumber *discount;
 @property (nonatomic,strong) NSString *remarks;
 @property (nonatomic,strong) NSNumber *number;
-@property (nonatomic,assign) BOOL  isSpecialDiscount;
-
+@property (nonatomic,assign) BOOL isSpecialDiscount;
 
 @end
