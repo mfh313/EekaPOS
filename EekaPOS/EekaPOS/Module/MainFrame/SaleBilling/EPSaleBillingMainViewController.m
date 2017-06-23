@@ -182,10 +182,6 @@
     
     cellView.itemModel = itemModel;
     
-//    [cellView setItemCode:itemModel.itemCode itemName:itemModel.itemName];
-//    [cellView setRemarkString:itemModel.remarks];
-//    [cellView setDiscountRate:itemModel.discount discountPreNumber:itemModel.listPrice];
-    
     return cell;
 }
 
@@ -739,6 +735,7 @@
             _saleBillingModel.phone = telephone;
             _currrentIndividualName = request.responseJSONObject[@"individualName"];
             
+            [self showTips:@"会员加载成功"];
             [strongSelf reSetTableSubViews];
             
         }        
