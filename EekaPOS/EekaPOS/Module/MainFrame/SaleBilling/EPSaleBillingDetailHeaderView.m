@@ -13,6 +13,12 @@
 @interface EPSaleBillingDetailHeaderView ()
 {
     TTTAttributedLabel *_contentLabel;
+    
+    __weak IBOutlet UILabel *_storeNameLabel;
+    __weak IBOutlet UILabel *_sellDateLabel;
+    __weak IBOutlet UILabel *_guiderLabel;
+    __weak IBOutlet UILabel *_cashierLabel;
+    
 }
 
 @end
