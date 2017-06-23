@@ -9,11 +9,17 @@
 #import "EPSaleBillingDetailViewController.h"
 #import "EPGetSaleBillingByIdApi.h"
 #import "EPSaleBillingModel.h"
+#import "EPSaleBillingDetailHeaderView.h"
+#import "EPSaleBillingDetailFooterView.h"
 
 @interface EPSaleBillingDetailViewController ()
 {
     __weak IBOutlet UITableView *_tableView;
     EPSaleBillingModel *_saleModel;
+    
+    EPSaleBillingDetailHeaderView *_headerView;
+    EPSaleBillingDetailFooterView *_footerView;
+    
 }
 
 @end
@@ -27,14 +33,27 @@
     
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
+    _headerView = [EPSaleBillingDetailHeaderView nibView];
+    _footerView = [EPSaleBillingDetailFooterView nibView];
+    
     [self getSaleBillingById];
+
 }
 
-
-
-
-
-
+-(void)setHeaderAndFooterView
+{
+    [_headerView setSaleBillingModel:_saleModel];
+    CGFloat headerHeight = [_headerView headerHeightForSaleBillingModel:_saleModel];
+    _headerView.frame = CGRectMake(0, 0, CGRectGetWidth(_tableView.frame), headerHeight);
+    
+    [_tableView beginUpdates];
+    _tableView.tableHeaderView  =_headerView;
+    [_tableView endUpdates];
+    
+    [_footerView setPrintDate:_saleModel.printDate];
+    _footerView.frame = CGRectMake(0, 0, CGRectGetWidth(_tableView.frame), 90);
+    _tableView.tableFooterView  =_footerView;
+}
 
 -(void)getSaleBillingById
 {
@@ -54,7 +73,7 @@
         }
         
         _saleModel = [EPSaleBillingModel MM_modelWithJSON:request.responseJSONObject];
-        
+        [strongSelf setHeaderAndFooterView];
         
     } failure:^(YTKBaseRequest * request) {
         

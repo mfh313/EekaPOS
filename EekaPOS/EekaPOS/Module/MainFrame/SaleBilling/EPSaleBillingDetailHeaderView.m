@@ -7,13 +7,10 @@
 //
 
 #import "EPSaleBillingDetailHeaderView.h"
-#import "TTTAttributedLabel.h"
 #import "EPSaleBillingModel.h"
 
 @interface EPSaleBillingDetailHeaderView ()
 {
-    TTTAttributedLabel *_contentLabel;
-    
     __weak IBOutlet UILabel *_storeNameLabel;
     __weak IBOutlet UILabel *_sellDateLabel;
     __weak IBOutlet UILabel *_guiderLabel;
@@ -25,16 +22,10 @@
 
 @implementation EPSaleBillingDetailHeaderView
 
--(instancetype)initWithFrame:(CGRect)frame
+-(void)awakeFromNib
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        _contentLabel = [[TTTAttributedLabel alloc] initWithFrame:self.bounds];
-        _contentLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [self addSubview:_contentLabel];
-    }
+    [super awakeFromNib];
     
-    return self;
 }
 
 -(void)setSaleBillingModel:(EPSaleBillingModel *)model
@@ -55,14 +46,19 @@
     NSString *guiderString = [NSString stringWithFormat:@"导购员：%@",guider];
     NSString *cashierString = [NSString stringWithFormat:@"收银员：%@",cashier];
     
-    [_contentLabel setAttributedText:nil];
+    _storeNameLabel.text = storeNameString;
+    _sellDateLabel.text = sellDateString;
+    _guiderLabel.text = guiderString;
+    _cashierLabel.text = cashierString;
     
 }
 
-
-+(NSMutableAttributedString *)headerSizeForSaleBillingModel:(EPSaleBillingModel *)SaleBillingModel
+-(CGFloat)headerHeightForSaleBillingModel:(EPSaleBillingModel *)model
 {
-    return nil;
+    [_cashierLabel sizeToFit];
+    [_guiderLabel sizeToFit];
+    
+    return 75 + MAX(CGRectGetHeight(_cashierLabel.frame), CGRectGetHeight(_guiderLabel.frame)) + 30;
 }
 
 @end

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EPSaleBillingDetailFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="167"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tc0-TM-MzE" customClass="MMOnePixLine">
+                    <rect key="frame" x="0.0" y="0.0" width="404" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="fcW-N4-mw5"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="谢谢惠顾，请保留小票以备查验" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1c-XZ-Eem">
+                    <rect key="frame" x="15" y="15" width="214.5" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="WnN-UU-3qz"/>
+                        <constraint firstAttribute="height" constant="22" id="o7T-bs-rUS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="退换货需以此销售小票为最终凭据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-Zm-kXI">
+                    <rect key="frame" x="15" y="37" width="230" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="08e-za-hLl"/>
+                        <constraint firstAttribute="height" constant="22" id="PMe-aI-xhH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打印日期：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQb-S1-wfh">
+                    <rect key="frame" x="15" y="59" width="76.5" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="Qlp-P8-Qz5"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="nxd-Jx-iNQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Tc0-TM-MzE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8Qj-IH-thv"/>
+                <constraint firstItem="CQb-S1-wfh" firstAttribute="leading" secondItem="u1c-XZ-Eem" secondAttribute="leading" id="L1a-JM-sZF"/>
+                <constraint firstItem="CQb-S1-wfh" firstAttribute="top" secondItem="hGe-Zm-kXI" secondAttribute="bottom" id="LCe-n6-x9V"/>
+                <constraint firstItem="hGe-Zm-kXI" firstAttribute="leading" secondItem="u1c-XZ-Eem" secondAttribute="leading" id="NUJ-mD-LJV"/>
+                <constraint firstItem="u1c-XZ-Eem" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="Tbd-nk-UPM"/>
+                <constraint firstItem="Tc0-TM-MzE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zdh-he-tRj"/>
+                <constraint firstItem="u1c-XZ-Eem" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="ajQ-Kb-wdt"/>
+                <constraint firstAttribute="trailing" secondItem="Tc0-TM-MzE" secondAttribute="trailing" id="ffa-mR-j3s"/>
+                <constraint firstItem="hGe-Zm-kXI" firstAttribute="top" secondItem="u1c-XZ-Eem" secondAttribute="bottom" id="heQ-Is-0w1"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="_printDateLabel" destination="CQb-S1-wfh" id="M9k-W4-zwK"/>
+            </connections>
+            <point key="canvasLocation" x="-21" y="34.5"/>
+        </view>
+    </objects>
+</document>
