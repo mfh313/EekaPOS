@@ -83,9 +83,6 @@
         
         [_tableView reloadData];
         
-        
-        
-        
     } failure:^(YTKBaseRequest * request) {
         
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
@@ -140,6 +137,31 @@
     saleBillingDetailVC.hidesBottomBarWhenPushed = YES;
     saleBillingDetailVC.saleBillingId = saleBillingId;
     [self.navigationController pushViewController:saleBillingDetailVC animated:YES];
+}
+
+-(void)deleteSaleBilling:(NSNumber *)saleBillingID
+{
+    EPDeleteSaleBillingApi *deleteApi = [EPDeleteSaleBillingApi new];
+    deleteApi.saleBillingID = saleBillingID;
+    
+    __weak typeof(self) weakSelf = self;
+    deleteApi.animatingText = @"正在删除...";
+    deleteApi.animatingView = MFAppWindow;
+    [deleteApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if (!deleteApi.messageSuccess) {
+            [strongSelf showTips:deleteApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf getSaleBillingList];
+ 
+    } failure:^(YTKBaseRequest * request) {
+        
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
