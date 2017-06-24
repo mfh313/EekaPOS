@@ -415,6 +415,7 @@
 		AC9514A71EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9514A61EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m */; };
 		AC9514A91EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9514A81EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib */; };
 		AC9794401EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC97943F1EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.m */; };
+		AC9794421EFDEE990050F45C /* EPSaleBillingDetailDeductionItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9794411EFDEE990050F45C /* EPSaleBillingDetailDeductionItemView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1218,6 +1219,7 @@
 		AC9514A81EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingItemCodeInputView.xib; sourceTree = "<group>"; };
 		AC97943E1EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingDetailDeductionItemView.h; sourceTree = "<group>"; };
 		AC97943F1EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingDetailDeductionItemView.m; sourceTree = "<group>"; };
+		AC9794411EFDEE990050F45C /* EPSaleBillingDetailDeductionItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingDetailDeductionItemView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1866,6 +1868,7 @@
 				AC794D201EFCB3B300FDC33D /* EPSaleBillingDetailHeaderView.xib */,
 				AC97943E1EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.h */,
 				AC97943F1EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.m */,
+				AC9794411EFDEE990050F45C /* EPSaleBillingDetailDeductionItemView.xib */,
 				AC794D221EFCEFC500FDC33D /* EPSaleBillingDetailFooterView.h */,
 				AC794D231EFCEFC500FDC33D /* EPSaleBillingDetailFooterView.m */,
 				AC794D251EFCF03000FDC33D /* EPSaleBillingDetailFooterView.xib */,
@@ -2722,6 +2725,7 @@
 				AC794D211EFCB3B300FDC33D /* EPSaleBillingDetailHeaderView.xib in Resources */,
 				AC950EC11EF5227B003EEBD0 /* SaleBilling.storyboard in Resources */,
 				AC34B9E31EF8152500852993 /* EPSaleBillingCashierCellView.xib in Resources */,
+				AC9794421EFDEE990050F45C /* EPSaleBillingDetailDeductionItemView.xib in Resources */,
 				AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */,
 				AC950E961EF4D560003EEBD0 /* Homelist.storyboard in Resources */,
 				AC32BE751EF67C31001A6291 /* EPSaleBillingSingleTitleSelectCellView.xib in Resources */,

@@ -10,4 +10,6 @@
 
 @interface EPSaleBillingDetailDeductionItemView : MMUIBridgeView
 
+-(void)setTypeName:(NSString *)typeName value:(NSString *)value;
+
 @end
