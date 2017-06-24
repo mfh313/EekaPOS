@@ -13,6 +13,6 @@
 
 -(void)setSaleBillingModel:(EPSaleBillingModel *)SaleBillingModel;
 
--(CGFloat)headerHeightForSaleBillingModel:(EPSaleBillingModel *)model;
+-(CGFloat)headerHeightForSaleBillingModel:(EPSaleBillingModel *)model headerWidth:(CGFloat)headerWidth;
 
 @end

@@ -53,12 +53,13 @@
     
 }
 
--(CGFloat)headerHeightForSaleBillingModel:(EPSaleBillingModel *)model
+-(CGFloat)headerHeightForSaleBillingModel:(EPSaleBillingModel *)model headerWidth:(CGFloat)headerWidth
 {
-    [_cashierLabel sizeToFit];
-    [_guiderLabel sizeToFit];
+    CGSize maxSize = CGSizeMake((headerWidth - 50) / 2, CGFLOAT_MAX);
+    CGFloat cashierLabelHeight = [_cashierLabel.text MMSizeWithFont:_cashierLabel.font maxSize:maxSize].height;
+    CGFloat guiderLabelHeight = [_guiderLabel.text MMSizeWithFont:_guiderLabel.font maxSize:maxSize].height;
     
-    return 75 + MAX(CGRectGetHeight(_cashierLabel.frame), CGRectGetHeight(_guiderLabel.frame)) + 30;
+    return 75 + MAX(cashierLabelHeight, guiderLabelHeight) + 10;
 }
 
 @end

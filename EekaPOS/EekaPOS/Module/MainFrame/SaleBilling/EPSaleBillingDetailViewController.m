@@ -181,9 +181,8 @@
 -(void)setHeaderAndFooterView
 {
     [_headerView setSaleBillingModel:_saleModel];
-    CGFloat headerHeight = [_headerView headerHeightForSaleBillingModel:_saleModel];
+    CGFloat headerHeight = [_headerView headerHeightForSaleBillingModel:_saleModel headerWidth:CGRectGetWidth(_tableView.frame)];
     _headerView.frame = CGRectMake(0, 0, CGRectGetWidth(_tableView.frame), headerHeight);
-    
     _tableView.tableHeaderView  =_headerView;
     
     [_footerView setPrintDate:_saleModel.printDate];

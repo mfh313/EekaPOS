@@ -11,10 +11,7 @@
 @implementation NSString (MMWidth)
 
 -(CGSize)MMSizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize
-{
-//    NSDictionary *attrs = @{NSFontAttributeName : font};
-//    return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
-    
+{    
     CGSize textBlockMinSize = maxSize;
     
     CGSize size = CGSizeZero;
