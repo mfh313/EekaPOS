@@ -72,15 +72,17 @@
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
     
+    _codeInputView.m_delegate = self;
+    
     _saleBillingItemModels = [NSMutableArray array];
     _saleBillingDeductions = [NSMutableArray array];
     _selectGuides = [NSMutableArray array];
     
-    _codeInputView.m_delegate = self;
+    EPEntitityService *entitityService = [[MMServiceCenter defaultCenter] getService:[EPEntitityService class]];
+    _selectCashier = [entitityService getEntitityEmployees].firstObject;
     
     _saleBillingModel = [EPSaleBillingModel new];
     _saleBillingModel.discount = @(1.00);
-
 }
 
 -(void)onClickBackBtn:(id)sender
