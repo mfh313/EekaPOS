@@ -414,6 +414,7 @@
 		AC9514A41EF56C68003EEBD0 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC9514A31EF56C68003EEBD0 /* CodeScan.bundle */; };
 		AC9514A71EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9514A61EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m */; };
 		AC9514A91EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9514A81EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib */; };
+		AC9794401EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC97943F1EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1215,6 +1216,8 @@
 		AC9514A51EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingItemCodeInputView.h; sourceTree = "<group>"; };
 		AC9514A61EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingItemCodeInputView.m; sourceTree = "<group>"; };
 		AC9514A81EF574CA003EEBD0 /* EPSaleBillingItemCodeInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingItemCodeInputView.xib; sourceTree = "<group>"; };
+		AC97943E1EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingDetailDeductionItemView.h; sourceTree = "<group>"; };
+		AC97943F1EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingDetailDeductionItemView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1861,6 +1864,8 @@
 				AC66462C1EFBD6EF0096C31E /* EPSaleBillingDetailHeaderView.h */,
 				AC66462D1EFBD6EF0096C31E /* EPSaleBillingDetailHeaderView.m */,
 				AC794D201EFCB3B300FDC33D /* EPSaleBillingDetailHeaderView.xib */,
+				AC97943E1EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.h */,
+				AC97943F1EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.m */,
 				AC794D221EFCEFC500FDC33D /* EPSaleBillingDetailFooterView.h */,
 				AC794D231EFCEFC500FDC33D /* EPSaleBillingDetailFooterView.m */,
 				AC794D251EFCF03000FDC33D /* EPSaleBillingDetailFooterView.xib */,
@@ -2855,6 +2860,7 @@
 				AC9514711EF52D67003EEBD0 /* ZXPDF417.m in Sources */,
 				AC9513F81EF52D67003EEBD0 /* ZXBoolArray.m in Sources */,
 				AC9513F71EF52D67003EEBD0 /* ZXBitSource.m in Sources */,
+				AC9794401EFDEB500050F45C /* EPSaleBillingDetailDeductionItemView.m in Sources */,
 				AC95142D1EF52D67003EEBD0 /* ZXAI01320xDecoder.m in Sources */,
 				AC9514311EF52D67003EEBD0 /* ZXAI013x0xDecoder.m in Sources */,
 				AC26E8991EF3DDA600C4FAA6 /* SDWebImageDownloaderOperation.m in Sources */,
