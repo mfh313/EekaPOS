@@ -85,8 +85,6 @@
 }
 
 +(float)roundFloat:(float)price{
-    
-    NSString *floatString = [NSString stringWithFormat:@"%0.2f",price];
     return (floorf(price*100 + 0.5))/100;
 }
 
@@ -178,11 +176,12 @@
         NSString *deductionItemStr = deductionArray[i];
         
         NSArray *strings = [deductionItemStr componentsSeparatedByString:@":"];
-        
-        payedMoney += ((NSString *)strings[1]).floatValue;
+        if (strings.count > 1) {
+            payedMoney += ((NSString *)strings[1]).floatValue;
+        }
     }
     
-    return payedMoney;
+    return [self roundFloat:payedMoney];
 }
 
 + (NSString*)dictionaryToJson:(NSDictionary *)dic
