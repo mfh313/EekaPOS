@@ -8,6 +8,7 @@
 
 #import "EPSaleBillingDetailGoodsItemView.h"
 #import "EPSaleBillingDetailGoodsItemPriceView.h"
+#import "EPSaleBillingItemModel.h"
 
 @interface EPSaleBillingDetailGoodsItemView ()
 {
@@ -20,6 +21,27 @@
 @end
 
 @implementation EPSaleBillingDetailGoodsItemView
+
+-(void)setSaleBillingItemModel:(EPSaleBillingItemModel *)itemModel
+{
+    CGFloat discountFloat = itemModel.listPrice.floatValue * itemModel.discount.floatValue * itemModel.number.floatValue;
+    
+    [_priceView setItemCode:itemModel.itemCode
+                     number:[NSString stringWithFormat:@"%@",itemModel.number]
+                  listPrice:[NSString stringWithFormat:@"%.1f",itemModel.listPrice.floatValue]
+              discountPrice:[NSString stringWithFormat:@"%.1f",discountFloat]];
+    
+    _discountLabel.text = [NSString stringWithFormat:@"折扣：.%4f",itemModel.discount.floatValue];
+    
+    if (itemModel.remarks) {
+        _remarkLabel.text = [NSString stringWithFormat:@"备注：%@",itemModel.remarks];
+    }
+    else
+    {
+        _remarkLabel.text = nil;
+    }
+    
+}
 
 
 @end
