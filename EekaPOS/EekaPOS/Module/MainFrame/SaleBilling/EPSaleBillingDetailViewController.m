@@ -55,7 +55,7 @@
     }
     else if (section == 1)
     {
-        return 0;
+        return _saleModel.itemList.count;
     }
     else if (section == 2)
     {
@@ -87,7 +87,7 @@
     }
     else if (section == 1)
     {
-        return 75.0;
+        return 60.0;
     }
     else if (section == 2)
     {
@@ -118,7 +118,7 @@
     }
     else if (section == 1)
     {
-        return nil;
+        return [self tableView:tableView saleBillingGoodsCellForRowAtIndexPath:indexPath];
     }
     else if (section == 2)
     {
@@ -159,15 +159,32 @@
     return cell;
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView saleBillingGoodsCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingDetailGoodsItemView"];
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingDetailGoodsItemView"];
+        EPSaleBillingDetailGoodsItemView *cellView = [EPSaleBillingDetailGoodsItemView nibView];
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingDetailGoodsItemView *cellView = (EPSaleBillingDetailGoodsItemView *)cell.m_subContentView;
+    
+    [cellView setSaleBillingItemModel:_saleModel.itemList[indexPath.row]];
+    
+    return cell;
+}
+
 -(void)setHeaderAndFooterView
 {
     [_headerView setSaleBillingModel:_saleModel];
     CGFloat headerHeight = [_headerView headerHeightForSaleBillingModel:_saleModel];
     _headerView.frame = CGRectMake(0, 0, CGRectGetWidth(_tableView.frame), headerHeight);
     
-    [_tableView beginUpdates];
     _tableView.tableHeaderView  =_headerView;
-    [_tableView endUpdates];
     
     [_footerView setPrintDate:_saleModel.printDate];
     _footerView.frame = CGRectMake(0, 0, CGRectGetWidth(_tableView.frame), 90);

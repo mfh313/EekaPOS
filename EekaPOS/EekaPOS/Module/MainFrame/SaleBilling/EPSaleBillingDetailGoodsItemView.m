@@ -24,14 +24,16 @@
 
 -(void)setSaleBillingItemModel:(EPSaleBillingItemModel *)itemModel
 {
-    CGFloat discountFloat = itemModel.listPrice.floatValue * itemModel.discount.floatValue * itemModel.number.floatValue;
+    if (!itemModel.number) {
+        itemModel.number = @(1);
+    }
     
     [_priceView setItemCode:itemModel.itemCode
                      number:[NSString stringWithFormat:@"%@",itemModel.number]
                   listPrice:[NSString stringWithFormat:@"%.1f",itemModel.listPrice.floatValue]
-              discountPrice:[NSString stringWithFormat:@"%.1f",discountFloat]];
+              discountPrice:[NSString stringWithFormat:@"%.1f",itemModel.receivablePrice.floatValue]];
     
-    _discountLabel.text = [NSString stringWithFormat:@"折扣：.%4f",itemModel.discount.floatValue];
+    _discountLabel.text = [NSString stringWithFormat:@"折扣：%.4f",itemModel.discount.floatValue];
     
     if (itemModel.remarks) {
         _remarkLabel.text = [NSString stringWithFormat:@"备注：%@",itemModel.remarks];

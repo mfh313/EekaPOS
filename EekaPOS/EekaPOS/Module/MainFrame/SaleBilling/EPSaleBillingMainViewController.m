@@ -564,7 +564,6 @@
     [self saveSaleBilling];
 }
 
-
 -(void)saveSaleBilling
 {
     EPAccountMgr *accountMgr = [[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
@@ -646,16 +645,15 @@
         
         _allPrice += itemModel.listPrice.floatValue;
         
-        if (itemModel.isSpecialDiscount) {
-            
-            _discountPrice += itemModel.listPrice.floatValue * itemModel.discount.floatValue * itemModel.number.floatValue;
-        }
-        else
-        {
-            itemModel.discount = _saleBillingModel.discount;
-            _discountPrice += itemModel.listPrice.floatValue * _saleBillingModel.discount.floatValue * itemModel.number.floatValue;
-        }
+        CGFloat receivablePrice = 0;
         
+        if (!itemModel.isSpecialDiscount) {
+            itemModel.discount = _saleBillingModel.discount;
+        }
+
+        receivablePrice = itemModel.listPrice.floatValue * itemModel.discount.floatValue * itemModel.number.floatValue;
+        _discountPrice += receivablePrice;
+        itemModel.receivablePrice = @(receivablePrice);
     }
     
     _deductionPrice = [EPSaleBillingHelper saleBillingSelectDeductionsValue:_saleBillingDeductions];

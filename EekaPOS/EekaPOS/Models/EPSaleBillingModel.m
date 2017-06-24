@@ -7,7 +7,12 @@
 //
 
 #import "EPSaleBillingModel.h"
+#import "EPSaleBillingItemModel.h"
 
 @implementation EPSaleBillingModel
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"itemList" : [EPSaleBillingItemModel class]};
+}
 
 @end
