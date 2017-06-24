@@ -31,4 +31,15 @@
     _discountPriceLabel.text = discountPrice;
 }
 
+-(void)setNumberColor:(NSNumber *)number
+{
+    if (number.floatValue > 0) {
+        _numberLabel.textColor = [UIColor hx_colorWithHexString:@"282828"];
+    }
+    else
+    {
+        _numberLabel.textColor = [UIColor redColor];
+    }
+}
+
 @end

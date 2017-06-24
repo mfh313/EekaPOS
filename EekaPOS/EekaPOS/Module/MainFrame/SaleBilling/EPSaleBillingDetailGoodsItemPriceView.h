@@ -15,4 +15,6 @@
          listPrice:(NSString *)listPrice
      discountPrice:(NSString *)discountPrice;
 
+-(void)setNumberColor:(NSNumber *)number;
+
 @end
