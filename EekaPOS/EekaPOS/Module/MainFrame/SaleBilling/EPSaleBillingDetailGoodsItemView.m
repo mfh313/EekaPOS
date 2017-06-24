@@ -37,7 +37,7 @@
     
     _discountLabel.text = [NSString stringWithFormat:@"折扣：%.4f",itemModel.discount.floatValue];
     
-    if (itemModel.remarks) {
+    if (![MFStringUtil isBlankString:itemModel.remarks]) {
         _remarkLabel.text = [NSString stringWithFormat:@"备注：%@",itemModel.remarks];
     }
     else
