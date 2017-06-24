@@ -25,7 +25,10 @@
          listPrice:(NSString *)listPrice
      discountPrice:(NSString *)discountPrice
 {
-    
+    _itemCodeLabel.text = itemCode;
+    _numberLabel.text = number;
+    _listPriceLabel.text = listPrice;
+    _discountPriceLabel.text = discountPrice;
 }
 
 @end
