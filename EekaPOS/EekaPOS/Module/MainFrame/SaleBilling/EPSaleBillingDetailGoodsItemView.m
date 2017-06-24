@@ -7,9 +7,19 @@
 //
 
 #import "EPSaleBillingDetailGoodsItemView.h"
+#import "EPSaleBillingDetailGoodsItemPriceView.h"
+
+@interface EPSaleBillingDetailGoodsItemView ()
+{
+    __weak IBOutlet EPSaleBillingDetailGoodsItemPriceView *_priceView;
+    
+    __weak IBOutlet UILabel *_discountLabel;
+    __weak IBOutlet UILabel *_remarkLabel;
+}
+
+@end
 
 @implementation EPSaleBillingDetailGoodsItemView
-
 
 
 @end

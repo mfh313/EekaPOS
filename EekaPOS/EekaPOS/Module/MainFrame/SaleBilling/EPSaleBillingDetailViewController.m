@@ -11,6 +11,7 @@
 #import "EPSaleBillingModel.h"
 #import "EPSaleBillingDetailHeaderView.h"
 #import "EPSaleBillingDetailFooterView.h"
+#import "EPSaleBillingDetailDeductionItemView.h"
 
 @interface EPSaleBillingDetailViewController ()
 {
