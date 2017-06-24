@@ -17,6 +17,7 @@
 #import "EPSaleBillingDetailGoodsItemPriceView.h"
 #import "EPSaleBillingDetailTitleItemView.h"
 #import "EPSaleBillingHelper.h"
+#import "EPUpdateSaleBillingApi.h"
 
 @interface EPSaleBillingDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -26,6 +27,7 @@
     EPSaleBillingDetailHeaderView *_headerView;
     EPSaleBillingDetailFooterView *_footerView;
     
+    NSMutableArray *_goodsModel;
     NSMutableArray *_deductionModels;
 }
 
@@ -42,6 +44,7 @@
     _headerView = [EPSaleBillingDetailHeaderView nibView];
     _footerView = [EPSaleBillingDetailFooterView nibView];
     
+    _goodsModel = [NSMutableArray array];
     _deductionModels = [NSMutableArray array];
     
     [self getSaleBillingById];
@@ -60,7 +63,7 @@
     }
     else if (section == 1)
     {
-        return _saleModel.itemList.count;
+        return _goodsModel.count;
     }
     else if (section == 2)
     {
@@ -107,7 +110,7 @@
     }
     else if (section == 4)
     {
-        return 22.0;
+        return 24.0;
     }
     else if (section == 5)
     {
@@ -189,7 +192,7 @@
     
     EPSaleBillingDetailGoodsItemView *cellView = (EPSaleBillingDetailGoodsItemView *)cell.m_subContentView;
     
-    [cellView setSaleBillingItemModel:_saleModel.itemList[indexPath.row]];
+    [cellView setSaleBillingItemModel:_goodsModel[indexPath.row]];
     
     return cell;
 }
@@ -358,7 +361,10 @@
         _saleModel = [EPSaleBillingModel MM_modelWithJSON:request.responseJSONObject];
         [strongSelf setHeaderAndFooterView];
         
+        _goodsModel = [NSMutableArray arrayWithArray:_saleModel.itemList];
         _deductionModels = [EPSaleBillingHelper deductionModelsForString:_saleModel.deductionStr];
+        
+        [_tableView reloadData];
         
         //收款异常 自行判断 ：收款的钱 小于 应收款的钱~~~
         CGFloat payMoney = [EPSaleBillingHelper payMoneyForString:_saleModel.payType];
@@ -366,10 +372,34 @@
             [strongSelf showTips:@"收款异常"];
         }
         
-        [_tableView reloadData];
-        
     } failure:^(YTKBaseRequest * request) {
         
+        NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
+        [self showTips:errorDesc];
+    }];
+}
+
+-(void)updateSaleBilling
+{
+    __weak typeof(self) weakSelf = self;
+    
+    EPUpdateSaleBillingApi *updateApi = [EPUpdateSaleBillingApi new];
+    updateApi.saleBillingModel = _saleModel;
+    updateApi.animatingText = @"正在修改...";
+    updateApi.animatingView = MFAppWindow;
+    [updateApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
+        
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (!updateApi.messageSuccess) {
+            [strongSelf showTips:updateApi.errorMessage];
+            return;
+        }
+        
+        [strongSelf showTips:@"修改成功"];
+        [strongSelf getSaleBillingById];
+        
+    } failure:^(YTKBaseRequest * request) {
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];
     }];
