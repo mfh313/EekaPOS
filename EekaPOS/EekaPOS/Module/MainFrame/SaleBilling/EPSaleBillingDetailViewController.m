@@ -193,6 +193,7 @@
         
         _saleModel = [EPSaleBillingModel MM_modelWithJSON:request.responseJSONObject];
         [strongSelf setHeaderAndFooterView];
+        [_tableView reloadData];
         
     } failure:^(YTKBaseRequest * request) {
         

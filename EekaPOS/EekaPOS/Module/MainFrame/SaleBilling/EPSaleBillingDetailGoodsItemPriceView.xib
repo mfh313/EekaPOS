@@ -17,7 +17,6 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品条码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nqr-ba-YLj">
                     <rect key="frame" x="15" y="18" width="110" height="30"/>
-                    <color key="backgroundColor" red="0.91372549020000005" green="0.21960784310000001" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="UoI-97-yKE"/>
                         <constraint firstAttribute="width" constant="110" id="Uue-xv-p3E"/>
@@ -28,7 +27,6 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ina-yW-N43">
                     <rect key="frame" x="135" y="18" width="40" height="30"/>
-                    <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="40" id="MRV-EL-gwz"/>
                         <constraint firstAttribute="height" constant="30" id="vvw-bb-aZI"/>
@@ -39,7 +37,6 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="吊牌价" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY7-WA-TZb">
                     <rect key="frame" x="185" y="18" width="140.5" height="30"/>
-                    <color key="backgroundColor" red="0.91372549020000005" green="0.21960784310000001" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="6cU-KO-Tfa"/>
                     </constraints>
@@ -49,7 +46,6 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="折后价" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqM-Xq-WOv">
                     <rect key="frame" x="335.5" y="18" width="140.5" height="30"/>
-                    <color key="backgroundColor" red="0.5000192175" green="1" blue="0.39297160050000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="IHp-Pw-XQN"/>
                     </constraints>
