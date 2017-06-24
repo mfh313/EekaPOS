@@ -421,6 +421,10 @@
 		AC9794491EFDF6E90050F45C /* EPSaleBillingDetailGoodsItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9794481EFDF6E90050F45C /* EPSaleBillingDetailGoodsItemView.xib */; };
 		AC97944C1EFDF78E0050F45C /* EPSaleBillingDetailGoodsItemPriceView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC97944B1EFDF78E0050F45C /* EPSaleBillingDetailGoodsItemPriceView.m */; };
 		AC97944E1EFDF79D0050F45C /* EPSaleBillingDetailGoodsItemPriceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC97944D1EFDF79D0050F45C /* EPSaleBillingDetailGoodsItemPriceView.xib */; };
+		AC97945B1EFE83560050F45C /* DAContextMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9794561EFE83560050F45C /* DAContextMenuCell.m */; };
+		AC97945C1EFE83560050F45C /* DAContextMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9794581EFE83560050F45C /* DAContextMenuTableViewController.m */; };
+		AC97945D1EFE83560050F45C /* DAOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC97945A1EFE83560050F45C /* DAOverlayView.m */; };
+		AC9794601EFE83F60050F45C /* MFMultiMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC97945F1EFE83F60050F45C /* MFMultiMenuTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1232,6 +1236,14 @@
 		AC97944A1EFDF78E0050F45C /* EPSaleBillingDetailGoodsItemPriceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingDetailGoodsItemPriceView.h; sourceTree = "<group>"; };
 		AC97944B1EFDF78E0050F45C /* EPSaleBillingDetailGoodsItemPriceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingDetailGoodsItemPriceView.m; sourceTree = "<group>"; };
 		AC97944D1EFDF79D0050F45C /* EPSaleBillingDetailGoodsItemPriceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingDetailGoodsItemPriceView.xib; sourceTree = "<group>"; };
+		AC9794551EFE83560050F45C /* DAContextMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAContextMenuCell.h; sourceTree = "<group>"; };
+		AC9794561EFE83560050F45C /* DAContextMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAContextMenuCell.m; sourceTree = "<group>"; };
+		AC9794571EFE83560050F45C /* DAContextMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAContextMenuTableViewController.h; sourceTree = "<group>"; };
+		AC9794581EFE83560050F45C /* DAContextMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAContextMenuTableViewController.m; sourceTree = "<group>"; };
+		AC9794591EFE83560050F45C /* DAOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOverlayView.h; sourceTree = "<group>"; };
+		AC97945A1EFE83560050F45C /* DAOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOverlayView.m; sourceTree = "<group>"; };
+		AC97945E1EFE83F60050F45C /* MFMultiMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFMultiMenuTableViewCell.h; sourceTree = "<group>"; };
+		AC97945F1EFE83F60050F45C /* MFMultiMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFMultiMenuTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1312,6 +1324,7 @@
 		AC26E7F01EF3DDA600C4FAA6 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				AC9794541EFE83560050F45C /* DAContextMenuTableViewController */,
 				AC6687891EFA1B3C008AE45D /* RYNumberkeyboard */,
 				AC9511B11EF52D66003EEBD0 /* LBXScan */,
 				AC950E5F1EF4B064003EEBD0 /* Aspects */,
@@ -1683,6 +1696,8 @@
 				AC950EB71EF51AF8003EEBD0 /* MMUINavigationBar.m */,
 				AC950EB81EF51AF8003EEBD0 /* UINavigationBar+MMUINavigationBar.h */,
 				AC950EB91EF51AF8003EEBD0 /* UINavigationBar+MMUINavigationBar.m */,
+				AC97945E1EFE83F60050F45C /* MFMultiMenuTableViewCell.h */,
+				AC97945F1EFE83F60050F45C /* MFMultiMenuTableViewCell.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -2660,6 +2675,19 @@
 			path = ZXingWrapper;
 			sourceTree = "<group>";
 		};
+		AC9794541EFE83560050F45C /* DAContextMenuTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC9794551EFE83560050F45C /* DAContextMenuCell.h */,
+				AC9794561EFE83560050F45C /* DAContextMenuCell.m */,
+				AC9794571EFE83560050F45C /* DAContextMenuTableViewController.h */,
+				AC9794581EFE83560050F45C /* DAContextMenuTableViewController.m */,
+				AC9794591EFE83560050F45C /* DAOverlayView.h */,
+				AC97945A1EFE83560050F45C /* DAOverlayView.m */,
+			);
+			path = DAContextMenuTableViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2792,6 +2820,7 @@
 				AC32BE6B1EF66EBC001A6291 /* EPEntitityEmployeeModel.m in Sources */,
 				AC9514961EF52D67003EEBD0 /* ZXMultiFormatWriter.m in Sources */,
 				AC95142C1EF52D67003EEBD0 /* ZXAI013103decoder.m in Sources */,
+				AC97945D1EFE83560050F45C /* DAOverlayView.m in Sources */,
 				AC26E87F1EF3DDA600C4FAA6 /* YTKBatchRequest+AnimatingAccessory.m in Sources */,
 				AC26E8961EF3DDA600C4FAA6 /* SDWebImageCompat.m in Sources */,
 				AC9514941EF52D67003EEBD0 /* ZXQRCodeWriter.m in Sources */,
@@ -2808,6 +2837,7 @@
 				AC950EBB1EF51AF8003EEBD0 /* UINavigationBar+MMUINavigationBar.m in Sources */,
 				AC95145C1EF52D67003EEBD0 /* ZXUPCEANExtension2Support.m in Sources */,
 				AC9513BD1EF52D67003EEBD0 /* ZXAztecBinaryShiftToken.m in Sources */,
+				AC97945C1EFE83560050F45C /* DAContextMenuTableViewController.m in Sources */,
 				AC34B9E61EF81AFA00852993 /* EPSaleBillingGuidesCellView.m in Sources */,
 				AC6687961EFA4423008AE45D /* EPSaleBillingGoodsRemarkSelectView.m in Sources */,
 				AC950E6A1EF4B184003EEBD0 /* MMServiceCenter.m in Sources */,
@@ -2891,6 +2921,7 @@
 				AC95142D1EF52D67003EEBD0 /* ZXAI01320xDecoder.m in Sources */,
 				AC9514311EF52D67003EEBD0 /* ZXAI013x0xDecoder.m in Sources */,
 				AC26E8991EF3DDA600C4FAA6 /* SDWebImageDownloaderOperation.m in Sources */,
+				AC97945B1EFE83560050F45C /* DAContextMenuCell.m in Sources */,
 				AC9514011EF52D67003EEBD0 /* ZXIntArray.m in Sources */,
 				AC9514931EF52D67003EEBD0 /* ZXQRCodeReader.m in Sources */,
 				AC950E511EF4AF54003EEBD0 /* MMBaseInfoItem.m in Sources */,
@@ -2992,6 +3023,7 @@
 				AC9513F31EF52D67003EEBD0 /* ZXReedSolomonDecoder.m in Sources */,
 				AC9514761EF52D67003EEBD0 /* ZXPDF417HighLevelEncoder.m in Sources */,
 				AC66461F1EFB9BC50096C31E /* EPUpdateSaleBillingApi.m in Sources */,
+				AC9794601EFE83F60050F45C /* MFMultiMenuTableViewCell.m in Sources */,
 				AC950E6F1EF4B679003EEBD0 /* MFThemeHelper.m in Sources */,
 				AC9514631EF52D67003EEBD0 /* ZXModulusPoly.m in Sources */,
 				AC9514671EF52D67003EEBD0 /* ZXPDF417BoundingBox.m in Sources */,
