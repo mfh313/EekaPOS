@@ -23,7 +23,7 @@
         [self bringSubviewToFront:_barBackShadowView];
         
         _navBarLine = [UIView new];
-        _navBarLine.frame = CGRectMake(0, CGRectGetHeight(self.bounds) - MFOnePixHeigtht, CGRectGetWidth(self.bounds), MFOnePixHeigtht);
+        _navBarLine.frame = CGRectMake(0, CGRectGetHeight(self.bounds) - MFOnePixHeight, CGRectGetWidth(self.bounds), MFOnePixHeight);
         _navBarLine.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         _navBarLine.backgroundColor = [UIColor clearColor];
         [self addSubview:_navBarLine];

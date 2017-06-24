@@ -9,11 +9,14 @@
 #import "EPSaleBillingDetailViewController.h"
 #import "EPGetSaleBillingByIdApi.h"
 #import "EPSaleBillingModel.h"
+#import "EPSaleBillingItemModel.h"
 #import "EPSaleBillingDetailHeaderView.h"
 #import "EPSaleBillingDetailFooterView.h"
 #import "EPSaleBillingDetailDeductionItemView.h"
 #import "EPSaleBillingDetailGoodsItemView.h"
 #import "EPSaleBillingDetailGoodsItemPriceView.h"
+#import "EPSaleBillingDetailTitleItemView.h"
+#import "EPSaleBillingHelper.h"
 
 @interface EPSaleBillingDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -23,6 +26,7 @@
     EPSaleBillingDetailHeaderView *_headerView;
     EPSaleBillingDetailFooterView *_footerView;
     
+    NSMutableArray *_deductionModels;
 }
 
 @end
@@ -33,11 +37,12 @@
     [super viewDidLoad];
     
     self.title = @"销售开单详情";
-    
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
     _headerView = [EPSaleBillingDetailHeaderView nibView];
     _footerView = [EPSaleBillingDetailFooterView nibView];
+    
+    _deductionModels = [NSMutableArray array];
     
     [self getSaleBillingById];
 }
@@ -59,19 +64,19 @@
     }
     else if (section == 2)
     {
-        return 0;
+        return 1;
     }
     else if (section == 3)
     {
-        return 0;
+        return 1;
     }
     else if (section == 4)
     {
-        return 0;
+        return _deductionModels.count;
     }
     else if (section == 5)
     {
-        return 0;
+        return 1;
     }
 
     
@@ -91,19 +96,19 @@
     }
     else if (section == 2)
     {
-        return 46.0;
+        return 30.0;
     }
     else if (section == 3)
     {
-        return 128.0;
+        return 30.0;
     }
     else if (section == 4)
     {
-        return 46.0;
+        return 22.0;
     }
     else if (section == 5)
     {
-        return 46.0;
+        return 30.0;
     }
 
     return 0;
@@ -122,19 +127,19 @@
     }
     else if (section == 2)
     {
-        return nil;
+        return [self tableView:tableView amountPriceCellForRowAtIndexPath:indexPath];
     }
     else if (section == 3)
     {
-        return nil;
+        return [self tableView:tableView discountPriceCellForRowAtIndexPath:indexPath];
     }
     else if (section == 4)
     {
-        return nil;
+        return [self tableView:tableView deductionItemPriceCellForRowAtIndexPath:indexPath];
     }
     else if (section == 5)
     {
-        return nil;
+        return [self tableView:tableView trueReceCellForRowAtIndexPath:indexPath];
     }
     
     return [UITableViewCell new];
@@ -178,6 +183,119 @@
     return cell;
 }
 
+-(UITableViewCell *)tableView:(UITableView *)tableView amountPriceCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"amountPriceCell"];
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"amountPriceCell"];
+        EPSaleBillingDetailTitleItemView *cellView = [EPSaleBillingDetailTitleItemView nibView];
+        
+        MMOnePixLine *line = [MMOnePixLine new];
+        line.frame = CGRectMake(0, 0, CGRectGetWidth(cellView.frame), MFOnePixHeight);
+        [cellView addSubview:line];
+        
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingDetailTitleItemView *cellView = (EPSaleBillingDetailTitleItemView *)cell.m_subContentView;
+    
+    NSString *amountPrice = [NSString stringWithFormat:@"合计：%.2f元",_saleModel.amountPrice];
+    [cellView setTitle:amountPrice];
+    
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView discountPriceCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"discountPriceCell"];
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"discountPriceCell"];
+        EPSaleBillingDetailTitleItemView *cellView = [EPSaleBillingDetailTitleItemView nibView];
+        
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingDetailTitleItemView *cellView = (EPSaleBillingDetailTitleItemView *)cell.m_subContentView;
+    
+    CGFloat discountPrice = [self deductionPrice] + [self discounPrice];
+    NSString *discountPriceString = [NSString stringWithFormat:@"优惠金额：%.2f元",discountPrice];
+    [cellView setTitle:discountPriceString];
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView deductionItemPriceCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"deductionItemPrice"];
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"deductionItemPrice"];
+        EPSaleBillingDetailDeductionItemView *cellView = [EPSaleBillingDetailDeductionItemView nibView];
+        
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingDetailDeductionItemView *cellView = (EPSaleBillingDetailDeductionItemView *)cell.m_subContentView;
+    
+    EPSaleBillingDeductionModel *deductionItem = _deductionModels[indexPath.row];
+    
+    [cellView setTypeName:deductionItem.name value:[NSString stringWithFormat:@"%.2f",deductionItem.value.floatValue]];
+    return cell;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView trueReceCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"trueReceCell"];
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"trueReceCell"];
+        EPSaleBillingDetailTitleItemView *cellView = [EPSaleBillingDetailTitleItemView nibView];
+        
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingDetailTitleItemView *cellView = (EPSaleBillingDetailTitleItemView *)cell.m_subContentView;
+    
+    NSString *trueReceString = [NSString stringWithFormat:@"实收金额：%.2f元",_saleModel.trueRece];
+    [cellView setTitle:trueReceString];
+    
+    return cell;
+}
+
+-(CGFloat)discounPrice
+{
+    CGFloat discounPrice = 0;
+    NSMutableArray *itemList = _saleModel.itemList;
+    for (int i = 0; i < itemList.count; i++) {
+        EPSaleBillingItemModel *item = itemList[i];
+        
+        discounPrice += item.listPrice.floatValue * (1 - item.discount.floatValue) * item.number.floatValue;
+    }
+    
+    return discounPrice;
+}
+
+-(CGFloat)deductionPrice
+{
+    CGFloat deductionPrice = 0;
+    for (int i = 0; i < _deductionModels.count; i++) {
+        EPSaleBillingDeductionModel *model = _deductionModels[i];
+        deductionPrice += model.value.floatValue;
+    }
+    
+    return deductionPrice;
+}
+
 -(void)setHeaderAndFooterView
 {
     [_headerView setSaleBillingModel:_saleModel];
@@ -185,7 +303,8 @@
     _headerView.frame = CGRectMake(0, 0, CGRectGetWidth(_tableView.frame), headerHeight);
     _tableView.tableHeaderView  =_headerView;
     
-    [_footerView setPrintDate:_saleModel.printDate];
+    [_footerView setPrintDate:[EPSaleBillingHelper dateStringWithDate:[NSDate date]]];
+    
     _footerView.frame = CGRectMake(0, 0, CGRectGetWidth(_tableView.frame), 90);
     _tableView.tableFooterView  =_footerView;
 }
@@ -209,6 +328,9 @@
         
         _saleModel = [EPSaleBillingModel MM_modelWithJSON:request.responseJSONObject];
         [strongSelf setHeaderAndFooterView];
+        
+        _deductionModels = [EPSaleBillingHelper deductionModelsForString:_saleModel.deductionStr];
+        
         [_tableView reloadData];
         
     } failure:^(YTKBaseRequest * request) {

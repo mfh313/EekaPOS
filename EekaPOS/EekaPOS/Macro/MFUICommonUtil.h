@@ -7,7 +7,7 @@
 //
 
 
-#define MFOnePixHeigtht 1/[UIScreen mainScreen].scale
+#define MFOnePixHeight 1/[UIScreen mainScreen].scale
 
 #define MFKeyWindow [[UIApplication sharedApplication] keyWindow]
 #define MFAppWindow [[UIApplication sharedApplication].delegate window]

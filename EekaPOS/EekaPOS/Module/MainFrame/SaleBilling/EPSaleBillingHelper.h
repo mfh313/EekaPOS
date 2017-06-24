@@ -40,6 +40,8 @@
 
 +(NSString *)saleBillingSelectDeductionsStr:(NSMutableArray *)saleBillingDeductions;
 
++(NSMutableArray *)deductionModelsForString:(NSString *)deductionStr;
+
 +(CGFloat)saleBillingSelectDeductionsValue:(NSMutableArray *)saleBillingDeductions;
 
 +(NSMutableArray *)remarkModelStrings;

@@ -13,7 +13,7 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    self.constant = MFOnePixHeigtht;
+    self.constant = MFOnePixHeight;
 }
 
 @end
@@ -28,7 +28,7 @@
     if (self.constraints.count > 0) {
         for (NSLayoutConstraint *constraint in self.constraints) {
             if (constraint.constant == 1) {
-                constraint.constant = MFOnePixHeigtht;
+                constraint.constant = MFOnePixHeight;
             }
         }
     }

@@ -125,8 +125,6 @@
     
     NSString *deductions = [deductionsArray componentsJoinedByString:@"&"];
     return deductions;
-    
-//    return @"抹零:25.0&电子现金劵:60.0&纸质现金劵:90.0&公司满减:20.0";
 }
 
 +(CGFloat)saleBillingSelectDeductionsValue:(NSMutableArray *)saleBillingDeductions
@@ -140,6 +138,30 @@
     }
     
     return deductionsValue;
+}
+
++(NSMutableArray *)deductionModelsForString:(NSString *)deductionStr
+{
+    if ([MFStringUtil isBlankString:deductionStr]) {
+        return nil;
+    }
+    
+    NSMutableArray *deductionModels = [NSMutableArray array];
+    NSArray *deductionArray = [deductionStr componentsSeparatedByString:@"&"];
+    
+    for (int i = 0; i < deductionArray.count; i++) {
+        NSString *deductionItemStr = deductionArray[i];
+        
+        NSArray *strings = [deductionItemStr componentsSeparatedByString:@":"];
+        
+        EPSaleBillingDeductionModel *model = [EPSaleBillingDeductionModel objectWithName:strings[0] key:nil];
+        CGFloat modelValue = ((NSString *)strings[1]).floatValue;
+        model.value = @(modelValue);
+        
+        [deductionModels addObject:model];
+    }
+    
+    return deductionModels;
 }
 
 + (NSString*)dictionaryToJson:(NSDictionary *)dic
