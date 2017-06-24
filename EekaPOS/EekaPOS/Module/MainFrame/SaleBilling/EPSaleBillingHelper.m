@@ -164,6 +164,27 @@
     return deductionModels;
 }
 
++(CGFloat)payMoneyForString:(NSString *)payType
+{
+    if ([MFStringUtil isBlankString:payType]) {
+        return 0;
+    }
+    
+    CGFloat payedMoney = 0;
+    
+    NSArray *deductionArray = [payType componentsSeparatedByString:@"&"];
+    
+    for (int i = 0; i < deductionArray.count; i++) {
+        NSString *deductionItemStr = deductionArray[i];
+        
+        NSArray *strings = [deductionItemStr componentsSeparatedByString:@":"];
+        
+        payedMoney += ((NSString *)strings[1]).floatValue;
+    }
+    
+    return payedMoney;
+}
+
 + (NSString*)dictionaryToJson:(NSDictionary *)dic
 {
     NSError *parseError = nil;

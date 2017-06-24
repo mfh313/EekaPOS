@@ -22,4 +22,9 @@
     _titleLabel.text = title;
 }
 
+-(void)setTitleFont:(UIFont *)font
+{
+    _titleLabel.font = font;
+}
+
 @end

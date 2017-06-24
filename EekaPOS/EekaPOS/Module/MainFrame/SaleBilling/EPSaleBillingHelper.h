@@ -42,6 +42,8 @@
 
 +(NSMutableArray *)deductionModelsForString:(NSString *)deductionStr;
 
++(CGFloat)payMoneyForString:(NSString *)payType;
+
 +(CGFloat)saleBillingSelectDeductionsValue:(NSMutableArray *)saleBillingDeductions;
 
 +(NSMutableArray *)remarkModelStrings;

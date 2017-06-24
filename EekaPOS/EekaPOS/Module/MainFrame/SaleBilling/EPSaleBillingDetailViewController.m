@@ -50,7 +50,7 @@
 #pragma mark - UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 6;
+    return 7;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -78,8 +78,11 @@
     {
         return 1;
     }
+    else if (section == 6)
+    {
+        return 1;
+    }
 
-    
     return 0;
 }
 
@@ -109,6 +112,10 @@
     else if (section == 5)
     {
         return 30.0;
+    }
+    else if (section == 6)
+    {
+        return 36.0;
     }
 
     return 0;
@@ -140,6 +147,10 @@
     else if (section == 5)
     {
         return [self tableView:tableView trueReceCellForRowAtIndexPath:indexPath];
+    }
+    else if (section == 6)
+    {
+        return [self tableView:tableView payTypeCellForRowAtIndexPath:indexPath];
     }
     
     return [UITableViewCell new];
@@ -250,7 +261,6 @@
     return cell;
 }
 
-
 -(UITableViewCell *)tableView:(UITableView *)tableView trueReceCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"trueReceCell"];
@@ -268,6 +278,25 @@
     
     NSString *trueReceString = [NSString stringWithFormat:@"实收金额：%.2f元",_saleModel.trueRece];
     [cellView setTitle:trueReceString];
+    
+    return cell;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView payTypeCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"payTypeCell"];
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"payTypeCell"];
+        EPSaleBillingDetailTitleItemView *cellView = [EPSaleBillingDetailTitleItemView nibView];
+        [cellView setTitleFont:[UIFont boldSystemFontOfSize:15.0]];
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingDetailTitleItemView *cellView = (EPSaleBillingDetailTitleItemView *)cell.m_subContentView;
+    [cellView setTitle:_saleModel.payType];
     
     return cell;
 }
@@ -330,6 +359,12 @@
         [strongSelf setHeaderAndFooterView];
         
         _deductionModels = [EPSaleBillingHelper deductionModelsForString:_saleModel.deductionStr];
+        
+        //收款异常 自行判断 ：收款的钱 小于 应收款的钱~~~
+        CGFloat payMoney = [EPSaleBillingHelper payMoneyForString:_saleModel.payType];
+        if (_saleModel.status == 30 && payMoney < _saleModel.trueRece) {
+            [strongSelf showTips:@"收款异常"];
+        }
         
         [_tableView reloadData];
         

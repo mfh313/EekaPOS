@@ -12,4 +12,6 @@
 
 -(void)setTitle:(NSString *)title;
 
+-(void)setTitleFont:(UIFont *)font;
+
 @end
