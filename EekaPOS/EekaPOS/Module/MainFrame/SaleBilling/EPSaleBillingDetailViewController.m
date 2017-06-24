@@ -12,8 +12,10 @@
 #import "EPSaleBillingDetailHeaderView.h"
 #import "EPSaleBillingDetailFooterView.h"
 #import "EPSaleBillingDetailDeductionItemView.h"
+#import "EPSaleBillingDetailGoodsItemView.h"
+#import "EPSaleBillingDetailGoodsItemPriceView.h"
 
-@interface EPSaleBillingDetailViewController ()
+@interface EPSaleBillingDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     EPSaleBillingModel *_saleModel;
@@ -38,7 +40,123 @@
     _footerView = [EPSaleBillingDetailFooterView nibView];
     
     [self getSaleBillingById];
+}
 
+#pragma mark - UITableViewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 6;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 1;
+    }
+    else if (section == 1)
+    {
+        return 0;
+    }
+    else if (section == 2)
+    {
+        return 0;
+    }
+    else if (section == 3)
+    {
+        return 0;
+    }
+    else if (section == 4)
+    {
+        return 0;
+    }
+    else if (section == 5)
+    {
+        return 0;
+    }
+
+    
+    return 0;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger section = indexPath.section;
+    if (section == 0)
+    {
+        return 40.0;
+    }
+    else if (section == 1)
+    {
+        return 75.0;
+    }
+    else if (section == 2)
+    {
+        return 46.0;
+    }
+    else if (section == 3)
+    {
+        return 128.0;
+    }
+    else if (section == 4)
+    {
+        return 46.0;
+    }
+    else if (section == 5)
+    {
+        return 46.0;
+    }
+
+    return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger section = indexPath.section;
+    if (section == 0)
+    {
+        return [self tableView:tableView saleBillingGoodsPriceTitleCellForRowAtIndexPath:indexPath];
+    }
+    else if (section == 1)
+    {
+        return nil;
+    }
+    else if (section == 2)
+    {
+        return nil;
+    }
+    else if (section == 3)
+    {
+        return nil;
+    }
+    else if (section == 4)
+    {
+        return nil;
+    }
+    else if (section == 5)
+    {
+        return nil;
+    }
+    
+    return [UITableViewCell new];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView saleBillingGoodsPriceTitleCellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GoodsPriceTitleCell"];
+    
+    if (cell == nil) {
+        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GoodsPriceTitleCell"];
+        EPSaleBillingDetailGoodsItemPriceView *cellView = [EPSaleBillingDetailGoodsItemPriceView nibView];
+        cell.m_subContentView = cellView;
+    }
+    
+    cell.m_subContentView.frame = cell.contentView.bounds;
+    
+    EPSaleBillingDetailGoodsItemPriceView *cellView = (EPSaleBillingDetailGoodsItemPriceView *)cell.m_subContentView;
+    
+    [cellView setItemCode:@"商品条码" number:@"数量" listPrice:@"吊牌价" discountPrice:@"折后价"];
+    
+    return cell;
 }
 
 -(void)setHeaderAndFooterView

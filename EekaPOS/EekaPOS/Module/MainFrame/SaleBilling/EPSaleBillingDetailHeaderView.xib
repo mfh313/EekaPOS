@@ -53,11 +53,21 @@
                     <color key="textColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elu-LQ-zTu" customClass="MMOnePixLine">
+                    <rect key="frame" x="0.0" y="171" width="411" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="zp2-wd-jnf"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="elu-LQ-zTu" secondAttribute="trailing" id="1VQ-G6-8dp"/>
+                <constraint firstItem="elu-LQ-zTu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5Sn-4H-LbB"/>
                 <constraint firstItem="Nkm-If-kW4" firstAttribute="top" secondItem="poP-8N-M6Z" secondAttribute="bottom" id="71N-A8-qem"/>
                 <constraint firstItem="NOX-gC-bNP" firstAttribute="top" secondItem="jjX-Re-o4f" secondAttribute="top" id="9bS-28-jT2"/>
+                <constraint firstAttribute="bottom" secondItem="elu-LQ-zTu" secondAttribute="bottom" id="BnR-ET-Oor"/>
                 <constraint firstAttribute="trailing" secondItem="NOX-gC-bNP" secondAttribute="trailing" constant="15" id="GUO-0d-mkc"/>
                 <constraint firstItem="jjX-Re-o4f" firstAttribute="width" secondItem="NOX-gC-bNP" secondAttribute="width" id="LJ1-pj-XM6"/>
                 <constraint firstItem="Nkm-If-kW4" firstAttribute="leading" secondItem="poP-8N-M6Z" secondAttribute="leading" id="M6Z-aU-3mR"/>
