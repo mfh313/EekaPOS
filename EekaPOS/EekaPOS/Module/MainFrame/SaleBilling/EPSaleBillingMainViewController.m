@@ -29,10 +29,11 @@
 #import "EPSaleBillingDeductionSelectedItemView.h"
 #import "EPSaveSaleBillingApi.h"
 #import "EPEntitityService.h"
+#import "MFMultiMenuTableViewCell.h"
 
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
-                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,EPSaleBillingDiscountInputViewDelegate,UITableViewDataSource,UITableViewDelegate>
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,EPSaleBillingDiscountInputViewDelegate,UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
     
@@ -166,17 +167,18 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView saleBillingGoodsCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingGoodsCell"];
+    MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingGoodsCell"];
     
     if (cell == nil) {
-        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingGoodsCell"];
+        cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingGoodsCell"];
+        cell.delegate = self;
+        
         EPSaleBillingGoodsCellView *cellView = [EPSaleBillingGoodsCellView nibView];
         cellView.m_delegate = self;
         cell.m_subContentView = cellView;
     }
     
     cell.m_subContentView.frame = cell.contentView.bounds;
-    
     
     EPSaleBillingItemModel *itemModel = _saleBillingItemModels[indexPath.row];
 
@@ -185,6 +187,33 @@
     cellView.itemModel = itemModel;
     
     return cell;
+}
+
+#pragma mark - LYSideslipCellDelegate
+- (NSArray<LYSideslipCellAction *> *)sideslipCell:(LYSideslipCell *)sideslipCell editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LYSideslipCellAction *action = [LYSideslipCellAction rowActionWithStyle:LYSideslipCellActionStyleDestructive title:@"删除" handler:^(LYSideslipCellAction * _Nonnull action, NSIndexPath * _Nonnull indexPath)
+                                    {
+                                        [sideslipCell hiddenAllSideslip];
+                                        if (indexPath.section == 0)
+                                        {
+                                            [_saleBillingItemModels removeObjectAtIndex:indexPath.row];
+                                            
+                                        }
+                                        else if (indexPath.section == 4)
+                                        {
+                                            [_saleBillingDeductions removeObjectAtIndex:indexPath.row];
+                                        }
+                                        
+                                        [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                                        [self reSetTableSubViews];
+                                        
+                                    }];
+    return @[action];
+}
+
+- (BOOL)sideslipCell:(LYSideslipCell *)sideslipCell canSideslipRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView discountInputCellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -258,10 +287,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView deductionItemCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"deductionItemCell"];
+    MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"deductionItemCell"];
     
     if (cell == nil) {
-        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"deductionItemCell"];
+        cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"deductionItemCell"];
+        cell.delegate = self;
+        
         EPSaleBillingDeductionSelectedItemView *cellView = [EPSaleBillingDeductionSelectedItemView nibView];
         cell.m_subContentView = cellView;
     }
