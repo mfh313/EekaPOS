@@ -66,9 +66,7 @@
     
     self.title = @"销售开单";
     
-    self.automaticallyAdjustsScrollViewInsets = YES;
-    self.extendedLayoutIncludesOpaqueBars = NO;
-    self.edgesForExtendedLayout = UIRectEdgeAll;
+    [self MF_wantsFullScreenLayout:NO];
     
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
