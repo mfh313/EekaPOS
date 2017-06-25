@@ -33,14 +33,6 @@
     [self onUserLoginUserName:userName Pwd:password];
 }
 
-//- (IBAction)onClickLoginBtn:(id)sender {
-//    [self.view endEditing:YES];
-//    [self showTips:@"即将自动下载最新版本,请点击确认"];
-//    NSURL *loadUrl = [NSURL URLWithString:@"itms-services://?action=download-manifest&url=https://www.eeka.info/eekapos_test/eekapos.plist"];
-//    [[UIApplication sharedApplication] performSelector:@selector(openURL:) withObject:loadUrl afterDelay:1.5];
-//}
-
-
 -(void)onUserLoginUserName:(NSString *)userName Pwd:(NSString *)password
 {
 #ifdef DEBUG
