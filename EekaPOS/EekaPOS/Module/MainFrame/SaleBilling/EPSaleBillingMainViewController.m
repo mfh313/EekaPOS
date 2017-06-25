@@ -82,6 +82,8 @@
     
     _saleBillingModel = [EPSaleBillingModel new];
     _saleBillingModel.discount = @(1.00);
+    
+    self.view.backgroundColor = [UIColor redColor];
 }
 
 -(void)onClickBackBtn:(id)sender

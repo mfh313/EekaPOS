@@ -13,8 +13,9 @@
 #import "EPSaleBillingModel.h"
 #import "EPDeleteSaleBillingApi.h"
 #import "EPSaleBillingDetailViewController.h"
+#import "MFMultiMenuTableViewCell.h"
 
-@interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate>
 {
     __weak IBOutlet UIButton *_dateBeginBtn;
     __weak IBOutlet UIButton *_dateEndBtn;
@@ -102,11 +103,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingEmployeeSelectView"];
+    MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingEmployeeSelectView"];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     if (cell == nil) {
-        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingEmployeeSelectView"];
+        cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingEmployeeSelectView"];
+        cell.delegate = self;
         EPSaleBillingListCellView *cellView = [EPSaleBillingListCellView nibView];
         cell.m_subContentView = cellView;
     }
@@ -122,6 +124,23 @@
     [cellView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:@(model.trueRece)]];
     
     return cell;
+}
+
+#pragma mark - LYSideslipCellDelegate
+- (NSArray<LYSideslipCellAction *> *)sideslipCell:(LYSideslipCell *)sideslipCell editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LYSideslipCellAction *action = [LYSideslipCellAction rowActionWithStyle:LYSideslipCellActionStyleDestructive title:@"删除" handler:^(LYSideslipCellAction * _Nonnull action, NSIndexPath * _Nonnull indexPath)
+                                    {
+                                        [sideslipCell hiddenAllSideslip];
+                                        EPSaleBillingModel *model = _saleBillingList[indexPath.row];
+                                        [self deleteSaleBilling:model.saleBillingID];
+                                        
+                                    }];
+    return @[action];
+}
+
+- (BOOL)sideslipCell:(LYSideslipCell *)sideslipCell canSideslipRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
