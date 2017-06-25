@@ -41,6 +41,7 @@
 {
     m_subContentView = subContentView;
     m_subContentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    m_subContentView.frame = self.contentView.bounds;
     [self.contentView addSubview:m_subContentView];
 }
 

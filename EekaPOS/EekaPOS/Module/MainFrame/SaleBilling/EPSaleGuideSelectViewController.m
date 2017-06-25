@@ -65,11 +65,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleGuideSelectViewController"];
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleGuideSelectViewController"];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     if (cell == nil) {
-        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleGuideSelectViewController"];
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleGuideSelectViewController"];
         EPSaleGuideSelectCellView *cellView = [EPSaleGuideSelectCellView nibView];
         cell.m_subContentView = cellView;
     }

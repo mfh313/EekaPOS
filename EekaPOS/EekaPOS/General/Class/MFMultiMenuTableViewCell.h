@@ -7,6 +7,7 @@
 //
 
 #import "MFTableViewCell.h"
+#import "LYSideslipCell.h"
 
 @interface MFMultiMenuTableViewCell : MFTableViewCell
 

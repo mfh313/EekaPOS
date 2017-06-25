@@ -10,7 +10,6 @@
 #define MMBaseClass_h
 
 #import "MMViewController.h"
-#import "MMTableViewCell.h"
 #import "MMUIView.h"
 #import "MMUIBridgeView.h"
 #import "MMNavigationController.h"
@@ -21,5 +20,6 @@
 
 #import "MMUITextField.h"
 #import "MFUIButton.h"
+#import "MFTableViewCell.h"
 
 #endif /* MMBaseClass_h */

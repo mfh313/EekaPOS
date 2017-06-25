@@ -87,11 +87,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingEmployeeSelectView"];
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingEmployeeSelectView"];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     if (cell == nil) {
-        cell = [[MMTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingEmployeeSelectView"];
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingEmployeeSelectView"];
         EPSaleBillingSingleTitleSelectCellView *cellView = [EPSaleBillingSingleTitleSelectCellView nibView];
         cell.m_subContentView = cellView;
     }
