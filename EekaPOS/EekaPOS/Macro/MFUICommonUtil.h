@@ -22,6 +22,16 @@
 
 #import "MFColorUtil.h"
 
-static NSString * const MFPhoneNumberRegex = @"1[3|4|5|7|8][0-9]\\d{8}$";
+#import "MFStringUtil.h"
+
+#import "XXNibBridge.h"
+
+#import "MMBaseClass.h"
+
+#import "HexColors.h"
+
+#import "MFCategorys.h"
+
+
 
 

@@ -667,6 +667,8 @@
 		AC8130151EFF549D00717359 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 		AC81301C1EFF5F5A00717359 /* LYSideslipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYSideslipCell.h; sourceTree = "<group>"; };
 		AC81301D1EFF5F5A00717359 /* LYSideslipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSideslipCell.m; sourceTree = "<group>"; };
+		AC81301F1EFF86B200717359 /* MFFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFFramework.h; sourceTree = "<group>"; };
+		AC8130201EFF87B200717359 /* MFVendors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFVendors.h; sourceTree = "<group>"; };
 		AC950E3A1EF4AF54003EEBD0 /* MMBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseClass.h; sourceTree = "<group>"; };
 		AC950E3B1EF4AF54003EEBD0 /* MMBaseInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseInfoItem.h; sourceTree = "<group>"; };
 		AC950E3C1EF4AF54003EEBD0 /* MMBaseInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseInfoItem.m; sourceTree = "<group>"; };
@@ -1349,6 +1351,7 @@
 				AC26E8661EF3DDA600C4FAA6 /* TTTAttributedLabel */,
 				AC26E8691EF3DDA600C4FAA6 /* XXNibBridge */,
 				AC26E86E1EF3DDA600C4FAA6 /* YYModel */,
+				AC8130201EFF87B200717359 /* MFVendors.h */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -1795,6 +1798,7 @@
 		AC950E631EF4B184003EEBD0 /* MFFramework */ = {
 			isa = PBXGroup;
 			children = (
+				AC81301F1EFF86B200717359 /* MFFramework.h */,
 				AC950E771EF4C48C003EEBD0 /* EekaPos */,
 				AC950E641EF4B184003EEBD0 /* Service */,
 			);
