@@ -98,8 +98,6 @@
 		AC32BE921EF6B7A1001A6291 /* EPSaleBillingGoodsEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC32BE911EF6B7A1001A6291 /* EPSaleBillingGoodsEditView.m */; };
 		AC32BE941EF6B7F6001A6291 /* EPSaleBillingGoodsEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC32BE931EF6B7F6001A6291 /* EPSaleBillingGoodsEditView.xib */; };
 		AC34B9CA1EF7C36400852993 /* keyboard.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC34B9C91EF7C36400852993 /* keyboard.xcassets */; };
-		AC34B9CF1EF7C44100852993 /* TKeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34B9CD1EF7C44100852993 /* TKeyBoardView.m */; };
-		AC34B9D01EF7C44100852993 /* TKeyBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC34B9CE1EF7C44100852993 /* TKeyBoardView.xib */; };
 		AC34B9D31EF7E88000852993 /* EPSaleBillingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34B9D21EF7E88000852993 /* EPSaleBillingModel.m */; };
 		AC34B9D61EF7EAA200852993 /* EPSaleBillingItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34B9D51EF7EAA200852993 /* EPSaleBillingItemModel.m */; };
 		AC34B9D91EF80C8700852993 /* EPSaleBillingPhoneInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34B9D81EF80C8700852993 /* EPSaleBillingPhoneInputView.m */; };
@@ -601,9 +599,6 @@
 		AC32BE911EF6B7A1001A6291 /* EPSaleBillingGoodsEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingGoodsEditView.m; sourceTree = "<group>"; };
 		AC32BE931EF6B7F6001A6291 /* EPSaleBillingGoodsEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingGoodsEditView.xib; sourceTree = "<group>"; };
 		AC34B9C91EF7C36400852993 /* keyboard.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = keyboard.xcassets; sourceTree = "<group>"; };
-		AC34B9CC1EF7C44100852993 /* TKeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKeyBoardView.h; sourceTree = "<group>"; };
-		AC34B9CD1EF7C44100852993 /* TKeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKeyBoardView.m; sourceTree = "<group>"; };
-		AC34B9CE1EF7C44100852993 /* TKeyBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TKeyBoardView.xib; sourceTree = "<group>"; };
 		AC34B9D11EF7E88000852993 /* EPSaleBillingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingModel.h; sourceTree = "<group>"; };
 		AC34B9D21EF7E88000852993 /* EPSaleBillingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingModel.m; sourceTree = "<group>"; };
 		AC34B9D41EF7EAA200852993 /* EPSaleBillingItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingItemModel.h; sourceTree = "<group>"; };
@@ -1584,7 +1579,6 @@
 		AC26E8BC1EF3E39700C4FAA6 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				AC34B9CB1EF7C44100852993 /* MFKeyBoardView */,
 				AC32BE621EF662E3001A6291 /* Util */,
 				AC950E9B1EF4DC99003EEBD0 /* MMTabBarController */,
 				AC950E391EF4AF54003EEBD0 /* Class */,
@@ -1601,16 +1595,6 @@
 				AC32BE641EF662FF001A6291 /* MFStringUtil.m */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		AC34B9CB1EF7C44100852993 /* MFKeyBoardView */ = {
-			isa = PBXGroup;
-			children = (
-				AC34B9CC1EF7C44100852993 /* TKeyBoardView.h */,
-				AC34B9CD1EF7C44100852993 /* TKeyBoardView.m */,
-				AC34B9CE1EF7C44100852993 /* TKeyBoardView.xib */,
-			);
-			path = MFKeyBoardView;
 			sourceTree = "<group>";
 		};
 		AC6687891EFA1B3C008AE45D /* RYNumberkeyboard */ = {
@@ -2855,7 +2839,6 @@
 				AC9794471EFDF5BC0050F45C /* EPSaleBillingDetailTitleItemView.xib in Resources */,
 				AC950E961EF4D560003EEBD0 /* Homelist.storyboard in Resources */,
 				AC32BE751EF67C31001A6291 /* EPSaleBillingSingleTitleSelectCellView.xib in Resources */,
-				AC34B9D01EF7C44100852993 /* TKeyBoardView.xib in Resources */,
 				AC9514A41EF56C68003EEBD0 /* CodeScan.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3182,7 +3165,6 @@
 				AC950E521EF4AF54003EEBD0 /* MMBaseTextFieldItem.m in Sources */,
 				AC9514291EF52D67003EEBD0 /* ZXByQuadrantReader.m in Sources */,
 				AC26E8951EF3DDA600C4FAA6 /* SDImageCache.m in Sources */,
-				AC34B9CF1EF7C44100852993 /* TKeyBoardView.m in Sources */,
 				AC9513D01EF52D67003EEBD0 /* ZXEmailDoCoMoResultParser.m in Sources */,
 				AC9514361EF52D67003EEBD0 /* ZXRSSExpandedBlockParsedResult.m in Sources */,
 				AC32BE4F1EF60D1C001A6291 /* EPSaleBillingDiscountInputView.m in Sources */,
