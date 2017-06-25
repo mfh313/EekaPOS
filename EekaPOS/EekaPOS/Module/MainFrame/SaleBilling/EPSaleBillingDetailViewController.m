@@ -18,8 +18,9 @@
 #import "EPSaleBillingDetailTitleItemView.h"
 #import "EPSaleBillingHelper.h"
 #import "EPUpdateSaleBillingApi.h"
+#import "MFMultiMenuTableViewCell.h"
 
-@interface EPSaleBillingDetailViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface EPSaleBillingDetailViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     EPSaleBillingModel *_saleModel;
@@ -180,10 +181,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView saleBillingGoodsCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingDetailGoodsItemView"];
+    MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingDetailGoodsItemView"];
     
     if (cell == nil) {
-        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingDetailGoodsItemView"];
+        cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingDetailGoodsItemView"];
+        cell.delegate = self;
         EPSaleBillingDetailGoodsItemView *cellView = [EPSaleBillingDetailGoodsItemView nibView];
         cell.m_subContentView = cellView;
     }
@@ -195,6 +197,25 @@
     [cellView setSaleBillingItemModel:_goodsModel[indexPath.row]];
     
     return cell;
+}
+
+#pragma mark - LYSideslipCellDelegate
+- (NSArray<LYSideslipCellAction *> *)sideslipCell:(LYSideslipCell *)sideslipCell editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    LYSideslipCellAction *action = [LYSideslipCellAction rowActionWithStyle:LYSideslipCellActionStyleDestructive title:@"删除" handler:^(LYSideslipCellAction * _Nonnull action, NSIndexPath * _Nonnull indexPath)
+    {
+        [sideslipCell hiddenAllSideslip];
+        
+        [_goodsModel removeObjectAtIndex:indexPath.row];
+        [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        
+        [self updateSaleBilling];
+        
+    }];
+    return @[action];
+}
+
+- (BOOL)sideslipCell:(LYSideslipCell *)sideslipCell canSideslipRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView amountPriceCellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -381,8 +402,9 @@
 
 -(void)updateSaleBilling
 {
-    __weak typeof(self) weakSelf = self;
+    _saleModel.itemList = _goodsModel;
     
+    __weak typeof(self) weakSelf = self;
     EPUpdateSaleBillingApi *updateApi = [EPUpdateSaleBillingApi new];
     updateApi.saleBillingModel = _saleModel;
     updateApi.animatingText = @"正在修改...";

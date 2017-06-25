@@ -6,9 +6,8 @@
 //  Copyright © 2017年 eeka. All rights reserved.
 //
 
-#import "MFTableViewCell.h"
 #import "LYSideslipCell.h"
 
-@interface MFMultiMenuTableViewCell : MFTableViewCell
+@interface MFMultiMenuTableViewCell : LYSideslipCell
 
 @end
