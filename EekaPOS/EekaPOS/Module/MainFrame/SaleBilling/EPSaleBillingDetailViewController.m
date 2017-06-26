@@ -262,7 +262,7 @@
     
     EPSaleBillingDetailTitleItemView *cellView = (EPSaleBillingDetailTitleItemView *)cell.m_subContentView;
     
-    CGFloat discountPrice = [self deductionPrice] + [self discounPrice];
+    CGFloat discountPrice =  [self discountPrice] + [self deductionPrice];
     NSString *discountPriceString = [NSString stringWithFormat:@"优惠金额：%.2f元",discountPrice];
     [cellView setTitle:discountPriceString];
     return cell;
@@ -329,17 +329,30 @@
     return cell;
 }
 
--(CGFloat)discounPrice
+-(CGFloat)discountPrice
 {
-    CGFloat discounPrice = 0;
+    CGFloat discountPrice = 0;
     NSMutableArray *itemList = _saleModel.itemList;
     for (int i = 0; i < itemList.count; i++) {
         EPSaleBillingItemModel *item = itemList[i];
         
-        discounPrice += item.listPrice.floatValue * (1 - item.discount.floatValue) * item.number.floatValue;
+        discountPrice += item.listPrice.floatValue * (1 - item.discount.floatValue) * item.number.floatValue;
     }
     
-    return discounPrice;
+    return discountPrice;
+}
+
+-(CGFloat)allDiscountAfter
+{
+    CGFloat allDiscountAfter = 0;
+    NSMutableArray *itemList = _saleModel.itemList;
+    for (int i = 0; i < itemList.count; i++) {
+        EPSaleBillingItemModel *item = itemList[i];
+        
+        allDiscountAfter += item.listPrice.floatValue * item.discount.floatValue * item.number.floatValue;
+    }
+    
+    return allDiscountAfter;
 }
 
 -(CGFloat)deductionPrice
@@ -407,6 +420,7 @@
 -(void)updateSaleBilling
 {
     _saleModel.itemList = _goodsModel;
+    _saleModel.trueRece = [self allDiscountAfter] - [self deductionPrice];
     
     __weak typeof(self) weakSelf = self;
     EPUpdateSaleBillingApi *updateApi = [EPUpdateSaleBillingApi new];
