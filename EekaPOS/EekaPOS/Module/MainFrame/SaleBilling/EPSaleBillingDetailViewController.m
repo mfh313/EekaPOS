@@ -329,6 +329,19 @@
     return cell;
 }
 
+-(CGFloat)amountPrice
+{
+    CGFloat amountPrice = 0;
+    NSMutableArray *itemList = _saleModel.itemList;
+    for (int i = 0; i < itemList.count; i++) {
+        EPSaleBillingItemModel *item = itemList[i];
+        
+        amountPrice += item.listPrice.floatValue;
+    }
+    
+    return amountPrice;
+}
+
 -(CGFloat)discountPrice
 {
     CGFloat discountPrice = 0;
@@ -420,6 +433,7 @@
 -(void)updateSaleBilling
 {
     _saleModel.itemList = _goodsModel;
+    _saleModel.amountPrice = [self amountPrice];
     _saleModel.trueRece = [self allDiscountAfter] - [self deductionPrice];
     
     __weak typeof(self) weakSelf = self;
