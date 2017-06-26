@@ -446,7 +446,6 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
     
-    [_codeInputView setItemCode:strScanned];
     [self getItemDetail:strScanned];
 }
 
