@@ -18,6 +18,7 @@
 + (id)getCellAttributeTextHightlightedColor;
 + (id)getCellTextHightlightedColor;
 - (void)addBackgroundView;
+- (void)addSelectedBackgroundView;
 - (void)addCustomArrow;
 - (void)setAccessoryType:(int)type;
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;

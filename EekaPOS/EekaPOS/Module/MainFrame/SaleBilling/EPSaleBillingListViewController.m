@@ -33,6 +33,13 @@
 
 @implementation EPSaleBillingListViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -104,13 +111,13 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingEmployeeSelectView"];
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-    
+  
     if (cell == nil) {
         cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingEmployeeSelectView"];
         cell.delegate = self;
         EPSaleBillingListCellView *cellView = [EPSaleBillingListCellView nibView];
         cell.m_subContentView = cellView;
+        [cell addSelectedBackgroundView];
     }
     
     cell.m_subContentView.frame = cell.contentView.bounds;
@@ -145,8 +152,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
     EPSaleBillingModel *model = _saleBillingList[indexPath.row];
     [self pushSaleBillingDetailViewController:model.saleBillingID];
 }
@@ -189,7 +194,6 @@
     [super didReceiveMemoryWarning];
     
 }
-
 
 
 @end

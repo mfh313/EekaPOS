@@ -14,14 +14,14 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.selectionStyle = UITableViewCellSelectionStyleGray;
 }
 
 -(id)init
 {
     self = [super init];
     if (self) {
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     
     return self;
@@ -31,7 +31,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     
     return self;
@@ -43,6 +43,12 @@
     m_subContentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     m_subContentView.frame = self.contentView.bounds;
     [self.contentView addSubview:m_subContentView];
+}
+
+- (void)addSelectedBackgroundView
+{
+    self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
+    self.selectedBackgroundView.backgroundColor = [UIColor hx_colorWithHexString:@"0080C0"];
 }
 
 @end
