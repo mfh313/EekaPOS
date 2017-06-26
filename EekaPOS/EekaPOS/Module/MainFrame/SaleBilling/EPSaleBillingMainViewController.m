@@ -441,7 +441,6 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-
 - (void)onScanQRCodeString:(NSString *)strScanned
 {
     [self.navigationController popViewControllerAnimated:YES];
