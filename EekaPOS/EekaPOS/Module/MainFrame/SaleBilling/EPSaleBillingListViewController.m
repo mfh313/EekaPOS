@@ -114,10 +114,11 @@
   
     if (cell == nil) {
         cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingEmployeeSelectView"];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
         cell.delegate = self;
+        
         EPSaleBillingListCellView *cellView = [EPSaleBillingListCellView nibView];
         cell.m_subContentView = cellView;
-        [cell addSelectedBackgroundView];
     }
     
     cell.m_subContentView.frame = cell.contentView.bounds;
