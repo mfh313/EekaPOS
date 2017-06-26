@@ -7,6 +7,7 @@
 //
 
 #import "EPSaleBillingListCellView.h"
+#import "EPSaleBillingHelper.h"
 
 @interface EPSaleBillingListCellView ()
 {
@@ -35,7 +36,7 @@
     _moneyLabel.text = money;
 }
 
--(void)setStatus:(int)status
+-(void)setStatus:(int)status model:(EPSaleBillingModel *)model
 {
     NSString *statusString = nil;
     UIColor *textColor = nil;
@@ -51,8 +52,15 @@
     }
     else if(status == 30)
     {
-        statusString = @"已收款";
-        textColor = [UIColor hx_colorWithHexString:@"989898"];
+        if ([EPSaleBillingHelper isAbnormalReceipt:model]) {
+            statusString = @"收款异常";
+            textColor = [UIColor hx_colorWithHexString:@"ea3d2e"];
+        }
+        else
+        {
+            statusString = @"已收款";
+            textColor = [UIColor hx_colorWithHexString:@"989898"];
+        }
     }
     
     _statusLabel.textColor = textColor;

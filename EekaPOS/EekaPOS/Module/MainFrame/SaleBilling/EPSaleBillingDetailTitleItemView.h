@@ -10,6 +10,8 @@
 
 @interface EPSaleBillingDetailTitleItemView : MMUIBridgeView
 
+-(void)setTopLineHidden:(BOOL)hidden;
+
 -(void)setTitle:(NSString *)title;
 
 -(void)setTitleFont:(UIFont *)font;

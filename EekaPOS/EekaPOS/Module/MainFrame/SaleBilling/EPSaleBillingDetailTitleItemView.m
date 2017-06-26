@@ -11,11 +11,18 @@
 @interface EPSaleBillingDetailTitleItemView ()
 {
     __weak IBOutlet UILabel *_titleLabel;
+    __weak IBOutlet MMOnePixLine *_topLineView;
 }
 
 @end
 
 @implementation EPSaleBillingDetailTitleItemView
+
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    [_topLineView setHidden:YES];
+}
 
 -(void)setTitle:(NSString *)title
 {
@@ -25,6 +32,11 @@
 -(void)setTitleFont:(UIFont *)font
 {
     _titleLabel.font = font;
+}
+
+-(void)setTopLineHidden:(BOOL)hidden
+{
+    [_topLineView setHidden:hidden];
 }
 
 @end

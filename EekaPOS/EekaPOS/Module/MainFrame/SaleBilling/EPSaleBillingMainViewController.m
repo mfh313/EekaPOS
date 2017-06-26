@@ -261,6 +261,8 @@
 #pragma mark - EPSaleBillingPhoneInputView
 -(void)didInputPhone:(NSString *)phone
 {
+    _saleBillingModel.phone = phone;
+    
     [self getIndividual:phone];
 }
 
@@ -761,7 +763,6 @@
         
         if (individualID && ![individualID isKindOfClass:[NSNull class]]) {
             
-            _saleBillingModel.phone = telephone;
             _currrentIndividualName = request.responseJSONObject[@"individualName"];
             
             [self showTips:@"会员加载成功"];

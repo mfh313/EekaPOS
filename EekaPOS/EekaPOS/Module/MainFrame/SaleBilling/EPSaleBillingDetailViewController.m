@@ -209,8 +209,11 @@
     {
         [sideslipCell hiddenAllSideslip];
         
-        [_goodsModel removeObjectAtIndex:indexPath.row];
-        [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        if (_goodsModel.count > 0)
+        {
+            [_goodsModel removeObjectAtIndex:indexPath.row];
+            [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        }
         
         [self updateSaleBilling];
         
@@ -230,9 +233,7 @@
         cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"amountPriceCell"];
         EPSaleBillingDetailTitleItemView *cellView = [EPSaleBillingDetailTitleItemView nibView];
         
-        MMOnePixLine *line = [MMOnePixLine new];
-        line.frame = CGRectMake(0, 0, CGRectGetWidth(cellView.frame), MFOnePixHeight);
-        [cellView addSubview:line];
+        [cellView setTopLineHidden:NO];
         
         cell.m_subContentView = cellView;
     }
@@ -348,8 +349,10 @@
     NSMutableArray *itemList = _saleModel.itemList;
     for (int i = 0; i < itemList.count; i++) {
         EPSaleBillingItemModel *item = itemList[i];
-        
-        discountPrice += item.listPrice.floatValue * (1 - item.discount.floatValue) * item.number.floatValue;
+        if (item.number.floatValue > 0)
+        {
+            discountPrice += item.listPrice.floatValue * (1 - item.discount.floatValue) * item.number.floatValue;
+        }
     }
     
     return discountPrice;
@@ -416,12 +419,6 @@
         _deductionModels = [EPSaleBillingHelper deductionModelsForString:_saleModel.deductionStr];
         
         [_tableView reloadData];
-        
-        //收款异常 自行判断 ：收款的钱 小于 应收款的钱~~~
-        CGFloat payMoney = [EPSaleBillingHelper payMoneyForString:_saleModel.payType];
-        if (_saleModel.status == 30 && payMoney < _saleModel.trueRece) {
-            [strongSelf showTips:@"收款异常"];
-        }
         
     } failure:^(YTKBaseRequest * request) {
         

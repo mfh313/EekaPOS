@@ -15,6 +15,13 @@
             <rect key="frame" x="0.0" y="0.0" width="453" height="78"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vC1-mm-7Fh" customClass="MMOnePixLine">
+                    <rect key="frame" x="0.0" y="0.0" width="453" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="tkQ-9d-rGD"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GL1-py-sWc">
                     <rect key="frame" x="15" y="24" width="52" height="30"/>
                     <constraints>
@@ -30,6 +37,9 @@
             <constraints>
                 <constraint firstItem="GL1-py-sWc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4oO-17-tTk"/>
                 <constraint firstItem="GL1-py-sWc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="KWe-Wz-pya"/>
+                <constraint firstItem="vC1-mm-7Fh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Yoj-oG-xSp"/>
+                <constraint firstAttribute="trailing" secondItem="vC1-mm-7Fh" secondAttribute="trailing" id="fXv-4x-wEA"/>
+                <constraint firstItem="vC1-mm-7Fh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="obg-p9-lPP"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -37,6 +47,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="_titleLabel" destination="GL1-py-sWc" id="jVo-nV-oL8"/>
+                <outlet property="_topLineView" destination="vC1-mm-7Fh" id="ca2-Kn-g8U"/>
             </connections>
             <point key="canvasLocation" x="72.5" y="348"/>
         </view>

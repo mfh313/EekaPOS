@@ -194,4 +194,15 @@
 
 }
 
++(BOOL)isAbnormalReceipt:(EPSaleBillingModel *)model
+{
+    //收款异常 自行判断 ：收款的钱 小于 应收款的钱~~~
+    CGFloat payMoney = [EPSaleBillingHelper payMoneyForString:model.payType];
+    if (model.status == 30 && payMoney < model.trueRece) {
+        return YES;
+    }
+    
+    return NO;
+}
+
 @end

@@ -8,6 +8,7 @@
 
 #import "MMUIBridgeView.h"
 
+@class EPSaleBillingModel;
 @interface EPSaleBillingListCellView : MMUIBridgeView
 
 -(void)setNames:(NSString *)names;
@@ -16,6 +17,6 @@
 
 -(void)setMoneyString:(NSString *)money;
 
--(void)setStatus:(int)status;
+-(void)setStatus:(int)status model:(EPSaleBillingModel *)model;
 
 @end

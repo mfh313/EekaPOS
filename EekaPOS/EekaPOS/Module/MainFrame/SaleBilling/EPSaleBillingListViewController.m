@@ -128,7 +128,7 @@
     
     [cellView setNames:model.guider];
     [cellView setTimeString:model.sellDate];
-    [cellView setStatus:model.status];
+    [cellView setStatus:model.status model:model];
     [cellView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:@(model.trueRece)]];
     
     return cell;

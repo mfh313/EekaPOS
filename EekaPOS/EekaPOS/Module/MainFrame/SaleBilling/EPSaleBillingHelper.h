@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EPSaleBillingModel.h"
 
 #define EPSaleBillingDeductionKey_1  @"NotCountTheSmallChange"
 #define EPSaleBillingDeductionKey_2  @"E-cash"
@@ -49,5 +50,7 @@
 +(NSMutableArray *)remarkModelStrings;
 
 +(NSString*)dictionaryToJson:(NSDictionary *)dic;
+
++(BOOL)isAbnormalReceipt:(EPSaleBillingModel *)model;
 
 @end
