@@ -141,6 +141,9 @@
 		AC8130181EFF549D00717359 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = AC8130131EFF549D00717359 /* main.js */; };
 		AC8130191EFF549D00717359 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = AC8130151EFF549D00717359 /* main.js */; };
 		AC81301E1EFF5F5A00717359 /* LYSideslipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC81301D1EFF5F5A00717359 /* LYSideslipCell.m */; };
+		AC8CDB201F023E07003E9413 /* MFTableViewUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDB1F1F023E07003E9413 /* MFTableViewUserInfo.m */; };
+		AC8CDB231F024088003E9413 /* MFTableViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDB221F024088003E9413 /* MFTableViewSectionInfo.m */; };
+		AC8CDB261F0250EC003E9413 /* MFTableViewCellInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDB251F0250EC003E9413 /* MFTableViewCellInfo.m */; };
 		AC950E511EF4AF54003EEBD0 /* MMBaseInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E3C1EF4AF54003EEBD0 /* MMBaseInfoItem.m */; };
 		AC950E521EF4AF54003EEBD0 /* MMBaseTextFieldItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E3E1EF4AF54003EEBD0 /* MMBaseTextFieldItem.m */; };
 		AC950E531EF4AF54003EEBD0 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E401EF4AF54003EEBD0 /* MMNavigationController.m */; };
@@ -669,6 +672,12 @@
 		AC81301D1EFF5F5A00717359 /* LYSideslipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYSideslipCell.m; sourceTree = "<group>"; };
 		AC81301F1EFF86B200717359 /* MFFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFFramework.h; sourceTree = "<group>"; };
 		AC8130201EFF87B200717359 /* MFVendors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFVendors.h; sourceTree = "<group>"; };
+		AC8CDB1E1F023E07003E9413 /* MFTableViewUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTableViewUserInfo.h; sourceTree = "<group>"; };
+		AC8CDB1F1F023E07003E9413 /* MFTableViewUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTableViewUserInfo.m; sourceTree = "<group>"; };
+		AC8CDB211F024088003E9413 /* MFTableViewSectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTableViewSectionInfo.h; sourceTree = "<group>"; };
+		AC8CDB221F024088003E9413 /* MFTableViewSectionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTableViewSectionInfo.m; sourceTree = "<group>"; };
+		AC8CDB241F0250EC003E9413 /* MFTableViewCellInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTableViewCellInfo.h; sourceTree = "<group>"; };
+		AC8CDB251F0250EC003E9413 /* MFTableViewCellInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTableViewCellInfo.m; sourceTree = "<group>"; };
 		AC950E3A1EF4AF54003EEBD0 /* MMBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseClass.h; sourceTree = "<group>"; };
 		AC950E3B1EF4AF54003EEBD0 /* MMBaseInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseInfoItem.h; sourceTree = "<group>"; };
 		AC950E3C1EF4AF54003EEBD0 /* MMBaseInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseInfoItem.m; sourceTree = "<group>"; };
@@ -1737,6 +1746,12 @@
 		AC8CDB1D1F020C5C003E9413 /* MFTableView */ = {
 			isa = PBXGroup;
 			children = (
+				AC8CDB1E1F023E07003E9413 /* MFTableViewUserInfo.h */,
+				AC8CDB1F1F023E07003E9413 /* MFTableViewUserInfo.m */,
+				AC8CDB211F024088003E9413 /* MFTableViewSectionInfo.h */,
+				AC8CDB221F024088003E9413 /* MFTableViewSectionInfo.m */,
+				AC8CDB241F0250EC003E9413 /* MFTableViewCellInfo.h */,
+				AC8CDB251F0250EC003E9413 /* MFTableViewCellInfo.m */,
 			);
 			path = MFTableView;
 			sourceTree = "<group>";
@@ -3033,6 +3048,7 @@
 				AC9513D31EF52D67003EEBD0 /* ZXGeoParsedResult.m in Sources */,
 				AC9514681EF52D67003EEBD0 /* ZXPDF417Codeword.m in Sources */,
 				AC9514601EF52D67003EEBD0 /* ZXUPCEANWriter.m in Sources */,
+				AC8CDB261F0250EC003E9413 /* MFTableViewCellInfo.m in Sources */,
 				AC66462B1EFBB26C0096C31E /* EPGetSaleBillingListApi.m in Sources */,
 				AC9513F91EF52D67003EEBD0 /* ZXByteArray.m in Sources */,
 				AC9514351EF52D67003EEBD0 /* ZXAnyAIDecoder.m in Sources */,
@@ -3143,6 +3159,7 @@
 				AC26E8A21EF3DDA600C4FAA6 /* UIView+WebCacheOperation.m in Sources */,
 				AC26E8801EF3DDA600C4FAA6 /* YTKChainRequest+AnimatingAccessory.m in Sources */,
 				AC9513DD1EF52D67003EEBD0 /* ZXSMSTOMMSTOResultParser.m in Sources */,
+				AC8CDB231F024088003E9413 /* MFTableViewSectionInfo.m in Sources */,
 				AC66461C1EFB943B0096C31E /* EPGetSaleBillingByIdApi.m in Sources */,
 				AC95147B1EF52D67003EEBD0 /* ZXQRCodeBitMatrixParser.m in Sources */,
 				AC9513CE1EF52D67003EEBD0 /* ZXEmailAddressParsedResult.m in Sources */,
@@ -3162,6 +3179,7 @@
 				AC9513E11EF52D67003EEBD0 /* ZXTextParsedResult.m in Sources */,
 				AC26E8B01EF3E05300C4FAA6 /* EPAppViewControllerManager.m in Sources */,
 				AC26E88D1EF3DDA600C4FAA6 /* YTKChainRequest.m in Sources */,
+				AC8CDB201F023E07003E9413 /* MFTableViewUserInfo.m in Sources */,
 				AC9514411EF52D67003EEBD0 /* ZXRSSExpandedRow.m in Sources */,
 				AC9513CA1EF52D67003EEBD0 /* ZXAddressBookParsedResult.m in Sources */,
 				AC950EBA1EF51AF8003EEBD0 /* MMUINavigationBar.m in Sources */,
