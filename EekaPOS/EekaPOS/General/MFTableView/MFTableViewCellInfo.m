@@ -49,7 +49,17 @@
 
 + (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName accessoryType:(UITableViewCellAccessoryType)accessoryType isFitIpadClassic:(BOOL)isFitIpadClassic
 {
-    return nil;
+    MFTableViewCellInfo *cellInfo = [[MFTableViewCellInfo alloc] init];
+    [cellInfo setMakeSel:@selector(makeNormalCell:)];
+    [cellInfo setMakeTarget:cellInfo];
+    [cellInfo setActionSel:sel];
+    [cellInfo setActionTarget:target];
+    [cellInfo setFCellHeight:44.0f];
+    [cellInfo setAccessoryType:accessoryType];
+    [cellInfo addUserInfoValue:title forKey:@"title"];
+    [cellInfo addUserInfoValue:rightValue forKey:@"rightValue"];
+    cellInfo setisf
+    return cellInfo;
 }
 
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue
@@ -59,7 +69,9 @@
 
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName
 {
-    return nil;
+    MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForTitle:title rightValue:rightValue];
+    [cellInfo addUserInfoValue:imageName forKey:@"imageName"];
+    return cellInfo;
 }
 
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName isFitIpadClassic:(BOOL)isFitIpadClassic
