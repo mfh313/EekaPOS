@@ -1583,6 +1583,7 @@
 		AC26E8BC1EF3E39700C4FAA6 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				AC8CDB1D1F020C5C003E9413 /* MFTableView */,
 				AC32BE621EF662E3001A6291 /* Util */,
 				AC950E9B1EF4DC99003EEBD0 /* MMTabBarController */,
 				AC950E391EF4AF54003EEBD0 /* Class */,
@@ -1731,6 +1732,13 @@
 				AC81301D1EFF5F5A00717359 /* LYSideslipCell.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		AC8CDB1D1F020C5C003E9413 /* MFTableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MFTableView;
 			sourceTree = "<group>";
 		};
 		AC950E391EF4AF54003EEBD0 /* Class */ = {
