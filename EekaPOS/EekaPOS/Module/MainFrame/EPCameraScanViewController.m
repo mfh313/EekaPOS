@@ -76,8 +76,6 @@
     [_btnFlash addTarget:self action:@selector(openOrCloseFlash) forControlEvents:UIControlEventTouchUpInside];
     
     [_bottomItemsView addSubview:_btnFlash];
-    
-    
 }
 
 //开关闪光灯
