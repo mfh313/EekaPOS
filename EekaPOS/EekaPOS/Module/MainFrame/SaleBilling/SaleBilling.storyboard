@@ -95,6 +95,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.5000192175" green="1" blue="0.39297160050000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="2ZF-od-72u" firstAttribute="height" secondItem="x6X-Z2-WKQ" secondAttribute="height" id="06w-u7-I5o"/>
                                     <constraint firstItem="x6X-Z2-WKQ" firstAttribute="leading" secondItem="2ZF-od-72u" secondAttribute="trailing" constant="1" id="0f3-nP-hwk"/>
@@ -120,9 +121,9 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="zxw-Qe-2bz" secondAttribute="trailing" id="1yY-qm-BLv"/>
                             <constraint firstItem="5mA-Gv-Qoj" firstAttribute="centerX" secondItem="Pw7-vr-Umx" secondAttribute="centerX" id="JoZ-tE-Nvr"/>
-                            <constraint firstItem="5mA-Gv-Qoj" firstAttribute="top" secondItem="AJv-df-MEo" secondAttribute="bottom" id="Ktn-VA-AnC"/>
                             <constraint firstItem="AJv-df-MEo" firstAttribute="centerX" secondItem="Pw7-vr-Umx" secondAttribute="centerX" id="TTu-L8-9c9"/>
                             <constraint firstItem="AJv-df-MEo" firstAttribute="top" secondItem="zxw-Qe-2bz" secondAttribute="bottom" id="UBI-g7-BSr"/>
+                            <constraint firstItem="KG7-Ow-HAG" firstAttribute="top" secondItem="AJv-df-MEo" secondAttribute="bottom" constant="80" id="WyU-y2-HL3"/>
                             <constraint firstAttribute="leading" secondItem="5mA-Gv-Qoj" secondAttribute="leading" id="eTO-g0-aPw"/>
                             <constraint firstItem="KG7-Ow-HAG" firstAttribute="top" secondItem="5mA-Gv-Qoj" secondAttribute="bottom" id="vf8-fd-4xM"/>
                             <constraint firstItem="zxw-Qe-2bz" firstAttribute="leading" secondItem="Pw7-vr-Umx" secondAttribute="leading" id="vzj-zW-E6u"/>

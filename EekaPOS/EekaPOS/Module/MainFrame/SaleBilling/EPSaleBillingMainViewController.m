@@ -66,7 +66,7 @@
     
     self.title = @"销售开单";
     
-    [self MF_wantsFullScreenLayout:NO];
+    [self.view layoutIfNeeded];
     
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
@@ -82,6 +82,21 @@
     
     _saleBillingModel = [EPSaleBillingModel new];
     _saleBillingModel.discount = @(1.0);
+    
+    NSLog(@"viewDidLoad = %@",NSStringFromCGRect(self.view.frame));
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSLog(@"viewWillAppear = %@",NSStringFromCGRect(self.view.frame));
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear = %@",NSStringFromCGRect(self.view.frame));
 }
 
 -(void)onClickBackBtn:(id)sender
