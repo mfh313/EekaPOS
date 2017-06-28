@@ -16,6 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    
+    NSLog(@"MMTabBarController viewDidLoad = %@",NSStringFromCGRect(self.view.frame));
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSLog(@"MMTabBarController viewWillAppear = %@",NSStringFromCGRect(self.view.frame));
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"MMTabBarController viewDidAppear = %@",NSStringFromCGRect(self.view.frame));
 }
 
 -(BOOL)shouldAutorotate

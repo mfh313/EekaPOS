@@ -33,7 +33,6 @@
                   listPrice:[NSString stringWithFormat:@"%.1f",itemModel.listPrice.floatValue]
               discountPrice:[NSString stringWithFormat:@"%.1f",itemModel.receivablePrice.floatValue]];
     
-    [_priceView setNumberColor:itemModel.number];
     
     _discountLabel.text = [NSString stringWithFormat:@"折扣：%.4f",itemModel.discount.floatValue];
     
@@ -45,6 +44,21 @@
         _remarkLabel.text = nil;
     }
     
+    BOOL refund = (itemModel.number.floatValue < 0 ? YES : NO);
+    [self setIsRefund:refund];
+    
+}
+
+-(void)setIsRefund:(BOOL)refund
+{
+    if (refund)
+    {
+        self.backgroundColor = [UIColor hx_colorWithHexString:@"ff6868"];
+    }
+    else
+    {
+        self.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 
