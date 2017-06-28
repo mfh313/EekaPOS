@@ -57,7 +57,7 @@
     
     [self.view addSubview:_bottomItemsView];
     
-    NSString *text = @"请将中间线条对准需要扫描的条形码";
+    NSString *text = @"请将蓝色的中间线条对准需要扫描的条形码";
     
     _tipLabel = [[UILabel alloc] init];
     _tipLabel.bounds = CGRectMake(0, 0, CGRectGetWidth(_bottomItemsView.frame), 30);
