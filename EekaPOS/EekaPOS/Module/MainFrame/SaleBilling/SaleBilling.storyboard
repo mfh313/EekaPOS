@@ -70,7 +70,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="vPF-r1-DiY"/>
                                         </constraints>
-                                        <state key="normal" title="保存">
+                                        <state key="normal" title="开单">
                                             <color key="titleColor" red="0.0" green="0.50196078430000002" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>

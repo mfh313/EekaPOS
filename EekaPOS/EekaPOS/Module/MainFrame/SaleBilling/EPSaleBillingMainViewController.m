@@ -81,7 +81,6 @@
     _selectCashier = [entitityService getEntitityEmployees].firstObject;
     
     _saleBillingModel = [EPSaleBillingModel new];
-    _saleBillingModel.discount = @(1.00);
 }
 
 -(void)onClickBackBtn:(id)sender
@@ -720,8 +719,8 @@
         }
         
         EPSaleBillingItemModel *itemModel = [EPSaleBillingItemModel MM_modelWithJSON:request.responseJSONObject];
-        itemModel.discount = _saleBillingModel.discount;
         itemModel.isSpecialDiscount = NO;
+        itemModel.discount = @(1.00);
         itemModel.number = @(1);
         
         [_saleBillingItemModels addObject:itemModel];
