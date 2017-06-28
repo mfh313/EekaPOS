@@ -35,6 +35,8 @@
 -(void)setPhone:(NSString *)phone
 {
     _phoneTextField.text = phone;
+    
+    [ZHKeyboardAvoiding setAvoidingView:_phoneTextField  moveView:[self MFViewController].view offset:20];
 }
 
 -(void)setName:(NSString *)name

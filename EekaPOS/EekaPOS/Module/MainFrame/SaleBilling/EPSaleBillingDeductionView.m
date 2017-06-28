@@ -64,6 +64,8 @@
     {
         _deductionTextField.text = nil;
     }
+    
+    [ZHKeyboardAvoiding setAvoidingView:_deductionTextField  moveView:[self MFViewController].view offset:20];
 }
 
 -(void)setDeductionTypeName:(NSString *)type

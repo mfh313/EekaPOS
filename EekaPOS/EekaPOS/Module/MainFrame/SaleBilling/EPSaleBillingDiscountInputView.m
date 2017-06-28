@@ -55,6 +55,8 @@
 -(void)setDiscountRate:(NSNumber *)discountRate
 {
     _discountInputTextField.text = [MFStringUtil floatStringWithTwoPoint:discountRate.floatValue];
+    
+    [ZHKeyboardAvoiding setAvoidingView:_discountInputTextField  moveView:[self MFViewController].view offset:20];
 }
 
 -(void)setReceivablePrice:(NSNumber *)receivablePrice allPrice:(NSNumber *)discountPre

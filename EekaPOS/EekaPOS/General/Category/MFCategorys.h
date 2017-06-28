@@ -12,3 +12,5 @@
 #import "UIViewController+FullScreen.h"
 #import "UIViewController+UINavigationItem.h"
 #import "UIViewController+pregress.h"
+#import "UIView+viewController.h"
+

@@ -133,6 +133,8 @@
 		AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3601EF26CC300564823 /* EekaPosMain.storyboard */; };
 		AC7CC3641EF26CC300564823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3631EF26CC300564823 /* Assets.xcassets */; };
 		AC7CC3671EF26CC300564823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3651EF26CC300564823 /* LaunchScreen.storyboard */; };
+		AC7ED1D51F039946003D10FA /* ZHKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7ED1D41F039946003D10FA /* ZHKeyboardAvoiding.m */; };
+		AC7ED1D81F039EF0003D10FA /* UIView+viewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7ED1D71F039EF0003D10FA /* UIView+viewController.m */; };
 		AC812FF91EFF505400717359 /* JSPatchPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC812FF61EFF505400717359 /* JSPatchPlatform.framework */; };
 		AC812FFA1EFF505400717359 /* rsa_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = AC812FF71EFF505400717359 /* rsa_private_key.pem */; };
 		AC812FFB1EFF505400717359 /* rsa_public_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = AC812FF81EFF505400717359 /* rsa_public_key.pem */; };
@@ -661,6 +663,10 @@
 		AC7CC3631EF26CC300564823 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC7CC3661EF26CC300564823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC7CC3681EF26CC300564823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC7ED1D31F039946003D10FA /* ZHKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHKeyboardAvoiding.h; sourceTree = "<group>"; };
+		AC7ED1D41F039946003D10FA /* ZHKeyboardAvoiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHKeyboardAvoiding.m; sourceTree = "<group>"; };
+		AC7ED1D61F039EF0003D10FA /* UIView+viewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+viewController.h"; sourceTree = "<group>"; };
+		AC7ED1D71F039EF0003D10FA /* UIView+viewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+viewController.m"; sourceTree = "<group>"; };
 		AC812FF61EFF505400717359 /* JSPatchPlatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSPatchPlatform.framework; sourceTree = "<group>"; };
 		AC812FF71EFF505400717359 /* rsa_private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsa_private_key.pem; sourceTree = "<group>"; };
 		AC812FF81EFF505400717359 /* rsa_public_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rsa_public_key.pem; sourceTree = "<group>"; };
@@ -1345,6 +1351,7 @@
 		AC26E7F01EF3DDA600C4FAA6 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				AC7ED1D21F039946003D10FA /* ZHKeyboardAvoiding */,
 				AC81301A1EFF5F5A00717359 /* LYSideslipCell */,
 				AC812FF51EFF505400717359 /* JSPatch */,
 				AC9794541EFE83560050F45C /* DAContextMenuTableViewController */,
@@ -1592,6 +1599,7 @@
 		AC26E8BC1EF3E39700C4FAA6 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				AC7ED1D11F0396F8003D10FA /* MFNumberKeyBoard */,
 				AC8CDB1D1F020C5C003E9413 /* MFTableView */,
 				AC32BE621EF662E3001A6291 /* Util */,
 				AC950E9B1EF4DC99003EEBD0 /* MMTabBarController */,
@@ -1670,6 +1678,22 @@
 				AC7CC3581EF26CC300564823 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC7ED1D11F0396F8003D10FA /* MFNumberKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MFNumberKeyBoard;
+			sourceTree = "<group>";
+		};
+		AC7ED1D21F039946003D10FA /* ZHKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				AC7ED1D31F039946003D10FA /* ZHKeyboardAvoiding.h */,
+				AC7ED1D41F039946003D10FA /* ZHKeyboardAvoiding.m */,
+			);
+			path = ZHKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		AC812FF51EFF505400717359 /* JSPatch */ = {
@@ -1881,6 +1905,8 @@
 				AC950E851EF4D337003EEBD0 /* UIView+Extend.m */,
 				AC950E861EF4D337003EEBD0 /* UIView+threadHook.h */,
 				AC950E871EF4D337003EEBD0 /* UIView+threadHook.m */,
+				AC7ED1D61F039EF0003D10FA /* UIView+viewController.h */,
+				AC7ED1D71F039EF0003D10FA /* UIView+viewController.m */,
 				AC950E881EF4D337003EEBD0 /* UIViewController+FixBackIndicatorImage.h */,
 				AC950E891EF4D337003EEBD0 /* UIViewController+FixBackIndicatorImage.m */,
 				AC950E8A1EF4D337003EEBD0 /* UIViewController+FullScreen.h */,
@@ -2911,6 +2937,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC950E8E1EF4D337003EEBD0 /* NSDictionary+Unicode.m in Sources */,
+				AC7ED1D81F039EF0003D10FA /* UIView+viewController.m in Sources */,
 				AC9514321EF52D67003EEBD0 /* ZXAI01AndOtherAIs.m in Sources */,
 				AC97944C1EFDF78E0050F45C /* EPSaleBillingDetailGoodsItemPriceView.m in Sources */,
 				AC9513C11EF52D67003EEBD0 /* ZXAztecSimpleToken.m in Sources */,
@@ -3061,6 +3088,7 @@
 				AC95145A1EF52D67003EEBD0 /* ZXUPCAReader.m in Sources */,
 				AC9514A71EF574AA003EEBD0 /* EPSaleBillingItemCodeInputView.m in Sources */,
 				AC7CC35C1EF26CC300564823 /* EekaPosAppDelegate.m in Sources */,
+				AC7ED1D51F039946003D10FA /* ZHKeyboardAvoiding.m in Sources */,
 				AC95140B1EF52D67003EEBD0 /* ZXInvertedLuminanceSource.m in Sources */,
 				AC9513DE1EF52D67003EEBD0 /* ZXSMTPResultParser.m in Sources */,
 				AC9513F61EF52D67003EEBD0 /* ZXBitMatrix.m in Sources */,
