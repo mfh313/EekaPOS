@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "MMTabBarController.h"
+#import "EPLoginViewController.h"
+#import "EPMainFrameViewController.h"
+#import "EPMeViewController.h"
 
 @interface EPAppViewControllerManager : NSObject
 {

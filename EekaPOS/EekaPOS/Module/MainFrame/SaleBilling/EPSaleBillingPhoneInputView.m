@@ -57,9 +57,17 @@
     NSPredicate *phoneNumberPredicate = [NSPredicate predicateWithFormat:@"self matches %@", phoneNumberRegex];
     
     NSMutableString *resultString = [NSMutableString stringWithString:text];
-    if (range.location <= resultString.length) {
-        [resultString insertString:string atIndex:range.location];
+    if ([string isEqualToString:@""]) {
+        [textField deleteBackward];
+        return NO;
     }
+    else
+    {
+        if (range.location <= resultString.length) {
+            [resultString insertString:string atIndex:range.location];
+        }
+    }
+    
     
     BOOL result = [predicate evaluateWithObject:resultString];
     

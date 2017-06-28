@@ -48,7 +48,34 @@
     
     [[EPAppViewControllerManager getAppViewControllerManager] jumpToLoginViewController];
     
+//    [self testTabVC];
+    
     return YES;
+}
+
+-(void)testTabVC
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homelist" bundle:nil];
+    EPMainFrameViewController *mainFrameVC = [storyboard instantiateViewControllerWithIdentifier:@"EPMainFrameViewController"];
+    MMNavigationController *rootNav = [[MMNavigationController alloc] initWithRootViewController:mainFrameVC];
+    UITabBarItem *homeTabItem = [[UITabBarItem alloc] initWithTitle:@"POS"
+                                                              image:[MFImage(@"tab1b") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                      selectedImage:[MFImage(@"tab1a") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    rootNav.tabBarItem = homeTabItem;
+    
+    
+    UIStoryboard *meStoryboard = [UIStoryboard storyboardWithName:@"Me" bundle:nil];
+    EPMeViewController *meVC = [meStoryboard instantiateViewControllerWithIdentifier:@"EPMeViewController"];
+    MMNavigationController *meRootNav = [[MMNavigationController alloc] initWithRootViewController:meVC];
+    UITabBarItem *setTabItem = [[UITabBarItem alloc] initWithTitle:@"我"
+                                                             image:[MFImage(@"tab3b") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                     selectedImage:[MFImage(@"tab4a") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    meRootNav.tabBarItem = setTabItem;
+    
+    UITabBarController *tabBarVC = [[UITabBarController alloc] init];
+    tabBarVC.viewControllers = @[rootNav,meRootNav];
+    tabBarVC.tabBar.barTintColor = [UIColor grayColor];
+    self.window.rootViewController = tabBarVC;
 }
 
 -(void)registerJSPatchHotFix
