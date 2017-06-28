@@ -58,7 +58,6 @@
     [cellInfo setAccessoryType:accessoryType];
     [cellInfo addUserInfoValue:title forKey:@"title"];
     [cellInfo addUserInfoValue:rightValue forKey:@"rightValue"];
-    cellInfo setisf
     return cellInfo;
 }
 

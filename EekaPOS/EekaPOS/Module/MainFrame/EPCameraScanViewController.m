@@ -12,6 +12,7 @@
 {
     UIView *_bottomItemsView;
     UIButton *_btnFlash;
+    UILabel *_tipLabel;
 }
 
 @end
@@ -50,11 +51,22 @@
     }
     
     //设置闪光灯
-    _bottomItemsView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.view.frame)-164,
-                                                                   CGRectGetWidth(self.view.frame), 100)];
+    _bottomItemsView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.view.frame)-164-50,
+                                                                   CGRectGetWidth(self.view.frame), 150)];
     _bottomItemsView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
     
     [self.view addSubview:_bottomItemsView];
+    
+    NSString *text = @"请将中间线条对准需要扫描的条形码";
+    
+    _tipLabel = [[UILabel alloc] init];
+    _tipLabel.bounds = CGRectMake(0, 0, CGRectGetWidth(_bottomItemsView.frame), 30);
+    _tipLabel.textAlignment = NSTextAlignmentCenter;
+    _tipLabel.center = CGPointMake(CGRectGetWidth(_bottomItemsView.frame)/2, 15);
+    [_tipLabel setText:text];
+    _tipLabel.font = [UIFont systemFontOfSize:14.0];
+    _tipLabel.textColor = [UIColor redColor];
+    [_bottomItemsView addSubview:_tipLabel];
     
     CGSize size = CGSizeMake(65, 87);
     _btnFlash = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -64,6 +76,7 @@
     [_btnFlash addTarget:self action:@selector(openOrCloseFlash) forControlEvents:UIControlEventTouchUpInside];
     
     [_bottomItemsView addSubview:_btnFlash];
+    
     
 }
 
