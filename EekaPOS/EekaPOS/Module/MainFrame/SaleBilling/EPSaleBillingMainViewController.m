@@ -79,22 +79,7 @@
     _selectCashier = [entitityService getEntitityEmployees].firstObject;
     
     _saleBillingModel = [EPSaleBillingModel new];
-    _saleBillingModel.discount = @(1.0);
-    
-    NSLog(@"viewDidLoad = %@",NSStringFromCGRect(self.view.frame));
-    
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    NSLog(@"viewWillAppear = %@",NSStringFromCGRect(self.view.frame));
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    NSLog(@"viewDidAppear = %@",NSStringFromCGRect(self.view.frame));
+//    _saleBillingModel.discount = @(1.0);
 }
 
 -(void)onClickBackBtn:(id)sender
@@ -690,11 +675,14 @@
         _allPrice += itemModel.listPrice.floatValue;
         
         CGFloat receivablePrice = 0;
-        
-        if (!itemModel.isSpecialDiscount) {
-            itemModel.discount = _saleBillingModel.discount;
+        if (!itemModel.isSpecialDiscount)
+        {
+            if (_saleBillingModel.discount)
+            {
+                itemModel.discount = _saleBillingModel.discount;
+            }
         }
-
+        
         receivablePrice = itemModel.listPrice.floatValue * itemModel.discount.floatValue * itemModel.number.floatValue;
         _discountPrice += receivablePrice;
         itemModel.receivablePrice = @(receivablePrice);
