@@ -30,7 +30,7 @@
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapGoodsCellView)];
     [self addGestureRecognizer:tapGes];
     
-    _discountPreLabel.textColor = [UIColor lightGrayColor];
+    _discountPreLabel.textColor = [UIColor hx_colorWithHexString:@"686868"];
 }
 
 -(void)onTapGoodsCellView
@@ -74,6 +74,9 @@
     
     [self setDiscountAfterNumber:@(rateAfter)];
     [self setDiscountPreNumber:listPrice];
+    
+    BOOL refund = (number.floatValue < 0 ? YES : NO);
+    [self setIsRefund:refund];
 }
 
 -(void)setDiscountAfterNumber:(NSNumber *)number
@@ -108,6 +111,22 @@
 -(void)setDiscountRateString:(NSString *)str
 {
     _discountRateLabel.text = str;
+}
+
+-(void)setIsRefund:(BOOL)refund
+{
+    if (refund)
+    {
+        self.backgroundColor = [UIColor hx_colorWithHexString:@"ff6868"];
+        _itemNameLabel.textColor = [UIColor hx_colorWithHexString:@"282828"];
+        _remarkLabel.textColor = [UIColor hx_colorWithHexString:@"282828"];
+    }
+    else
+    {
+        self.backgroundColor = [UIColor whiteColor];
+        _itemNameLabel.textColor = [UIColor hx_colorWithHexString:@"686868"];
+        _remarkLabel.textColor = [UIColor hx_colorWithHexString:@"686868"];
+    }
 }
 
 @end

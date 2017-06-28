@@ -81,6 +81,7 @@
     _selectCashier = [entitityService getEntitityEmployees].firstObject;
     
     _saleBillingModel = [EPSaleBillingModel new];
+    _saleBillingModel.discount = @(1.0);
 }
 
 -(void)onClickBackBtn:(id)sender

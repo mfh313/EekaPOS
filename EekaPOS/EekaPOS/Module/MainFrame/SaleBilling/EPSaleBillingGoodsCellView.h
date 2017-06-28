@@ -40,4 +40,6 @@
 
 -(void)setDiscountRateString:(NSString *)str;
 
+-(void)setIsRefund:(BOOL)refund;
+
 @end
