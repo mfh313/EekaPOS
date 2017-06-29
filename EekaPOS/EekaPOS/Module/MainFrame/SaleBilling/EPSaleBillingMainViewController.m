@@ -644,11 +644,6 @@
         return NO;
     }
     
-    if ([MFStringUtil isBlankString:_saleBillingModel.phone]) {
-        [self showTips:@"请输入会员手机号码"];
-        return NO;
-    }
-    
     if ([MFStringUtil isBlankString:_saleBillingModel.cashier]) {
         [self showTips:@"请选择收银员"];
         return NO;

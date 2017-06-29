@@ -42,7 +42,8 @@
     
 #endif
     
-    if (!userName || !password) {
+    if ([MFStringUtil isBlankString:userName] || [MFStringUtil isBlankString:password]) {
+        [self showTips:@"账号和密码不能为空"];
         return;
     }
     
