@@ -42,7 +42,7 @@
     UIColor *textColor = nil;
     
     if (status == 10) {
-        statusString = @"未开单";
+        statusString = @"未收款";
         textColor = [UIColor hx_colorWithHexString:@"ea3d2e"];
     }
     else if(status == 20)

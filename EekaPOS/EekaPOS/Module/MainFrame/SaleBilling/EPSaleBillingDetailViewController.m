@@ -305,7 +305,7 @@
     
     EPSaleBillingDetailTitleItemView *cellView = (EPSaleBillingDetailTitleItemView *)cell.m_subContentView;
     
-    NSString *trueReceString = [NSString stringWithFormat:@"实收金额：%.2f元",_saleModel.trueRece];
+    NSString *trueReceString = [NSString stringWithFormat:@"应收金额：%.2f元",_saleModel.trueRece];
     [cellView setTitle:trueReceString];
     
     return cell;
