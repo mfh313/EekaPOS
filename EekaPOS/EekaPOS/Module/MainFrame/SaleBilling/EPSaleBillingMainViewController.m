@@ -50,6 +50,7 @@
     EPSaleBillingDeductionModel *_selectedDeductionModel;
     NSMutableArray *_selectGuides;
     
+    NSString *_currrentPhone;
     NSString *_currrentIndividualName;
     
     CGFloat _discountPrice;
@@ -251,7 +252,7 @@
     cell.m_subContentView.frame = cell.contentView.bounds;
     
     EPSaleBillingPhoneInputView *cellView = (EPSaleBillingPhoneInputView *)cell.m_subContentView;
-    [cellView setPhone:_saleBillingModel.phone];
+    [cellView setPhone:_currrentPhone];
     [cellView setName:_currrentIndividualName];
     
     return cell;
@@ -260,7 +261,7 @@
 #pragma mark - EPSaleBillingPhoneInputView
 -(void)didInputPhone:(NSString *)phone
 {
-    _saleBillingModel.phone = phone;
+    _currrentPhone = phone;
     
     [self getIndividual:phone];
 }
@@ -752,13 +753,13 @@
         if (!getIndividualApi.messageSuccess)
         {
             [strongSelf showTips:getIndividualApi.errorMessage];
-            _saleBillingModel.phone = nil;
             _currrentIndividualName = nil;
             return;
         }
         
         id individualID = request.responseJSONObject[@"individualID"];
         if (individualID && ![individualID isKindOfClass:[NSNull class]]) {
+            _saleBillingModel.phone = telephone;
             _currrentIndividualName = request.responseJSONObject[@"individualName"];
             [self showTips:@"会员加载成功"];
         }
