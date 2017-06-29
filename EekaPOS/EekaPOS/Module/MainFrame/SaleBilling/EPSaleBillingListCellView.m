@@ -52,19 +52,33 @@
     }
     else if(status == 30)
     {
-        if ([EPSaleBillingHelper isAbnormalReceipt:model]) {
+        if ([EPSaleBillingHelper isAbnormalReceipt:model])
+        {
             statusString = @"收款异常";
-            textColor = [UIColor hx_colorWithHexString:@"ea3d2e"];
         }
         else
         {
             statusString = @"已收款";
-            textColor = [UIColor hx_colorWithHexString:@"989898"];
         }
+        
+        textColor = [UIColor hx_colorWithHexString:@"989898"];
     }
     
     _statusLabel.textColor = textColor;
     [self setStatusString:statusString];
+    [self setIsRefund:[EPSaleBillingHelper isAbnormalReceipt:model]];
+}
+
+-(void)setIsRefund:(BOOL)refund
+{
+    if (refund)
+    {
+        self.backgroundColor = [UIColor hx_colorWithHexString:@"ff6868"];
+    }
+    else
+    {
+        self.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 -(void)setStatusString:(NSString *)status

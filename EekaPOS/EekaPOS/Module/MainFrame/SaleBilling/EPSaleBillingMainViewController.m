@@ -67,8 +67,10 @@
     
     self.title = @"销售开单";
     
+    self.edgesForExtendedLayout = UIRectEdgeAll;
+    
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 90, 0);
     
     _codeInputView.m_delegate = self;
     
@@ -82,6 +84,11 @@
     _saleBillingModel = [EPSaleBillingModel new];
     
     self.view.backgroundColor = [UIColor redColor];
+}
+
+-(void)viewWillLayoutSubviews
+{
+    NSLog(@"self.view.frame=%@",NSStringFromCGRect(self.view.frame));
 }
 
 -(void)onClickBackBtn:(id)sender
