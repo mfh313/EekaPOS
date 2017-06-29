@@ -11,9 +11,6 @@
 #import "MMServiceCenter.h"
 #import "MFThemeHelper.h"
 #import "EPAppViewControllerManager.h"
-#import <JSPatchPlatform/JSPatch.h>
-
-#define JSPatch_APP_KEY @"a95d77d008b9a872"
 
 
 @interface EekaPosAppDelegate ()
@@ -34,8 +31,6 @@
     MFThirdPartyPlugin *thirdPartyPlugin = [m_serviceCenter getService:[MFThirdPartyPlugin class]];
     [thirdPartyPlugin registerPlugins];
     
-    [self registerJSPatchHotFix];
-    
     [MFThemeHelper setDefaultThemeColor];
     
     [MFNetwork makeConfigNetwork];
@@ -50,17 +45,6 @@
     
     return YES;
 }
-
--(void)registerJSPatchHotFix
-{
-    [JSPatch startWithAppKey:JSPatch_APP_KEY];
-#ifdef DEBUG
-    [JSPatch setupDevelopment];
-#endif
-    [JSPatch setupRSAPublicKey:@"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC7Y3DvH67G7d6EjFPHF6y37sO/\nTs76k+hLDoDwKNv51PEIcko2lcsWr/DEvyIQdn0fXcmR/A1mgjHIAI2jFmAi5La5\nw11LnksUhDWHuHFDeagcKUlLWG/TC+U25Ym88ikWAYqrhReCLEXjJeAH7XPr6uoM\n4mRLB4IINO7goBcs2QIDAQAB\n-----END PUBLIC KEY-----"];
-    [JSPatch sync];
-}
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -79,9 +63,12 @@
 }
 
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [JSPatch sync];
+    
+    MFThirdPartyPlugin *thirdPartyPlugin = [m_serviceCenter getService:[MFThirdPartyPlugin class]];
+    [thirdPartyPlugin applicationDidBecomeActive:application];
 }
 
 

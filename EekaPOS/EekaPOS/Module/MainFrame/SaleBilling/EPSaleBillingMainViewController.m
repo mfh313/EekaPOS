@@ -66,7 +66,7 @@
     
     self.title = @"销售开单";
     
-    self.edgesForExtendedLayout = UIRectEdgeAll;
+    self.edgesForExtendedLayout = UIRectEdgeBottom;
     
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     _tableView.contentInset = UIEdgeInsetsMake(0, 0, 90, 0);
@@ -87,7 +87,7 @@
 
 -(void)viewWillLayoutSubviews
 {
-    NSLog(@"self.view.frame=%@",NSStringFromCGRect(self.view.frame));
+    NSLog(@"EPSaleBillingMainViewController frame=%@",NSStringFromCGRect(self.view.frame));
 }
 
 -(void)onClickBackBtn:(id)sender

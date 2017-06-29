@@ -12,7 +12,7 @@
         <!--Sale Billing Main View Controller-->
         <scene sceneID="rw3-qb-atK">
             <objects>
-                <viewController storyboardIdentifier="EPSaleBillingMainViewController" id="CHT-Nm-EaG" customClass="EPSaleBillingMainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EPSaleBillingMainViewController" wantsFullScreenLayout="YES" id="CHT-Nm-EaG" customClass="EPSaleBillingMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="49l-xr-2YA"/>
                         <viewControllerLayoutGuide type="bottom" id="KG7-Ow-HAG"/>
@@ -36,7 +36,7 @@
                                     <outlet property="delegate" destination="CHT-Nm-EaG" id="IpR-WN-4wc"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mA-Gv-Qoj" userLabel="footView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mA-Gv-Qoj" userLabel="footView">
                                 <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpu-Bg-toz" customClass="MMOnePixLine">
@@ -95,7 +95,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.5000192175" green="1" blue="0.39297160050000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="2ZF-od-72u" firstAttribute="height" secondItem="x6X-Z2-WKQ" secondAttribute="height" id="06w-u7-I5o"/>
                                     <constraint firstItem="x6X-Z2-WKQ" firstAttribute="leading" secondItem="2ZF-od-72u" secondAttribute="trailing" constant="1" id="0f3-nP-hwk"/>
@@ -253,7 +253,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y4K-2i-ggf" customClass="MFUITableView">
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.5000192175" green="1" blue="0.39297160050000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vC8-sT-Inq" id="paN-gC-Cdl"/>
                                     <outlet property="delegate" destination="vC8-sT-Inq" id="mia-Nt-Okr"/>

@@ -12,4 +12,6 @@
     
 -(void)registerPlugins;
 
+-(void)applicationDidBecomeActive:(UIApplication *)application;
+
 @end
