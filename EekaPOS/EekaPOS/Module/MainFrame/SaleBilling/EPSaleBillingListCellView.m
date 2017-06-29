@@ -55,13 +55,13 @@
         if ([EPSaleBillingHelper isAbnormalReceipt:model])
         {
             statusString = @"收款异常";
+            textColor = [UIColor hx_colorWithHexString:@"282828"];
         }
         else
         {
             statusString = @"已收款";
+            textColor = [UIColor hx_colorWithHexString:@"989898"];
         }
-        
-        textColor = [UIColor hx_colorWithHexString:@"989898"];
     }
     
     _statusLabel.textColor = textColor;
@@ -73,10 +73,12 @@
 {
     if (refund)
     {
+        _timeLabel.textColor = [UIColor hx_colorWithHexString:@"282828"];
         self.backgroundColor = [UIColor hx_colorWithHexString:@"ff6868"];
     }
     else
     {
+        _timeLabel.textColor = [UIColor hx_colorWithHexString:@"989898"];
         self.backgroundColor = [UIColor whiteColor];
     }
 }
