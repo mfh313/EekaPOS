@@ -24,6 +24,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
+//-(CGSize)preferredContentSize
+//{
+//    return [UIScreen mainScreen].bounds.size;
+//}
+
 -(BOOL)shouldAutorotate
 {
     return NO;

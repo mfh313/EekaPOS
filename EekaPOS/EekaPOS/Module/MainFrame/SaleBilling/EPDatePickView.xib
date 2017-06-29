@@ -20,12 +20,13 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ePu-tv-TjL">
-                    <rect key="frame" x="149" y="141" width="320" height="253"/>
+                    <rect key="frame" x="169" y="141" width="280" height="253"/>
                 </imageView>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdT-WB-DGU">
-                    <rect key="frame" x="149" y="166" width="320" height="170"/>
+                    <rect key="frame" x="169" y="166" width="280" height="170"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="170" id="dNT-88-42q"/>
+                        <constraint firstAttribute="width" constant="280" id="iyw-Jv-2NL"/>
                     </constraints>
                     <date key="date" timeIntervalSinceReferenceDate="-1293923637.4187393">
                         <!--1960-01-01 00:46:02 +0000-->

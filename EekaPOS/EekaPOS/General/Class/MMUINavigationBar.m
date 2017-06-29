@@ -28,6 +28,8 @@
         _navBarLine.backgroundColor = [UIColor clearColor];
         [self addSubview:_navBarLine];
         
+        self.translucent = YES;
+        
     }
     
     return self;

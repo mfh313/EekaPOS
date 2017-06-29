@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EekaPOS/EekaPOS/General/Helper/MFThemeHelper.m"
-            timestampString = "519380325.331908"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "+setDefaultThemeColor"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "EekaPOS/EekaPOS/Module/MainFrame/SaleBilling/EPSaleBillingDetailViewController.m"
             timestampString = "520152904.040432"
             startingColumnNumber = "9223372036854775807"

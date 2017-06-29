@@ -30,7 +30,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AJv-df-MEo">
                                 <rect key="frame" x="0.0" y="76" width="374" height="591"/>
-                                <color key="backgroundColor" red="0.91372549020000005" green="0.21960784310000001" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="CHT-Nm-EaG" id="aC2-Bk-dMn"/>
                                     <outlet property="delegate" destination="CHT-Nm-EaG" id="IpR-WN-4wc"/>
@@ -122,10 +122,10 @@
                             <constraint firstAttribute="trailing" secondItem="zxw-Qe-2bz" secondAttribute="trailing" id="1yY-qm-BLv"/>
                             <constraint firstItem="5mA-Gv-Qoj" firstAttribute="centerX" secondItem="Pw7-vr-Umx" secondAttribute="centerX" id="JoZ-tE-Nvr"/>
                             <constraint firstItem="AJv-df-MEo" firstAttribute="centerX" secondItem="Pw7-vr-Umx" secondAttribute="centerX" id="TTu-L8-9c9"/>
-                            <constraint firstItem="AJv-df-MEo" firstAttribute="top" secondItem="zxw-Qe-2bz" secondAttribute="bottom" id="UBI-g7-BSr"/>
                             <constraint firstItem="KG7-Ow-HAG" firstAttribute="top" secondItem="AJv-df-MEo" secondAttribute="bottom" id="WyJ-we-8SZ"/>
                             <constraint firstAttribute="leading" secondItem="5mA-Gv-Qoj" secondAttribute="leading" id="eTO-g0-aPw"/>
-                            <constraint firstItem="KG7-Ow-HAG" firstAttribute="top" secondItem="5mA-Gv-Qoj" secondAttribute="bottom" id="vf8-fd-4xM"/>
+                            <constraint firstItem="AJv-df-MEo" firstAttribute="top" secondItem="zxw-Qe-2bz" secondAttribute="bottom" id="lrv-PM-cnZ"/>
+                            <constraint firstItem="KG7-Ow-HAG" firstAttribute="top" secondItem="5mA-Gv-Qoj" secondAttribute="bottom" id="rG8-5Z-Ap0"/>
                             <constraint firstItem="zxw-Qe-2bz" firstAttribute="leading" secondItem="Pw7-vr-Umx" secondAttribute="leading" id="vzj-zW-E6u"/>
                             <constraint firstItem="AJv-df-MEo" firstAttribute="leading" secondItem="Pw7-vr-Umx" secondAttribute="leading" id="xYT-Bb-lR7"/>
                             <constraint firstItem="zxw-Qe-2bz" firstAttribute="top" secondItem="49l-xr-2YA" secondAttribute="bottom" id="z2t-IV-cEH"/>
@@ -253,7 +253,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y4K-2i-ggf" customClass="MFUITableView">
                                 <rect key="frame" x="0.0" y="70" width="375" height="597"/>
-                                <color key="backgroundColor" red="0.5000192175" green="1" blue="0.39297160050000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vC8-sT-Inq" id="paN-gC-Cdl"/>
                                     <outlet property="delegate" destination="vC8-sT-Inq" id="mia-Nt-Okr"/>

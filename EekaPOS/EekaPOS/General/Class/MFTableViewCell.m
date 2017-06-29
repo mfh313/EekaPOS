@@ -48,7 +48,7 @@
 - (void)addSelectedBackgroundView
 {
     self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
-    self.selectedBackgroundView.backgroundColor = [UIColor hx_colorWithHexString:@"0080C0"];
+    self.selectedBackgroundView.backgroundColor = [UIColor hx_colorWithHexString:@"0080C0" alpha:0.5];
 }
 
 @end
