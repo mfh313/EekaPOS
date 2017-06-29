@@ -21,12 +21,25 @@
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
     
     [[UINavigationBar appearance] setBackgroundImage:MFImageStretchCenter(@"navbg") forBarMetrics:UIBarMetricsDefault];
-    
+//    [[UINavigationBar appearance] setBackgroundImage:[[self class] createImageWithColor:MFCustomNavBarColor] forBarMetrics:UIBarMetricsDefault];
+
     [[UITextField appearance] setTintColor:MFCustomNavBarColor];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor hx_colorWithHexString:@"71D0FF"]} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:MFCustomNavBarColor} forState:UIControlStateSelected];
 
+}
+
++ (UIImage*)createImageWithColor:(UIColor*)color
+{
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 @end
