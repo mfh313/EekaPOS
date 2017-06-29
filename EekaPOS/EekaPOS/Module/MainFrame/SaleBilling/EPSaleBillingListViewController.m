@@ -14,8 +14,9 @@
 #import "EPDeleteSaleBillingApi.h"
 #import "EPSaleBillingDetailViewController.h"
 #import "MFMultiMenuTableViewCell.h"
+#import "EPDatePickView.h"
 
-@interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate>
+@interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate,EPDatePickViewDelegate>
 {
     __weak IBOutlet UIButton *_dateBeginBtn;
     __weak IBOutlet UIButton *_dateEndBtn;
@@ -40,6 +41,60 @@
     [_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:YES];
 }
 
+- (IBAction)onClickBeginDate:(id)sender {
+    [self showDatePick:_dateBegin viewKey:@"dateBegin"];
+}
+
+- (IBAction)onClickBeginEnd:(id)sender {
+    [self showDatePick:_dateEnd viewKey:@"dateEnd"];
+}
+
+-(void)showDatePick:(NSString *)dateString viewKey:(NSString *)viewKey
+{
+    EPDatePickView *datePicker = [EPDatePickView nibView];
+    datePicker.m_delegate = self;
+    datePicker.frame = MFAppWindow.bounds;
+    
+    [datePicker setDatePickString:dateString];
+    datePicker.viewKey = viewKey;
+    
+    [MFAppWindow addSubview:datePicker];
+}
+
+#pragma mark - EPDatePickViewDelegate
+-(void)datePickerViewDidSelected:(NSString *)time viewKey:(NSString *)viewKey datePickView:(EPDatePickView *)datePick
+{
+    if ([viewKey isEqualToString:@"dateBegin"]) {
+        _dateBegin = time;
+    }
+    else if ([viewKey isEqualToString:@"dateEnd"])
+    {
+        _dateEnd = time;
+    }
+    
+    [datePick removeFromSuperview];
+    [self setDateBeginAndEndTitle];
+    [self getSaleBillingList];
+}
+
+-(void)setDateBeginBtnTitle
+{
+    NSString *dateBeginBtnTitle = [NSString stringWithFormat:@"%@ 开始",_dateBegin];
+    [_dateBeginBtn setTitle:dateBeginBtnTitle forState:UIControlStateNormal];
+}
+
+-(void)setDateEndBtnTitle
+{
+    NSString *dateEndBtnTitle = [NSString stringWithFormat:@"%@ 结束",_dateEnd];
+    [_dateEndBtn setTitle:dateEndBtnTitle forState:UIControlStateNormal];
+}
+
+-(void)setDateBeginAndEndTitle
+{
+    [self setDateBeginBtnTitle];
+    [self setDateEndBtnTitle];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -51,14 +106,10 @@
     _dateEnd = [EPSaleBillingHelper yMDdateStringWithDate:[NSDate date]];
     _dateBegin = [EPSaleBillingHelper getMonthBeginWith:_dateEnd];
     
-    NSString *dateBeginBtnTitle = [NSString stringWithFormat:@"%@ 开始",_dateBegin];
-    NSString *dateEndBtnTitle = [NSString stringWithFormat:@"%@ 结束",_dateEnd];
-    [_dateBeginBtn setTitle:dateBeginBtnTitle forState:UIControlStateNormal];
-    [_dateEndBtn setTitle:dateEndBtnTitle forState:UIControlStateNormal];
+    [self setDateBeginAndEndTitle];
     
     _saleBillingList = [NSMutableArray array];
     [self getSaleBillingList];
-    
 }
 
 -(void)getSaleBillingList

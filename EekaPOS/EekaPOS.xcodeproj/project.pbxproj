@@ -133,6 +133,8 @@
 		AC7CC3621EF26CC300564823 /* EekaPosMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3601EF26CC300564823 /* EekaPosMain.storyboard */; };
 		AC7CC3641EF26CC300564823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3631EF26CC300564823 /* Assets.xcassets */; };
 		AC7CC3671EF26CC300564823 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7CC3651EF26CC300564823 /* LaunchScreen.storyboard */; };
+		AC7D5D421F048AD200BBA056 /* EPDatePickView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7D5D411F048AD200BBA056 /* EPDatePickView.m */; };
+		AC7D5D441F048AEA00BBA056 /* EPDatePickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC7D5D431F048AEA00BBA056 /* EPDatePickView.xib */; };
 		AC7ED1D51F039946003D10FA /* ZHKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7ED1D41F039946003D10FA /* ZHKeyboardAvoiding.m */; };
 		AC7ED1D81F039EF0003D10FA /* UIView+viewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7ED1D71F039EF0003D10FA /* UIView+viewController.m */; };
 		AC812FF91EFF505400717359 /* JSPatchPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC812FF61EFF505400717359 /* JSPatchPlatform.framework */; };
@@ -663,6 +665,9 @@
 		AC7CC3631EF26CC300564823 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC7CC3661EF26CC300564823 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC7CC3681EF26CC300564823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC7D5D401F048AD200BBA056 /* EPDatePickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPDatePickView.h; sourceTree = "<group>"; };
+		AC7D5D411F048AD200BBA056 /* EPDatePickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPDatePickView.m; sourceTree = "<group>"; };
+		AC7D5D431F048AEA00BBA056 /* EPDatePickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPDatePickView.xib; sourceTree = "<group>"; };
 		AC7ED1D31F039946003D10FA /* ZHKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHKeyboardAvoiding.h; sourceTree = "<group>"; };
 		AC7ED1D41F039946003D10FA /* ZHKeyboardAvoiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHKeyboardAvoiding.m; sourceTree = "<group>"; };
 		AC7ED1D61F039EF0003D10FA /* UIView+viewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+viewController.h"; sourceTree = "<group>"; };
@@ -2029,6 +2034,9 @@
 				AC794D221EFCEFC500FDC33D /* EPSaleBillingDetailFooterView.h */,
 				AC794D231EFCEFC500FDC33D /* EPSaleBillingDetailFooterView.m */,
 				AC794D251EFCF03000FDC33D /* EPSaleBillingDetailFooterView.xib */,
+				AC7D5D401F048AD200BBA056 /* EPDatePickView.h */,
+				AC7D5D411F048AD200BBA056 /* EPDatePickView.m */,
+				AC7D5D431F048AEA00BBA056 /* EPDatePickView.xib */,
 			);
 			path = SaleBilling;
 			sourceTree = "<group>";
@@ -2885,6 +2893,7 @@
 				AC4EB29E1EF90AC5003AD128 /* EPSaleBillingListCellView.xib in Resources */,
 				AC32BE561EF617CE001A6291 /* EPSaleBillingGoodsCellView.xib in Resources */,
 				AC950EA01EF4DDDE003EEBD0 /* Me.storyboard in Resources */,
+				AC7D5D441F048AEA00BBA056 /* EPDatePickView.xib in Resources */,
 				AC32BE941EF6B7F6001A6291 /* EPSaleBillingGoodsEditView.xib in Resources */,
 				AC6687981EFA447F008AE45D /* EPSaleBillingGoodsRemarkSelectView.xib in Resources */,
 				AC34B9CA1EF7C36400852993 /* keyboard.xcassets in Resources */,
@@ -3174,6 +3183,7 @@
 				AC9514241EF52D67003EEBD0 /* ZXDataMatrixWriter.m in Sources */,
 				AC950E941EF4D337003EEBD0 /* UIViewController+UINavigationItem.m in Sources */,
 				AC9514621EF52D67003EEBD0 /* ZXModulusGF.m in Sources */,
+				AC7D5D421F048AD200BBA056 /* EPDatePickView.m in Sources */,
 				AC95140D1EF52D67003EEBD0 /* ZXPlanarYUVLuminanceSource.m in Sources */,
 				AC9513CF1EF52D67003EEBD0 /* ZXEmailAddressResultParser.m in Sources */,
 				AC950EB51EF505B1003EEBD0 /* MFUICollectionView.m in Sources */,
