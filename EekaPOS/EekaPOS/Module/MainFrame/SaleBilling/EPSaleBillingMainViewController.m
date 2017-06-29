@@ -79,6 +79,8 @@
     _selectCashier = [entitityService getEntitityEmployees].firstObject;
     
     _saleBillingModel = [EPSaleBillingModel new];
+    
+    self.view.backgroundColor = [UIColor redColor];
 }
 
 -(void)onClickBackBtn:(id)sender
@@ -745,23 +747,28 @@
     
     [getIndividualApi startWithCompletionBlockWithSuccess:^(YTKBaseRequest * request) {
         
-        if (!getIndividualApi.messageSuccess) {
-            [self showTips:getIndividualApi.errorMessage];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        
+        if (!getIndividualApi.messageSuccess)
+        {
+            [strongSelf showTips:getIndividualApi.errorMessage];
+            _saleBillingModel.phone = nil;
+            _currrentIndividualName = nil;
             return;
         }
         
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        
         id individualID = request.responseJSONObject[@"individualID"];
-        
         if (individualID && ![individualID isKindOfClass:[NSNull class]]) {
-            
             _currrentIndividualName = request.responseJSONObject[@"individualName"];
-            
             [self showTips:@"会员加载成功"];
-            [strongSelf reSetTableSubViews];
-            
-        }        
+        }
+        else
+        {
+            _saleBillingModel.phone = nil;
+            _currrentIndividualName = nil;
+        }
+        
+        [strongSelf reSetTableSubViews];
         
     } failure:^(YTKBaseRequest * request) {
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
