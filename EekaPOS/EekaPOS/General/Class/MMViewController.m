@@ -25,8 +25,8 @@
     
     self.extendedLayoutIncludesOpaqueBars = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.edgesForExtendedLayout = UIRectEdgeAll;
 }
-
 
 -(BOOL)shouldAutorotate
 {

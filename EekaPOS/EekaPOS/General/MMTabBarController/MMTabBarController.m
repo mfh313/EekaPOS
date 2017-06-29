@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     self.extendedLayoutIncludesOpaqueBars = YES;
+    self.edgesForExtendedLayout = UIRectEdgeAll;
 }
 
 -(BOOL)shouldAutorotate
