@@ -22,12 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
-//-(CGSize)preferredContentSize
-//{
-//    return [UIScreen mainScreen].bounds.size;
-//}
 
 -(BOOL)shouldAutorotate
 {
