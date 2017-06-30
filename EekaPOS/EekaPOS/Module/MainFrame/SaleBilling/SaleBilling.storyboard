@@ -21,9 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AJv-df-MEo">
-                                <rect key="frame" x="0.0" y="56" width="374" height="647"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AJv-df-MEo">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="CHT-Nm-EaG" id="aC2-Bk-dMn"/>
@@ -40,8 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="AJv-df-MEo" firstAttribute="top" secondItem="49l-xr-2YA" secondAttribute="bottom" id="9N8-OH-p0d"/>
                             <constraint firstItem="zxw-Qe-2bz" firstAttribute="leading" secondItem="Pw7-vr-Umx" secondAttribute="leading" id="Iqp-9a-LmX"/>
+                            <constraint firstItem="KG7-Ow-HAG" firstAttribute="top" secondItem="AJv-df-MEo" secondAttribute="bottom" id="KnQ-nv-tll"/>
                             <constraint firstItem="zxw-Qe-2bz" firstAttribute="top" secondItem="49l-xr-2YA" secondAttribute="bottom" id="Up2-Xe-yBh"/>
+                            <constraint firstItem="AJv-df-MEo" firstAttribute="leading" secondItem="Pw7-vr-Umx" secondAttribute="leading" id="oIX-7S-XN5"/>
+                            <constraint firstAttribute="trailing" secondItem="AJv-df-MEo" secondAttribute="trailing" id="t4f-KP-4Mz"/>
                             <constraint firstAttribute="trailing" secondItem="zxw-Qe-2bz" secondAttribute="trailing" id="wiw-SU-obP"/>
                         </constraints>
                     </view>
