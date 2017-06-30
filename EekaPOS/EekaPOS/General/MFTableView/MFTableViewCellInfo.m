@@ -63,6 +63,8 @@
 
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue
 {
+    MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForSel:nil target:nil title:title rightValue:rightValue accessoryType:0];
+    [cellInfo setSelectionStyle:UITableViewCellSelectionStyleNone];
     return nil;
 }
 
@@ -75,12 +77,15 @@
 
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName isFitIpadClassic:(BOOL)isFitIpadClassic
 {
+    MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForTitle:title rightValue:rightValue imageName:imageName];
+    [cellInfo addUserInfoValue:@(isFitIpadClassic) forKey:@"isFitIpadClassic"];
     return nil;
 }
 
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue isFitIpadClassic:(BOOL)isFitIpadClassic
 {
-    return nil;
+    MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForTitle:title rightValue:rightValue imageName:nil isFitIpadClassic:isFitIpadClassic];
+    return cellInfo;
 }
 
 - (void)makeNormalCell:(MFTableViewCell *)cell title:(NSString *)title

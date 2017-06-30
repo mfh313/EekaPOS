@@ -45,9 +45,17 @@
 @property (nonatomic, weak) id actionTargetForSwitchCell;
 @property (nonatomic, weak) id calHeightTarget;
 @property (nonatomic, assign) CGFloat fCellHeight;
-
 @property (nonatomic, weak) MFTableViewCell *cell;
 
++ (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title accessoryType:(UITableViewCellAccessoryType)accessoryType;
++ (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title accessoryType:(UITableViewCellAccessoryType)accessoryType isFitIpadClassic:(BOOL)isFitIpadClassic;
++ (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title rightValue:(NSString *)rightValue accessoryType:(UITableViewCellAccessoryType)accessoryType;
++ (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title rightValue:(NSString *)rightValue accessoryType:(UITableViewCellAccessoryType)accessoryType isFitIpadClassic:(BOOL)isFitIpadClassic;
++ (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName accessoryType:(UITableViewCellAccessoryType)accessoryType;
++ (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName accessoryType:(UITableViewCellAccessoryType)accessoryType isFitIpadClassic:(BOOL)isFitIpadClassic;
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue;
++ (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName;
++ (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName isFitIpadClassic:(BOOL)isFitIpadClassic;
++ (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue isFitIpadClassic:(BOOL)isFitIpadClassic;
 
 @end
