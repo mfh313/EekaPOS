@@ -209,11 +209,7 @@
     {
         [sideslipCell hiddenAllSideslip];
         
-        if (_goodsModel.count > 0)
-        {
-            [_goodsModel removeObjectAtIndex:indexPath.row];
-            [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        }
+        [_goodsModel removeObjectAtIndex:indexPath.row];
         
         [self updateSaleBilling];
         
