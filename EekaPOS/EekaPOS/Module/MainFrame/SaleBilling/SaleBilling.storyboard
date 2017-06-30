@@ -118,7 +118,6 @@
                                         </state>
                                         <connections>
                                             <action selector="onClickBeginDate:" destination="vC8-sT-Inq" eventType="touchUpInside" id="ErQ-zZ-cdl"/>
-                                            <action selector="onClickSaveBtn:" destination="CHT-Nm-EaG" eventType="touchUpInside" id="sqs-C8-oFO"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQJ-RI-FFf" customClass="MMOnePixLine">
@@ -138,7 +137,6 @@
                                         </state>
                                         <connections>
                                             <action selector="onClickBeginEnd:" destination="vC8-sT-Inq" eventType="touchUpInside" id="Mc6-GB-26V"/>
-                                            <action selector="onClickSaveBtn:" destination="CHT-Nm-EaG" eventType="touchUpInside" id="2cR-pk-OGO"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQu-aO-67y" customClass="MMOnePixLine">

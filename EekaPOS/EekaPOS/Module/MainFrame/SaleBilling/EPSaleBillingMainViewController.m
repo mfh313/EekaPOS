@@ -599,12 +599,7 @@
     return selectGuiderIds;
 }
 
-- (IBAction)onClickScanBtn:(id)sender
-{
-    [self onClickCameraScanBtn];
-}
-
-- (IBAction)onClickSaveBtn:(id)sender
+- (void)onClickSaveBillingBtn
 {
     [self saveSaleBilling];
 }
