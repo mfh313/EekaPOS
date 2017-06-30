@@ -15,8 +15,8 @@
     __weak id _makeHeaderTarget;
     SEL _makeFooterSel;
     __weak id _makeFooterTarget;
-    double _fHeaderHeight;
-    double _fFooterHeight;
+    CGFloat _fHeaderHeight;
+    CGFloat _fFooterHeight;
     NSMutableArray *_arrCells;
     BOOL _bUseDynamicSize;
 }

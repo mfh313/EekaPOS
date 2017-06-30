@@ -18,7 +18,7 @@
     __weak id _actionTarget;
     SEL _calHeightSel;
     __weak id _calHeightTarget;
-    double _fCellHeight;
+    CGFloat _fCellHeight;
     UITableViewCellSelectionStyle _selectionStyle;
     UITableViewCellAccessoryType _accessoryType;
     UITableViewCellEditingStyle _editStyle;
