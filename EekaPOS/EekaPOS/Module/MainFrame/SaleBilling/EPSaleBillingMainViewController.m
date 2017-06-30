@@ -30,15 +30,16 @@
 #import "EPSaveSaleBillingApi.h"
 #import "EPEntitityService.h"
 #import "MFMultiMenuTableViewCell.h"
+#import "EPSaleBillingMainFooterView.h"
 
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
-                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,EPSaleBillingDiscountInputViewDelegate,UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate>
+                                    EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,EPSaleBillingDiscountInputViewDelegate,UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate,EPSaleBillingMainFooterViewDelegate>
 {
     __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
-    
     __weak IBOutlet UITableView *_tableView;
-    __weak IBOutlet UILabel *_receivablePriceLabel;
+    
+    EPSaleBillingMainFooterView *_footView;;
     
     EPGetIndividualApi *_getIndividualApi;
     EPSaleBillingModel *_saleBillingModel;
@@ -66,10 +67,21 @@
     
     self.title = @"销售开单";
     
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    self.edgesForExtendedLayout = UIRectEdgeAll;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
-    _tableView.contentInset = UIEdgeInsetsMake(0, 0, 90, 0);
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _tableView.contentInset = UIEdgeInsetsMake(56, 0, 90, 0);
     
     _codeInputView.m_delegate = self;
+    
+    _footView = [EPSaleBillingMainFooterView nibView];
+    _footView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 80, CGRectGetWidth(self.view.frame), 80);
+    _footView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _footView.m_delegate = self;
+    [self.view addSubview:_footView];
     
     _saleBillingItemModels = [NSMutableArray array];
     _saleBillingDeductions = [NSMutableArray array];
@@ -79,6 +91,11 @@
     _selectCashier = [entitityService getEntitityEmployees].firstObject;
     
     _saleBillingModel = [EPSaleBillingModel new];
+}
+
+-(void)viewWillLayoutSubviews
+{
+    [self.view layoutIfNeeded];
 }
 
 -(void)onClickBackBtn:(id)sender
@@ -689,7 +706,8 @@
 {
     [self calculationAllPriceAndReceivablePrice];
     [_tableView reloadData];
-    [_receivablePriceLabel setText:[EPSaleBillingHelper moneyDescWithNumber:@([self receivablePrice])]];
+    NSString *receivablePrice = [EPSaleBillingHelper moneyDescWithNumber:@([self receivablePrice])];
+    [_footView setReceivablePrice:receivablePrice];
 }
 
 -(double)receivablePrice
