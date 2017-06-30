@@ -126,6 +126,7 @@
 		AC6687981EFA447F008AE45D /* EPSaleBillingGoodsRemarkSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6687971EFA447F008AE45D /* EPSaleBillingGoodsRemarkSelectView.xib */; };
 		AC73D2DD1F060067008654A0 /* EPSaleBillingMainFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73D2DC1F060067008654A0 /* EPSaleBillingMainFooterView.m */; };
 		AC73D2DF1F06008D008654A0 /* EPSaleBillingMainFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC73D2DE1F06008D008654A0 /* EPSaleBillingMainFooterView.xib */; };
+		AC73D2E31F064495008654A0 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = AC73D2E21F064495008654A0 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		AC794D211EFCB3B300FDC33D /* EPSaleBillingDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC794D201EFCB3B300FDC33D /* EPSaleBillingDetailHeaderView.xib */; };
 		AC794D241EFCEFC500FDC33D /* EPSaleBillingDetailFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC794D231EFCEFC500FDC33D /* EPSaleBillingDetailFooterView.m */; };
 		AC794D261EFCF03000FDC33D /* EPSaleBillingDetailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC794D251EFCF03000FDC33D /* EPSaleBillingDetailFooterView.xib */; };
@@ -656,6 +657,8 @@
 		AC73D2DB1F060067008654A0 /* EPSaleBillingMainFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingMainFooterView.h; sourceTree = "<group>"; };
 		AC73D2DC1F060067008654A0 /* EPSaleBillingMainFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingMainFooterView.m; sourceTree = "<group>"; };
 		AC73D2DE1F06008D008654A0 /* EPSaleBillingMainFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingMainFooterView.xib; sourceTree = "<group>"; };
+		AC73D2E11F064495008654A0 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		AC73D2E21F064495008654A0 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		AC794D201EFCB3B300FDC33D /* EPSaleBillingDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EPSaleBillingDetailHeaderView.xib; sourceTree = "<group>"; };
 		AC794D221EFCEFC500FDC33D /* EPSaleBillingDetailFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSaleBillingDetailFooterView.h; sourceTree = "<group>"; };
 		AC794D231EFCEFC500FDC33D /* EPSaleBillingDetailFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSaleBillingDetailFooterView.m; sourceTree = "<group>"; };
@@ -1361,6 +1364,7 @@
 		AC26E7F01EF3DDA600C4FAA6 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				AC73D2E01F064495008654A0 /* FDFullscreenPopGesture */,
 				AC7ED1D21F039946003D10FA /* ZHKeyboardAvoiding */,
 				AC81301A1EFF5F5A00717359 /* LYSideslipCell */,
 				AC812FF51EFF505400717359 /* JSPatch */,
@@ -1640,6 +1644,15 @@
 				AC66878F1EFA1B3D008AE45D /* UITextField+RYNumberKeyboard.m */,
 			);
 			path = RYNumberkeyboard;
+			sourceTree = "<group>";
+		};
+		AC73D2E01F064495008654A0 /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				AC73D2E11F064495008654A0 /* UINavigationController+FDFullscreenPopGesture.h */,
+				AC73D2E21F064495008654A0 /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
 			sourceTree = "<group>";
 		};
 		AC7CC34B1EF26CC300564823 = {
@@ -3228,6 +3241,7 @@
 				AC26E8B01EF3E05300C4FAA6 /* EPAppViewControllerManager.m in Sources */,
 				AC26E88D1EF3DDA600C4FAA6 /* YTKChainRequest.m in Sources */,
 				AC8CDB201F023E07003E9413 /* MFTableViewUserInfo.m in Sources */,
+				AC73D2E31F064495008654A0 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				AC9514411EF52D67003EEBD0 /* ZXRSSExpandedRow.m in Sources */,
 				AC9513CA1EF52D67003EEBD0 /* ZXAddressBookParsedResult.m in Sources */,
 				AC950EBA1EF51AF8003EEBD0 /* MMUINavigationBar.m in Sources */,
