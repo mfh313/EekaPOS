@@ -15,6 +15,7 @@
 #import "EPSaleBillingDetailViewController.h"
 #import "MFMultiMenuTableViewCell.h"
 #import "EPDatePickView.h"
+#import "SLExpandableTableView.h"
 
 @interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate,EPDatePickViewDelegate>
 {
@@ -161,10 +162,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingEmployeeSelectView"];
+    MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingListCellView"];
   
     if (cell == nil) {
-        cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingEmployeeSelectView"];
+        cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingListCellView"];
         [cell addSelectedBackgroundView];
         cell.delegate = self;
         

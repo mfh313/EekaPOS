@@ -152,6 +152,7 @@
 		AC8CDB231F024088003E9413 /* MFTableViewSectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDB221F024088003E9413 /* MFTableViewSectionInfo.m */; };
 		AC8CDB261F0250EC003E9413 /* MFTableViewCellInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8CDB251F0250EC003E9413 /* MFTableViewCellInfo.m */; };
 		AC939F2F1F0A1E6700CAFF96 /* MFTableViewInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = AC939F2E1F0A1E6700CAFF96 /* MFTableViewInfo.m */; };
+		AC939F371F0A455C00CAFF96 /* SLExpandableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC939F361F0A455C00CAFF96 /* SLExpandableTableView.m */; };
 		AC950E511EF4AF54003EEBD0 /* MMBaseInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E3C1EF4AF54003EEBD0 /* MMBaseInfoItem.m */; };
 		AC950E521EF4AF54003EEBD0 /* MMBaseTextFieldItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E3E1EF4AF54003EEBD0 /* MMBaseTextFieldItem.m */; };
 		AC950E531EF4AF54003EEBD0 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC950E401EF4AF54003EEBD0 /* MMNavigationController.m */; };
@@ -700,6 +701,8 @@
 		AC8CDB251F0250EC003E9413 /* MFTableViewCellInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTableViewCellInfo.m; sourceTree = "<group>"; };
 		AC939F2D1F0A1E6700CAFF96 /* MFTableViewInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTableViewInfo.h; sourceTree = "<group>"; };
 		AC939F2E1F0A1E6700CAFF96 /* MFTableViewInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTableViewInfo.m; sourceTree = "<group>"; };
+		AC939F351F0A455C00CAFF96 /* SLExpandableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLExpandableTableView.h; sourceTree = "<group>"; };
+		AC939F361F0A455C00CAFF96 /* SLExpandableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLExpandableTableView.m; sourceTree = "<group>"; };
 		AC950E3A1EF4AF54003EEBD0 /* MMBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseClass.h; sourceTree = "<group>"; };
 		AC950E3B1EF4AF54003EEBD0 /* MMBaseInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseInfoItem.h; sourceTree = "<group>"; };
 		AC950E3C1EF4AF54003EEBD0 /* MMBaseInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseInfoItem.m; sourceTree = "<group>"; };
@@ -1367,6 +1370,7 @@
 		AC26E7F01EF3DDA600C4FAA6 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				AC939F341F0A455C00CAFF96 /* SLExpandableTableView */,
 				AC73D2E01F064495008654A0 /* FDFullscreenPopGesture */,
 				AC7ED1D21F039946003D10FA /* ZHKeyboardAvoiding */,
 				AC81301A1EFF5F5A00717359 /* LYSideslipCell */,
@@ -1806,6 +1810,15 @@
 				AC939F2E1F0A1E6700CAFF96 /* MFTableViewInfo.m */,
 			);
 			path = MFTableView;
+			sourceTree = "<group>";
+		};
+		AC939F341F0A455C00CAFF96 /* SLExpandableTableView */ = {
+			isa = PBXGroup;
+			children = (
+				AC939F351F0A455C00CAFF96 /* SLExpandableTableView.h */,
+				AC939F361F0A455C00CAFF96 /* SLExpandableTableView.m */,
+			);
+			path = SLExpandableTableView;
 			sourceTree = "<group>";
 		};
 		AC950E391EF4AF54003EEBD0 /* Class */ = {
@@ -3028,6 +3041,7 @@
 				AC32BE541EF617B5001A6291 /* EPSaleBillingGoodsCellView.m in Sources */,
 				AC9514561EF52D67003EEBD0 /* ZXMultiFormatOneDReader.m in Sources */,
 				AC9514611EF52D67003EEBD0 /* ZXUPCEReader.m in Sources */,
+				AC939F371F0A455C00CAFF96 /* SLExpandableTableView.m in Sources */,
 				AC950E761EF4C433003EEBD0 /* EPMemberLoginApi.m in Sources */,
 				AC26E8911EF3DDA600C4FAA6 /* YTKNetworkPrivate.m in Sources */,
 				AC26E89A1EF3DDA600C4FAA6 /* SDWebImageManager.m in Sources */,
