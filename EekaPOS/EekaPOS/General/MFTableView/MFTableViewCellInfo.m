@@ -24,27 +24,32 @@
 
 + (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title accessoryType:(UITableViewCellAccessoryType)accessoryType
 {
-    return nil;
+    MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForSel:sel target:target title:title accessoryType:accessoryType isFitIpadClassic:NO];
+    return cellInfo;
 }
 
 + (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title accessoryType:(UITableViewCellAccessoryType)accessoryType isFitIpadClassic:(BOOL)isFitIpadClassic
 {
-    return nil;
+    MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForSel:sel target:target title:title rightValue:nil accessoryType:accessoryType isFitIpadClassic:isFitIpadClassic];
+    return cellInfo;
 }
 
 + (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title rightValue:(NSString *)rightValue accessoryType:(UITableViewCellAccessoryType)accessoryType
 {
-    return nil;
+    MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForSel:sel target:target title:title rightValue:rightValue accessoryType:accessoryType isFitIpadClassic:NO];
+    return cellInfo;
 }
 
 + (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title rightValue:(NSString *)rightValue accessoryType:(UITableViewCellAccessoryType)accessoryType isFitIpadClassic:(BOOL)isFitIpadClassic
 {
-    return nil;
+    MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForSel:sel target:target title:title rightValue:rightValue imageName:nil accessoryType:accessoryType isFitIpadClassic:isFitIpadClassic];
+    return cellInfo;
 }
 
 + (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName accessoryType:(UITableViewCellAccessoryType)accessoryType
 {
-    return nil;
+    MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForSel:sel target:target title:title rightValue:rightValue imageName:imageName accessoryType:accessoryType isFitIpadClassic:NO];
+    return cellInfo;
 }
 
 + (instancetype)normalCellForSel:(SEL)sel target:(id)target title:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName accessoryType:(UITableViewCellAccessoryType)accessoryType isFitIpadClassic:(BOOL)isFitIpadClassic
