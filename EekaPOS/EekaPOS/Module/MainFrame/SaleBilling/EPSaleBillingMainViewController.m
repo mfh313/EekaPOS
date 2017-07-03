@@ -179,10 +179,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView saleBillingGoodsCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingGoodsCell"];
+    MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingGoodsCellView"];
     
     if (cell == nil) {
-        cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingGoodsCell"];
+        cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingGoodsCellView"];
         cell.delegate = self;
         
         EPSaleBillingGoodsCellView *cellView = [EPSaleBillingGoodsCellView nibView];
@@ -230,10 +230,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView discountInputCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"discountInputCell"];
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingDiscountInputView"];
     
     if (cell == nil) {
-        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"discountInputCell"];
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingDiscountInputView"];
         EPSaleBillingDiscountInputView *cellView = [EPSaleBillingDiscountInputView nibView];
         cellView.m_delegate = self;
         cell.m_subContentView = cellView;
@@ -254,10 +254,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView telePhoneCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"telePhoneCell"];
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingPhoneInputView"];
     
     if (cell == nil) {
-        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"telePhoneCell"];
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingPhoneInputView"];
         EPSaleBillingPhoneInputView *cellView = [EPSaleBillingPhoneInputView nibView];
         cellView.m_delegate = self;
         cell.m_subContentView = cellView;
@@ -282,10 +282,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView saleBillingDeductionInputCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingDeductionInput"];
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingDeductionView"];
     
     if (cell == nil) {
-        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingDeductionInput"];
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingDeductionView"];
         EPSaleBillingDeductionView *cellView = [EPSaleBillingDeductionView nibView];
         cellView.m_delegate = self;
         cell.m_subContentView = cellView;
@@ -301,10 +301,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView deductionItemCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"deductionItemCell"];
+    MFMultiMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingDeductionSelectedItemView"];
     
     if (cell == nil) {
-        cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"deductionItemCell"];
+        cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingDeductionSelectedItemView"];
         cell.delegate = self;
         
         EPSaleBillingDeductionSelectedItemView *cellView = [EPSaleBillingDeductionSelectedItemView nibView];
@@ -323,10 +323,10 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cashierCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillingCashierCell"];
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingCashierCellView"];
     
     if (cell == nil) {
-        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillingCashierCell"];
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingCashierCellView"];
         EPSaleBillingCashierCellView *cellView = [EPSaleBillingCashierCellView nibView];
         cellView.m_delegate = self;
         cell.m_subContentView = cellView;
@@ -348,11 +348,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView guidesCellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleBillinGuidesCell"];
+    MFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EPSaleBillingGuidesCellView"];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     if (cell == nil) {
-        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"saleBillinGuidesCell"];
+        cell = [[MFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingGuidesCellView"];
         EPSaleBillingGuidesCellView *cellView = [EPSaleBillingGuidesCellView nibView];
         cellView.m_delegate = self;
         cell.m_subContentView = cellView;
