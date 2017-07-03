@@ -37,6 +37,7 @@
 @property (nonatomic, assign) UITextAutocorrectionType autoCorrectionType;
 
 @property (nonatomic, assign) BOOL bNeedSeperateLine;
+@property (nonatomic, assign) BOOL isNeedFixIpadClassic;
 @property (nonatomic, assign) SEL makeSel;
 @property (nonatomic, assign) SEL actionSel;
 @property (nonatomic, assign) SEL calHeightSel;

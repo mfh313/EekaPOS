@@ -61,8 +61,10 @@
     [cellInfo setActionTarget:target];
     [cellInfo setFCellHeight:44.0f];
     [cellInfo setAccessoryType:accessoryType];
+    [cellInfo setIsNeedFixIpadClassic:isFitIpadClassic];
     [cellInfo addUserInfoValue:title forKey:@"title"];
     [cellInfo addUserInfoValue:rightValue forKey:@"rightValue"];
+    [cellInfo addUserInfoValue:imageName forKey:@"imageName"];
     return cellInfo;
 }
 
@@ -70,7 +72,7 @@
 {
     MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForSel:nil target:nil title:title rightValue:rightValue accessoryType:0];
     [cellInfo setSelectionStyle:UITableViewCellSelectionStyleNone];
-    return nil;
+    return cellInfo;
 }
 
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName
@@ -83,7 +85,7 @@
 + (instancetype)normalCellForTitle:(NSString *)title rightValue:(NSString *)rightValue imageName:(NSString *)imageName isFitIpadClassic:(BOOL)isFitIpadClassic
 {
     MFTableViewCellInfo *cellInfo = [MFTableViewCellInfo normalCellForTitle:title rightValue:rightValue imageName:imageName];
-    [cellInfo addUserInfoValue:@(isFitIpadClassic) forKey:@"isFitIpadClassic"];
+    [cellInfo setIsNeedFixIpadClassic:isFitIpadClassic];
     return nil;
 }
 
