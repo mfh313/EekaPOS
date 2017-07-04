@@ -29,7 +29,7 @@
     __weak IBOutlet UIView *_mainBgView;
     
     BOOL _isNegative;
-    
+    BOOL _isSpecialDiscount;
 }
 
 @end
@@ -66,6 +66,8 @@
     rateKeyBoard.ryDelegate = self;
     rateKeyBoard.inputType = RYFloatZeroToOneInputType;
     _rateTextField.tag = 1101;
+    
+    _isSpecialDiscount = NO;
 }
 
 - (void)ryNumberKeyboardValueChange:(NSString *)string tag:(NSInteger)tag
@@ -74,10 +76,9 @@
         
     }
     else if (tag == 1101) {
-        
+        _isSpecialDiscount = YES;
     }
 }
-
 
 - (void)ryNumberKeyboardSubmit:(NSString *)string tag:(NSInteger)tag
 {
@@ -148,7 +149,6 @@
     NSString *sizeString = _itemSizeInputTextField.text;
     NSString *rateString = _rateTextField.text;
     NSString *remarkString = _remarkTextField.text;
-    BOOL isSpecialDiscount = YES;
     
     NSNumber *sizeNumber = @(sizeString.intValue);
     
@@ -169,7 +169,7 @@
     }
     
     if ([self.m_delegate respondsToSelector:@selector(editGoodsWithitemModel:size:rate:isSpecialDiscount:remark:)]) {
-        [self.m_delegate editGoodsWithitemModel:self.itemModel size:sizeNumber rate:rateNumber isSpecialDiscount:isSpecialDiscount remark:remarkString];
+        [self.m_delegate editGoodsWithitemModel:self.itemModel size:sizeNumber rate:rateNumber isSpecialDiscount:_isSpecialDiscount remark:remarkString];
     }
     
     [self removeFromSuperview];
