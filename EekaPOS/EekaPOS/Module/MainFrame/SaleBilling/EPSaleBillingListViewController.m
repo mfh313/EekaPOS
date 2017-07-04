@@ -16,6 +16,7 @@
 #import "MFMultiMenuTableViewCell.h"
 #import "EPDatePickView.h"
 #import "SLExpandableTableView.h"
+#import "EPSaleBillingListModel.h"
 
 @interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate,EPDatePickViewDelegate>
 {
@@ -27,8 +28,7 @@
     
     NSMutableArray *_saleBillingList;
     
-    __weak IBOutlet MFUITableView *_tableView;
-    
+    __weak IBOutlet SLExpandableTableView *_tableView;
 }
 
 @end
