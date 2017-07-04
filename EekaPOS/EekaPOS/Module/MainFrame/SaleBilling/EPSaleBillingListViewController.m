@@ -27,9 +27,9 @@
     NSString *_dateBegin;
     NSString *_dateEnd;
     
-    NSMutableArray *_saleBillingList;
-    
     __weak IBOutlet SLExpandableTableView *_tableView;
+    NSMutableArray *_sectionsArray;
+    NSMutableIndexSet *_expandableSections;
 }
 
 @end
@@ -103,15 +103,15 @@
     self.title = @"开单列表";
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
     
-    _tableView.rowHeight = 80.0;
-    
     _dateEnd = [EPSaleBillingHelper yMDdateStringWithDate:[NSDate date]];
     _dateBegin = [EPSaleBillingHelper getMonthBeginWith:_dateEnd];
     
     [self setDateBeginAndEndTitle];
     
-    _saleBillingList = [NSMutableArray array];
     [self getSaleBillingList];
+    
+    _sectionsArray = [NSMutableArray array];
+    _expandableSections = [NSMutableIndexSet indexSet];
 }
 
 -(void)getSaleBillingList
@@ -135,12 +135,36 @@
             return;
         }
         
-        [_saleBillingList removeAllObjects];
+        NSMutableArray *saleBillingList = [NSMutableArray array];
         NSArray *saleBillingLists = request.responseJSONObject[@"saleBillingList"];
         for (int i = 0; i < saleBillingLists.count; i++) {
             EPSaleBillingModel *model = [EPSaleBillingModel MM_modelWithJSON:saleBillingLists[i]];
-            [_saleBillingList addObject:model];
+            [saleBillingList addObject:model];
         }
+        
+        [_sectionsArray removeAllObjects];
+        
+        EPSaleBillingListModel *model = [EPSaleBillingListModel new];
+        model.isExpand = NO;
+        model.time = @"2017-07-02";
+        model.money = @(11.00);
+        model.models = saleBillingList;
+        
+        EPSaleBillingListModel *model1 = [EPSaleBillingListModel new];
+        model1.isExpand = NO;
+        model1.time = @"2017-07-04";
+        model1.money = @(123.00);
+        model1.models = saleBillingList;
+        
+        EPSaleBillingListModel *model2 = [EPSaleBillingListModel new];
+        model2.isExpand = NO;
+        model2.time = @"2017-07-06";
+        model2.money = @(145.00);
+        model2.models = saleBillingList;
+        
+        [_sectionsArray addObject:model];
+        [_sectionsArray addObject:model1];
+        [_sectionsArray addObject:model2];
         
         [_tableView reloadData];
         
@@ -151,14 +175,64 @@
     }];
 }
 
+#pragma mark - SLExpandableTableViewDatasource
+
+- (BOOL)tableView:(SLExpandableTableView *)tableView canExpandSection:(NSInteger)section
+{
+    return YES;
+}
+
+- (BOOL)tableView:(SLExpandableTableView *)tableView needsToDownloadDataForExpandableSection:(NSInteger)section
+{
+    return NO;
+}
+
+- (UITableViewCell<UIExpandingTableViewCell> *)tableView:(SLExpandableTableView *)tableView expandingCellForSection:(NSInteger)section
+{
+    static NSString *CellIdentifier = @"EPSaleBillingListSectionCell";
+    EPSaleBillingListSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell) {
+        cell = [[EPSaleBillingListSectionCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+    }
+    
+    EPSaleBillingListModel *listModel = _sectionsArray[section];
+    [cell setListModel:listModel];
+    
+    return cell;
+}
+
+#pragma mark - SLExpandableTableViewDelegate
+- (void)tableView:(SLExpandableTableView *)tableView downloadDataForExpandableSection:(NSInteger)section
+{
+    EPSaleBillingListModel *listModel = _sectionsArray[section];
+    listModel.isExpand = YES;
+    [tableView expandSection:section animated:YES];
+}
+
+- (void)tableView:(SLExpandableTableView *)tableView didCollapseSection:(NSUInteger)section animated:(BOOL)animated
+{
+    EPSaleBillingListModel *listModel = _sectionsArray[section];
+    listModel.isExpand = NO;
+    
+    [tableView collapseSection:section animated:animated];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80.0;
+}
+
+#pragma mark - UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return _sectionsArray.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _saleBillingList.count;
+    EPSaleBillingListModel *listModel = _sectionsArray[section];
+    return listModel.models.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -176,7 +250,9 @@
     
     cell.m_subContentView.frame = cell.contentView.bounds;
     
-    EPSaleBillingModel *model = _saleBillingList[indexPath.row];
+    EPSaleBillingListModel *listModel = _sectionsArray[indexPath.section];
+    EPSaleBillingModel *model = listModel.models[indexPath.row];
+    
     EPSaleBillingListCellView *cellView = (EPSaleBillingListCellView *)cell.m_subContentView;
     
     [cellView setNames:model.guider];
@@ -193,7 +269,9 @@
     LYSideslipCellAction *action = [LYSideslipCellAction rowActionWithStyle:LYSideslipCellActionStyleDestructive title:@"删除" handler:^(LYSideslipCellAction * _Nonnull action, NSIndexPath * _Nonnull indexPath)
                                     {
                                         [sideslipCell hiddenAllSideslip];
-                                        EPSaleBillingModel *model = _saleBillingList[indexPath.row];
+                                        EPSaleBillingListModel *listModel = _sectionsArray[indexPath.section];
+                                        EPSaleBillingModel *model = listModel.models[indexPath.row];
+                                        
                                         [self deleteSaleBilling:model.saleBillingID];
                                         
                                     }];
@@ -206,7 +284,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    EPSaleBillingModel *model = _saleBillingList[indexPath.row];
+    EPSaleBillingListModel *listModel = _sectionsArray[indexPath.section];
+    EPSaleBillingModel *model = listModel.models[indexPath.row];
+    
     [self pushSaleBillingDetailViewController:model.saleBillingID];
 }
 

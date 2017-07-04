@@ -13,5 +13,6 @@
 @property (nonatomic,strong) NSString *time;
 @property (nonatomic,strong) NSNumber *money;
 @property (nonatomic,assign) BOOL isExpand;
+@property (nonatomic,strong) NSMutableArray *models;
 
 @end
