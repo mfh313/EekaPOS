@@ -106,7 +106,7 @@
     [self setDateBeginAndEndTitle];
     
     _tableView.rowHeight = 80.0;
-    _tableView.sectionHeaderHeight = 60.0;
+    _tableView.sectionHeaderHeight = 56.0;
     
     _sectionsArray = [NSMutableArray array];
     [self getSaleBillingList];
