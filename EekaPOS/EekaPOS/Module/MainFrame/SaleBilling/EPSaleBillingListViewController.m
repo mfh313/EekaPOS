@@ -110,6 +110,8 @@
     
     _sectionsArray = [NSMutableArray array];
     [self getSaleBillingList];
+    
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
 
 -(void)getSaleBillingList
