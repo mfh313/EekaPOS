@@ -7,30 +7,22 @@
 //
 
 #import "MMUIBridgeView.h"
-#import "SLExpandableTableView.h"
+
+@protocol EPSaleBillingListSectionViewDelegate <NSObject>
+
+@optional
+-(void)onClickSection:(NSInteger)section;
+
+@end
 
 @interface EPSaleBillingListSectionView : MMUIBridgeView
+
+@property (nonatomic,assign) NSInteger section;
+@property (nonatomic,weak) id<EPSaleBillingListSectionViewDelegate> m_delegate;
 
 -(void)setIsOpen:(BOOL)open;
 -(void)setTimeString:(NSString *)time;
 -(void)setMoneyString:(NSString *)moneyString;
-
-@end
-
-
-@class EPSaleBillingListModel;
-#pragma mark - EPSaleBillingListSectionCell
-@interface EPSaleBillingListSectionCell : MFTableViewCell <UIExpandingTableViewCell>
-{
-    EPSaleBillingListSectionView *_contentView;
-    EPSaleBillingListModel *_listModel;
-}
-
-@property (nonatomic, assign, getter = isLoading) BOOL loading;
-
-@property (nonatomic, readonly) UIExpansionStyle expansionStyle;
-- (void)setExpansionStyle:(UIExpansionStyle)expansionStyle animated:(BOOL)animated;
-
-- (void)setListModel:(EPSaleBillingListModel *)listModel;
+-(void)setOpen:(BOOL)open animated:(BOOL)animated;
 
 @end

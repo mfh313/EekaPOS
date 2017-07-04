@@ -15,11 +15,10 @@
 #import "EPSaleBillingDetailViewController.h"
 #import "MFMultiMenuTableViewCell.h"
 #import "EPDatePickView.h"
-#import "SLExpandableTableView.h"
 #import "EPSaleBillingListSectionView.h"
 #import "EPSaleBillingListModel.h"
 
-@interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate,EPDatePickViewDelegate>
+@interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate,EPDatePickViewDelegate,EPSaleBillingListSectionViewDelegate>
 {
     __weak IBOutlet UIButton *_dateBeginBtn;
     __weak IBOutlet UIButton *_dateEndBtn;
@@ -27,9 +26,8 @@
     NSString *_dateBegin;
     NSString *_dateEnd;
     
-    __weak IBOutlet SLExpandableTableView *_tableView;
+    __weak IBOutlet MFUITableView *_tableView;
     NSMutableArray *_sectionsArray;
-    NSMutableIndexSet *_expandableSections;
 }
 
 @end
@@ -105,13 +103,13 @@
     
     _dateEnd = [EPSaleBillingHelper yMDdateStringWithDate:[NSDate date]];
     _dateBegin = [EPSaleBillingHelper getMonthBeginWith:_dateEnd];
-    
     [self setDateBeginAndEndTitle];
     
-    [self getSaleBillingList];
+    _tableView.rowHeight = 80.0;
+    _tableView.sectionHeaderHeight = 66.0;
     
     _sectionsArray = [NSMutableArray array];
-    _expandableSections = [NSMutableIndexSet indexSet];
+    [self getSaleBillingList];
 }
 
 -(void)getSaleBillingList
@@ -166,6 +164,19 @@
         [_sectionsArray addObject:model1];
         [_sectionsArray addObject:model2];
         
+        for (int i = 0; i < 10; i++) {
+            EPSaleBillingListModel *model = [EPSaleBillingListModel new];
+            model.isExpand = NO;
+            model.time = @"2017-07-02";
+            model.money = @(11.00);
+            model.models = saleBillingList;
+            [_sectionsArray addObject:model];
+        }
+        
+        if (_sectionsArray.count > 0) {
+            ((EPSaleBillingListModel *)_sectionsArray.firstObject).isExpand = YES;
+        }
+        
         [_tableView reloadData];
         
     } failure:^(YTKBaseRequest * request) {
@@ -173,54 +184,6 @@
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];
     }];
-}
-
-#pragma mark - SLExpandableTableViewDatasource
-
-- (BOOL)tableView:(SLExpandableTableView *)tableView canExpandSection:(NSInteger)section
-{
-    return YES;
-}
-
-- (BOOL)tableView:(SLExpandableTableView *)tableView needsToDownloadDataForExpandableSection:(NSInteger)section
-{
-    return NO;
-}
-
-- (UITableViewCell<UIExpandingTableViewCell> *)tableView:(SLExpandableTableView *)tableView expandingCellForSection:(NSInteger)section
-{
-    static NSString *CellIdentifier = @"EPSaleBillingListSectionCell";
-    EPSaleBillingListSectionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (!cell) {
-        cell = [[EPSaleBillingListSectionCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-    }
-    
-    EPSaleBillingListModel *listModel = _sectionsArray[section];
-    [cell setListModel:listModel];
-    
-    return cell;
-}
-
-#pragma mark - SLExpandableTableViewDelegate
-- (void)tableView:(SLExpandableTableView *)tableView downloadDataForExpandableSection:(NSInteger)section
-{
-    EPSaleBillingListModel *listModel = _sectionsArray[section];
-    listModel.isExpand = YES;
-    [tableView expandSection:section animated:YES];
-}
-
-- (void)tableView:(SLExpandableTableView *)tableView didCollapseSection:(NSUInteger)section animated:(BOOL)animated
-{
-    EPSaleBillingListModel *listModel = _sectionsArray[section];
-    listModel.isExpand = NO;
-    
-    [tableView collapseSection:section animated:animated];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 80.0;
 }
 
 #pragma mark - UITableViewDataSource
@@ -232,7 +195,10 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     EPSaleBillingListModel *listModel = _sectionsArray[section];
-    return listModel.models.count;
+    if (listModel.isExpand) {
+        return listModel.models.count;
+    }
+    return 0;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -241,13 +207,13 @@
   
     if (cell == nil) {
         cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingListCellView"];
-        [cell addSelectedBackgroundView];
         cell.delegate = self;
         
         EPSaleBillingListCellView *cellView = [EPSaleBillingListCellView nibView];
         cell.m_subContentView = cellView;
     }
     
+    [cell addSelectedBackgroundView];
     cell.m_subContentView.frame = cell.contentView.bounds;
     
     EPSaleBillingListModel *listModel = _sectionsArray[indexPath.section];
@@ -261,6 +227,33 @@
     [cellView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:@(model.trueRece)]];
     
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(tableView.frame), 60)];
+    
+    EPSaleBillingListSectionView *sectionView = [EPSaleBillingListSectionView nibView];
+    sectionView.m_delegate = self;
+    sectionView.frame = view.bounds;
+    sectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [view addSubview:sectionView];
+    
+    EPSaleBillingListModel *listModel = _sectionsArray[section];
+    sectionView.section = section;
+    [sectionView setIsOpen:listModel.isExpand];
+    [sectionView setTimeString:listModel.time];
+    [sectionView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:listModel.money]];
+    
+    return view;
+}
+
+#pragma mark - EPSaleBillingListSectionViewDelegate
+-(void)onClickSection:(NSInteger)section
+{
+    EPSaleBillingListModel *listModel = _sectionsArray[section];
+    listModel.isExpand = !listModel.isExpand;
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - LYSideslipCellDelegate

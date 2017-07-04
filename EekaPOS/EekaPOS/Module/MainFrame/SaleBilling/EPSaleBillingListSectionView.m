@@ -7,22 +7,57 @@
 //
 
 #import "EPSaleBillingListSectionView.h"
-#import "EPSaleBillingListModel.h"
-#import "EPSaleBillingHelper.h"
 
-@interface EPSaleBillingListSectionView ()
+@interface EPSaleBillingListSectionView () <CAAnimationDelegate>
 {
     __weak IBOutlet UIButton *_arrowBtn;
     __weak IBOutlet UILabel *_timeLabel;
     __weak IBOutlet UILabel *_moneyLabel;
+    
+    BOOL _isOpen;
 }
 
 @end
 
 @implementation EPSaleBillingListSectionView
 
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap)];
+    [self addGestureRecognizer:tapGes];
+}
+
+-(void)onTap
+{
+    CABasicAnimation *rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    rotation.duration = 0.20;
+    rotation.toValue = @(M_PI/2);
+    rotation.removedOnCompletion = NO;
+    rotation.fillMode = kCAFillModeForwards;
+    rotation.delegate = self;
+    
+    if (_isOpen) {
+        rotation.toValue = @(-M_PI/2);
+    }
+    
+    [_arrowBtn.layer addAnimation:rotation forKey:@"rotation"];
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    if([_arrowBtn.layer animationForKey:@"rotation"] == anim)
+    {
+        if ([self.m_delegate respondsToSelector:@selector(onClickSection:)]) {
+            [self.m_delegate onClickSection:self.section];
+        }
+    }
+}
+
 -(void)setIsOpen:(BOOL)open
 {
+    _isOpen = open;
+    
     if (open)
     {
         [_arrowBtn setImage:MFImage(@"sj1") forState:UIControlStateNormal];
@@ -43,51 +78,10 @@
     _moneyLabel.text = moneyString;
 }
 
-@end
-
-
-#pragma mark - EPSaleBillingListSectionCell
-@implementation EPSaleBillingListSectionCell
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+-(void)setOpen:(BOOL)open animated:(BOOL)animated
 {
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        
-        _contentView = [EPSaleBillingListSectionView nibView];
-        _contentView.frame = self.contentView.bounds;
-        [self setM_subContentView:_contentView];
-    }
-    return self;
-}
-
-- (void)setLoading:(BOOL)loading
-{
-    if (loading != _loading) {
-        _loading = loading;
-        [self _updateDetailView];
-    }
-}
-
-- (void)setExpansionStyle:(UIExpansionStyle)expansionStyle animated:(BOOL)animated
-{
-    if (expansionStyle != _expansionStyle) {
-        _expansionStyle = expansionStyle;
-        [self _updateDetailView];
-    }
-}
-
--(void)_updateDetailView
-{
-    [_contentView setIsOpen:_listModel.isExpand];
-    [_contentView setTimeString:_listModel.time];
-    [_contentView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:_listModel.money]];
-}
-
-- (void)setListModel:(EPSaleBillingListModel *)listModel
-{
-    _listModel = listModel;
     
-    [self _updateDetailView];
 }
 
 @end
+
