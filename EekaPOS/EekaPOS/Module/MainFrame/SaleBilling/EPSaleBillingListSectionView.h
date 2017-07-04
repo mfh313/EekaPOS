@@ -23,6 +23,5 @@
 -(void)setIsOpen:(BOOL)open;
 -(void)setTimeString:(NSString *)time;
 -(void)setMoneyString:(NSString *)moneyString;
--(void)setOpen:(BOOL)open animated:(BOOL)animated;
 
 @end

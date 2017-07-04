@@ -31,7 +31,7 @@
 -(void)onTap
 {
     CABasicAnimation *rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    rotation.duration = 0.20;
+    rotation.duration = 0.15;
     rotation.toValue = @(M_PI/2);
     rotation.removedOnCompletion = NO;
     rotation.fillMode = kCAFillModeForwards;
@@ -76,11 +76,6 @@
 -(void)setMoneyString:(NSString *)moneyString
 {
     _moneyLabel.text = moneyString;
-}
-
--(void)setOpen:(BOOL)open animated:(BOOL)animated
-{
-    
 }
 
 @end

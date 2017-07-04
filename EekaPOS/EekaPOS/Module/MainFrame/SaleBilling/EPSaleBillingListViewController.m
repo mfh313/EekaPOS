@@ -106,7 +106,7 @@
     [self setDateBeginAndEndTitle];
     
     _tableView.rowHeight = 80.0;
-    _tableView.sectionHeaderHeight = 66.0;
+    _tableView.sectionHeaderHeight = 60.0;
     
     _sectionsArray = [NSMutableArray array];
     [self getSaleBillingList];
@@ -208,12 +208,12 @@
     if (cell == nil) {
         cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingListCellView"];
         cell.delegate = self;
+        [cell addSelectedBackgroundView];
         
         EPSaleBillingListCellView *cellView = [EPSaleBillingListCellView nibView];
         cell.m_subContentView = cellView;
     }
     
-    [cell addSelectedBackgroundView];
     cell.m_subContentView.frame = cell.contentView.bounds;
     
     EPSaleBillingListModel *listModel = _sectionsArray[indexPath.section];
@@ -276,7 +276,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{  
     EPSaleBillingListModel *listModel = _sectionsArray[indexPath.section];
     EPSaleBillingModel *model = listModel.models[indexPath.row];
     
