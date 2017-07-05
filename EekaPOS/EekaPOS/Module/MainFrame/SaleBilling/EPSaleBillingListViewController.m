@@ -166,14 +166,14 @@
         [_sectionsArray addObject:model1];
         [_sectionsArray addObject:model2];
         
-        for (int i = 0; i < 10; i++) {
-            EPSaleBillingListModel *model = [EPSaleBillingListModel new];
-            model.isExpand = NO;
-            model.time = @"2017-07-02";
-            model.money = @(11.00);
-            model.models = saleBillingList;
-            [_sectionsArray addObject:model];
-        }
+//        for (int i = 0; i < 10; i++) {
+//            EPSaleBillingListModel *model = [EPSaleBillingListModel new];
+//            model.isExpand = NO;
+//            model.time = @"2017-07-02";
+//            model.money = @(11.00);
+//            model.models = saleBillingList;
+//            [_sectionsArray addObject:model];
+//        }
         
         if (_sectionsArray.count > 0) {
             ((EPSaleBillingListModel *)_sectionsArray.firstObject).isExpand = YES;
