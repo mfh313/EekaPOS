@@ -707,7 +707,7 @@
 
 -(double)receivablePrice
 {
-    return (_discountPrice - _deductionPrice);
+    return [EPSaleBillingHelper roundFloat:(_discountPrice - _deductionPrice)];
 }
 
 -(void)getItemDetail:(NSString *)itemCode
@@ -729,7 +729,7 @@
         
         EPSaleBillingItemModel *itemModel = [EPSaleBillingItemModel MM_modelWithJSON:request.responseJSONObject];
         itemModel.isSpecialDiscount = NO;
-        itemModel.discount = @(1.00);
+        itemModel.discount = @(1.0000);
         itemModel.number = @(1);
         
         [_saleBillingItemModels addObject:itemModel];
