@@ -146,8 +146,8 @@
         
         EPSaleBillingListModel *model = [EPSaleBillingListModel new];
         model.isExpand = NO;
-        model.time = @"2017-07-02";
-        model.money = @(11.00);
+        model.time = @"2017-07";
+        model.money = nil;
         model.models = saleBillingList;
         
         EPSaleBillingListModel *model1 = [EPSaleBillingListModel new];
@@ -163,8 +163,8 @@
         model2.models = saleBillingList;
         
         [_sectionsArray addObject:model];
-        [_sectionsArray addObject:model1];
-        [_sectionsArray addObject:model2];
+//        [_sectionsArray addObject:model1];
+//        [_sectionsArray addObject:model2];
         
 //        for (int i = 0; i < 10; i++) {
 //            EPSaleBillingListModel *model = [EPSaleBillingListModel new];
@@ -246,7 +246,7 @@
     sectionView.section = section;
     [sectionView setIsOpen:listModel.isExpand];
     [sectionView setTimeString:listModel.time];
-    [sectionView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:listModel.money]];
+//    [sectionView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:listModel.money]];
     
     return view;
 }
