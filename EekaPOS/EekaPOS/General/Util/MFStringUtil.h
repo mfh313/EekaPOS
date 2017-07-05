@@ -18,6 +18,8 @@ static NSString * const MFPhoneNumberRegex = @"1[3|4|5|7|8][0-9]\\d{8}$";
 
 +(NSString *)floatStringWithTwoPoint:(CGFloat)aFloat;
 
++(NSString *)floatStringWithFourPoint:(CGFloat)aFloat;
+
 +(NSString *)URLEncodedString:(NSString *)str;
 
 +(NSString *)URLDecodedString:(NSString *)str;

@@ -88,6 +88,10 @@
     return (floorf(price*100 + 0.5))/100;
 }
 
++(float)roundFourFloat:(float)price{
+    return (floorf(price*10000 + 0.5))/10000;
+}
+
 +(NSString *)moneyDescWithNumber:(NSNumber *)money
 {
     return [NSString stringWithFormat:@"¥ %.2f ",money.floatValue];

@@ -112,7 +112,7 @@
 
 -(void)setDiscount:(NSNumber *)discountNumber
 {
-    _rateTextField.text = [NSString stringWithFormat:@"%.2f",discountNumber.floatValue];;
+    _rateTextField.text = [MFStringUtil floatStringWithFourPoint:discountNumber.floatValue];
 }
 
 -(void)setRemarkString:(NSString *)remark
@@ -156,7 +156,7 @@
         return;
     }
     
-    float rateFloat = [EPSaleBillingHelper roundFloat:rateString.floatValue];
+    float rateFloat = [EPSaleBillingHelper roundFourFloat:rateString.floatValue];
     
     NSNumber *rateNumber = @(rateFloat);
     

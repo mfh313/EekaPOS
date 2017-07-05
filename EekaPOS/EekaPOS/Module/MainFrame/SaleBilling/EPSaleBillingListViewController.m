@@ -209,6 +209,7 @@
   
     if (cell == nil) {
         cell = [[MFMultiMenuTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EPSaleBillingListCellView"];
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
         cell.delegate = self;
         [cell addSelectedBackgroundView];
         

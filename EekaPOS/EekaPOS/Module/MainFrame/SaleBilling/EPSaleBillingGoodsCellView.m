@@ -95,7 +95,7 @@
 
 -(void)setDiscountRate:(NSNumber *)rate
 {
-    _discountRateLabel.text = [MFStringUtil floatStringWithTwoPoint:rate.floatValue];
+    _discountRateLabel.text = [MFStringUtil floatStringWithFourPoint:rate.floatValue];
 }
 
 -(void)setDiscountAfter:(NSString *)str

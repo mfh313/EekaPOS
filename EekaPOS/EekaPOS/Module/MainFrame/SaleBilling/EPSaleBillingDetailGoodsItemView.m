@@ -30,8 +30,8 @@
     
     [_priceView setItemCode:itemModel.itemCode
                      number:[NSString stringWithFormat:@"%@",itemModel.number]
-                  listPrice:[NSString stringWithFormat:@"%.1f",itemModel.listPrice.floatValue]
-              discountPrice:[NSString stringWithFormat:@"%.1f",itemModel.receivablePrice.floatValue]];
+                  listPrice:[NSString stringWithFormat:@"%.2f",itemModel.listPrice.floatValue]
+              discountPrice:[NSString stringWithFormat:@"%.2f",itemModel.receivablePrice.floatValue]];
     
     
     _discountLabel.text = [NSString stringWithFormat:@"折扣：%.4f",itemModel.discount.floatValue];

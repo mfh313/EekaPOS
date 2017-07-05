@@ -48,14 +48,14 @@
 - (void)ryNumberKeyboardSubmit:(NSString *)string tag:(NSInteger)tag
 {
     if ([self.m_delegate respondsToSelector:@selector(didSetDiscount:)]) {
-        [self.m_delegate didSetDiscount:[EPSaleBillingHelper roundFloat:string.floatValue]];
+        [self.m_delegate didSetDiscount:[EPSaleBillingHelper roundFourFloat:string.floatValue]];
     }
 }
 
 -(void)setDiscountRate:(NSNumber *)discountRate
 {
     if (discountRate) {
-        _discountInputTextField.text = [MFStringUtil floatStringWithTwoPoint:discountRate.floatValue];
+        _discountInputTextField.text = [MFStringUtil floatStringWithFourPoint:discountRate.floatValue];
     }
     else
     {

@@ -53,4 +53,9 @@
     return [NSString stringWithFormat:@"%.2f",aFloat];
 }
 
++(NSString *)floatStringWithFourPoint:(CGFloat)aFloat
+{
+    return [NSString stringWithFormat:@"%.4f",aFloat];
+}
+
 @end

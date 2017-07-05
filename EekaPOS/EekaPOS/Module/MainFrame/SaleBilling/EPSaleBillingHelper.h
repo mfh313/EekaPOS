@@ -35,6 +35,8 @@
 
 +(float)roundFloat:(float)price;
 
++(float)roundFourFloat:(float)price;
+
 +(NSString *)moneyDescWithNumber:(NSNumber *)money;
 
 +(NSMutableArray *)saleBillingDeductionModels;
