@@ -246,7 +246,7 @@
     sectionView.section = section;
     [sectionView setIsOpen:listModel.isExpand];
     [sectionView setTimeString:listModel.time];
-//    [sectionView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:listModel.money]];
+    [sectionView setMoneyString:[EPSaleBillingHelper moneyDescWithNumber:listModel.money]];
     
     return view;
 }
