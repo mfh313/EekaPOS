@@ -15,11 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="511" height="48"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aot-u2-dkh">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aot-u2-dkh">
                     <rect key="frame" x="20" y="14" width="20" height="20"/>
-                    <accessibility key="accessibilityConfiguration">
-                        <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
-                    </accessibility>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="Kjb-Fw-4zj"/>
                         <constraint firstAttribute="height" constant="20" id="ZrE-AV-3RQ"/>
