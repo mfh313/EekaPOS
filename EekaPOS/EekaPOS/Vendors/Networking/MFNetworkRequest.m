@@ -136,25 +136,33 @@
 
 -(BOOL)messageSuccess
 {
-    NSDictionary *dict = self.responseJSONObject;
-    NSNumber *number = dict[@"errcode"];
-    if (number.intValue == 0 || number.intValue == 1)
-    {
-        return YES;
+    if ([self.responseJSONObject isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dict = self.responseJSONObject;
+        NSNumber *number = dict[@"errcode"];
+        if (number.intValue == 0 || number.intValue == 1)
+        {
+            return YES;
+        }
+        
+        return NO;
     }
     
-    return NO;
+    return YES;
 }
 
 -(NSString*)errorMessage
 {
-    NSDictionary *dict = self.responseJSONObject;
-    id string = dict[@"errmsg"];
-    if ([string isKindOfClass:[NSNull class]]) {
-        string = @"服务器无错误描述";
+    if ([self.responseJSONObject isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dict = self.responseJSONObject;
+        id string = dict[@"errmsg"];
+        if ([string isKindOfClass:[NSNull class]]) {
+            string = @"服务器无错误描述";
+        }
+        
+        return string;
     }
     
-    return string;
+    return nil;
 }
 
 @end

@@ -135,45 +135,15 @@
             return;
         }
         
+        [_sectionsArray removeAllObjects];
         NSMutableArray *saleBillingList = [NSMutableArray array];
-        NSArray *saleBillingLists = request.responseJSONObject[@"saleBillingList"];
+        NSArray *saleBillingLists = request.responseJSONObject;
         for (int i = 0; i < saleBillingLists.count; i++) {
-            EPSaleBillingModel *model = [EPSaleBillingModel MM_modelWithJSON:saleBillingLists[i]];
+            EPSaleBillingListModel *model = [EPSaleBillingListModel MM_modelWithJSON:saleBillingLists[i]];
+            model.isExpand = NO;
             [saleBillingList addObject:model];
         }
-        
-        [_sectionsArray removeAllObjects];
-        
-        EPSaleBillingListModel *model = [EPSaleBillingListModel new];
-        model.isExpand = NO;
-        model.time = @"2017-07";
-        model.money = nil;
-        model.models = saleBillingList;
-        
-        EPSaleBillingListModel *model1 = [EPSaleBillingListModel new];
-        model1.isExpand = NO;
-        model1.time = @"2017-07-04";
-        model1.money = @(123.00);
-        model1.models = saleBillingList;
-        
-        EPSaleBillingListModel *model2 = [EPSaleBillingListModel new];
-        model2.isExpand = NO;
-        model2.time = @"2017-07-06";
-        model2.money = @(145.00);
-        model2.models = saleBillingList;
-        
-        [_sectionsArray addObject:model];
-//        [_sectionsArray addObject:model1];
-//        [_sectionsArray addObject:model2];
-        
-//        for (int i = 0; i < 10; i++) {
-//            EPSaleBillingListModel *model = [EPSaleBillingListModel new];
-//            model.isExpand = NO;
-//            model.time = @"2017-07-02";
-//            model.money = @(11.00);
-//            model.models = saleBillingList;
-//            [_sectionsArray addObject:model];
-//        }
+        _sectionsArray = saleBillingList;
         
         if (_sectionsArray.count > 0) {
             ((EPSaleBillingListModel *)_sectionsArray.firstObject).isExpand = YES;
