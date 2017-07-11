@@ -7,55 +7,12 @@
 //
 
 #import "EPSaleBillingMainViewController.h"
-#import "EPCameraScanViewController.h"
-#import "EPGetGoodsDetailApi.h"
-#import "EPGoodsDetailModel.h"
-#import "EPEntitityEmployeeModel.h"
-#import "EPSaleBillingItemCodeInputView.h"
-#import "EPSaleBillingDeductionView.h"
-#import "EPSaleBillingEmployeeSelectView.h"
-#import "EPSaleBillingDeductionTypeSelectView.h"
-#import "EPSaleGuideSelectViewController.h"
-#import "EPSaleBillingHelper.h"
-#import "EPSaleBillingGoodsEditView.h"
-#import "EPSaleBillingGoodsCellView.h"
-#import "EPGetIndividualApi.h"
-#import "EPSaleBillingModel.h"
-#import "EPSaleBillingItemModel.h"
-#import "EPSaleBillingDiscountInputView.h"
-#import "EPSaleBillingPhoneInputView.h"
-#import "EPSaleBillingCashierCellView.h"
-#import "EPSaleBillingGuidesCellView.h"
-#import "EPSaleBillingDeductionSelectedItemView.h"
-#import "EPSaveSaleBillingApi.h"
-#import "EPEntitityService.h"
-#import "MFMultiMenuTableViewCell.h"
-#import "EPSaleBillingMainFooterView.h"
 
 
 @interface EPSaleBillingMainViewController () <EPCameraScanDelegate,EPSaleBillingItemCodeInputViewDelegate,
                                     EPSaleBillingDeductionViewDelegate,EPSaleBillingEmployeeSelectViewDelegate,EPSaleGuideSelectViewControllerDelegate,EPSaleBillingDeductionTypeSelectViewDelegate,EPSaleBillingGoodsEditViewDelegate,EPSaleBillingGoodsCellViewDelegate,EPSaleBillingPhoneInputViewDelegate,EPSaleBillingCashierCellViewDelegate,EPSaleBillingGuidesCellViewDelegate,EPSaleBillingDiscountInputViewDelegate,UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate,EPSaleBillingMainFooterViewDelegate>
 {
-    __weak IBOutlet EPSaleBillingItemCodeInputView *_codeInputView;
-    __weak IBOutlet UITableView *_tableView;
     
-    EPSaleBillingMainFooterView *_footView;;
-    
-    EPGetIndividualApi *_getIndividualApi;
-    EPSaleBillingModel *_saleBillingModel;
-    
-    NSMutableArray *_saleBillingItemModels;
-    NSMutableArray *_saleBillingDeductions;
-    
-    EPEntitityEmployeeModel *_selectCashier;
-    EPSaleBillingDeductionModel *_selectedDeductionModel;
-    NSMutableArray *_selectGuides;
-    
-    NSString *_currrentIndividualName;
-    
-    CGFloat _discountPrice;
-    CGFloat _allPrice;
-    CGFloat _deductionPrice;
 }
 
 @end
@@ -72,10 +29,19 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self setLeftNaviButtonWithAction:@selector(onClickBackBtn:)];
-    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    _tableView.contentInset = UIEdgeInsetsMake(56, 0, 90, 0);
     
+    _tableView = [[MFUITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    [self.view addSubview:_tableView];
+    
+    _codeInputView = [EPSaleBillingItemCodeInputView nibView];
+    _codeInputView.frame = CGRectMake(0, 64, CGRectGetWidth(self.view.frame), 56);
+    _codeInputView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
     _codeInputView.m_delegate = self;
+    [self.view addSubview:_codeInputView];
     
     _footView = [EPSaleBillingMainFooterView nibView];
     _footView.frame = CGRectMake(0, CGRectGetHeight(self.view.frame) - 80, CGRectGetWidth(self.view.frame), 80);
@@ -83,6 +49,13 @@
     _footView.m_delegate = self;
     [self.view addSubview:_footView];
     
+    _tableView.contentInset = UIEdgeInsetsMake(64 + 56, 0, 90, 0);
+    
+    [self initSaleBillingDatas];
+}
+
+-(void)initSaleBillingDatas
+{
     _saleBillingItemModels = [NSMutableArray array];
     _saleBillingDeductions = [NSMutableArray array];
     _selectGuides = [NSMutableArray array];
@@ -91,11 +64,6 @@
     _selectCashier = [entitityService getEntitityEmployees].firstObject;
     
     _saleBillingModel = [EPSaleBillingModel new];
-}
-
--(void)viewWillLayoutSubviews
-{
-    [self.view layoutIfNeeded];
 }
 
 -(void)onClickBackBtn:(id)sender

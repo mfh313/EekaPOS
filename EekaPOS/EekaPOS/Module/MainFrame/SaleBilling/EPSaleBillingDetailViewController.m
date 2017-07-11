@@ -476,9 +476,9 @@
 -(void)onClickEditSaleBilling
 {
     EPSaleBillingUpdateViewController *saleBillingUpdateVC = [[EPSaleBillingUpdateViewController alloc] init];
+    saleBillingUpdateVC.hidesBottomBarWhenPushed = YES;
     saleBillingUpdateVC.m_delegate = self;
     saleBillingUpdateVC.saleModel = _saleModel;
-    saleBillingUpdateVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:saleBillingUpdateVC animated:YES];
 }
 

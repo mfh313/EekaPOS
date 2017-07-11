@@ -14,23 +14,27 @@
 
 @implementation EPSaleBillingUpdateViewController
 
--(instancetype)init
-{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SaleBilling" bundle:nil];
-    
-    self = [storyboard instantiateViewControllerWithIdentifier:@"EPSaleBillingMainViewController"];
-    
-    if (self) {
-        
-    }
-    
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"销售开单修改";
     
+    _saleBillingModel = self.saleModel;
+    
+    [self updateSaleBillingDatas];
+}
+
+-(void)updateSaleBillingDatas
+{
+    _selectGuides = [NSMutableArray array];
+    
+//    EPEntitityService *entitityService = [[MMServiceCenter defaultCenter] getService:[EPEntitityService class]];
+//    _selectCashier = [entitityService getEntitityEmployees].firstObject;
+    
+    _saleBillingItemModels = [NSMutableArray arrayWithArray:_saleBillingModel.itemList];
+    _saleBillingDeductions = [EPSaleBillingHelper deductionModelsForString:_saleBillingModel.deductionStr];
+    
+    [self reSetTableSubViews];
 }
 
 - (void)didReceiveMemoryWarning {

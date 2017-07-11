@@ -51,8 +51,7 @@
 
 -(void)pushSaleBillingMainVC
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SaleBilling" bundle:nil];
-    EPSaleBillingMainViewController *saleBillingMainVC = [storyboard instantiateViewControllerWithIdentifier:@"EPSaleBillingMainViewController"];
+    EPSaleBillingMainViewController *saleBillingMainVC = [[EPSaleBillingMainViewController alloc] init];
     saleBillingMainVC.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:saleBillingMainVC animated:YES];

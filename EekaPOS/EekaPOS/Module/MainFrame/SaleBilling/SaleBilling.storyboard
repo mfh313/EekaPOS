@@ -9,54 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sale Billing Main View Controller-->
-        <scene sceneID="rw3-qb-atK">
-            <objects>
-                <viewController storyboardIdentifier="EPSaleBillingMainViewController" wantsFullScreenLayout="YES" id="CHT-Nm-EaG" customClass="EPSaleBillingMainViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="49l-xr-2YA"/>
-                        <viewControllerLayoutGuide type="bottom" id="KG7-Ow-HAG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pw7-vr-Umx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AJv-df-MEo">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="CHT-Nm-EaG" id="aC2-Bk-dMn"/>
-                                    <outlet property="delegate" destination="CHT-Nm-EaG" id="IpR-WN-4wc"/>
-                                </connections>
-                            </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxw-Qe-2bz" customClass="EPSaleBillingItemCodeInputView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="2RB-Uo-eaS"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="AJv-df-MEo" firstAttribute="top" secondItem="49l-xr-2YA" secondAttribute="bottom" id="9N8-OH-p0d"/>
-                            <constraint firstItem="zxw-Qe-2bz" firstAttribute="leading" secondItem="Pw7-vr-Umx" secondAttribute="leading" id="Iqp-9a-LmX"/>
-                            <constraint firstItem="KG7-Ow-HAG" firstAttribute="top" secondItem="AJv-df-MEo" secondAttribute="bottom" id="KnQ-nv-tll"/>
-                            <constraint firstItem="zxw-Qe-2bz" firstAttribute="top" secondItem="49l-xr-2YA" secondAttribute="bottom" id="Up2-Xe-yBh"/>
-                            <constraint firstItem="AJv-df-MEo" firstAttribute="leading" secondItem="Pw7-vr-Umx" secondAttribute="leading" id="oIX-7S-XN5"/>
-                            <constraint firstAttribute="trailing" secondItem="AJv-df-MEo" secondAttribute="trailing" id="t4f-KP-4Mz"/>
-                            <constraint firstAttribute="trailing" secondItem="zxw-Qe-2bz" secondAttribute="trailing" id="wiw-SU-obP"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="_codeInputView" destination="zxw-Qe-2bz" id="hWh-sp-xgJ"/>
-                        <outlet property="_tableView" destination="AJv-df-MEo" id="0Y8-BF-59f"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8lT-vL-nFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-634.39999999999998" y="-14.842578710644679"/>
-        </scene>
         <!--Sale Guide Select View Controller-->
         <scene sceneID="A2I-f6-wMk">
             <objects>
