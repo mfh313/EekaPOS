@@ -47,8 +47,6 @@
 {
     EPAccountMgr *accountMgr = [[MMServiceCenter defaultCenter] getService:[EPAccountMgr class]];
     _saleBillingModel.storeName = accountMgr.loginModel.fullname;
-    _saleBillingModel.cashier = _selectCashier.contactName;
-    _saleBillingModel.guider = [self selectGuiderNames];
     _saleBillingModel.deductionStr = [EPSaleBillingHelper saleBillingSelectDeductionsStr:_saleBillingDeductions];
     _saleBillingModel.sellDate = [EPSaleBillingHelper dateStringWithDate:[NSDate date]];
     _saleBillingModel.printDate = [EPSaleBillingHelper dateStringWithDate:[NSDate date]];
@@ -77,6 +75,8 @@
         
         [strongSelf showTips:@"修改成功"];
         
+        EPSaleBillingModel *saleBillingModel = [EPSaleBillingModel MM_modelWithJSON:request.responseJSONObject];
+        [strongSelf reloadEditInfo:saleBillingModel];
         
     } failure:^(YTKBaseRequest * request) {
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
@@ -84,6 +84,14 @@
     }];
 }
 
+-(void)reloadEditInfo:(EPSaleBillingModel *)model
+{
+    if ([self.m_delegate respondsToSelector:@selector(saleBillingDidUpdate:)]) {
+        [self.m_delegate saleBillingDidUpdate:model];
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

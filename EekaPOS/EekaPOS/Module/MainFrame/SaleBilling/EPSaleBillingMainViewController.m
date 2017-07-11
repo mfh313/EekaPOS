@@ -303,7 +303,7 @@
     cell.m_subContentView.frame = cell.contentView.bounds;
     
     EPSaleBillingCashierCellView *cellView = (EPSaleBillingCashierCellView *)cell.m_subContentView;
-    [cellView setCashierString:_selectCashier.contactName];
+    [cellView setCashierString:_saleBillingModel.cashier];
     
     return cell;
 }
@@ -329,7 +329,7 @@
     cell.m_subContentView.frame = cell.contentView.bounds;
     
     EPSaleBillingGuidesCellView *cellView = (EPSaleBillingGuidesCellView *)cell.m_subContentView;
-    [cellView setGuidesString:[self selectGuiderNames]];
+    [cellView setGuidesString:_saleBillingModel.guider];
     
     return cell;
 }
@@ -515,7 +515,7 @@
 -(void)didSelectEmployee:(EPEntitityEmployeeModel *)selectEmployee view:(EPSaleBillingEmployeeSelectView *)view
 {
     _selectCashier = selectEmployee;
-    _saleBillingModel.cashier = _selectCashier.contactID.stringValue;
+    _saleBillingModel.cashier = _selectCashier.contactName;
     
     [self reSetTableSubViews];
     
@@ -539,6 +539,8 @@
 -(void)didSelectEmployees:(NSMutableArray *)selectEmployees viewController:(EPSaleGuideSelectViewController *)viewController
 {
     _selectGuides = selectEmployees;
+    
+    _saleBillingModel.guider = [self selectGuiderNames];
     
     [self reSetTableSubViews];
 }
