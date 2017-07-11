@@ -487,6 +487,10 @@
 {
     _saleModel = model;
     [self setSaleBillingSubViews];
+    
+    if ([self.m_delegate respondsToSelector:@selector(saleBillingDidUpdate)]) {
+        [self.m_delegate saleBillingDidUpdate];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

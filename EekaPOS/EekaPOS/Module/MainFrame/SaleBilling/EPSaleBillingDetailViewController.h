@@ -8,8 +8,16 @@
 
 #import "MMViewController.h"
 
+@protocol EPSaleBillingDetailViewControllerDelegate <NSObject>
+
+@optional
+-(void)saleBillingDidUpdate;
+
+@end
+
 @interface EPSaleBillingDetailViewController : MMViewController
 
 @property(nonatomic,strong) NSNumber *saleBillingId;
+@property (nonatomic,weak) id<EPSaleBillingDetailViewControllerDelegate> m_delegate;
 
 @end

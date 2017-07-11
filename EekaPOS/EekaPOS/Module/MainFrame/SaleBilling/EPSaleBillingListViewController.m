@@ -18,7 +18,7 @@
 #import "EPSaleBillingListSectionView.h"
 #import "EPSaleBillingListModel.h"
 
-@interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate,EPDatePickViewDelegate,EPSaleBillingListSectionViewDelegate>
+@interface EPSaleBillingListViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate,EPDatePickViewDelegate,EPSaleBillingListSectionViewDelegate,EPSaleBillingDetailViewControllerDelegate>
 {
     __weak IBOutlet UIButton *_dateBeginBtn;
     __weak IBOutlet UIButton *_dateEndBtn;
@@ -262,7 +262,14 @@
     EPSaleBillingDetailViewController *saleBillingDetailVC = [storyboard instantiateViewControllerWithIdentifier:@"EPSaleBillingDetailViewController"];
     saleBillingDetailVC.hidesBottomBarWhenPushed = YES;
     saleBillingDetailVC.saleBillingId = saleBillingId;
+    saleBillingDetailVC.m_delegate = self;
     [self.navigationController pushViewController:saleBillingDetailVC animated:YES];
+}
+
+#pragma mark - EPSaleBillingDetailViewControllerDelegate
+-(void)saleBillingDidUpdate
+{
+    [self getSaleBillingList];
 }
 
 -(void)deleteSaleBilling:(NSNumber *)saleBillingID
