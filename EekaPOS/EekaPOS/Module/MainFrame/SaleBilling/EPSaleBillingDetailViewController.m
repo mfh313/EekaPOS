@@ -19,8 +19,9 @@
 #import "EPSaleBillingHelper.h"
 #import "EPUpdateSaleBillingApi.h"
 #import "MFMultiMenuTableViewCell.h"
+#import "EPSaleBillingUpdateViewController.h"
 
-@interface EPSaleBillingDetailViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate>
+@interface EPSaleBillingDetailViewController () <UITableViewDataSource,UITableViewDelegate,LYSideslipCellDelegate,EPSaleBillingUpdateViewControllerDelegate>
 {
     __weak IBOutlet UITableView *_tableView;
     EPSaleBillingModel *_saleModel;
@@ -409,18 +410,24 @@
         }
         
         _saleModel = [EPSaleBillingModel MM_modelWithJSON:request.responseJSONObject];
-        [strongSelf setHeaderAndFooterView];
-        
-        _goodsModel = [NSMutableArray arrayWithArray:_saleModel.itemList];
-        _deductionModels = [EPSaleBillingHelper deductionModelsForString:_saleModel.deductionStr];
-        
-        [_tableView reloadData];
+        [strongSelf setSaleBillingSubViews];
         
     } failure:^(YTKBaseRequest * request) {
         
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];
     }];
+}
+
+-(void)setSaleBillingSubViews
+{
+    [self setHeaderAndFooterView];
+    
+    _goodsModel = [NSMutableArray arrayWithArray:_saleModel.itemList];
+    _deductionModels = [EPSaleBillingHelper deductionModelsForString:_saleModel.deductionStr];
+    
+    [self setRightEditBtn];
+    [_tableView reloadData];
 }
 
 -(void)updateSaleBilling
@@ -450,6 +457,37 @@
         NSString *errorDesc = [NSString stringWithFormat:@"错误状态码=%@\n错误原因=%@",@(request.error.code),[request.error localizedDescription]];
         [self showTips:errorDesc];
     }];
+}
+
+-(void)setRightEditBtn
+{
+    if (_saleModel.status != 10) {
+        return;
+    }
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:CGRectMake(0, 0, 66, 44)];
+    [button setTitle:@"修改" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(onClickEditSaleBilling) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [self setRightBarButtonItem:rightBarButtonItem];
+}
+
+-(void)onClickEditSaleBilling
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SaleBilling" bundle:nil];
+    EPSaleBillingUpdateViewController *saleBillingUpdateVC = [storyboard instantiateViewControllerWithIdentifier:@"EPSaleBillingMainViewController"];
+    saleBillingUpdateVC.m_delegate = self;
+    saleBillingUpdateVC.saleModel = _saleModel;
+    saleBillingUpdateVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:saleBillingUpdateVC animated:YES];
+}
+
+#pragma mark - EPSaleBillingUpdateViewControllerDelegate
+-(void)saleBillingDidUpdate:(EPSaleBillingModel *)model
+{
+    _saleModel = model;
+    [self setSaleBillingSubViews];
 }
 
 - (void)didReceiveMemoryWarning {
