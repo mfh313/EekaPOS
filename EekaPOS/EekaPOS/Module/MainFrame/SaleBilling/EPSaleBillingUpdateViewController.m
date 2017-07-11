@@ -14,8 +14,22 @@
 
 @implementation EPSaleBillingUpdateViewController
 
+-(instancetype)init
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SaleBilling" bundle:nil];
+    
+    self = [storyboard instantiateViewControllerWithIdentifier:@"EPSaleBillingMainViewController"];
+    
+    if (self) {
+        
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
 }
 

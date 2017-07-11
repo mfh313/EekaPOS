@@ -475,8 +475,7 @@
 
 -(void)onClickEditSaleBilling
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SaleBilling" bundle:nil];
-    EPSaleBillingUpdateViewController *saleBillingUpdateVC = [storyboard instantiateViewControllerWithIdentifier:@"EPSaleBillingMainViewController"];
+    EPSaleBillingUpdateViewController *saleBillingUpdateVC = [[EPSaleBillingUpdateViewController alloc] init];
     saleBillingUpdateVC.m_delegate = self;
     saleBillingUpdateVC.saleModel = _saleModel;
     saleBillingUpdateVC.hidesBottomBarWhenPushed = YES;
@@ -494,7 +493,5 @@
     [super didReceiveMemoryWarning];
     
 }
-
-
 
 @end
