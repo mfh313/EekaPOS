@@ -58,5 +58,13 @@
 
 -(void)reSetTableSubViews;
 
+-(void)onClickSaveBillingBtn;
+
+-(BOOL)canSaveSaleBilling;
+
+-(NSString *)selectGuiderNames;
+
+-(double)receivablePrice;
+
 
 @end
