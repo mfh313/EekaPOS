@@ -20,7 +20,6 @@ NSString const *EPApiUrl = @"https://pos.szyingjia.cn:8888/";
 
 + (NSString *)hostUrl
 {
-//    return @"http://10.8.143.30:8080";  //zaolong
     return @"http://120.76.242.182:8083/";
 }
 
